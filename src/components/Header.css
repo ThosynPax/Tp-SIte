@@ -1,0 +1,27 @@
+.header {
+    width: 100%;
+    color: #000; /* Black text for contrast */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  }
+  
+  .header-top {
+
+  }
+
+  .logo {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .title {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
+  .subtitle {
+    font-size: 1.2rem;
+  }
+  

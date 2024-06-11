@@ -1,38 +1,202 @@
-.App {
-  text-align: center;
+/*  Pax's CSS */
+
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+body {
+  background-color: #000 !important;
+  border-top: 20px solid #fff !important;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.site-header {
+  margin-bottom: 50px;
+  position: relative;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header-content {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.logo {
+  width: 40px;
+  height: auto;
+  margin-top: 30px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.site-title {
+  font-size: 3.5rem; 
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.intro-title {
+  font-family: "Annie Use Your Telescope", cursive;
+  font-weight: 400;
+  font-style: normal;
+  color: #fff;
+  font-size: 70px;
+  margin-top: 0;
+
+}
+
+.intro-current-job {
+  font-family: "Annie Use Your Telescope", cursive;
+  font-weight: 300;
+  font-style: normal;
+  color: #969A9F;
+  margin-top: -50px;
+  font-size: 25px;
+}
+
+.brief-content {
+  font-family: "Montserrat", sans-serif;
+  color: #969A9F;
+  font-size: 18px;
+  line-height: 150%;
+}
+
+.com-1, .com-2, .com-3 {
+  font-family: "Annie Use Your Telescope", cursive;
+  color: #fff;
+  font-size: 25px;
+  text-transform: none;
+  text-decoration: none;
+}
+
+.com-3 {
+  font-size: 25px;
+}
+
+@media (max-width: 800px) {
+  .site-body {
+    margin-bottom: 150px; /* Adjust as needed */
   }
-  to {
-    transform: rotate(360deg);
+
+  .site-footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: left;
+    z-index: 9999;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-family: "Montserrat", sans-serif;
+    color: #969A9F;
+    font-size: 15px;
+  }
+
+  .site-nav ul {
+    display: flex;
+    position: absolute;
+    bottom: 20%;
+    text-decoration: none;
+    text-transform: none;
+    font-family: "Annie Use Your Telescope", cursive;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .site-nav ul li {
+    margin-bottom: 10px;
+  }
+
+  .intro-title {
+    font-size: 50px;
   }
 }
+
+.social-icons {
+  display: flex;
+  gap: 20px;
+  color: #969A9F;
+  font-size: 25px;
+  
+}
+
+
+
+.wrapper {
+  width: 90%;
+  max-width: 1500px;
+  margin-right: auto;
+  margin-left: auto;
+  position: relative;
+}
+
+.main-grid {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 100%;
+  grid-gap: 30px;
+}
+
+
+.site-title {
+  position: absolute;
+  top: -5px;
+  left: 0;
+}
+
+
+.site-nav {
+  height: 50px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.site-nav ul {
+  display: flex;
+  position: absolute;
+  bottom: 40%;
+  text-decoration: none;
+  text-transform: none;
+  font-family: "Annie Use Your Telescope", cursive;
+}
+
+.site-nav ul li a {
+  text-decoration: none;
+  text-transform: none;
+  font-family: "Annie Use Your Telescope", cursive;
+  font-size: 20px;
+  color: #fff ;
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px 12px; /* Adjust the padding around the links */
+  transition: background-color 0.3s ease; /* Add a smooth transition for hover effect */
+}
+
+
+
+.site-footer {
+  position: relative;
+  left: 0;
+  bottom: -40px;
+  width: 100%;
+  text-align: left;
+  z-index: 9999;
+  padding-top: 25px;
+  padding-bottom: 15px; 
+  font-family: "Montserrat", sans-serif;
+  color: #969A9F;
+  font-size: 15px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.social-icons a {
+  color: inherit;
+  font-size: 24px; 
+  text-decoration: none;
+}
+
+.social-icons a:hover {
+  color: #0073b1; 
+}
+
