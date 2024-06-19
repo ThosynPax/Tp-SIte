@@ -20,7 +20,7 @@ const Main = () => {
               <p>I founded <a href='https://afribreath.com' target="_blank" rel="noopener noreferrer" className='com-1'>Afribreath</a> , a tech company in Lagos, Nigeria. And we offer a virtual internship program aimed at bridging the gap <br /> between talented individuals and career opportunities across Africa.</p>
               <p>Additionally, I created <a href='https://afriheals.afribreath.com/' target="_blank" rel="noopener noreferrer" className='com-2'>Afriheals Careers</a>, a thriving tech community aimed at nurturing careers <br /> and fostering collaboration.</p>
               <p>Recently, I established <a href='https://paxschool.africa/' target="_blank" rel="noopener noreferrer" className='com-2'>Pax School of Tech</a>, a groundbreaking initiative dedicated to empowering the next <br /> generation of tech leaders.</p> 
-              <p>Through Pax School of Tech, we're reshaping education, providing hands-on learning experiences that prepare individuals for success in the ever-evolving tech landscape.</p>
+              <p>Through Pax School of Tech, we're reshaping education, providing hands-on learning experiences that prepare individuals <br />for success in the ever-evolving tech landscape.</p>
               <p>I'm dedicated to fostering talent and innovation in Africa's tech ecosystem</p>
             </div>
             <div className="social-icons">
