@@ -140,6 +140,38 @@ body {
   left: 0;
 }
 
+.other-site-nav ul {
+  display: contents;
+  position: absolute;
+  bottom: 40%;
+  text-decoration: none;
+  text-transform: none;
+  font-family: "Annie Use Your Telescope", cursive;
+}
+
+.other-site-nav {
+  height: 50px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.other-site-nav ul li a {
+  text-decoration: underline;
+  text-transform: none;
+  font-family: "Annie Use Your Telescope", cursive;
+  font-size: 25px;
+  color: #fff ;
+  display: inline-block;
+  padding-left: 0;
+  padding-right: 15px;
+  transition: background-color 0.3s ease; /* Add a smooth transition for hover effect */
+}
+
+.other-site-nav ul li a:hover {
+  background-color: #fff;
+  color: #000;
+}
 
 .site-nav {
   height: 50px;

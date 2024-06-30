@@ -13,7 +13,6 @@ const Header = () => {
           <ul>
             <li><a href='/blog'>Blog</a></li>
             <li><a href='/bytes'>Billion-Bytes</a></li>
-            <li><a target="_blank" rel="noopener noreferrer" href="https://calendar.app.google/i8s7Mao11AY28HVH6" className="menu-link">Meeting</a></li>
           </ul>
         </nav>
       </div>
