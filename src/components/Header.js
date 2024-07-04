@@ -11,7 +11,7 @@ const Header = () => {
         </div>
         <nav className="site-nav">
           <ul>
-            <li><a href='/blog'>Blog</a></li>
+            <li><a href='https://pax-trail.netlify.app/'>Blog</a></li>
             <li><a href='/bytes'>Billion-Bytes</a></li>
           </ul>
         </nav>

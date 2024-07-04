@@ -5,8 +5,8 @@
 
 
 body {
-  background-color: #000 !important;
-  border-top: 20px solid #fff !important;
+  background-color: #fff !important;
+  border-top: 20px solid #000 !important;
 }
 
 .site-header {
@@ -33,9 +33,9 @@ body {
 
 .intro-title {
   font-family: "Annie Use Your Telescope", cursive;
-  font-weight: 400;
+  font-weight: bold;
   font-style: normal;
-  color: #fff;
+  color: #000;
   font-size: 70px;
   margin-top: 0;
 
@@ -45,24 +45,25 @@ body {
   font-family: "Annie Use Your Telescope", cursive;
   font-weight: 300;
   font-style: normal;
-  color: #969A9F;
+  color: #333;
   margin-top: -50px;
   font-size: 25px;
 }
 
 .brief-content {
   font-family: "Montserrat", sans-serif;
-  color: #969A9F;
+  color: #333;
   font-size: 18px;
   line-height: 150%;
 }
 
 .com-1, .com-2, .com-3 {
   font-family: "Annie Use Your Telescope", cursive;
-  color: #fff;
+  color: #000;
   font-size: 25px;
   text-transform: none;
   text-decoration: none;
+  font-weight: 700;
 }
 
 .com-3 {
@@ -146,6 +147,7 @@ body {
   bottom: 40%;
   text-decoration: none;
   text-transform: none;
+  color: #fff;
   font-family: "Annie Use Your Telescope", cursive;
 }
 
@@ -161,16 +163,17 @@ body {
   text-transform: none;
   font-family: "Annie Use Your Telescope", cursive;
   font-size: 25px;
-  color: #fff ;
+  color: #000 ;
   display: inline-block;
   padding-left: 0;
   padding-right: 15px;
+  font-weight: 700;
   transition: background-color 0.3s ease; /* Add a smooth transition for hover effect */
 }
 
 .other-site-nav ul li a:hover {
-  background-color: #fff;
-  color: #000;
+  background-color: #000;
+  color: #fff;
 }
 
 .site-nav {
@@ -181,21 +184,22 @@ body {
 }
 
 .site-nav ul {
+  text-decoration: none;
+  text-transform: none;
+  color: #fff;
   display: flex;
   position: absolute;
   bottom: 40%;
-  text-decoration: none;
-  text-transform: none;
   font-family: "Annie Use Your Telescope", cursive;
 }
 
 .site-nav ul li a {
-  text-decoration: none;
+  text-decoration: none !important;
   text-transform: none;
   font-family: "Annie Use Your Telescope", cursive;
   font-size: 20px;
-  color: #fff ;
-  text-decoration: none;
+  color: #000 ;
+  font-weight: 700;
   display: inline-block;
   padding: 8px 12px; /* Adjust the padding around the links */
   transition: background-color 0.3s ease; /* Add a smooth transition for hover effect */
@@ -213,8 +217,9 @@ body {
   padding-top: 25px;
   padding-bottom: 15px; 
   font-family: "Montserrat", sans-serif;
-  color: #969A9F;
+  color: #fff;
   font-size: 15px;
+  background-color: #000;
 }
 
 .social-icons {
@@ -229,6 +234,6 @@ body {
 }
 
 .social-icons a:hover {
-  color: #0073b1; 
+  color: #969A9F; 
 }
 
