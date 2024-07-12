@@ -18,12 +18,16 @@ const Main = () => {
               <p>Recently, I established <a href='https://paxschool.africa/' target="_blank" rel="noopener noreferrer" className='com-2'>Pax School of Tech</a>, a groundbreaking initiative dedicated to empowering the next generation of tech leaders.</p> 
               <p>Through Pax School of Tech, we're reshaping education, providing hands-on learning experiences that prepare individuals for success in the ever-evolving tech landscape.</p>
               <p>I'm dedicated to fostering talent and innovation in Africa's tech ecosystem</p>
+
+              <p>I write about tech on 
+                <a target="_blank" className='com-2' href="https://medium.com/@Thosynpax"> Medium </a> and 
+                <a target="_blank" className='com-2' href="https://www.linkedin.com/newsletters/thosyn-pax-digest-7051836831897673731/"> Linkedin </a>  </p>
             </div>
 
           
             <nav className="other-site-nav">
               <ul>
-                <li><a href='/featured'>Featured</a></li>
+               
                 <li><a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/channel/UC-RwLGJY_ggKiNL16KqBkmg" className="menu-link">Youtube Channel</a></li>
                 <li><a target="_blank" rel="noopener noreferrer" href="https://calendar.app.google/i8s7Mao11AY28HVH6" className="menu-link">Meeting</a></li>
               </ul>
