@@ -1,0 +1,91 @@
+.side-projects {
+    background-color: #000;
+    color: #fff;
+    padding: 20px;
+    font-family: "Montserrat";
+  }
+  
+  h2 {
+    margin-bottom: 20px;
+    font-family: "Montserrat";
+  }
+  
+  .project {
+    display: grid;
+    align-items: center;
+    margin-bottom: 20px;
+    font-family: "Montserrat";
+  }
+  
+  .year {
+    font-size: 15px;
+    font-weight: 400;
+    color: #969A9F;
+    margin-bottom: 10px;
+    font-family: "Montserrat";
+  }
+  
+  .project-details {
+    flex: 1;
+  }
+  
+  .project-title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+  
+  .project-icon {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #fff;
+    margin-right: 10px;
+  }
+  
+  .project-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 19px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+  }
+  
+  .project-link:hover {
+    color: #fff;
+    text-decoration: underline;
+    font-size: 19px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+  }
+
+  .project-link .link-icon {
+    margin-left: 5px;
+    font-size: 14px;
+  }
+  
+  .project-description {
+    margin-bottom: 5px;
+    color: #E2E8F0;
+    font-size: 15px;
+    width: 30%;
+  }
+  
+  .project-tags {
+    font-size: 12px;
+    color: #aaa;
+  }
+
+  @media (max-width: 768px) {
+    .project-description {
+        margin-bottom: 5px;
+        color: #E2E8F0;
+        font-size: 15px;
+        width: 100%;
+      }
+  }
+  

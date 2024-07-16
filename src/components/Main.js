@@ -12,13 +12,10 @@ const Main = () => {
             </header>
             <div className="brief-content">
               <p>I am a Software Engineer, and a UX unicorn 🦄 </p>
-              <p>I founded <a href='https://afribreath.com' target="_blank" rel="noopener noreferrer" className='com-1'>Afribreath</a> , a tech company in Lagos, Nigeria. And we offer a virtual internship program aimed at bridging the gap 
-              between talented individuals and career opportunities across Africa.</p>
-              <p>Additionally, I created <a href='https://afriheals.afribreath.com/' target="_blank" rel="noopener noreferrer" className='com-2'>Afriheals Careers</a>, a thriving tech community aimed at nurturing careers and fostering collaboration.</p>
-              <p>Recently, I established <a href='https://paxschool.africa/' target="_blank" rel="noopener noreferrer" className='com-2'>Pax School of Tech</a>, a groundbreaking initiative dedicated to empowering the next generation of tech leaders.</p> 
-              <p>Through Pax School of Tech, we're reshaping education, providing hands-on learning experiences that prepare individuals for success in the ever-evolving tech landscape.</p>
-              <p>I'm dedicated to fostering talent and innovation in Africa's tech ecosystem</p>
-
+              <p>My journey in tech began in 2013 when I wrote my first line of code, and since then, I have been dedicated to fostering talent and pushing the boundaries of technology.</p>
+              <p>I have trained tech newbies in several tech skills, continually sharing my expertise and knowledge. </p>
+              <p>As an indie hacker, I relentlessly build amazing products and startups, driven by a passion for innovation and creativity. </p>
+              
               <p>I write about tech on 
                 <a target="_blank" className='com-2' href="https://medium.com/@Thosynpax"> Medium </a> and 
                 <a target="_blank" className='com-2' href="https://www.linkedin.com/newsletters/thosyn-pax-digest-7051836831897673731/"> Linkedin </a>  </p>
@@ -27,8 +24,8 @@ const Main = () => {
           
             <nav className="other-site-nav">
               <ul>
-               
-                <li><a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/channel/UC-RwLGJY_ggKiNL16KqBkmg" className="menu-link">Youtube Channel</a></li>
+                <li><a href='/bytes'>Billion-Bytes</a></li>
+                <li><a href='https://pax-trail.netlify.app/'>Blog</a></li>
                 <li><a target="_blank" rel="noopener noreferrer" href="https://calendar.app.google/i8s7Mao11AY28HVH6" className="menu-link">Meeting</a></li>
               </ul>
            </nav>

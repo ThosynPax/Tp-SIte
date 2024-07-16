@@ -7,12 +7,11 @@ const Header = () => {
     <header className="site-header">
       <div className="wrapper">
         <div className="header-content">
-          <img src={logo} alt="Logo" className="logo" />
+          <a href='/'> <img src={logo} alt="Logo" className="logo" /> </a>
         </div>
         <nav className="site-nav">
           <ul>
-            <li><a href='https://pax-trail.netlify.app/'>Blog</a></li>
-        
+            
           </ul>
         </nav>
       </div>
