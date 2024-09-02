@@ -2,7 +2,7 @@ import React from 'react';
 import '../App.css';
 import TP from '../assets/tp.png';
 
-const Main = () => {
+const Works = () => {
   return (
     <main className="site-body">
       <br />
@@ -12,10 +12,13 @@ const Main = () => {
         <div className="main-grid">
           <div className="main-content">
             <header className="intro">
-              <h1 className="intro-title">Hey! I'm Thosyn Pax</h1>
+            <h1 
+            className="intro-title" 
+            style={{ lineHeight: '0.8' }} 
+          >I Turn Ambitious Ideas into Market-Leading Products</h1>
               <h4 className="intro-current-job">
-                Transforming Ideas into Reality as a Senior Product Manager,
-                UX Unicorn, & Software Engineer
+              Leveraging over 9 years of experience, I excel in guiding products from concept to market, 
+              ensuring they achieve both business goals and user satisfaction.
               </h4>
            
 
@@ -57,4 +60,4 @@ const Main = () => {
   );
 };
 
-export default Main;
+export default Works;

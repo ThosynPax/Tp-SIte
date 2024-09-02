@@ -1,7 +1,7 @@
 /*  Pax's CSS */
 
 @charset "UTF-8";
-@import url('https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 @font-face {
   font-family: 'MyCustomFont';
@@ -39,28 +39,35 @@ body {
 
 .intro-title {
   font-family: "MyCustomFont";
-  font-weight: bold;
+  font-weight: 400;
   font-style: normal;
   color: #fff;
-  font-size: 70px;
+  font-size: 96px;
   margin-top: 0;
-
 }
 
 .intro-current-job {
-  font-family: "MyCustomFont";
+  font-family: "Inter";
   font-weight: 300;
-  font-style: normal;
-  color: #f9f8f4;
+  font-style: italic;
+  color: #C2C2C2;
   margin-top: -30px;
-  font-size: 25px;
+  font-size: 20px;
 }
 
 .brief-content {
-  font-family: "Montserrat";
-  color: #f9f8f4;
+  font-family: "Inter";
+  color: #C2C2C2;
   font-size: 18px;
   line-height: 150%;
+  font-weight: 300;
+  margin-top: 50px;
+}
+
+.inner-brief-content {
+  font-family: "MyCustomFont";
+  color: #fff;
+  font-size: 27px;
 }
 
 .com-1, .com-2, .com-3 {
@@ -76,6 +83,56 @@ body {
   font-size: 25px;
 }
 
+.site-nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: flex-start;
+  font-family: "Inter";
+  color: #fff;
+}
+
+.site-nav ul li {
+  margin-right: 20px;
+}
+
+.site-nav ul li a {
+  position: relative;
+  text-decoration: none;
+  font-family: "Menu";
+  font-size: 18px;
+  color: #fff !important;
+  padding: 10px 0;
+  text-transform: none;
+  transition: color 0.3s ease;
+}
+
+.site-nav ul li a:hover {
+  color: #fff;
+  text-decoration: line-through !important;
+}
+
+.site-nav ul li a.active {
+  color: #fff;
+  text-decoration: line-through !important;
+}
+
+.site-nav ul li a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: #fff;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+
+
 @media (max-width: 800px) {
   .site-body {
     margin-bottom: 150px; /* Adjust as needed */
@@ -89,7 +146,7 @@ body {
     z-index: 9999;
     padding-top: 15px;
     padding-bottom: 15px;
-    font-family: "Montserrat";
+    font-family: "Inter";
     color: #6c6d70;
     font-size: 15px;
   }
@@ -100,7 +157,7 @@ body {
     bottom: 20%;
     text-decoration: none;
     text-transform: none;
-    font-family: "MyCustomFont";
+    font-family: "Inter";
     list-style-type: none;
     padding: 0;
     margin: 0;
@@ -120,10 +177,7 @@ body {
   gap: 20px;
   color: #969A9F;
   font-size: 25px;
-  
 }
-
-
 
 .wrapper {
   width: 90%;
@@ -136,10 +190,14 @@ body {
 .main-grid {
   display: grid;
   grid-template-rows: auto;
-  grid-template-columns: 100%;
+  grid-template-columns: 1fr 1fr; /* Two columns: content on the left, image on the right */
   grid-gap: 30px;
 }
 
+.right-image {
+  grid-column: 2; /* Ensure the image is in the second column */
+  justify-self: end; /* Align the image to the right */
+}
 
 .site-title {
   position: absolute;
@@ -179,13 +237,13 @@ body {
   text-transform: none;
   color: #fff;
   font-weight: 300;
-  font-family: "Montserrat";
+  font-family: "Inter";
 }
 
 .other-site-nav-bytes ul li a {
   text-decoration: none;
   text-transform: none;
-  font-family: "Montserrat";
+  font-family: "Inter";
   font-size: 18px;
   color: #fcfaf0 ;
   display: inline-block;
@@ -205,7 +263,6 @@ body {
   font-size: 20px;
   color: #fcfaf0 ;
   display: inline-block;
-
   padding-right: 15px;
   font-weight: 400;
   transition: background-color 0.3s ease;
@@ -217,7 +274,7 @@ body {
 }
 
 .site-nav {
-  height: 50px;
+  height: 30px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -230,20 +287,19 @@ body {
   display: flex;
   position: absolute;
   bottom: 40%;
-  font-family: "MyCustomFont";
+  font-family: "Inter";
 }
 
 .site-nav ul li a {
   text-decoration: none !important;
   text-transform: none;
-  font-family: "MyCustomFont";
+  font-family: "Inter";
   color: #000 ;
-  font-weight: 700;
+  font-weight: 300;
   display: inline-block;
   padding: 8px 12px;
   transition: background-color 0.3s ease;
 }
-
 
 .site-footer {
   position: relative;
@@ -254,7 +310,7 @@ body {
   z-index: 9999;
   padding-top: 25px;
   padding-bottom: 15px; 
-  font-family: "Montserrat";
+  font-family: "Inter";
   color: #fff;
   font-size: 15px;
   background-color: #000;
@@ -274,4 +330,5 @@ body {
 .social-icons a:hover {
   color: #969A9F; 
 }
+
 
