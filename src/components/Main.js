@@ -14,7 +14,7 @@ const Main = () => {
             <header className="intro">
               <h1 className="intro-title">Hey! I'm Thosyn Pax</h1>
               <h4 className="intro-current-job">
-                Transforming Ideas into Reality as a Senior Product Manager,
+                Transforming Ideas into Reality as a Technical Product Manager,
                 UX Unicorn, & Software Engineer
               </h4>
            
@@ -24,7 +24,7 @@ const Main = () => {
               <p>
                 I’m passionate about turning innovative ideas into real-world products. With over 9
                 years of experience in the tech sector, I’ve had the privilege of working across UX
-                design, product management, and software engineering.
+                design, technical product management, and software engineering.
               </p>
               <p>
                 <span className='inner-brief-content'>My goal is simple:</span> To help you create products that not only meet user needs but <br />

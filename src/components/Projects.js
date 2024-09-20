@@ -2,7 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLink } from '@fortawesome/free-solid-svg-icons';
 
-const Bytes = () => {
+const Projects = () => {
   return (
     <main className="site-body">
       <style>
@@ -78,10 +78,10 @@ const Bytes = () => {
       <div className="wrapper">
         {/** Moved the header outside the grid */}
         <header className="intro">
-          <h1 className="intro-title">Billion Bytes</h1>
-          <h4 className="intro-current-job">Check out my "Billion Bytes" page, where I showcase personal projects<br />
-             I've worked on and continue to pursue as an indie hacker and startup founder. <br />
-             See how I've been turning ideas into reality and driving innovation in my ventures.</h4>
+          <h1 className="intro-title">Projects</h1>
+          <h4 className="intro-current-job"> See the projects I've completed as a UX Unicorn and Software Engineer.<br /> 
+            Discover how I’ve combined user experience design and software engineering to create impactful
+             solutions and deliver successful results.</h4>
         </header>
 
         {/** Grid starts below the header */}
@@ -133,10 +133,42 @@ const Bytes = () => {
               <div className="project-tags">Javascript • Express • Mongo db</div>
             </div>
           </div>
+
+           {/** Chrome Extension */}
+           <div className="project">
+            <div className="year">2024</div>
+            <div className="project-details">
+              <div className="project-title">
+                <a target="_blank" href="https://afriheals.afribreath.com/" className="project-link">
+                  Chrome Extension
+                </a>
+              </div>
+              <div className="project-description">
+                An Extension to jot down and reuse ideas
+              </div>
+              <div className="project-tags">Javascript • Express • Mongo db</div>
+            </div>
+          </div>
+
+           {/** Chrome Extension */}
+           <div className="project">
+            <div className="year">2024</div>
+            <div className="project-details">
+              <div className="project-title">
+                <a target="_blank" href="https://afriheals.afribreath.com/" className="project-link">
+                  Chrome Extension
+                </a>
+              </div>
+              <div className="project-description">
+                An Extension to jot down and reuse ideas
+              </div>
+              <div className="project-tags">Javascript • Express • Mongo db</div>
+            </div>
+          </div>
         </div>
       </div>
     </main>
   );
 };
 
-export default Bytes;
+export default Projects;

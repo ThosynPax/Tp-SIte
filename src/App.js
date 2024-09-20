@@ -5,6 +5,8 @@ import Main from './components/Main';
 import Footer from './components/Footer';
 import Bytes from './components/Bytes';
 import Works from './components/Works';
+import Projects from './components/Projects';
+import Media from './components/media-kits';
 import './App.css';
 
 const App = () => {
@@ -16,6 +18,8 @@ const App = () => {
           <Route path="/" element={<Main />} />
           <Route path="/bytes" element={<Bytes />} />
           <Route path="/Works" element={<Works />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/media-kits" element={<Media />} />
           {/* Add more routes here as needed */}
         </Routes>
         <Footer />
