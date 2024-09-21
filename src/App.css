@@ -26,9 +26,9 @@ body {
 }
 
 .logo {
-  width: 40px;
+  width: 50px;
   height: auto;
-  margin-top: 30px;
+  margin-top: 20px;
 }
 
 .site-title {
@@ -138,6 +138,13 @@ body {
     margin-bottom: 150px; /* Adjust as needed */
   }
 
+  .main-grid {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr !important;
+    grid-gap: 30px;
+  }
+
   .site-footer {
     left: 0;
     bottom: 0;
@@ -151,19 +158,55 @@ body {
     font-size: 15px;
   }
 
+  body {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+
+  .main-content, .image-content {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .image-content img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Adjust margins for better readability */
+  .intro-current-job {
+    font-size: 16px;
+    margin-top: 0;
+  }
+
+  .inner-brief-content {
+    font-size: 22px;
+  }
+
+  /* Adjust nav spacing */
+  .site-nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
   .site-nav ul li {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
   }
 
   .intro-title {
-    font-size: 50px;
+    font-size: 48px;
   }
 
   .wrapper {
     width: 100%;
     margin: 0 auto;
     padding: 0.4rem;
+}
+
+.brief-content {
+  padding: 10px;
+  font-size: 16px;
 }
 }
 
@@ -185,7 +228,7 @@ body {
 .main-grid {
   display: grid;
   grid-template-rows: auto;
-  grid-template-columns: 1fr 1fr; /* Two columns: content on the left, image on the right */
+  grid-template-columns: 1fr 1fr;
   grid-gap: 30px;
 }
 
@@ -326,10 +369,6 @@ body {
 .social-icons a:hover {
   color: #969A9F; 
 }
-/* Hide the mobile menu by default */
-.mobile-menu {
-  display: none;
-}
 
 /* Show the mobile menu when it's active */
 .mobile-menu.active {
@@ -343,11 +382,10 @@ body {
   }
 
   .hamburger-icon {
-    display: block;
+    right: 0.1rem;
   }
 }
 
-/* Mobile menu styles */
 .mobile-menu {
   position: fixed;
   top: 0;
@@ -363,6 +401,15 @@ body {
   z-index: 1000;
 }
 
+.mobile-menu.active {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Centered Menu List */
 .mobile-menu ul {
   list-style: none;
   padding: 0;
@@ -370,13 +417,13 @@ body {
 }
 
 .mobile-menu ul li {
-  margin: 1rem 0;
+  margin: 1.5rem 0;
 }
 
 .mobile-menu ul li a {
   color: #fff;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 30px;
   transition: color 0.3s ease;
 }
 
@@ -386,7 +433,7 @@ body {
 
 .close-icon {
   position: absolute;
-  top: 1rem;
+  top: 1.5rem;
   right: 1rem;
   background: none;
   border: none;
@@ -396,5 +443,13 @@ body {
 }
 
 .hamburger-icon {
-  display: none;
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem; /* Aligns the icon to the right */
+  display: block;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
 }

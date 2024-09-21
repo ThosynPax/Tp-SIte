@@ -22,6 +22,13 @@ const Bytes = () => {
             transition: transform 0.2s ease;
           }
 
+          .svg-inline--fa {
+              display: var(--fa-display, inline-block);
+              height: 0.7em;
+              overflow: visible;
+              vertical-align: -0.125em;
+          }
+
           .project:hover {
             transform: scale(1.05);
           }
@@ -51,8 +58,8 @@ const Bytes = () => {
           }
 
           .project-tags {
-            font-size: 0.9rem;
-            color: #66ffcc;
+            font-size: 1.2rem;
+            color: #ffe666;
           }
 
           @media (max-width: 1200px) {
@@ -120,17 +127,47 @@ const Bytes = () => {
 
           {/** Chrome Extension */}
           <div className="project">
-            <div className="year">2024</div>
+            <div className="year">2023</div>
             <div className="project-details">
               <div className="project-title">
                 <a target="_blank" href="https://afriheals.afribreath.com/" className="project-link">
-                  Chrome Extension
+                  Spape.lol
                 </a>
               </div>
               <div className="project-description">
                 An Extension to jot down and reuse ideas
               </div>
-              <div className="project-tags">Javascript • Express • Mongo db</div>
+              <div className="project-tags">React • Express • Mongo db</div>
+            </div>
+          </div>
+
+          <div className="project">
+            <div className="year">2023</div>
+            <div className="project-details">
+              <div className="project-title">
+                <a target="_blank" href="https://afriheals.afribreath.com/" className="project-link">
+                 Nerdbox
+                </a>
+              </div>
+              <div className="project-description">
+                An Extension to jot down and reuse ideas
+              </div>
+              <div className="project-tags">React • Express • Mongo db</div>
+            </div>
+          </div>
+
+          <div className="project">
+            <div className="year">2023</div>
+            <div className="project-details">
+              <div className="project-title">
+                <a target="_blank" href="https://afriheals.afribreath.com/" className="project-link">
+                  Pax School of Africa
+                </a>
+              </div>
+              <div className="project-description">
+                An Extension to jot down and reuse ideas
+              </div>
+              <div className="project-tags">React • Express • Mongo db</div>
             </div>
           </div>
         </div>

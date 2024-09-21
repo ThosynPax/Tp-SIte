@@ -1,6 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLink } from '@fortawesome/free-solid-svg-icons';
+import { faLock } from '@fortawesome/free-solid-svg-icons';
 
 const Projects = () => {
   return (
@@ -13,6 +14,13 @@ const Projects = () => {
             grid-template-columns: repeat(4, 1fr);
             gap: 2rem;
             margin-top: 2rem;
+          }
+
+          .svg-inline--fa {
+            display: var(--fa-display, inline-block);
+            height: 0.7em;
+            overflow: visible;
+            vertical-align: -0.125em;
           }
 
           .project {
@@ -44,10 +52,12 @@ const Projects = () => {
           }
 
           .project-description {
-            font-size: 1rem;
+           font-size: 15px;
+            line-height: 1.5;
             color: #cccccc;
             margin-bottom: 0.5rem;
-             font-family: "Montserrat";
+            font-family: "Montserrat";
+            font-weight: 400;
           }
 
           .project-tags {
@@ -88,81 +98,216 @@ const Projects = () => {
         <div className="main-grid">
           {/** Afribreath */}
           <div className="project">
-            <div className="year">2018</div>
             <div className="project-details">
               <div className="project-title">
-                <a target="_blank" href="http://afribreath.com/" className="project-link">
-                  Afribreath <FontAwesomeIcon icon={faLink} className="link-icon" />
+                <a target="_blank" href="https://standardtimesng.com/" className="project-link">
+                Standard Times NG <FontAwesomeIcon icon={faLink} className="link-icon" />
                 </a>
               </div>
               <div className="project-description">
-                Afribreath is a pioneering tech company committed to transforming the tech landscape in Africa.
+              I undertook the task of creating a comprehensive news website using the WordPress platform, tailored to the specific needs and requirements of a newspaper company.
               </div>
-              <div className="project-tags">Startup</div>
+              <div className="project-tags">WP</div>
             </div>
           </div>
 
           {/** Afriheals Careers */}
           <div className="project">
-            <div className="year">2024</div>
             <div className="project-details">
               <div className="project-title">
-                <a target="_blank" href="http://afribreath.com/" className="project-link">
-                  Afriheals Careers <FontAwesomeIcon icon={faLink} className="link-icon" />
+                <a target="_blank" href="#" className="project-link">
+                Quickinbox <FontAwesomeIcon icon={faLock} className="link-icon" />
                 </a>
               </div>
               <div className="project-description">
-                We are fostering innovation, collaboration, and knowledge-sharing among tech enthusiasts of all levels.
+                I designed and crafted a sophisticated software application for sending bulk emails efficiently and effectively.
               </div>
-              <div className="project-tags">Tech Community</div>
+              <div className="project-tags">Javascript • PHP • MYSQL</div>
             </div>
           </div>
 
           {/** Chrome Extension */}
           <div className="project">
-            <div className="year">2024</div>
             <div className="project-details">
               <div className="project-title">
-                <a target="_blank" href="https://afriheals.afribreath.com/" className="project-link">
-                  Chrome Extension
+                <a target="_blank" href="https://hagitalconsulting.com//" className="project-link">
+                Hagital Consulting  <FontAwesomeIcon icon={faLink} className="link-icon" />
                 </a>
               </div>
               <div className="project-description">
-                An Extension to jot down and reuse ideas
+              Created a dynamic Content Management System (CMS) website catering to the distinct demands of a technology training company.
               </div>
-              <div className="project-tags">Javascript • Express • Mongo db</div>
+              <div className="project-tags">WP</div>
             </div>
           </div>
 
            {/** Chrome Extension */}
            <div className="project">
-            <div className="year">2024</div>
             <div className="project-details">
               <div className="project-title">
-                <a target="_blank" href="https://afriheals.afribreath.com/" className="project-link">
-                  Chrome Extension
+                <a target="_blank" href="https://toplagy.eu/" className="project-link">
+                Toplagy.eu  <FontAwesomeIcon icon={faLink} className="link-icon" />
                 </a>
               </div>
               <div className="project-description">
-                An Extension to jot down and reuse ideas
+              Designed and crafted a tailor-made Shopify e-commerce website for a clothing brand, including the composition of raw Liquid scripts to enhance the platform's functionality.
               </div>
-              <div className="project-tags">Javascript • Express • Mongo db</div>
+              <div className="project-tags">Shopify • Liquid • Figma</div>
             </div>
           </div>
 
            {/** Chrome Extension */}
            <div className="project">
-            <div className="year">2024</div>
             <div className="project-details">
               <div className="project-title">
-                <a target="_blank" href="https://afriheals.afribreath.com/" className="project-link">
-                  Chrome Extension
+                <a target="_blank" href="https://roaddaysconsults.com/" className="project-link">
+                Roaddays Consults  <FontAwesomeIcon icon={faLink} className="link-icon" />
                 </a>
               </div>
               <div className="project-description">
-                An Extension to jot down and reuse ideas
+              Crafted a fundamental website catering to the needs of a travel agency company, focusing on design and functionality.
               </div>
-              <div className="project-tags">Javascript • Express • Mongo db</div>
+              <div className="project-tags">WP</div>
+            </div>
+          </div>
+
+          <div className="project">
+            <div className="project-details">
+              <div className="project-title">
+                <a target="_blank" href="https://soderuandsoderu.com.ng/" className="project-link">
+                Soderu and Soderu  <FontAwesomeIcon icon={faLink} className="link-icon" />
+                </a>
+              </div>
+              <div className="project-description">
+              Crafted a fundamental website catering to the needs of a travel agency company, focusing on design and functionality.
+              </div>
+              <div className="project-tags">WP</div>
+            </div>
+          </div>
+
+          <div className="project">
+            <div className="project-details">
+              <div className="project-title">
+                <a target="_blank" href="https://www.t20luxury.eu/" className="project-link">
+                T20luxury.eu <FontAwesomeIcon icon={faLink} className="link-icon" />
+                </a>
+              </div>
+              <div className="project-description">
+              Designed and crafted a tailor-made Shopify e-commerce website for a clothing brand, including the composition of raw Liquid scripts to enhance the platform's functionality.
+              </div>
+              <div className="project-tags">Shopify • Liquid • Figma</div>
+            </div>
+          </div>
+
+          <div className="project">
+            <div className="project-details">
+              <div className="project-title">
+                <a target="_blank" href="https://confiinitiative.com/" className="project-link">
+                Confi Initiative <FontAwesomeIcon icon={faLink} className="link-icon" />
+                </a>
+              </div>
+              <div className="project-description">
+              Crafted a website for a non-governmental organization (NGO) while also designing numerous graphic flyers to support their cause.
+              </div>
+              <div className="project-tags">WP</div>
+            </div>
+          </div>
+
+          <div className="project">
+            <div className="project-details">
+              <div className="project-title">
+                <a target="_blank" href="https://kingdasilvafoundation.com/" className="project-link">
+                King Da Silva Foundation <FontAwesomeIcon icon={faLink} className="link-icon" />
+                </a>
+              </div>
+              <div className="project-description">
+              Designed and built an online presence for an NGO to keeping track of the work progress.
+              </div>
+              <div className="project-tags">WP</div>
+            </div>
+          </div>
+
+          <div className="project">
+            <div className="project-details">
+              <div className="project-title">
+                <a target="_blank" href="https://argentstoragebv.com/" className="project-link">
+                Argent Storage <FontAwesomeIcon icon={faLink} className="link-icon" />
+                </a>
+              </div>
+              <div className="project-description">
+              Created a website for a business specializing in the sales, delivery, and maintenance of oil and gas tanks.
+              </div>
+              <div className="project-tags">WP</div>
+            </div>
+          </div>
+
+          <div className="project">
+            <div className="project-details">
+              <div className="project-title">
+                <a target="_blank" href="https://tjongershippingbv.nl/" className="project-link">
+                tjonger Shipping <FontAwesomeIcon icon={faLink} className="link-icon" />
+                </a>
+              </div>
+              <div className="project-description">
+              Created a website for a business specializing in the sales, delivery, and maintenance of oil and gas tanks.
+              </div>
+              <div className="project-tags">WP</div>
+            </div>
+          </div>
+
+          <div className="project">
+            <div className="project-details">
+              <div className="project-title">
+                <a target="_blank" href="https://shalomwomenfoundation.com/" className="project-link">
+                Shalom Women Foundation <FontAwesomeIcon icon={faLink} className="link-icon" />
+                </a>
+              </div>
+              <div className="project-description">
+              Created a website for a business specializing in the sales, delivery, and maintenance of oil and gas tanks.
+              </div>
+              <div className="project-tags">WP</div>
+            </div>
+          </div>
+
+          <div className="project">
+            <div className="project-details">
+              <div className="project-title">
+                <a target="_blank" href="https://tmpalmersolicitors.com/" className="project-link">
+                TM Palmer Solicitor <FontAwesomeIcon icon={faLink} className="link-icon" />
+                </a>
+              </div>
+              <div className="project-description">
+              Developed a website for a law firm, providing comprehensive legal services and resources.
+              </div>
+              <div className="project-tags">WP</div>
+            </div>
+          </div>
+
+          <div className="project">
+            <div className="project-details">
+              <div className="project-title">
+                <a target="_blank" href="https://hubwrightgroup.com/" className="project-link">
+               HubWright Groups <FontAwesomeIcon icon={faLink} className="link-icon" />
+                </a>
+              </div>
+              <div className="project-description">
+              Developed a website for a law firm, providing comprehensive legal services and resources.
+              </div>
+              <div className="project-tags">WP</div>
+            </div>
+          </div>
+
+          <div className="project">
+            <div className="project-details">
+              <div className="project-title">
+                <a target="_blank" href="#" className="project-link">
+              Injection Reports <FontAwesomeIcon icon={faLock} className="link-icon" />
+                </a>
+              </div>
+              <div className="project-description">
+              Developed a website for a law firm, providing comprehensive legal services and resources.
+              </div>
+              <div className="project-tags">WP</div>
             </div>
           </div>
         </div>

@@ -23,12 +23,14 @@ const Header = () => {
           <button 
             className="hamburger-icon" 
             onClick={toggleMenu}
+            aria-label="Menu"
           >
-            <FontAwesomeIcon icon={faBars} />
+            <FontAwesomeIcon icon={isMenuOpen ? faTimes : faBars} />
           </button>
+
         </div>
 
-        {/* Web Menu */}
+        {/* Web 
         <nav className="site-nav">
           <ul>
             <li><a href="/">About</a></li>
@@ -40,6 +42,7 @@ const Header = () => {
             <li><a href="/media-kits">Media Kits</a></li>
           </ul>
         </nav>
+        Menu */}
 
         {/* Mobile Menu */}
         <div className={`mobile-menu ${isMenuOpen ? 'active' : ''}`}>
