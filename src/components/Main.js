@@ -22,29 +22,30 @@ const Main = () => {
             </header>
             <div className="brief-content">
               <p>
-                I’m passionate about turning innovative ideas into real-world products. With over 9
-                years of experience in the tech sector, I’ve had the privilege of working across UX
-                design, technical product management, and software engineering.
+              I love bringing creative ideas to life as real products. 
+              With more than 9 years of experience in the tech industry, 
+              I've worked in UX design, product management, and software engineering.
               </p>
               <p>
-                <span className='inner-brief-content'>My goal is simple:</span> To help you create products that not only meet user needs but <br />
-                also stand out in the market.
+                <span className='inner-brief-content'>My goal is simple:</span> To help you create products that not only meet user needs but also stand out in the tech industry and in the market.
               </p>
               <p>
-                Throughout my career, I've worked with a diverse range of clients, from ambitious 
-                startups to established companies, helping them navigate the challenges of
-                product development and user experience. I believe in a hands-on, collaborative
-                approach, ensuring that every project I work on is tailored to the unique needs of
-                the client.
+              Throughout my career, I’ve worked with all kinds of clients, 
+              from new startups to well-known companies,
+               helping them tackle challenges in product 
+               development and user experience. I believe 
+               in working closely with my clients, making 
+               sure every project fits their specific needs.
               </p>
               <p>
-                Beyond my professional work, I’m also the driving force behind AfriHeals Careers, 
-                a community focused on mentoring and supporting the next generation of African 
-                innovators. This is more than just a job for me, it's a commitment to building a
-                better future through technology and creativity.
+              Outside of my professional work, I lead a 
+              community focused on mentoring and supporting the next 
+               generation of African innovators. 
+               It’s not just a job for me, it's a passion to
+                help build a better future through technology and creativity.
               </p>
               <p>
-                Let’s connect and see how we can bring your vision to life. <span className='inner-brief-content'>Book a Consultation</span>
+                Let’s connect and see how we can bring your vision to life. <span className='inner-brief-content'><a target="_blank" href='https://cal.com/thosynpax/product-discovery'>Book a Consultation</a> </span>
               </p>
             </div>
           </div>

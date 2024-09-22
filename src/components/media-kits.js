@@ -37,7 +37,7 @@ const MediaKit = () => {
           }
 
           .links a:hover {
-            border-bottom: 2px solid #00A3A3;
+            border-bottom: 2px solid #ffe666;
           }
 
           .section-image img {
@@ -96,35 +96,57 @@ const MediaKit = () => {
         <section className="content-section">
           <h2 className="subtitle">Basic Information</h2>
           <p className="description">
-            Investor — Limited Partner, Angel Investor <br />
-            Entrepreneur — Co-founded Helicarrier <br />
-            Frontend Engineer — Google Expert in Web Technologies <br />
-            Founding Member — Feminist Coalition <br />
+            Freelance — Software Engineer, Technical Product Manager, UX Unicorn <br />
+            Entrepreneur — Founded Afribreath and Afriheals Careers <br />
+            Tech Mentor — Afriheals Careers <br />
             Lagos, Nigeria
           </p>
           <div className="links">
-            <a href="#">Personal Website</a>
-            <a href="#">Twitter</a>
-            <a href="#">LinkedIn</a>
-            <a href="#">Medium</a>
+            <a href="https://thosynpax.com">Personal Website</a>
+            <a href="https://thosynpax.com/links">One page site</a>
+            <a href="https://x.com/thosynpax">Twitter</a>
+            <a href="https://www.linkedin.com/in/thosyn-pax/">LinkedIn</a>
+            <a href="https://www.instagram.com/thosynpax/">Instagram</a>
           </div>
         </section>
 
         <section className="content-section">
           <h2 className="subtitle">Biography</h2>
           <p className="description">
-            Ire Aderinokun is an Investor, Entrepreneur, and Frontend Engineer from Lagos, Nigeria, now based in London, UK. She is renowned for her contributions to technology, gender equity, and social causes...
+          Thosyn Pax (Solomon Oladele) is a skilled Technical Product Manager, 
+          UX Designer, and Software Engineer with over 9 years of experience in the
+           tech industry. Known for his ability to bridge creativity and technology, 
+           Thosyn has led various successful projects, turning innovative
+            ideas into impactful products. His expertise spans across UX design,
+             product management, and software development, making him a versatile 
+             leader in the tech space.
+          </p>
+
+          <p className="description">
+          Beyond his professional roles, Thosyn is the driving force behind AfriHeals Careers, 
+          a mentoring community aimed at nurturing and empowering African innovators. 
+          Through this initiative, he dedicates his time to mentoring young talent,
+           fostering the growth of future leaders in technology and entrepreneurship.
+          </p>
+
+          <p className="description">
+          Thosyn is committed to continuous learning and sharing knowledge. 
+          He actively creates content on platforms like LinkedIn, Instagram, and X (twitter),
+           offering insights on product development, tech innovation, and personal growth.
+            His work and community efforts reflect his belief in building a brighter future
+             through technology, creativity, and collaboration.
           </p>
         </section>
 
         <section className="content-section photographs">
           <h2 className="subtitle">Photographs</h2>
           <div className="section-image">
-            <img src="link-to-photo1" alt="Ire Aderinokun" />
-            <img src="link-to-photo2" alt="Ire Aderinokun" />
+            <img src="link-to-photo1" alt="Thosyn Pax" />
+            <img src="link-to-photo2" alt="Thosyn Pax" />
           </div>
         </section>
 
+         {/**  
         <section className="content-section">
           <h2 className="subtitle">Press Features</h2>
           <p className="description">
@@ -136,6 +158,7 @@ const MediaKit = () => {
             <a href="#">Press Feature 3</a>
           </div>
         </section>
+        */}
       </div>
     </main>
   );

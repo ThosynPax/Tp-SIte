@@ -131,7 +131,7 @@ const Bytes = () => {
             <div className="project-details">
               <div className="project-title">
                 <a target="_blank" href="https://afriheals.afribreath.com/" className="project-link">
-                  Spape.lol
+                  Shape.lol
                 </a>
               </div>
               <div className="project-description">

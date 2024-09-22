@@ -70,6 +70,14 @@ body {
   font-size: 27px;
 }
 
+.inner-brief-content a {
+  font-family: "MyCustomFont";
+  color: #fff;
+  font-size: 27px;
+  text-decoration: none;
+  text-transform: none;
+}
+
 .com-1, .com-2, .com-3 {
   font-family: "MyCustomFont";
   color: #fcfaf0;

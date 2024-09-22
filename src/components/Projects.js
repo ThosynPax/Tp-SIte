@@ -105,24 +105,9 @@ const Projects = () => {
                 </a>
               </div>
               <div className="project-description">
-              I undertook the task of creating a comprehensive news website using the WordPress platform, tailored to the specific needs and requirements of a newspaper company.
+              I created a news website using WordPress, designed to fit the needs of a newspaper company.
               </div>
               <div className="project-tags">WP</div>
-            </div>
-          </div>
-
-          {/** Afriheals Careers */}
-          <div className="project">
-            <div className="project-details">
-              <div className="project-title">
-                <a target="_blank" href="#" className="project-link">
-                Quickinbox <FontAwesomeIcon icon={faLock} className="link-icon" />
-                </a>
-              </div>
-              <div className="project-description">
-                I designed and crafted a sophisticated software application for sending bulk emails efficiently and effectively.
-              </div>
-              <div className="project-tags">Javascript • PHP • MYSQL</div>
             </div>
           </div>
 
