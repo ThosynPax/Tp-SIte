@@ -124,52 +124,6 @@ const Bytes = () => {
               <div className="project-tags">Tech Community</div>
             </div>
           </div>
-
-          {/** Chrome Extension */}
-          <div className="project">
-            <div className="year">2023</div>
-            <div className="project-details">
-              <div className="project-title">
-                <a target="_blank" href="https://afriheals.afribreath.com/" className="project-link">
-                  Shape.lol
-                </a>
-              </div>
-              <div className="project-description">
-                An Extension to jot down and reuse ideas
-              </div>
-              <div className="project-tags">React • Express • Mongo db</div>
-            </div>
-          </div>
-
-          <div className="project">
-            <div className="year">2023</div>
-            <div className="project-details">
-              <div className="project-title">
-                <a target="_blank" href="https://afriheals.afribreath.com/" className="project-link">
-                 Nerdbox
-                </a>
-              </div>
-              <div className="project-description">
-                An Extension to jot down and reuse ideas
-              </div>
-              <div className="project-tags">React • Express • Mongo db</div>
-            </div>
-          </div>
-
-          <div className="project">
-            <div className="year">2023</div>
-            <div className="project-details">
-              <div className="project-title">
-                <a target="_blank" href="https://afriheals.afribreath.com/" className="project-link">
-                  Pax School of Africa
-                </a>
-              </div>
-              <div className="project-description">
-                An Extension to jot down and reuse ideas
-              </div>
-              <div className="project-tags">React • Express • Mongo db</div>
-            </div>
-          </div>
         </div>
       </div>
     </main>

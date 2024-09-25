@@ -126,6 +126,20 @@ const Projects = () => {
             </div>
           </div>
 
+          <div className="project">
+            <div className="project-details">
+              <div className="project-title">
+                <a target="_blank" href="https://hagitalconsulting.com//" className="project-link">
+               Quick Extractor <FontAwesomeIcon icon={faLock} className="link-icon" />
+                </a>
+              </div>
+              <div className="project-description">
+              Developed a web application capable of extracting and organizing contact details from various sources, such as emails, or web pages. 
+              </div>
+              <div className="project-tags">EJS • Mongodb • Figma</div>
+            </div>
+          </div>
+
            {/** Chrome Extension */}
            <div className="project">
             <div className="project-details">
@@ -223,6 +237,20 @@ const Projects = () => {
               Created a website for a business specializing in the sales, delivery, and maintenance of oil and gas tanks.
               </div>
               <div className="project-tags">WP</div>
+            </div>
+          </div>
+
+          <div className="project">
+            <div className="project-details">
+              <div className="project-title">
+                <a target="_blank" href="https://hagitalconsulting.com//" className="project-link">
+               CPD <FontAwesomeIcon icon={faLock} className="link-icon" />
+                </a>
+              </div>
+              <div className="project-description">
+              Developed a Complaint Management System designed to streamline the process of logging, tracking, and resolving customer complaints.
+              </div>
+              <div className="project-tags">PHP • Javascript • MYSQL</div>
             </div>
           </div>
 

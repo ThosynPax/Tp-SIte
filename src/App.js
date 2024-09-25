@@ -7,6 +7,7 @@ import Bytes from './components/Bytes';
 import Works from './components/Works';
 import Projects from './components/Projects';
 import Media from './components/media-kits';
+import Archives from './components/Archives';
 import './App.css';
 
 const App = () => {
@@ -20,6 +21,7 @@ const App = () => {
           <Route path="/Works" element={<Works />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/media-kits" element={<Media />} />
+          <Route path="/Archives" element={<Archives />} />
           {/* Add more routes here as needed */}
         </Routes>
         <Footer />
