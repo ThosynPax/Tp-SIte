@@ -12,6 +12,10 @@ const Projects = () => {
             width: 100%;
             border-spacing: 0 15px;
           }
+          .project-list {
+              display: none;
+              width: 100%;
+            }
           .project-table th,
           .project-table td {
             padding: 1rem;
@@ -24,9 +28,11 @@ const Projects = () => {
             font-weight: 600;
           }
           .project-table td {
-            background-color: #112240;
+            background-color: #1a1a1a;
             border-radius: 8px;
-            color: #fff;
+            color: #f0f5f8;
+            font-family: 'Montserrat';
+            font-weight: 300;
           }
           .project-table a {
             color: #64ffda;
@@ -48,19 +54,20 @@ const Projects = () => {
           /* Mobile-first styles */
           @media (max-width: 768px) {
             .project-table {
-              display: none; /* Hide table on mobile */
+              display: none; 
             }
             .project-list {
-              display: block; /* Show the project list on mobile */
+              display: block;
               width: 100%;
             }
             .project-row {
               display: flex;
               justify-content: space-between;
               padding: 1rem;
-              background-color: #112240;
+              background-color: #1a1a1a;
               border-radius: 8px;
               margin-bottom: 1rem;
+              font-family: 'Montserrat';
             }
             .project-year {
               font-weight: bold;
@@ -70,7 +77,7 @@ const Projects = () => {
               text-align: right;
             }
             .project-name a {
-              color: #64ffda;
+              color: #6c6d70;
               text-decoration: none;
               display: flex;
               align-items: center;
@@ -79,6 +86,20 @@ const Projects = () => {
               text-decoration: underline;
             }
           }
+             .project-tags {
+          display: flex;
+          gap: 10px;
+        }
+
+        .project-tags span.tag {
+          padding: 2px 5px;
+          background-color: #ffe666;
+          border-radius: 10px;
+          color: #000; /* Light blue text */
+          font-size: 12px;
+          font-weight: 500;
+          transition: background-color 0.3s ease;
+        }
         `}
       </style>
 
@@ -91,42 +112,80 @@ const Projects = () => {
             <tr>
               <th>Year</th>
               <th>Project</th>
+              <th>Stack & Tools</th>
+              <th>Link</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td className="year">2023</td>
               <td>
-                <a target="_blank" href="https://standardtimesng.com/">
                   Standard Times NG
-                  <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+              </td>
+              <td>
+                <div className="project-tags">
+                  <span className="tag">PHP</span>
+                  <span className="tag">JavaScript</span>
+                  <span className="tag">MySQL</span>
+                </div>
+              </td>
+              <td>
+              <a target="_blank" href="https://standardtimesng.com/">
+                  https://standardtimesng.com/
                 </a>
               </td>
             </tr>
             <tr>
               <td className="year">2023</td>
               <td>
-                <a target="_blank" href="https://hagitalconsulting.com/">
-                  Hagital Consulting
-                  <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
-                </a>
+                  Standard Times NG
               </td>
-            </tr>
-            <tr>
-              <td className="year">2022</td>
               <td>
-                <a href="#">
-                  Quick Extractor
-                  <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+                <div className="project-tags">
+                  <span className="tag">PHP</span>
+                  <span className="tag">JavaScript</span>
+                  <span className="tag">MySQL</span>
+                </div>
+              </td>
+              <td>
+              <a target="_blank" href="https://standardtimesng.com/">
+                  https://standardtimesng.com/
                 </a>
               </td>
             </tr>
             <tr>
               <td className="year">2023</td>
               <td>
-                <a target="_blank" href="https://toplagy.eu/">
-                  Toplagy.eu
-                  <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+                  Standard Times NG
+              </td>
+              <td>
+                <div className="project-tags">
+                  <span className="tag">PHP</span>
+                  <span className="tag">JavaScript</span>
+                  <span className="tag">MySQL</span>
+                </div>
+              </td>
+              <td>
+              <a target="_blank" href="https://standardtimesng.com/">
+                  https://standardtimesng.com/
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td className="year">2023</td>
+              <td>
+                  Standard Times NG
+              </td>
+              <td>
+                <div className="project-tags">
+                  <span className="tag">PHP</span>
+                  <span className="tag">JavaScript</span>
+                  <span className="tag">MySQL</span>
+                </div>
+              </td>
+              <td>
+              <a target="_blank" href="https://standardtimesng.com/">
+                  https://standardtimesng.com/
                 </a>
               </td>
             </tr>
@@ -141,7 +200,7 @@ const Projects = () => {
             <span className="project-name">
               <a target="_blank" href="https://standardtimesng.com/">
                 Standard Times NG
-                <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+                 <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
               </a>
             </span>
           </div>
