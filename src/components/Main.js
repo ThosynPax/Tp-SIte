@@ -45,7 +45,7 @@ const Main = () => {
                 help build a better future through technology and creativity.
               </p>
               <p>
-                Let’s connect and see how we can bring your vision to life. <span className='inner-brief-content'><a target="_blank" href='https://cal.com/thosynpax/product-discovery'>Book a Consultation</a> </span>
+                Let’s connect and see how we can bring your vision to life. <span className='inner-brief-content'><a target="_blank" href='https://cal.com/thosyn-pax/60min'>Book a Consultation</a> </span>
               </p>
             </div>
           </div>
