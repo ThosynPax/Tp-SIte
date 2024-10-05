@@ -98,7 +98,7 @@ const MediaKit = () => {
           <p className="description">
             Freelance — Software Engineer, Technical Product Manager, UX Unicorn <br />
             Entrepreneur — Founded Afribreath and Afriheals Careers <br />
-            Tech Mentor — Afriheals Careers <br />
+            Tech Mentor — Afriheals Careers and Pax School of Tech <br />
             Lagos, Nigeria
           </p>
           <div className="links">

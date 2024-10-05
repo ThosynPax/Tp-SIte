@@ -117,70 +117,159 @@ const Projects = () => {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td className="year">2023</td>
+          <tr>
+              <td className="year">2024</td>
               <td>
-                  Standard Times NG
+              Argent Storage
               </td>
               <td>
                 <div className="project-tags">
-                  <span className="tag">PHP</span>
-                  <span className="tag">JavaScript</span>
-                  <span className="tag">MySQL</span>
+                  <span className="tag">WP</span>
                 </div>
               </td>
               <td>
-              <a target="_blank" href="https://standardtimesng.com/">
-                  https://standardtimesng.com/
+              <a target="_blank" href="https://argentstoragebv.com/">
+              https://argentstoragebv.com/
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td className="year">2024</td>
+              <td>
+              tjonger Shipping
+              </td>
+              <td>
+                <div className="project-tags">
+                  <span className="tag">WP</span>
+                </div>
+              </td>
+              <td>
+              <a target="_blank" href="https://tjongershippingbv.nl/">
+              https://tjongershippingbv.nl/
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td className="year">2024</td>
+              <td>
+              Shalom Women Foundation
+              </td>
+              <td>
+                <div className="project-tags">
+                  <span className="tag">WP</span>
+                </div>
+              </td>
+              <td>
+              <a target="_blank" href="https://shalomwomenfoundation.com/">
+              https://shalomwomenfoundation.com/
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td className="year">2024</td>
+              <td>
+              TM Palmer Solicitor
+              </td>
+              <td>
+                <div className="project-tags">
+                  <span className="tag">WP</span>
+                </div>
+              </td>
+              <td>
+              <a target="_blank" href="https://tmpalmersolicitors.com/">
+              https://tmpalmersolicitors.com/
+                </a>
+              </td>
+            </tr>
+
+            <tr>
+              <td className="year">2024</td>
+              <td>
+              HubWright Groups
+              </td>
+              <td>
+                <div className="project-tags">
+                  <span className="tag">WP</span>
+                </div>
+              </td>
+              <td>
+              <a target="_blank" href="https://hubwrightgroup.com/">
+              https://hubwrightgroup.com/
                 </a>
               </td>
             </tr>
             <tr>
               <td className="year">2023</td>
               <td>
-                  Standard Times NG
+              King Da Silva Foundation
               </td>
               <td>
                 <div className="project-tags">
-                  <span className="tag">PHP</span>
-                  <span className="tag">JavaScript</span>
-                  <span className="tag">MySQL</span>
+                  <span className="tag">WP</span>
                 </div>
               </td>
               <td>
-              <a target="_blank" href="https://standardtimesng.com/">
-                  https://standardtimesng.com/
+              <a target="_blank" href="https://kingdasilvafoundation.com/">
+              https://kingdasilvafoundation.com/
                 </a>
               </td>
             </tr>
             <tr>
-              <td className="year">2023</td>
-              <td>
-                  Standard Times NG
-              </td>
+              <td className="year">2021</td>
+              <td>Hagital Consulting</td>
               <td>
                 <div className="project-tags">
-                  <span className="tag">PHP</span>
-                  <span className="tag">JavaScript</span>
-                  <span className="tag">MySQL</span>
+                  <span className="tag">WP</span>
                 </div>
               </td>
               <td>
-              <a target="_blank" href="https://standardtimesng.com/">
-                  https://standardtimesng.com/
+              <a target="_blank" href="https://hagitalconsulting.com">
+              https://hagitalconsulting.com
                 </a>
               </td>
             </tr>
             <tr>
-              <td className="year">2023</td>
+              <td className="year">2020</td>
               <td>
-                  Standard Times NG
+              Confi Initiative 
               </td>
               <td>
                 <div className="project-tags">
-                  <span className="tag">PHP</span>
-                  <span className="tag">JavaScript</span>
-                  <span className="tag">MySQL</span>
+                  <span className="tag">WP</span>
+                  <span className="tag">Figma</span>
+                </div>
+              </td>
+              <td>
+              <a target="_blank" href="https://confiinitiative.com/">
+              https://confiinitiative.com/
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td className="year">2019</td>
+              <td>
+               Roaddays Consults 
+              </td>
+              <td>
+                <div className="project-tags">
+                  <span className="tag">WP</span>
+                  <span className="tag">Logo</span>
+                </div>
+              </td>
+              <td>
+              <a target="_blank" href="https://roaddaysconsults.com/">
+              https://roaddaysconsults.com/
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td className="year">2018</td>
+              <td>Standard Times NG</td>
+              <td>
+                <div className="project-tags">
+                  <span className="tag">WP</span>
+                  <span className="tag">Photoshop</span>
+                  <span className="tag">Logo</span>
                 </div>
               </td>
               <td>
@@ -195,46 +284,104 @@ const Projects = () => {
 
         {/* Mobile List View */}
         <div className="project-list">
+        <div className="project-row">
+            <span className="project-year">2024</span>
+            <span className="project-name">
+              <a target="_blank" href="https://argentstoragebv.com/">
+              Argent Storage
+                <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+              </a>
+            </span>
+          </div>
+
+          <div className="project-row">
+            <span className="project-year">2024</span>
+            <span className="project-name">
+              <a target="_blank" href="https://tjongershippingbv.nl/">
+              tjonger Shipping
+                <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+              </a>
+            </span>
+          </div>
+
+          <div className="project-row">
+            <span className="project-year">2024</span>
+            <span className="project-name">
+              <a target="_blank" href="https://shalomwomenfoundation.com/">
+              Shalom Women Foundation
+                <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+              </a>
+            </span>
+          </div>
+
+          <div className="project-row">
+            <span className="project-year">2024</span>
+            <span className="project-name">
+              <a target="_blank" href="https://tmpalmersolicitors.com/">
+              TM Palmer Solicitor
+                <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+              </a>
+            </span>
+          </div>
+
+          <div className="project-row">
+            <span className="project-year">2024</span>
+            <span className="project-name">
+              <a target="_blank" href="https://hubwrightgroup.com/">
+              HubWright Groups
+                <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+              </a>
+            </span>
+          </div>
           <div className="project-row">
             <span className="project-year">2023</span>
             <span className="project-name">
+              <a target="_blank" href="https://kingdasilvafoundation.com/">
+              King Da Silva Foundation
+                <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+              </a>
+            </span>
+          </div>
+
+          <div className="project-row">
+            <span className="project-year">2021</span>
+            <span className="project-name">
+              <a target="_blank" href="https://hagitalconsulting.com/">
+              Hagital Consulting
+                <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+              </a>
+            </span>
+          </div>
+
+          <div className="project-row">
+            <span className="project-year">2020</span>
+            <span className="project-name">
+              <a target="_blank" href="https://confiinitiative.com/">
+              Confi Initiative
+                <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+              </a>
+            </span>
+          </div>
+
+          <div className="project-row">
+            <span className="project-year">2019</span>
+            <span className="project-name">
+              <a target="_blank" href="https://roaddaysconsults.com/">
+              Roaddays Consults
+                <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+              </a>
+            </span>
+          </div>
+          
+          <div className="project-row">
+            <span className="project-year">2018</span>
+            <span className="project-name">
               <a target="_blank" href="https://standardtimesng.com/">
-                Standard Times NG
+              Standard Times NG
                  <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
               </a>
             </span>
           </div>
-
-          <div className="project-row">
-            <span className="project-year">2023</span>
-            <span className="project-name">
-              <a target="_blank" href="https://hagitalconsulting.com/">
-                Hagital Consulting
-                <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
-              </a>
-            </span>
-          </div>
-
-          <div className="project-row">
-            <span className="project-year">2022</span>
-            <span className="project-name">
-              <a href="#">
-                Quick Extractor
-                <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
-              </a>
-            </span>
-          </div>
-
-          <div className="project-row">
-            <span className="project-year">2023</span>
-            <span className="project-name">
-              <a target="_blank" href="https://toplagy.eu/">
-                Toplagy.eu
-                <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
-              </a>
-            </span>
-          </div>
-
           {/* Add more projects as necessary */}
         </div>
       </div>

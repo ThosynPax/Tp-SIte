@@ -111,10 +111,10 @@ const Bytes = () => {
 
           {/** Afriheals Careers */}
           <div className="project">
-            <div className="year">2024</div>
+            <div className="year">2020</div>
             <div className="project-details">
               <div className="project-title">
-                <a target="_blank" href="http://afribreath.com/" className="project-link">
+                <a target="_blank" href="http://afribreath.com/community" className="project-link">
                   Afriheals Careers <FontAwesomeIcon icon={faLink} className="link-icon" />
                 </a>
               </div>
@@ -122,6 +122,21 @@ const Bytes = () => {
                 We are fostering innovation, collaboration, and knowledge-sharing among tech enthusiasts of all levels.
               </div>
               <div className="project-tags">Tech Community</div>
+            </div>
+          </div>
+
+          <div className="project">
+            <div className="year">2024</div>
+            <div className="project-details">
+              <div className="project-title">
+                <a target="_blank" href="https://paxschool.africa/" className="project-link">
+                 Pax School of Tech <FontAwesomeIcon icon={faLink} className="link-icon" />
+                </a>
+              </div>
+              <div className="project-description">
+                A Technical Product Management School
+              </div>
+              <div className="project-tags">Tech School</div>
             </div>
           </div>
         </div>

@@ -96,40 +96,11 @@ const Projects = () => {
 
         {/** Grid starts below the header */}
         <div className="main-grid">
-          {/** Afribreath */}
-          <div className="project">
-            <div className="project-details">
-              <div className="project-title">
-                <a target="_blank" href="https://standardtimesng.com/" className="project-link">
-                Standard Times NG <FontAwesomeIcon icon={faLink} className="link-icon" />
-                </a>
-              </div>
-              <div className="project-description">
-              I created a news website using WordPress, designed to fit the needs of a newspaper company.
-              </div>
-              <div className="project-tags">WP</div>
-            </div>
-          </div>
-
-          {/** Chrome Extension */}
-          <div className="project">
-            <div className="project-details">
-              <div className="project-title">
-                <a target="_blank" href="https://hagitalconsulting.com//" className="project-link">
-                Hagital Consulting  <FontAwesomeIcon icon={faLink} className="link-icon" />
-                </a>
-              </div>
-              <div className="project-description">
-              Created a dynamic Content Management System (CMS) website catering to the distinct demands of a technology training company.
-              </div>
-              <div className="project-tags">WP</div>
-            </div>
-          </div>
 
           <div className="project">
             <div className="project-details">
               <div className="project-title">
-                <a target="_blank" href="https://hagitalconsulting.com//" className="project-link">
+                <a target="_blank" href="#" className="project-link">
                Quick Extractor <FontAwesomeIcon icon={faLock} className="link-icon" />
                 </a>
               </div>
@@ -155,35 +126,6 @@ const Projects = () => {
             </div>
           </div>
 
-           {/** Chrome Extension */}
-           <div className="project">
-            <div className="project-details">
-              <div className="project-title">
-                <a target="_blank" href="https://roaddaysconsults.com/" className="project-link">
-                Roaddays Consults  <FontAwesomeIcon icon={faLink} className="link-icon" />
-                </a>
-              </div>
-              <div className="project-description">
-              Crafted a fundamental website catering to the needs of a travel agency company, focusing on design and functionality.
-              </div>
-              <div className="project-tags">WP</div>
-            </div>
-          </div>
-
-          <div className="project">
-            <div className="project-details">
-              <div className="project-title">
-                <a target="_blank" href="https://soderuandsoderu.com.ng/" className="project-link">
-                Soderu and Soderu  <FontAwesomeIcon icon={faLink} className="link-icon" />
-                </a>
-              </div>
-              <div className="project-description">
-              Crafted a fundamental website catering to the needs of a travel agency company, focusing on design and functionality.
-              </div>
-              <div className="project-tags">WP</div>
-            </div>
-          </div>
-
           <div className="project">
             <div className="project-details">
               <div className="project-title">
@@ -201,49 +143,7 @@ const Projects = () => {
           <div className="project">
             <div className="project-details">
               <div className="project-title">
-                <a target="_blank" href="https://confiinitiative.com/" className="project-link">
-                Confi Initiative <FontAwesomeIcon icon={faLink} className="link-icon" />
-                </a>
-              </div>
-              <div className="project-description">
-              Crafted a website for a non-governmental organization (NGO) while also designing numerous graphic flyers to support their cause.
-              </div>
-              <div className="project-tags">WP</div>
-            </div>
-          </div>
-
-          <div className="project">
-            <div className="project-details">
-              <div className="project-title">
-                <a target="_blank" href="https://kingdasilvafoundation.com/" className="project-link">
-                King Da Silva Foundation <FontAwesomeIcon icon={faLink} className="link-icon" />
-                </a>
-              </div>
-              <div className="project-description">
-              Designed and built an online presence for an NGO to keeping track of the work progress.
-              </div>
-              <div className="project-tags">WP</div>
-            </div>
-          </div>
-
-          <div className="project">
-            <div className="project-details">
-              <div className="project-title">
-                <a target="_blank" href="https://argentstoragebv.com/" className="project-link">
-                Argent Storage <FontAwesomeIcon icon={faLink} className="link-icon" />
-                </a>
-              </div>
-              <div className="project-description">
-              Created a website for a business specializing in the sales, delivery, and maintenance of oil and gas tanks.
-              </div>
-              <div className="project-tags">WP</div>
-            </div>
-          </div>
-
-          <div className="project">
-            <div className="project-details">
-              <div className="project-title">
-                <a target="_blank" href="https://hagitalconsulting.com//" className="project-link">
+                <a target="_blank" href="#" className="project-link">
                CPD <FontAwesomeIcon icon={faLock} className="link-icon" />
                 </a>
               </div>
@@ -251,62 +151,6 @@ const Projects = () => {
               Developed a Complaint Management System designed to streamline the process of logging, tracking, and resolving customer complaints.
               </div>
               <div className="project-tags">PHP • Javascript • MYSQL</div>
-            </div>
-          </div>
-
-          <div className="project">
-            <div className="project-details">
-              <div className="project-title">
-                <a target="_blank" href="https://tjongershippingbv.nl/" className="project-link">
-                tjonger Shipping <FontAwesomeIcon icon={faLink} className="link-icon" />
-                </a>
-              </div>
-              <div className="project-description">
-              Created a website for a business specializing in the sales, delivery, and maintenance of oil and gas tanks.
-              </div>
-              <div className="project-tags">WP</div>
-            </div>
-          </div>
-
-          <div className="project">
-            <div className="project-details">
-              <div className="project-title">
-                <a target="_blank" href="https://shalomwomenfoundation.com/" className="project-link">
-                Shalom Women Foundation <FontAwesomeIcon icon={faLink} className="link-icon" />
-                </a>
-              </div>
-              <div className="project-description">
-              Created a website for a business specializing in the sales, delivery, and maintenance of oil and gas tanks.
-              </div>
-              <div className="project-tags">WP</div>
-            </div>
-          </div>
-
-          <div className="project">
-            <div className="project-details">
-              <div className="project-title">
-                <a target="_blank" href="https://tmpalmersolicitors.com/" className="project-link">
-                TM Palmer Solicitor <FontAwesomeIcon icon={faLink} className="link-icon" />
-                </a>
-              </div>
-              <div className="project-description">
-              Developed a website for a law firm, providing comprehensive legal services and resources.
-              </div>
-              <div className="project-tags">WP</div>
-            </div>
-          </div>
-
-          <div className="project">
-            <div className="project-details">
-              <div className="project-title">
-                <a target="_blank" href="https://hubwrightgroup.com/" className="project-link">
-               HubWright Groups <FontAwesomeIcon icon={faLink} className="link-icon" />
-                </a>
-              </div>
-              <div className="project-description">
-              Developed a website for a law firm, providing comprehensive legal services and resources.
-              </div>
-              <div className="project-tags">WP</div>
             </div>
           </div>
 
@@ -324,6 +168,12 @@ const Projects = () => {
             </div>
           </div>
         </div>
+
+        <h2>
+           <a style={{ color: "#fff" }} href="/archives" className="project-link">
+         View All Project Archive</a>
+        </h2>
+        
       </div>
     </main>
   );
