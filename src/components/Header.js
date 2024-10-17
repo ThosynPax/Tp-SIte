@@ -58,8 +58,10 @@ const Header = () => {
               <li><a href="/works" onClick={toggleMenu}>Works</a></li>
               <li><a href="/projects" onClick={toggleMenu}>Projects</a></li>
               <li><a href="/bytes" onClick={toggleMenu}>Billion Bytes</a></li>
+              <li><a href="/prodsculpt/" rel="noreferrer" target="_blank" onClick={toggleMenu}>ProdSculpt</a></li>
               <li><a href="https://afribreath.com/community/1-on-1-mastery/" rel="noreferrer" target="_blank" onClick={toggleMenu}>1-on-1 Mastery</a></li>
               <li><a href="https://paxschool.africa/" rel="noreferrer" target="_blank" onClick={toggleMenu}>Pax School</a></li>
+              <li><a href="/mvpfast" rel="noreferrer" target="_blank" onClick={toggleMenu}>mvpfa.st</a></li>
               <li><a href="/media-kits" onClick={toggleMenu}>Media Kits</a></li>
              
             </ul>
