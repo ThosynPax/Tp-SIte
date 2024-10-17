@@ -96,7 +96,7 @@ const MediaKit = () => {
         <section className="content-section">
           <h2 className="subtitle">Basic Information</h2>
           <p className="description">
-            Freelance — Software Engineer,and UI/UX Engineer<br />
+            Freelance — Software Engineer, Technical Product Manager, UX Unicorn <br />
             Entrepreneur — Founded Afribreath and Afriheals Careers <br />
             Tech Mentor — Afriheals Careers and Pax School of Tech <br />
             Lagos, Nigeria

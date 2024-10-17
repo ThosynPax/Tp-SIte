@@ -14,8 +14,11 @@ const Main = () => {
             <header className="intro">
               <h1 className="intro-title">Hey! I'm Thosyn Pax</h1>
               <h4 className="intro-current-job">
-                I am a Software Engineer & UI/UX Engineer, aspiring to become a Technical Product Manager
+                Transforming Ideas into Reality as a Technical Product Manager,
+                UX Unicorn, & Software Engineer
               </h4>
+           
+
             </header>
             <div className="brief-content">
               <p>
