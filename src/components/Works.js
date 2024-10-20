@@ -279,6 +279,10 @@ const Works = () => {
               <span className="tag">Node js</span>
             </div>
           </div>
+          <h2>
+           <a style={{ color: "#fff" }} href="/projects" className="project-link">
+              View Other Projects</a>
+          </h2>
         </div>
       </div>
     </main>

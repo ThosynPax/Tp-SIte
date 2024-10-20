@@ -104,7 +104,7 @@ const Projects = () => {
       </style>
 
       <div className="wrapper">
-        <h1 className="intro-title">All Projects</h1>
+        <h1 className="intro-title">All Projects Archives</h1>
 
         {/* Desktop Table View */}
         <table className="project-table">
