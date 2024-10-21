@@ -92,23 +92,25 @@ const Works = () => {
             <div className="brief-content">
               <h1 className='intro-title' style={{ fontSize: 30 }}>Quickinbox</h1>
               <p>
-              For Quickinbox, a bulk email platform, my focus was on building an 
-              efficient system for sending and managing high-volume emails. 
-              I worked on streamlining operations for businesses that need 
-              to communicate with large audiences. Key actions:
+              As a Software Engineer and UI/UX Engineer for Quickinbox, 
+              a bulk email platform, my focus was on creating an efficient 
+              system for sending and managing large volumes of emails. 
+              I worked on optimizing the platform for businesses requiring 
+              seamless communication with vast audiences.
+               Key contributions included:
               </p>
               <p>
-                <span className='inner-brief-content'>Scalability:</span> Directed the development team to ensure 
-                the platform could handle millions of emails daily without downtime, optimizing 
-                the database for speed and performance.
+                <span className='inner-brief-content'>Scalability:</span> Led the development team to 
+                ensure the platform could handle millions of emails daily without downtime, enhancing 
+                database performance for speed and reliability.
               </p>
               <p>
-                <span className='inner-brief-content'>Feature Development:</span> Led the creation of advanced filtering,
-                 automated list management, and personalized bulk email features to increase user engagement.
+                <span className='inner-brief-content'>Feature Development:</span> Spearheaded the development of advanced filtering,
+                 automated list management, and personalized bulk email features to improve user engagement.
               </p>
               <p>
                 <span className='inner-brief-content'>User Testing and Feedback:</span> Conducted user interviews and A/B testing to
-                 refine the platform’s interface, ensuring intuitive navigation and functionality.
+                 refine the platform’s user interface, ensuring a smooth and intuitive experience.
               </p>
               <p>
                 <span className='inner-brief-content'>Outcome:</span> Quickinbox became a preferred tool for businesses needing fast 
@@ -140,22 +142,22 @@ const Works = () => {
             <div className="brief-content">
               <h1 className='intro-title' style={{ fontSize: 30 }}>TecPay</h1>
               <p>
-              As the TPM for TecPay, a mobile banking app, I played a key role in managing the
-               app’s end-to-end development, ensuring seamless integration with financial 
-               systems while prioritizing security. Key responsibilities included:
+              As a Software Engineer and UI/UX Engineer for TecPay, a mobile banking app,
+               I was instrumental in managing the app's end-to-end development,
+                ensuring seamless integration with financial systems while
+                 prioritizing security. Key responsibilities included:
               </p>
               <p>
-                <span className='inner-brief-content'>API Management:</span> Oversaw the integration of multiple
-                 payment methods, including bank transfers and mobile wallets, to cater to diverse user needs.
+                <span className='inner-brief-content'>API Management:</span> Led the integration of various payment methods,
+                 such as bank transfers and mobile wallets, to accommodate a wide range of user needs.
               </p>
               <p>
-                <span className='inner-brief-content'>Security and Compliance:</span> Collaborated with legal and security
-                 teams to ensure TecPay complied with financial regulations like PCI-DSS and provided encryption for 
-                 sensitive transactions.
+                <span className='inner-brief-content'>Development:</span> Collaborated with cross-functional teams to ensure TecPay's 
+                features were effectively integrated and aligned with user needs, enhancing overall functionality and performance.
               </p>
               <p>
-                <span className='inner-brief-content'>User Experience:</span> Worked closely with the design team to deliver a user-friendly
-                 interface for easy transaction navigation and real-time account management.
+                <span className='inner-brief-content'>User Experience:</span> Collaborated with the design team to deliver a user-friendly interface,
+                 facilitating easy transaction navigation and real-time account management.
               </p>
             </div>
           </div>
@@ -189,21 +191,21 @@ const Works = () => {
             <div className="brief-content">
               <h1 className='intro-title' style={{ fontSize: 30 }}>InclusiLearn</h1>
               <p>
-              As the TPM for InclusiLearn, an educational platform with advanced AI and ML capabilities,
-               I was responsible for overseeing the development of features that enhance accessibility 
-               for learners across the globe. Key highlights include:
+              As a Software Engineer and UI/UX Engineer for InclusiLearn, 
+              an educational platform utilizing advanced AI and ML capabilities, 
+              I focused on developing features that enhance accessibility for
+               learners worldwide. Key highlights include:
               </p>
               <p>
-                <span className='inner-brief-content'>AI-Powered Translation:</span>  Implemented machine learning algorithms to translate educational 
-                content into multiple languages, making the platform accessible to non-native speakers.
+                <span className='inner-brief-content'>AI-Powered Translation:</span> Developed machine learning algorithms to translate educational 
+                content into multiple languages, making the platform more accessible to non-native speakers.
+              <p>
+                <span className='inner-brief-content'>Text-to-Speech Integration:</span> Led the implementation of text-to-speech functionality to
+                 support learners with disabilities and those who prefer auditory learning.
               </p>
               <p>
-                <span className='inner-brief-content'>Text-to-Speech Integration:</span> Led the addition of text-to-speech functionality to accommodate
-                 learners with disabilities or those who prefer auditory learning.
-              </p>
-              <p>
-                <span className='inner-brief-content'>Inclusive Design:</span> Worked closely with educators and developers to ensure the platform supports diverse learning styles, 
-                focusing on accessibility features like adjustable font sizes and voice commands.
+                <span className='inner-brief-content'>Inclusive Design:</span> Collaborated with educators and developers to create a platform 
+                that accommodates diverse learning styles, emphasizing accessibility features like adjustable font sizes and voice commands.
               </p>
             </div>
           </div>
@@ -235,22 +237,22 @@ const Works = () => {
             <div className="brief-content">
               <h1 className='intro-title' style={{ fontSize: 30 }}>Phillioo</h1>
               <p>
-              As the TPM for Phillioo, a dating app currently in progress, my role is focused on ensuring the app
-               delivers a smooth and intuitive user experience while building features that promote 
-              safe and meaningful connections. I’m leading the product development lifecycle, from 
-              the initial concept to beta testing. My contributions include:
+              As a Software Engineer and UI/UX Engineer for Phillioo, a dating app 
+              currently in development, my focus is on delivering a smooth and intuitive
+               user experience while building features that foster safe and meaningful connections.
+                My contributions include:
               </p>
               <p>
-                <span className='inner-brief-content'>Feature Prioritization:</span> Collaborated with designers and developers to prioritize features like user matching algorithms,
-                 real-time messaging, and profile verification.
+                <span className='inner-brief-content'>Feature Prioritization:</span> Designed and implemented core functionalities
+                 such as user matching algorithms, real-time messaging, and profile verification to enhance user engagement.
               </p>
               <p>
-                <span className='inner-brief-content'>User-Centered Design:</span>Ensured the app follows best practices for user engagement and retention, particularly
-                 around features that enhance profile discovery and interaction.
+                <span className='inner-brief-content'>User-Centered Design:</span>Created wireframes and prototypes to ensure an intuitive interface,
+                 focusing on features that facilitate profile discovery and meaningful interactions.
               </p>
               <p>
-                <span className='inner-brief-content'>Agile Implementation:</span> Established clear sprint goals and milestones to keep
-                 development on track and aligned with market expectations.
+                <span className='inner-brief-content'>Agile Implementation:</span> Worked closely with cross-functional teams to conduct user testing 
+                and gather feedback, iterating on designs to improve usability and meet user needs effectively.
               </p>
               
             </div>
