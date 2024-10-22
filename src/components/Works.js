@@ -198,7 +198,7 @@ const Works = () => {
               </p>
               <p>
                 <span className='inner-brief-content'>AI-Powered Translation:</span> Developed machine learning algorithms to translate educational 
-                content into multiple languages, making the platform more accessible to non-native speakers.
+                content into multiple languages, making the platform more accessible to non-native speakers.</p>
               <p>
                 <span className='inner-brief-content'>Text-to-Speech Integration:</span> Led the implementation of text-to-speech functionality to
                  support learners with disabilities and those who prefer auditory learning.
