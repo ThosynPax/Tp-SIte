@@ -93,21 +93,6 @@ const Bytes = () => {
 
         {/** Grid starts below the header */}
         <div className="main-grid">
-          {/** Afribreath */}
-          <div className="project">
-            <div className="year">2018</div>
-            <div className="project-details">
-              <div className="project-title">
-                <a target="_blank" href="http://afribreath.com/" className="project-link">
-                  Afribreath <FontAwesomeIcon icon={faLink} className="link-icon" />
-                </a>
-              </div>
-              <div className="project-description">
-                Afribreath is a pioneering tech company committed to transforming the tech landscape in Africa.
-              </div>
-              <div className="project-tags">Startup</div>
-            </div>
-          </div>
 
           {/** Afriheals Careers */}
           <div className="project">
@@ -129,14 +114,14 @@ const Bytes = () => {
             <div className="year">2024</div>
             <div className="project-details">
               <div className="project-title">
-                <a target="_blank" href="https://paxschool.africa/" className="project-link">
-                 Pax School of Tech <FontAwesomeIcon icon={faLink} className="link-icon" />
+                <a target="_blank" href="#" className="project-link">
+                 CLipKip 
                 </a>
               </div>
               <div className="project-description">
-                A Technical Product Management School
+              Save copied text to use anytime (Launching Soon)
               </div>
-              <div className="project-tags">Tech School</div>
+              <div className="project-tags">Chrome Extension</div>
             </div>
           </div>
         </div>
