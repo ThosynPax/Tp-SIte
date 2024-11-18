@@ -120,6 +120,38 @@ const Projects = () => {
           <tr>
               <td className="year">2024</td>
               <td>
+             TekLearn
+              </td>
+              <td>
+                <div className="project-tags">
+                  <span className="tag">WP</span>
+                </div>
+              </td>
+              <td>
+              <a target="_blank" href="https://teklearn.org/">
+              https://teklearn.org/
+                </a>
+              </td>
+            </tr>
+          <tr>
+              <td className="year">2024</td>
+              <td>
+             De-OrganicMaster
+              </td>
+              <td>
+                <div className="project-tags">
+                  <span className="tag">WP</span>
+                </div>
+              </td>
+              <td>
+              <a target="_blank" href="https://deorganicmaster.com/">
+              https://deorganicmaster.com
+                </a>
+              </td>
+            </tr>
+          <tr>
+              <td className="year">2024</td>
+              <td>
               Argent Storage
               </td>
               <td>
