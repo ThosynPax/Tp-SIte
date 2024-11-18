@@ -115,11 +115,26 @@ const Bytes = () => {
             <div className="project-details">
               <div className="project-title">
                 <a target="_blank" href="#" className="project-link">
-                 CLipKip 
+                 ClipKip <FontAwesomeIcon icon={faLink} className="link-icon" />
                 </a>
               </div>
               <div className="project-description">
               Save copied text to use anytime (Launching Soon)
+              </div>
+              <div className="project-tags">Chrome Extension</div>
+            </div>
+          </div>
+
+          <div className="project">
+            <div className="year">2024</div>
+            <div className="project-details">
+              <div className="project-title">
+                <a target="_blank" href="#" className="project-link">
+                 PaxPlanner <FontAwesomeIcon icon={faLink} className="link-icon" />
+                </a>
+              </div>
+              <div className="project-description">
+              Simple To-Do List Planner
               </div>
               <div className="project-tags">Chrome Extension</div>
             </div>

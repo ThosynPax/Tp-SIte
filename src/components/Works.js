@@ -186,7 +186,7 @@ const Works = () => {
             </div>
           </div>
 
-          {/* Shape.LOL Section */}
+          {/* Shape.LOL Section 
           <div className="main-content"><hr />
             <div className="brief-content">
               <h1 className='intro-title' style={{ fontSize: 30 }}>InclusiLearn</h1>
@@ -231,6 +231,9 @@ const Works = () => {
               <span className="tag">Miro</span>
             </div>
           </div>
+
+
+          */}
 
           {/* Quickinbox Section */}
           <div className="main-content"><hr />
