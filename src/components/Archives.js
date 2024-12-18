@@ -176,8 +176,8 @@ const Projects = () => {
                 </div>
               </td>
               <td>
-              <a target="_blank" href="https://tjongershippingbv.nl/">
-              https://tjongershippingbv.nl/
+              <a target="_blank" href="https://tjongershippingbv.com/">
+              https://tjongershippingbv.com/
                 </a>
               </td>
             </tr>

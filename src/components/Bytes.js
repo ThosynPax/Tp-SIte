@@ -104,7 +104,7 @@ const Bytes = () => {
                 </a>
               </div>
               <div className="project-description">
-                We are fostering innovation, collaboration, and knowledge-sharing among tech enthusiasts of all levels.
+                A Tech Community, offering one-on-one mentoring, job opportunities, bootcamps, webinars, courses, etc.
               </div>
               <div className="project-tags">Tech Community</div>
             </div>

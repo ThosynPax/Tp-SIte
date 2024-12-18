@@ -162,9 +162,9 @@ const Projects = () => {
                 </a>
               </div>
               <div className="project-description">
-              Developed a website for a law firm, providing comprehensive legal services and resources.
+              Oil and Gas report and analytics
               </div>
-              <div className="project-tags">WP</div>
+              <div className="project-tags">PHP • Javascript • MYSQL</div>
             </div>
           </div>
         </div>
