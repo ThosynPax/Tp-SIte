@@ -99,7 +99,7 @@ const Bytes = () => {
             <div className="year">2020</div>
             <div className="project-details">
               <div className="project-title">
-                <a target="_blank" href="http://afribreath.com/community" className="project-link">
+                <a target="_blank" href="https://www.afrihealscareers.com/" className="project-link">
                   Afriheals Careers <FontAwesomeIcon icon={faLink} className="link-icon" />
                 </a>
               </div>
@@ -114,12 +114,12 @@ const Bytes = () => {
             <div className="year">2024</div>
             <div className="project-details">
               <div className="project-title">
-                <a target="_blank" href="#" className="project-link">
+                <a target="_blank" href="https://clipkip-site.vercel.app/" className="project-link">
                  ClipKip <FontAwesomeIcon icon={faLink} className="link-icon" />
                 </a>
               </div>
               <div className="project-description">
-              Save copied text to use anytime (Launching Soon)
+              Save copied text to use anytime 
               </div>
               <div className="project-tags">Chrome Extension</div>
             </div>
@@ -129,7 +129,7 @@ const Bytes = () => {
             <div className="year">2024</div>
             <div className="project-details">
               <div className="project-title">
-                <a target="_blank" href="#" className="project-link">
+                <a target="_blank" href="https://paxplanner-site.vercel.app/" className="project-link">
                  PaxPlanner <FontAwesomeIcon icon={faLink} className="link-icon" />
                 </a>
               </div>
@@ -137,6 +137,21 @@ const Bytes = () => {
               Simple To-Do List Planner
               </div>
               <div className="project-tags">Chrome Extension</div>
+            </div>
+          </div>
+
+          <div className="project">
+            <div className="year">2025</div>
+            <div className="project-details">
+              <div className="project-title">
+                <a target="_blank" href="https://paxplanner-site.vercel.app/" className="project-link">
+                 BillFlow <FontAwesomeIcon icon={faLink} className="link-icon" />
+                </a>
+              </div>
+              <div className="project-description">
+              Invoice & Receipt Social Sharing
+              </div>
+              <div className="project-tags">Web App</div>
             </div>
           </div>
         </div>

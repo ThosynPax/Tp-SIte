@@ -97,13 +97,12 @@ const MediaKit = () => {
           <h2 className="subtitle">Basic Information</h2>
           <p className="description">
             Freelance — Software Engineer,and UI/UX Engineer<br />
-            Entrepreneur — Founded Afribreath and Afriheals Careers <br />
-            Tech Mentor — Afriheals Careers and Pax School of Tech <br />
+            Entrepreneur — Founded Afriheals Careers <br />
+            Tech Mentor — Afriheals Careers<br />
             Lagos, Nigeria
           </p>
           <div className="links">
             <a href="https://thosynpax.com">Personal Website</a>
-            <a href="https://thosynpax.com/links">One page site</a>
             <a href="https://x.com/thosynpax">Twitter</a>
             <a href="https://www.linkedin.com/in/thosyn-pax/">LinkedIn</a>
             <a href="https://www.instagram.com/thosynpax/">Instagram</a>
@@ -113,8 +112,7 @@ const MediaKit = () => {
         <section className="content-section">
           <h2 className="subtitle">Biography</h2>
           <p className="description">
-          Thosyn Pax (Solomon Oladele) is a skilled Technical Product Manager, 
-          UX Designer, and Software Engineer with over 9 years of experience in the
+          Thosyn Pax (Solomon Oladele) is a skilled UX Designer, and Software Engineer with over 9 years of experience in the
            tech industry. Known for his ability to bridge creativity and technology, 
            Thosyn has led various successful projects, turning innovative
             ideas into impactful products. His expertise spans across UX design,
