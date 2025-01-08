@@ -19,7 +19,7 @@ const MediaKit = () => {
             font-family: "AnnieUseYourTelescope
           }
 
-          .description {
+          .description-list {
             font-size: 1.1rem;
             color: #fff;
             line-height: 1.8rem;
@@ -95,12 +95,13 @@ const MediaKit = () => {
 
         <section className="content-section">
           <h2 className="subtitle">Basic Information</h2>
-          <p className="description">
-            Freelance — Software Engineer,and UI/UX Engineer<br />
-            Entrepreneur — Founded Afriheals Careers <br />
-            Tech Mentor — Afriheals Careers<br />
-            Lagos, Nigeria
-          </p>
+          <ul className="description-list">
+            <li>Career — Software Engineer, and UI/UX Engineer</li>
+            <li>Entrepreneur — Founder of Afriheals Careers, Co-Founder of Inflect Innovations</li>
+            <li>Partnerships - Partner at Axiom Affiliate</li>
+            <li>Tech Mentor — Afriheals Careers</li>
+          </ul>
+
           <div className="links">
             <a href="https://thosynpax.com">Personal Website</a>
             <a href="https://x.com/thosynpax">Twitter</a>
@@ -111,7 +112,7 @@ const MediaKit = () => {
 
         <section className="content-section">
           <h2 className="subtitle">Biography</h2>
-          <p className="description">
+          <p className="description-list">
           Thosyn Pax (Solomon Oladele) is a skilled UX Designer, and Software Engineer with over 9 years of experience in the
            tech industry. Known for his ability to bridge creativity and technology, 
            Thosyn has led various successful projects, turning innovative
@@ -120,7 +121,7 @@ const MediaKit = () => {
              leader in the tech space.
           </p>
 
-          <p className="description">
+          <p className="description-list">
           Beyond his professional roles, Thosyn is the driving force behind AfriHeals Careers, 
           a mentoring community aimed at nurturing and empowering African innovators. 
           Through this initiative, he dedicates his time to mentoring young talent,

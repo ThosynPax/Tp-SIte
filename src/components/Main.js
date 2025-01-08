@@ -39,8 +39,15 @@ const Main = () => {
               </p>
             </div>
 
-            {/* New section added for your partnerships */}
-            <div className="partnerships">
+           
+
+
+          </div>
+          <div className="image-content">
+            <img src={TP} alt="Thosyn Pax" />
+          </div>
+           {/* New section added for your partnerships */}
+           <div className="partnerships">
               <h2 className="partnerships-heading">Building the Future with Strong Partnerships</h2>
               <ul className="partnerships-list">
                 <li>
@@ -59,12 +66,6 @@ const Main = () => {
                 </li>
               </ul>
             </div>
-
-
-          </div>
-          <div className="image-content">
-            <img src={TP} alt="Thosyn Pax" />
-          </div>
         </div>
       </div>
     </main>
