@@ -118,6 +118,22 @@ const Projects = () => {
           </thead>
           <tbody>
           <tr>
+              <td className="year">2025</td>
+              <td>
+             Tope Olajide
+              </td>
+              <td>
+                <div className="project-tags">
+                  <span className="tag">WP</span>
+                </div>
+              </td>
+              <td>
+              <a target="_blank" href="https://topeolajide.com/">
+              https://topeolajide.com/
+                </a>
+              </td>
+            </tr>
+          <tr>
               <td className="year">2024</td>
               <td>
              TekLearn
@@ -316,7 +332,44 @@ const Projects = () => {
 
         {/* Mobile List View */}
         <div className="project-list">
-        <div className="project-row">
+          <div className="project-row">
+            <span className="project-year">2025</span>
+            <span className="project-name">
+              <a target="_blank" href="https://topeolajide.com/">
+              Tope Olajide
+                 <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+              </a>
+            </span>
+          </div>
+          <div className="project-row">
+            <span className="project-year">2024</span>
+            <span className="project-name">
+              <a target="_blank" href="https://deorganicmaster.com">
+              De-OrganicMaster
+                 <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+              </a>
+            </span>
+          </div>
+          <div className="project-row">
+            <span className="project-year">2024</span>
+            <span className="project-name">
+              <a target="_blank" href="https://deorganicmaster.com">
+              De-OrganicMaster
+                 <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+              </a>
+            </span>
+          </div>
+
+          <div className="project-row">
+            <span className="project-year">2024</span>
+            <span className="project-name">
+              <a target="_blank" href="https://teklearn.org/">
+              TekLearn
+                 <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+              </a>
+            </span>
+          </div>
+          <div className="project-row">
             <span className="project-year">2024</span>
             <span className="project-name">
               <a target="_blank" href="https://argentstoragebv.com/">

@@ -94,8 +94,7 @@ const Bytes = () => {
         {/** Grid starts below the header */}
         <div className="main-grid">
 
-          {/** Afriheals Careers */}
-          <div className="project">
+        <div className="project">
             <div className="year">2020</div>
             <div className="project-details">
               <div className="project-title">
@@ -109,6 +108,26 @@ const Bytes = () => {
               <div className="project-tags">Tech Community</div>
             </div>
           </div>
+
+          {/** Afriheals Careers */}
+          <div className="project">
+  <div className="year">2024</div>
+  <div className="project-details">
+    <div className="project-title">
+      <a target="_blank" href="https://www.afribreath.com" className="project-link">
+        Afribreath <FontAwesomeIcon icon={faLink} className="link-icon" />
+      </a>
+    </div>
+    <div className="project-description">
+      A Virtual Internship Startup
+    </div>
+    <div className="project-tags">Startup</div>
+    <div className="project-status paused">
+      PAUSED
+    </div>
+  </div>
+</div>
+
 
           <div className="project">
             <div className="year">2024</div>
@@ -145,11 +164,11 @@ const Bytes = () => {
             <div className="project-details">
               <div className="project-title">
                 <a target="_blank" href="https://paxplanner-site.vercel.app/" className="project-link">
-                 BillFlow <FontAwesomeIcon icon={faLink} className="link-icon" />
+                 BillFlow {/*<FontAwesomeIcon icon={faLink} className="link-icon" /> */}
                 </a>
               </div>
               <div className="project-description">
-              Invoice & Receipt Social Sharing
+              Invoice & Receipt Social Sharing (Coming Soon)
               </div>
               <div className="project-tags">Web App</div>
             </div>

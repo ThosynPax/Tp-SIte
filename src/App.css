@@ -470,3 +470,14 @@ body {
   font-size: 2rem;
   cursor: pointer;
 }
+
+.project-status.paused {
+  color: red;
+  background-color: #fff; 
+  padding: 5px 10px;
+  font-family: 'Times New Roman', Times, serif;
+  border-radius: 5px;
+  font-weight: bold;
+  width: 20%;
+}
+

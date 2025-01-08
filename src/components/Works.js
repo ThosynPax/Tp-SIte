@@ -3,7 +3,7 @@ import '../App.css';
 import quickinbox_video from '../assets/works/quickinbox_video.mp4';
 import phillioo_video from '../assets/works/phillioo_video.mp4';
 import tecpay_video from '../assets/works/tecpay_video.mp4';
-import inclusilearn_video from '../assets/works/inclusilearn_video.mp4';
+import philip_video from '../assets/works/Philip_video.webm';
 
 
 const Works = () => {
@@ -186,32 +186,28 @@ const Works = () => {
             </div>
           </div>
 
-          {/* Shape.LOL Section 
+         {/* Philip Ikeazor Website */}
           <div className="main-content"><hr />
             <div className="brief-content">
-              <h1 className='intro-title' style={{ fontSize: 30 }}>InclusiLearn</h1>
+              <h1 className='intro-title' style={{ fontSize: 30 }}>Philip Ikeazor Website</h1>
               <p>
-              As a Software Engineer and UI/UX Engineer for InclusiLearn, 
-              an educational platform utilizing advanced AI and ML capabilities, 
-              I focused on developing features that enhance accessibility for
-               learners worldwide. Key highlights include:
+                I had the privilege of designing and developing the official website for Philip Ikeazor, a prominent leader in financial system stability and inclusion across Africa. The website was created with the goal of reflecting his innovative leadership, philanthropic efforts, and commitment to empowering economies through stability. Key features of the project include:
               </p>
               <p>
-                <span className='inner-brief-content'>AI-Powered Translation:</span> Developed machine learning algorithms to translate educational 
-                content into multiple languages, making the platform more accessible to non-native speakers.</p>
-              <p>
-                <span className='inner-brief-content'>Text-to-Speech Integration:</span> Led the implementation of text-to-speech functionality to
-                 support learners with disabilities and those who prefer auditory learning.
+                <span className='inner-brief-content'>User-Centric Design:</span> The website's design prioritizes a clean, modern aesthetic while ensuring ease of navigation and accessibility for users across different devices and platforms.
               </p>
               <p>
-                <span className='inner-brief-content'>Inclusive Design:</span> Collaborated with educators and developers to create a platform 
-                that accommodates diverse learning styles, emphasizing accessibility features like adjustable font sizes and voice commands.
+                <span className='inner-brief-content'>Responsive & Mobile-First:</span> The website was built with a mobile-first approach, ensuring that it delivers a seamless experience for users, whether on desktop, tablet, or smartphone.
+              </p>
+              <p>
+                <span className='inner-brief-content'>Content Strategy:</span> I helped structure the site’s content to clearly highlight his vision, achievements, and key areas of focus, making it easy for visitors to explore his work in financial stability, innovation, and inclusion.
               </p>
             </div>
           </div>
+
           <div className="image-content">
             <video
-                  src={inclusilearn_video}
+                  src={ philip_video}
                   autoPlay
                   loop
                   muted
@@ -221,19 +217,14 @@ const Works = () => {
               Your browser does not support the video tag.
             </video>
             <div className="project-tags">
-              <span className="tag">React</span>
-              <span className="tag">API</span>
-              <span className="tag">lLama 3</span>
-              <span className="tag">Vercel</span>
-              <span className="tag">Python</span>
               <span className="tag">Figma</span>
-              <span className="tag">CI/CD</span>
-              <span className="tag">Miro</span>
+              <span className="tag">Photoshop</span>
+              <span className="tag">Elementor</span>
+              <span className="tag">WordPress</span>
             </div>
           </div>
 
 
-          */}
 
           {/* Quickinbox Section */}
           <div className="main-content"><hr />
