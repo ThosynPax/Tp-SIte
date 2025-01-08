@@ -7,6 +7,8 @@ import { BsLinkedin,
   } from 'react-icons/bs'; 
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer className="site-footer">
       <div className="wrapper">
@@ -24,7 +26,7 @@ const Footer = () => {
               <BsGithub />
             </a> 
           </div>
-        <p>&copy; 2024 Thosyn Pax. All rights reserved. <br />
+        <p>&copy; {currentYear} Thosyn Pax. All rights reserved. <br />
         Designed in  
         <a target="_blank" rel="noopener noreferrer"  href='https://figma.com/' style={{ color: "#fff", fontWeight: 500}} className='com-3'> Figma</a> and coded in 
         <a target="_blank" rel="noopener noreferrer" href='https://code.visualstudio.com/' style={{ color: "#fff", fontWeight: 500}} className='com-3'> Visual Studio Code </a> 
