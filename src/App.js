@@ -8,6 +8,7 @@ import Works from './components/Works';
 import Projects from './components/Projects';
 import Media from './components/media-kits';
 import Archives from './components/Archives';
+import Links from './components/Links';
 import './App.css';
 
 const App = () => {
@@ -22,6 +23,7 @@ const App = () => {
           <Route path="/projects" element={<Projects />} />
           <Route path="/media-kits" element={<Media />} />
           <Route path="/Archives" element={<Archives />} />
+          <Route path='/links' element={<Links />} />
           {/* Add more routes here as needed */}
         </Routes>
         <Footer />

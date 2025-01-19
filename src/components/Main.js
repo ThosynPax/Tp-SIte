@@ -35,7 +35,7 @@ const Main = () => {
                 Outside of my professional work, I lead a community focused on mentoring and supporting the next generation of African innovators. It’s not just a job for me, it's a passion to help build a better future through technology and creativity.
               </p>
               <p>
-                Let’s connect and see how we can bring your vision to life. <span className='inner-brief-content'><a target="_blank" href='https://cal.com/thosyn-pax/60min'>Book a Consultation</a> </span>
+                Let’s connect and see how we can bring your vision to life. <span className='inner-brief-content'><a target="_blank" href='https://thosynpax.mainstackbookings.com/p/678c40e929cc2436245a5b22'>Book a Consultation</a> </span>
               </p>
             </div>
 
