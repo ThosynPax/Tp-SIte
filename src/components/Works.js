@@ -88,6 +88,26 @@ const Works = () => {
           
           <div className="main-content"><hr />
         
+
+                 {/* Philip Ikeazor Website */}
+                 <div className="main-content"><hr />
+            <div className="brief-content">
+              <h1 className='intro-title' style={{ fontSize: 30 }}>Philip Ikeazor Website</h1>
+              <p>
+                I had the privilege of designing and developing the official website for Philip Ikeazor, a prominent leader in financial system stability and inclusion across Africa. The website was created with the goal of reflecting his innovative leadership, philanthropic efforts, and commitment to empowering economies through stability. Key features of the project include:
+              </p>
+              <p>
+                <span className='inner-brief-content'>User-Centric Design:</span> The website's design prioritizes a clean, modern aesthetic while ensuring ease of navigation and accessibility for users across different devices and platforms.
+              </p>
+              <p>
+                <span className='inner-brief-content'>Responsive & Mobile-First:</span> The website was built with a mobile-first approach, ensuring that it delivers a seamless experience for users, whether on desktop, tablet, or smartphone.
+              </p>
+              <p>
+                <span className='inner-brief-content'>Content Strategy:</span> I helped structure the site’s content to clearly highlight his vision, achievements, and key areas of focus, making it easy for visitors to explore his work in financial stability, innovation, and inclusion.
+              </p>
+            </div>
+          </div>
+          
             {/* MonieClips Section */}
             <div className="brief-content">
               <h1 className='intro-title' style={{ fontSize: 30 }}>Quickinbox</h1>
@@ -183,25 +203,6 @@ const Works = () => {
               <span className="tag">Figma</span>
               <span className="tag">Miro</span>
               <span className="tag">API</span>
-            </div>
-          </div>
-
-         {/* Philip Ikeazor Website */}
-          <div className="main-content"><hr />
-            <div className="brief-content">
-              <h1 className='intro-title' style={{ fontSize: 30 }}>Philip Ikeazor Website</h1>
-              <p>
-                I had the privilege of designing and developing the official website for Philip Ikeazor, a prominent leader in financial system stability and inclusion across Africa. The website was created with the goal of reflecting his innovative leadership, philanthropic efforts, and commitment to empowering economies through stability. Key features of the project include:
-              </p>
-              <p>
-                <span className='inner-brief-content'>User-Centric Design:</span> The website's design prioritizes a clean, modern aesthetic while ensuring ease of navigation and accessibility for users across different devices and platforms.
-              </p>
-              <p>
-                <span className='inner-brief-content'>Responsive & Mobile-First:</span> The website was built with a mobile-first approach, ensuring that it delivers a seamless experience for users, whether on desktop, tablet, or smartphone.
-              </p>
-              <p>
-                <span className='inner-brief-content'>Content Strategy:</span> I helped structure the site’s content to clearly highlight his vision, achievements, and key areas of focus, making it easy for visitors to explore his work in financial stability, innovation, and inclusion.
-              </p>
             </div>
           </div>
 
