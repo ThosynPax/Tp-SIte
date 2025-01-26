@@ -165,38 +165,6 @@ const Projects = () => {
                 </a>
               </td>
             </tr>
-          <tr>
-              <td className="year">2024</td>
-              <td>
-              Argent Storage
-              </td>
-              <td>
-                <div className="project-tags">
-                  <span className="tag">WP</span>
-                </div>
-              </td>
-              <td>
-              <a target="_blank" href="https://argentstoragebv.com/">
-              https://argentstoragebv.com/
-                </a>
-              </td>
-            </tr>
-            <tr>
-              <td className="year">2024</td>
-              <td>
-              tjonger Shipping
-              </td>
-              <td>
-                <div className="project-tags">
-                  <span className="tag">WP</span>
-                </div>
-              </td>
-              <td>
-              <a target="_blank" href="https://tjongershippingbv.com/">
-              https://tjongershippingbv.com/
-                </a>
-              </td>
-            </tr>
             <tr>
               <td className="year">2024</td>
               <td>
@@ -366,25 +334,6 @@ const Projects = () => {
               <a target="_blank" href="https://teklearn.org/">
               TekLearn
                  <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
-              </a>
-            </span>
-          </div>
-          <div className="project-row">
-            <span className="project-year">2024</span>
-            <span className="project-name">
-              <a target="_blank" href="https://argentstoragebv.com/">
-              Argent Storage
-                <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
-              </a>
-            </span>
-          </div>
-
-          <div className="project-row">
-            <span className="project-year">2024</span>
-            <span className="project-name">
-              <a target="_blank" href="https://tjongershippingbv.nl/">
-              tjonger Shipping
-                <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
               </a>
             </span>
           </div>
