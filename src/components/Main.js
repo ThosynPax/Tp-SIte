@@ -10,34 +10,33 @@ const Main = () => {
       <br />
       <div className="wrapper">
         <div className="main-grid">
-          <div className="main-content">
-            <header className="intro">
-              <h1 className="intro-title">Hey! I'm Thosyn Pax</h1>
-              <h4 className="intro-current-job">
-                I am a Software Engineer & UI/UX Engineer, aspiring Product Manager
-              </h4>
-            </header>
-            <div className="brief-content">
-              <p>
-                I love bringing creative ideas to life as real products. 
-                With more than 9 years of experience in the tech industry, 
-                I've worked in UX design, product management, and software engineering.
-              </p>
-              <p>
-                <span className='inner-brief-content'>My goal is simple:</span> To help you create products that not only meet user needs but also stand out in the tech industry and in the market.
-              </p>
-              <p>
-                Throughout my career, I’ve worked with all kinds of clients, 
-                from new startups to well-known companies,
-                helping them tackle challenges in product development and user experience. I believe in working closely with my clients, making sure every project fits their specific needs.
-              </p>
-              <p>
-                Outside of my professional work, I lead a community focused on mentoring and supporting the next generation of African innovators. It’s not just a job for me, it's a passion to help build a better future through technology and creativity.
-              </p>
-              <p>
-                Let’s connect and see how we can bring your vision to life. <span className='inner-brief-content'><a target="_blank" href='https://thosynpax.mainstackbookings.com/p/678c40e929cc2436245a5b22'>Book a Consultation</a> </span>
-              </p>
-            </div>
+        <div className="main-content">
+  <header className="intro">
+    <h1 className="intro-title">Hey! I'm Thosyn Pax</h1>
+    <h4 className="intro-current-job">
+      I'm a Software Engineer & UI/UX Creator, exploring new ways to build products.
+    </h4>
+  </header>
+  <div className="brief-content">
+    <p>
+      I love experimenting with creative ideas and turning them into real, working products.
+      With over 9 years in tech, I’ve dabbled in UX design, software engineering, and product management.
+    </p>
+    <p>
+      <span className='inner-brief-content'>My goal is simple:</span> I want to help you build products that are not just useful, but also unique and innovative in the tech world.
+    </p>
+    <p>
+      I’ve worked with all kinds of clients, from startups to established companies, helping them solve problems with user experience and product development.
+      I focus on understanding your needs, so each project feels custom-made.
+    </p>
+    <p>
+      Outside of work, I lead a community where I mentor and support the next wave of African innovators. This isn't just a job for me—it's my passion to shape a brighter future through creativity and tech.
+    </p>
+    <p>
+      Let’s connect and explore how we can make your ideas come to life. <span className='inner-brief-content'><a target="_blank" href='https://thosynpax.mainstackbookings.com/p/678c40e929cc2436245a5b22'>Book a Consultation</a></span>
+    </p>
+  </div>
+
 
            
 
