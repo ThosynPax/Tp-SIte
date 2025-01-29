@@ -84,29 +84,6 @@ const Works = () => {
       <br />
       <div className="wrapper"> <h1 className="intro-title" style={{ lineHeight: '0.8' }}>Works</h1>
         <div className="main-grid">
-
-          
-          <div className="main-content"><hr />
-        
-
-                 {/* Philip Ikeazor Website */}
-                 <div className="main-content"><hr />
-            <div className="brief-content">
-              <h1 className='intro-title' style={{ fontSize: 30 }}>Philip Ikeazor Website</h1>
-              <p>
-                I had the privilege of designing and developing the official website for Philip Ikeazor, a prominent leader in financial system stability and inclusion across Africa. The website was created with the goal of reflecting his innovative leadership, philanthropic efforts, and commitment to empowering economies through stability. Key features of the project include:
-              </p>
-              <p>
-                <span className='inner-brief-content'>User-Centric Design:</span> The website's design prioritizes a clean, modern aesthetic while ensuring ease of navigation and accessibility for users across different devices and platforms.
-              </p>
-              <p>
-                <span className='inner-brief-content'>Responsive & Mobile-First:</span> The website was built with a mobile-first approach, ensuring that it delivers a seamless experience for users, whether on desktop, tablet, or smartphone.
-              </p>
-              <p>
-                <span className='inner-brief-content'>Content Strategy:</span> I helped structure the site’s content to clearly highlight his vision, achievements, and key areas of focus, making it easy for visitors to explore his work in financial stability, innovation, and inclusion.
-              </p>
-            </div>
-          </div>
           
             {/* MonieClips Section */}
             <div className="brief-content">
@@ -137,7 +114,7 @@ const Works = () => {
                 and reliable bulk email delivery, with a 20% boost in customer retention.
               </p>
             </div>
-          </div>
+        
 
           <div className="image-content">
             <video
@@ -157,6 +134,44 @@ const Works = () => {
             </div>
           </div>
 
+
+                 {/* Philip Ikeazor Website */}
+                <div className="main-content"><hr />
+                  <div className="brief-content">
+                    <h1 className='intro-title' style={{ fontSize: 30 }}>Philip Ikeazor Website</h1>
+                    <p>
+                      I had the privilege of designing and developing the official website for Philip Ikeazor, a prominent leader in financial system stability and inclusion across Africa. The website was created with the goal of reflecting his innovative leadership, philanthropic efforts, and commitment to empowering economies through stability. Key features of the project include:
+                    </p>
+                    <p>
+                      <span className='inner-brief-content'>User-Centric Design:</span> The website's design prioritizes a clean, modern aesthetic while ensuring ease of navigation and accessibility for users across different devices and platforms.
+                    </p>
+                    <p>
+                      <span className='inner-brief-content'>Responsive & Mobile-First:</span> The website was built with a mobile-first approach, ensuring that it delivers a seamless experience for users, whether on desktop, tablet, or smartphone.
+                    </p>
+                    <p>
+                      <span className='inner-brief-content'>Content Strategy:</span> I helped structure the site’s content to clearly highlight his vision, achievements, and key areas of focus, making it easy for visitors to explore his work in financial stability, innovation, and inclusion.
+                    </p>
+                  </div>
+              </div>
+
+              <div className="image-content">
+            <video
+                  src={ philip_video}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  style={{ width: '100%', height: 'auto' }}
+                >
+              Your browser does not support the video tag.
+            </video>
+            <div className="project-tags">
+              <span className="tag">Figma</span>
+              <span className="tag">Photoshop</span>
+              <span className="tag">Elementor</span>
+              <span className="tag">WordPress</span>
+            </div>
+          </div>
           {/* TecPay Section */}
           <div className="main-content"><hr />
             <div className="brief-content">
@@ -205,26 +220,6 @@ const Works = () => {
               <span className="tag">API</span>
             </div>
           </div>
-
-          <div className="image-content">
-            <video
-                  src={ philip_video}
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  style={{ width: '100%', height: 'auto' }}
-                >
-              Your browser does not support the video tag.
-            </video>
-            <div className="project-tags">
-              <span className="tag">Figma</span>
-              <span className="tag">Photoshop</span>
-              <span className="tag">Elementor</span>
-              <span className="tag">WordPress</span>
-            </div>
-          </div>
-
 
 
           {/* Quickinbox Section */}
