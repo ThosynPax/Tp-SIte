@@ -58,9 +58,9 @@ const Header = () => {
               <li><a href="/works" onClick={toggleMenu}>Works</a></li>
               <li><a href="/projects" onClick={toggleMenu}>Projects</a></li>
               <li><a href="/bytes" onClick={toggleMenu}>Billion Bytes</a></li>
-              <li><a href="https://www.afrihealscareers.com/" rel="noreferrer" target="_blank" onClick={toggleMenu}>Mentoring</a></li>
               <li><a href="https://thosynpax.gumroad.com/" rel="noreferrer" target="_blank" onClick={toggleMenu}>Shop</a></li>
-         {/*  <li><a href="https://paxschool.africa/" rel="noreferrer" target="_blank" onClick={toggleMenu}>Pax School</a></li> */} 
+              <li><a href="https://trail.thosynpax.com/" rel="noreferrer" target="_blank" onClick={toggleMenu}> Pax Trail</a></li>
+              <li><a href="https://www.afrihealscareers.com/" rel="noreferrer" target="_blank" onClick={toggleMenu}>Mentoring</a></li>
          {/*     <li><a href="/mvpfast" rel="noreferrer" target="_blank" onClick={toggleMenu}>mvpfa.st</a></li> */}
               <li><a href="/media-kits" onClick={toggleMenu}>Media Kits</a></li>
              
