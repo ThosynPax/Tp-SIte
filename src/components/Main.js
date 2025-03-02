@@ -45,9 +45,9 @@ const Main = () => {
               </h4>
             </header>
             {/* Image shown only on mobile */}
-<div className="image-content mobile-only">
-  <img src={TP} alt="Thosyn Pax" />
-</div>
+            <div className="image-content2 mobile-only">
+              <img src={TP} alt="Thosyn Pax" />
+            </div>
             <div className="brief-content">
               <p>
                 I specialize in building intuitive, high-performing web and mobile applications, combining technical expertise with product strategy.
@@ -180,21 +180,25 @@ const Main = () => {
             }
           /* Hide the new image by default on larger screens */
           .mobile-only {
-            display: none;
+            display: none !important;
           }
 
           /* Show the image below the header only on mobile */
           @media (max-width: 768px) {
             .mobile-only {
-              display: block;
+              display: block !important;
               text-align: center;
               margin-top: 10px;
+            }
+              
+
+            .image-content {
+            display: none;
             }
 
               .mobile-only img {
                 width: 100%;
                 height: auto;
-                border-radius: 10px;
               }
           }
 
