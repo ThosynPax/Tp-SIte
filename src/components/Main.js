@@ -44,6 +44,10 @@ const Main = () => {
                 I'm a Frontend/Mobile Engineer & UI/UX Unicorn and Product Manager
               </h4>
             </header>
+            {/* Image shown only on mobile */}
+<div className="image-content mobile-only">
+  <img src={TP} alt="Thosyn Pax" />
+</div>
             <div className="brief-content">
               <p>
                 I specialize in building intuitive, high-performing web and mobile applications, combining technical expertise with product strategy.
@@ -117,7 +121,7 @@ const Main = () => {
                           Frontend Developer Resume
                         </a>
                         <a
-                          href="https://docs.google.com/document/d/1gI2NzJfgiO4JLRO-uvO3pMCeOrpVw_p1Bo3FzjGBhco/edit?usp=sharing  "
+                          href="https://docs.google.com/document/d/1gI2NzJfgiO4JLRO-uvO3pMCeOrpVw_p1Bo3FzjGBhco/edit?usp=sharing"
                           target="_blank"
                           rel="noopener noreferrer"
                           style={{
@@ -146,12 +150,12 @@ const Main = () => {
                   </li>
                 </ul>
               </div>
-              <h2 className="skills-heading">Skills I Have Acquired During My Tech Journey</h2>
+              
             </div>
 
              {/* Tools and Skills */}
           <div className="skills">
-            
+          <h2 className="skills-heading">Skills & Tools I Have Acquired During My Tech Journey</h2>
             <div className="skills-grid">
               {skills.map((skill, index) => (
                 <div key={index} className="skill-item">
@@ -170,10 +174,31 @@ const Main = () => {
           {/* Styles */}
           <style jsx>{`
             .skills {
-              text-align: center;
+              text-align: left;
               padding: 2rem;
               color: white;
             }
+          /* Hide the new image by default on larger screens */
+          .mobile-only {
+            display: none;
+          }
+
+          /* Show the image below the header only on mobile */
+          @media (max-width: 768px) {
+            .mobile-only {
+              display: block;
+              text-align: center;
+              margin-top: 10px;
+            }
+
+              .mobile-only img {
+                width: 100%;
+                height: auto;
+                border-radius: 10px;
+              }
+          }
+
+
             .skills-heading {
               font-size: 1.8rem;
               margin-bottom: 1rem;
