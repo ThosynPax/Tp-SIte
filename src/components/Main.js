@@ -68,6 +68,17 @@ const Main = () => {
                     </a>
                   </li>
 
+                  <li style={{ fontWeight: "bold", listStyle: "none" }}>
+                    <a
+                      href="https://dribbble.com/ThosynPax"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{ textDecoration: "none", color: "#C2C2C2", fontWeight: "300", textDecoration: "underline", fontSize: "16px" }}
+                    >
+                      Design Portfolio
+                    </a>
+                  </li>
+
                   {/* Resume Download Link (Popup Trigger) */}
                   <li style={{ fontWeight: "bold", listStyle: "none", position: "relative" }}>
                     <a
