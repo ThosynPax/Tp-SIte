@@ -145,6 +145,20 @@ const Main = () => {
                         >
                           Product Manager Resume
                         </a>
+                        <a
+                          href="https://docs.google.com/document/d/18o56vJ7Tv4piNTTTE-bI_sbPltaoz1_ygxQDvWFAnsE/edit?usp=sharing"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          style={{
+                            display: "block",
+                            color: "#fff",
+                            fontWeight: "300",
+                            textDecoration: "none",
+                            padding: "8px 0",
+                          }}
+                        >
+                         Product & Industrial Designer Resume
+                        </a>
                       </div>
                     )}
                   </li>
