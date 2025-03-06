@@ -84,56 +84,6 @@ const Works = () => {
       <br />
       <div className="wrapper"> <h1 className="intro-title" style={{ lineHeight: '0.8' }}>Works</h1>
         <div className="main-grid">
-          
-            {/* MonieClips Section */}
-            <div className="brief-content">
-              <h1 className='intro-title' style={{ fontSize: 30 }}>Quickinbox</h1>
-              <p>
-              As a Software Engineer and UI/UX Engineer for Quickinbox, 
-              a bulk email platform, my focus was on creating an efficient 
-              system for sending and managing large volumes of emails. 
-              I worked on optimizing the platform for businesses requiring 
-              seamless communication with vast audiences.
-               Key contributions included:
-              </p>
-              <p>
-                <span className='inner-brief-content'>Scalability:</span> Led the development team to 
-                ensure the platform could handle millions of emails daily without downtime, enhancing 
-                database performance for speed and reliability.
-              </p>
-              <p>
-                <span className='inner-brief-content'>Feature Development:</span> Spearheaded the development of advanced filtering,
-                 automated list management, and personalized bulk email features to improve user engagement.
-              </p>
-              <p>
-                <span className='inner-brief-content'>User Testing and Feedback:</span> Conducted user interviews and A/B testing to
-                 refine the platform’s user interface, ensuring a smooth and intuitive experience.
-              </p>
-              <p>
-                <span className='inner-brief-content'>Outcome:</span> Quickinbox became a preferred tool for businesses needing fast 
-                and reliable bulk email delivery, with a 20% boost in customer retention.
-              </p>
-            </div>
-        
-
-          <div className="image-content">
-            <video
-              src={quickinbox_video}
-              autoPlay
-              loop
-              muted
-              playsInline
-              style={{ width: '100%', height: 'auto' }}
-            >
-              Your browser does not support the video tag.
-            </video>
-            <div className="project-tags">
-              <span className="tag">PHP</span>
-              <span className="tag">React</span>
-              <span className="tag">MySQL</span>
-            </div>
-          </div>
-
 
                  {/* Philip Ikeazor Website */}
                 <div className="main-content"><hr />
@@ -177,10 +127,7 @@ const Works = () => {
             <div className="brief-content">
               <h1 className='intro-title' style={{ fontSize: 30 }}>TecPay</h1>
               <p>
-              As a Software Engineer and UI/UX Engineer for TecPay, a mobile banking app,
-               I was instrumental in managing the app's end-to-end development,
-                ensuring seamless integration with financial systems while
-                 prioritizing security. Key responsibilities included:
+              As a Technical Product Designer and UX Engineer working on a mobile banking app, I played a key role in overseeing the app’s end-to-end development. I ensured seamless integration with financial systems while prioritizing security and an optimal user experience. My key responsibilities included:
               </p>
               <p>
                 <span className='inner-brief-content'>API Management:</span> Led the integration of various payment methods,
@@ -227,10 +174,7 @@ const Works = () => {
             <div className="brief-content">
               <h1 className='intro-title' style={{ fontSize: 30 }}>Phillioo</h1>
               <p>
-              As a Software Engineer and UI/UX Engineer for Phillioo, a dating app 
-              currently in development, my focus is on delivering a smooth and intuitive
-               user experience while building features that foster safe and meaningful connections.
-                My contributions include:
+              As a Technical Product Designer and UX Engineer, a dating app currently in development, I focus on creating a seamless and intuitive user experience while designing features that promote safe and meaningful connections. My contributions include:
               </p>
               <p>
                 <span className='inner-brief-content'>Feature Prioritization:</span> Designed and implemented core functionalities
@@ -271,6 +215,55 @@ const Works = () => {
               <span className="tag">Node js</span>
             </div>
           </div>
+
+          {/* MonieClips Section */}
+          <div className="brief-content">
+              <h1 className='intro-title' style={{ fontSize: 30 }}>Quickinbox</h1>
+              <p>
+              A bulk email platform, my focus was on creating an efficient 
+              system for sending and managing large volumes of emails. 
+              I worked on optimizing the platform for businesses requiring 
+              seamless communication with vast audiences.
+               Key contributions included:
+              </p>
+              <p>
+                <span className='inner-brief-content'>Scalability:</span> Led the development team to 
+                ensure the platform could handle millions of emails daily without downtime, enhancing 
+                database performance for speed and reliability.
+              </p>
+              <p>
+                <span className='inner-brief-content'>Feature Development:</span> Spearheaded the development of advanced filtering,
+                 automated list management, and personalized bulk email features to improve user engagement.
+              </p>
+              <p>
+                <span className='inner-brief-content'>User Testing and Feedback:</span> Conducted user interviews and A/B testing to
+                 refine the platform’s user interface, ensuring a smooth and intuitive experience.
+              </p>
+              <p>
+                <span className='inner-brief-content'>Outcome:</span> Quickinbox became a preferred tool for businesses needing fast 
+                and reliable bulk email delivery, with a 20% boost in customer retention.
+              </p>
+            </div>
+        
+
+          <div className="image-content">
+            <video
+              src={quickinbox_video}
+              autoPlay
+              loop
+              muted
+              playsInline
+              style={{ width: '100%', height: 'auto' }}
+            >
+              Your browser does not support the video tag.
+            </video>
+            <div className="project-tags">
+              <span className="tag">PHP</span>
+              <span className="tag">React</span>
+              <span className="tag">MySQL</span>
+            </div>
+          </div>
+
           <h2>
            <a style={{ color: "#fff" }} href="/projects" className="project-link">
               View Other Projects</a>

@@ -41,7 +41,7 @@ const Main = () => {
             <header className="intro">
               <h1 className="intro-title">Hey! I'm Thosyn Pax</h1>
               <h4 className="intro-current-job">
-                I'm a Frontend/Mobile Engineer & UI/UX Unicorn and Product Manager
+                I'm a Technical Product Designer and UX Engineer
               </h4>
             </header>
             {/* Image shown only on mobile */}
@@ -50,8 +50,8 @@ const Main = () => {
             </div>
             <div className="brief-content">
               <p>
-                I specialize in building intuitive, high-performing web and mobile applications, combining technical expertise with product strategy.
-                <p>I’m currently open to Frontend Developer and Product Manager roles. Let’s connect and create impactful products together.</p>
+              I specialize in designing and developing intuitive, high-performing web and mobile applications, seamlessly blending UX design with engineering expertise.
+                <p>I'm currently open to opportunities as a Technical Product Designer and UX Engineer. Let’s connect and build impactful digital experiences together.</p>
               </p>
 
               {/* New section for partnerships */}
@@ -79,88 +79,15 @@ const Main = () => {
                     </a>
                   </li>
 
-                  {/* Resume Download Link (Popup Trigger) */}
-                  <li style={{ fontWeight: "bold", listStyle: "none", position: "relative" }}>
+                  <li style={{ fontWeight: "bold", listStyle: "none" }}>
                     <a
-                      href="#"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        setIsOpen(!isOpen);
-                      }}
-                      style={{
-                        textDecoration: "underline",
-                        color: "#C2C2C2",
-                        fontWeight: "300",
-                        fontSize: "16px",
-                        cursor: "pointer",
-                      }}
+                      href="https://docs.google.com/document/d/1WSfjQNOd7sAHEStPzUVZ4tTNzuiWE0FkSJ8chuWprn0/edit?usp=sharing"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{ textDecoration: "none", color: "#C2C2C2", fontWeight: "300", textDecoration: "underline", fontSize: "16px" }}
                     >
-                      Download My Resume
+                      Download Resume
                     </a>
-
-                    {/* Popup Box */}
-                    {isOpen && (
-                      <div
-                        style={{
-                          position: "absolute",
-                          top: "30px",
-                          left: "0",
-                          background: "#222",
-                          padding: "10px",
-                          borderRadius: "8px",
-                          boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.3)",
-                          zIndex: "100",
-                          minWidth: "200px",
-                          fontWeight: "300",
-                          transform: isOpen ? "translateY(0px)" : "translateY(-10px)",
-                          opacity: isOpen ? "1" : "0",
-                          transition: "transform 0.3s ease-in-out, opacity 0.3s ease-in-out",
-                        }}
-                      >
-                        <a
-                          href="https://docs.google.com/document/d/1eBlsJbdckGyW0Lx8Vz3E9fcHOb53X0XWr06fh1VSqoI/edit?usp=sharing"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          style={{
-                            display: "block",
-                            color: "#fff",
-                            fontWeight: "300",
-                            textDecoration: "none",
-                            padding: "8px 0",
-                          }}
-                        >
-                          Frontend Developer Resume
-                        </a>
-                        <a
-                          href="https://docs.google.com/document/d/1gI2NzJfgiO4JLRO-uvO3pMCeOrpVw_p1Bo3FzjGBhco/edit?usp=sharing"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          style={{
-                            display: "block",
-                            color: "#fff",
-                            fontWeight: "300",
-                            textDecoration: "none",
-                            padding: "8px 0",
-                          }}
-                        >
-                          Product Manager Resume
-                        </a>
-                        <a
-                          href="https://docs.google.com/document/d/18o56vJ7Tv4piNTTTE-bI_sbPltaoz1_ygxQDvWFAnsE/edit?usp=sharing"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          style={{
-                            display: "block",
-                            color: "#fff",
-                            fontWeight: "300",
-                            textDecoration: "none",
-                            padding: "8px 0",
-                          }}
-                        >
-                         Product & Industrial Designer Resume
-                        </a>
-                      </div>
-                    )}
                   </li>
 
                   <li style={{ fontWeight: "bold", listStyle: "none" }}>
