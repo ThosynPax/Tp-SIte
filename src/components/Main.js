@@ -70,7 +70,7 @@ const Main = () => {
 
                   <li style={{ fontWeight: "bold", listStyle: "none" }}>
                     <a
-                      href="https://dribbble.com/ThosynPax"
+                      href="https://www.behance.net/thosyn_pax"
                       target="_blank"
                       rel="noopener noreferrer"
                       style={{ textDecoration: "none", color: "#C2C2C2", fontWeight: "300", textDecoration: "underline", fontSize: "16px" }}
