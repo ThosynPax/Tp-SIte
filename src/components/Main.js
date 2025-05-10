@@ -221,7 +221,9 @@ const Main = () => {
           `}</style>
         </div>
          
-
+        <br />
+        <br />
+        <br />
         <div className="full-width-black">
             <div className="black-section">
                 <section className="content-section container">
@@ -237,8 +239,8 @@ const Main = () => {
                     <h2 className="roles-grid">Current Roles & Impact</h2><br />
                       <ul className="description-list">
                           <li>
-                            <b>Commercial Skills</b><br />
-                            UX Engineer, Technical Product Designer
+                            <b>Afriheals Careers</b><br />
+                            Mentor & Tech Instructor
                           </li>
                           <li>
                             <b>The Pax Company</b><br />
