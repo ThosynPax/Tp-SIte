@@ -41,7 +41,7 @@ body {
 }
 
 .intro-title {
-  font-family: "Montserrat";
+  font-family: "Noto Serif Display";
   font-weight: 600;
   font-style: bold;
   color: #F4D4B7;
@@ -50,16 +50,15 @@ body {
 }
 
 .intro-current-job {
-  font-family: "Inter";
+  font-family: "Montserrat";
   font-weight: 500;
-  font-style: normal;
   color: #fff;
   margin-top: -30px;
   font-size: 60px;
 }
 
 .brief-content {
-  font-family: "Inter";
+  font-family: "Montserrat";
   color: #ccc;
   font-size: 25px;
   line-height: 200%;
@@ -103,7 +102,7 @@ body {
   margin: 0;
   display: flex;
   justify-content: flex-start;
-  font-family: "Inter";
+  font-family: "Montserrat";
   color: #fff;
 }
 
@@ -173,7 +172,7 @@ body {
     text-align: left;
     padding-top: 15px;
     padding-bottom: 15px;
-    font-family: "Inter";
+    font-family: "Montserrat";
     color: #000;
     font-size: 15px;
   }
@@ -297,13 +296,13 @@ body {
   text-transform: none;
   color: #fff;
   font-weight: 300;
-  font-family: "Inter";
+  font-family: "Montserrat";
 }
 
 .other-site-nav-bytes ul li a {
   text-decoration: none;
   text-transform: none;
-  font-family: "Inter";
+  font-family: "Montserrat";
   font-size: 19px;
   color: #fcfaf0 ;
   display: inline-block;
@@ -347,7 +346,7 @@ body {
   display: flex;
   position: absolute;
   bottom: 40%;
-  font-family: "Inter";
+  font-family: "Montserrat";
 }
 
 .site-nav ul li a {
@@ -370,7 +369,7 @@ body {
   text-align: left;
   padding-top: 25px;
   padding-bottom: 15px; 
-  font-family: "Inter";
+  font-family: "Montserrat";
   color: #fff;
   font-size: 15px;
 }
@@ -460,7 +459,7 @@ body {
   border: none;
   color: #fff;
   font-size: 2rem;
-  cursor: pointer;
+  cursor: poMontserrat;
 }
 
 .hamburger-icon {
@@ -472,7 +471,7 @@ body {
   border: none;
   color: #fff;
   font-size: 2rem;
-  cursor: pointer;
+  cursor: poMontserrat;
 }
 
 .project-status.paused {
@@ -501,7 +500,7 @@ body {
   font-size: 18px;
   line-height: 1.6;
   margin-bottom: 15px;
-  font-family: "Inter";
+  font-family: "Montserrat";
   font-weight: 300;
   color: #fff;
 }
@@ -563,6 +562,7 @@ body {
 .roles-grid {
   display: flex;
   flex-direction: column;
+  font-family: "Noto Serif Display";
   gap: 2rem;
   margin-top: 1.5rem;
   font-size: 40px;
@@ -578,4 +578,7 @@ body {
 }
 
 
+.intro {
+  margin-top: 120px;
+}
 
