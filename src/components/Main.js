@@ -111,9 +111,6 @@ const Main = () => {
           }
         `}
       </style>
-      <br />
-      <br />
-      <br />
       <div className="wrapper">
         <div className="main-grid">
           <div className="main-content">

@@ -467,7 +467,7 @@ body {
   position: absolute;
   top: 1.5rem;
   right: 1.5rem; /* Aligns the icon to the right */
-  display: none;
+  display: block;
   background: none;
   border: none;
   color: #fff;
