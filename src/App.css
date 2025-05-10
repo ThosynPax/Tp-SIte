@@ -1,18 +1,21 @@
 /*  Pax's CSS */
 
 @charset "UTF-8";
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Serif+Display:ital,wght@0,100..900;1,100..900&display=swap');
 
-@font-face {
-  font-family: 'MyCustomFont';
-  src: url('./assets/fonts/AnnieUseYourTelescope-Regular.ttf') format('truetype');
-  font-style: normal;
-}
+
 
 body {
-  background-color: #000 !important;
-  border-top: 20px solid #fff !important;
-  font-family: "MyCustomFont";
+  background-color: #008080 !important;
+  border-top: 20px solid #F4D4B7 !important;
+  font-family: "Montserrat";
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 .site-header {
@@ -38,40 +41,41 @@ body {
 }
 
 .intro-title {
-  font-family: "MyCustomFont";
-  font-weight: 400;
-  font-style: normal;
-  color: #fff;
+  font-family: "Montserrat";
+  font-weight: 600;
+  font-style: bold;
+  color: #F4D4B7;
   font-size: 96px;
   margin-top: 0;
 }
 
 .intro-current-job {
   font-family: "Inter";
-  font-weight: 300;
-  font-style: italic;
-  color: #C2C2C2;
+  font-weight: 500;
+  font-style: normal;
+  color: #fff;
   margin-top: -30px;
-  font-size: 20px;
+  font-size: 60px;
 }
 
 .brief-content {
   font-family: "Inter";
-  color: #C2C2C2;
-  font-size: 18px;
-  line-height: 150%;
-  font-weight: 300;
+  color: #ccc;
+  font-size: 25px;
+  line-height: 200%;
+  font-weight: 400;
   margin-top: 50px;
+   margin-bottom: 120px;
 }
 
 .inner-brief-content {
-  font-family: "MyCustomFont";
+  font-family: "Montserrat";
   color: #fff;
   font-size: 27px;
 }
 
 .inner-brief-content a {
-  font-family: "MyCustomFont";
+  font-family: "Montserrat";
   color: #fff;
   font-size: 27px;
   text-decoration: none;
@@ -79,7 +83,7 @@ body {
 }
 
 .com-1, .com-2, .com-3 {
-  font-family: "MyCustomFont";
+  font-family: "Montserrat";
   color: #fcfaf0;
   font-size: 25px;
   text-transform: none;
@@ -88,7 +92,9 @@ body {
 }
 
 .com-3 {
-  font-size: 25px;
+  font-size: 14px;
+  font-style: italic;
+  color: #F4D4B7 !important;
 }
 
 .site-nav ul {
@@ -108,7 +114,7 @@ body {
 .site-nav ul li a {
   position: relative;
   text-decoration: none;
-  font-family: "MyCustomFont";
+  font-family: "Montserrat";
   font-size: 18px;
   color: #fff !important;
   padding: 10px 0;
@@ -152,9 +158,6 @@ body {
 
 
 @media (max-width: 800px) {
-  .site-body {
-    margin-bottom: 150px; /* Adjust as needed */
-  }
 
   .main-grid {
     display: grid;
@@ -171,7 +174,7 @@ body {
     padding-top: 15px;
     padding-bottom: 15px;
     font-family: "Inter";
-    color: #6c6d70;
+    color: #000;
     font-size: 15px;
   }
 
@@ -194,8 +197,9 @@ body {
 
   /* Adjust margins for better readability */
   .intro-current-job {
-    font-size: 16px;
+    font-size: 36px;
     margin-top: 0;
+    margin-bottom: 120px;
   }
 
   .inner-brief-content {
@@ -224,7 +228,7 @@ body {
 
 .brief-content {
   padding: 10px;
-  font-size: 16px;
+  font-size: 20px;
 }
 }
 
@@ -268,7 +272,7 @@ body {
   text-decoration: none;
   text-transform: none;
   color: #fff;
-  font-family: "MyCustomFont";
+  font-family: "Montserrat";
 }
 
 .other-site-nav {
@@ -315,7 +319,7 @@ body {
 .other-site-nav ul li a {
   text-decoration: underline;
   text-transform: none;
-  font-family: "MyCustomFont";
+  font-family: "Montserrat";
   font-size: 20px;
   color: #fcfaf0 ;
   display: inline-block;
@@ -349,7 +353,7 @@ body {
 .site-nav ul li a {
   text-decoration: none !important;
   text-transform: none;
-  font-family: "MyCustomFont";
+  font-family: "Montserrat";
   color: #000 ;
   font-size: 25px;
   font-weight: 300;
@@ -369,12 +373,12 @@ body {
   font-family: "Inter";
   color: #fff;
   font-size: 15px;
-  background-color: #000;
 }
 
 .social-icons {
   display: flex;
   gap: 10px;
+  color: #fff;
 }
 
 .social-icons a {
@@ -463,7 +467,7 @@ body {
   position: absolute;
   top: 1.5rem;
   right: 1.5rem; /* Aligns the icon to the right */
-  display: block;
+  display: none;
   background: none;
   border: none;
   color: #fff;
@@ -506,11 +510,72 @@ body {
   color: #ffe666; 
   text-decoration: none;
   font-weight: bold;
-  font-family: "MyCustomFont";
+  font-family: "Montserrat";
 
 }
 
 .partnership-link:hover {
   text-decoration: underline;
 }
+
+.description-list {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  column-gap: 1rem;
+  row-gap: 1.5rem;
+   list-style: none;
+  padding-left: 0;
+}
+
+@media (min-width: 768px) {
+  .description-list {
+    grid-template-columns: repeat(3, 1fr);  
+    column-gap: 1rem;
+    row-gap: 1.5rem;
+  }
+}
+
+.full-width-black {
+  background-color: #000;
+  color: #fff;
+  width: 100vw;         
+  margin-left: calc(-50vw + 50%);
+  padding: 2rem 1rem;
+}
+
+.content-section {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.black-section {
+  background-color: #000;
+  color: #fff;
+  padding: 2rem 1rem;
+  width: 100%;
+}
+
+.container {
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.roles-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 1.5rem;
+  font-size: 40px;
+  font-weight: 400;
+}
+
+/* Responsive layout */
+@media (min-width: 768px) {
+  .roles-grid {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+
 

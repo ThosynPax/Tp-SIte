@@ -32,6 +32,85 @@ const Main = () => {
 
   return (
     <main className="site-body">
+       <style>
+        {`
+          .content-section {
+            margin-bottom: 3rem;
+          }
+
+          .title {
+            font-size: 3.5rem;
+            font-weight: bold;
+            color: #fff;
+            margin-bottom: 1rem;
+            font-family: "AnnieUseYourTelescope
+          }
+
+          .description-list {
+            font-size: 1.1rem;
+            color: #fff;
+            line-height: 1.8rem;
+            margin-bottom: 2rem;
+            font-family: 'Montserrat';
+          }
+
+          .links a {
+            font-size: 1.1rem;
+            color: #ffe666;
+            text-decoration: none;
+            margin-right: 1.5rem;
+            position: relative;
+            padding-bottom: 2px;
+          }
+
+          .links a:hover {
+            border-bottom: 2px solid #ffe666;
+          }
+
+          .section-image img {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 8px;
+            margin: 2rem 0;
+          }
+
+          .subtitle {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: #fff;
+          }
+
+          .links-section {
+            margin-bottom: 3rem;
+          }
+
+          .photographs img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+            margin: 1rem 0;
+          }
+
+          @media (max-width: 768px) {
+            .wrapper {
+              padding: 1rem;
+            }
+
+            .title {
+              font-size: 2rem;
+            }
+
+            .subtitle {
+              font-size: 1.5rem;
+            }
+
+            .description {
+              font-size: 1rem;
+            }
+          }
+        `}
+      </style>
       <br />
       <br />
       <br />
@@ -39,86 +118,18 @@ const Main = () => {
         <div className="main-grid">
           <div className="main-content">
             <header className="intro">
-              <h1 className="intro-title">Hey! I'm Thosyn Pax</h1>
-              <h4 className="intro-current-job">
-                I'm a Technical Product Designer and UX Engineer
-              </h4>
+              <h1 className="intro-title">Hey 👋 I'm Thosyn Pax</h1>
+              <h3 className="intro-current-job">
+               A Technical Product Designer, UX Engineer, and Startup Product Architect
+              </h3>
             </header>
             {/* Image shown only on mobile */}
             <div className="image-content2 mobile-only">
               <img src={TP} alt="Thosyn Pax" />
             </div>
-            <div className="brief-content">
-              <p>
-              I specialize in designing and developing intuitive, high-performing web and mobile applications, seamlessly blending UX design with engineering expertise.
-                <p>I'm currently open to opportunities as a Technical Product Designer and UX Engineer. Let’s connect and build impactful digital experiences together.</p>
-              </p>
-
-              {/* New section for partnerships */}
-              <div className="partnerships">
-                <ul className="partnerships-list">
-                  <li style={{ fontWeight: "bold", listStyle: "none" }}>
-                    <a
-                      href="https://www.thosynpax.com/works"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      style={{ textDecoration: "none", color: "#C2C2C2", fontWeight: "300", textDecoration: "underline", fontSize: "16px" }}
-                    >
-                      View My Work
-                    </a>
-                  </li>
-
-                  <li style={{ fontWeight: "bold", listStyle: "none" }}>
-                    <a
-                      href="https://www.behance.net/thosyn_pax"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      style={{ textDecoration: "none", color: "#C2C2C2", fontWeight: "300", textDecoration: "underline", fontSize: "16px" }}
-                    >
-                      Design Portfolio
-                    </a>
-                  </li>
-
-                  <li style={{ fontWeight: "bold", listStyle: "none" }}>
-                    <a
-                      href="https://docs.google.com/document/d/1WSfjQNOd7sAHEStPzUVZ4tTNzuiWE0FkSJ8chuWprn0/edit?usp=sharing"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      style={{ textDecoration: "none", color: "#C2C2C2", fontWeight: "300", textDecoration: "underline", fontSize: "16px" }}
-                    >
-                      Download Resume
-                    </a>
-                  </li>
-
-                  <li style={{ fontWeight: "bold", listStyle: "none" }}>
-                    <a
-                      href="https://linkedin.com/in/thosyn-pax"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      style={{ textDecoration: "none", color: "#C2C2C2", fontWeight: "300", textDecoration: "underline", fontSize: "16px" }}
-                    >
-                      Let’s Connect
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              
-            </div>
-
-             {/* Tools and Skills */}
-          <div className="skills">
-          <h2 className="skills-heading">Skills & Tools I Have Acquired During My Tech Journey</h2>
-            <div className="skills-grid">
-              {skills.map((skill, index) => (
-                <div key={index} className="skill-item">
-                  <img src={skill.img} alt={skill.name} className="skill-image" />
-                  <p className="skill-name">{skill.name}</p>
-                </div>
-              ))}
-            </div>
           </div>
-          </div>
-
+          
+          
           <div className="image-content">
             <img src={TP} alt="Thosyn Pax" />
           </div>
@@ -140,7 +151,8 @@ const Main = () => {
             .mobile-only {
               display: block !important;
               text-align: center;
-              margin-top: 10px;
+              top: 10px;
+              margin: calc(-50vw + 50%);
             }
               
 
@@ -210,6 +222,39 @@ const Main = () => {
               }
             }
           `}</style>
+        </div>
+         
+
+        <div className="full-width-black">
+            <div className="black-section">
+                <section className="content-section container">
+                  <div className="brief-content">
+                          <p>
+                            My story isn't just about coding and designing, it's about crafting products that change how people interact with the digital world.
+                            As a product builder and innovator, I see each challenge as an opportunity to not only learn but to make a difference. 
+                            Every product I work on is part of a bigger picture, whether it’s simplifying complex systems or designing intuitive tools, 
+                            my goal has always been to empower users.
+                          </p>
+                  </div>
+
+                    <h2 className="roles-grid">Current Roles & Impact</h2><br />
+                      <ul className="description-list">
+                          <li>
+                            <b>Commercial Skills</b><br />
+                            UX Engineer, Technical Product Designer
+                          </li>
+                          <li>
+                            <b>The Pax Company</b><br />
+                            Startup Product Architect<br />
+                            UX Engineer, Technical Product Designer
+                          </li>
+                          <li>
+                            <b>Inflect Innovations</b><br />
+                            Co-Founder and Team Lead
+                          </li>
+                    </ul>
+                </section>       
+            </div>
         </div>
       </div>
     </main>
