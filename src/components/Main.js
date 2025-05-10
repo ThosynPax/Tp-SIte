@@ -231,9 +231,9 @@ const Main = () => {
                   <div className="brief-content">
                           <p>
                             My story isn't just about coding and designing, it's about crafting products that change how people interact with the digital world.
-                            As a product builder and innovator, I see each challenge as an opportunity to not only learn but to make a difference. 
+                            I see each challenge as an opportunity to not only learn but to make a difference. 
                             Every product I work on is part of a bigger picture, whether it’s simplifying complex systems or designing intuitive tools, 
-                            my goal has always been to empower users.
+                            my goal has always been to turn ideas to real working product.
                           </p>
                   </div>
 
