@@ -148,7 +148,8 @@ const Main = () => {
             .mobile-only {
               display: block !important;
               text-align: center;
-              top: 10px;
+              position: relative;
+              top: 40px;
               margin: calc(-50vw + 50%);
             }
               
