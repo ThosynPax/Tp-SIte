@@ -1,17 +1,6 @@
 import { useState } from "react";
 import '../App.css';
-import TP from '../assets/tp.png';
-import reactLogo from "../assets/skills/react-logo.svg";
-import tailwindLogo from "../assets/skills/tailwindcss-logo.png";
-import supabaseLogo from "../assets/skills/supabase-logo.png";
-import firebaseLogo from "../assets/skills/firebase-logo.svg";
-import jiraLogo from "../assets/skills/jira-logo.png";
-import confluenceLogo from "../assets/skills/confluence-logo.png";
-import gitLogo from "../assets/skills/git-logo.png";
-import threejsLogo from "../assets/skills/threejs-logo.png";
-import figmaLogo from "../assets/skills/figma-logo.png";
-import notionLogo from "../assets/skills/notion-logo.png";
-import javascriptLogo from "../assets/skills/javascript-logo.png";
+import TP from '../assets/thosyn-pax.JPG';
 
 const skills = [
   { name: "React", img: reactLogo },
