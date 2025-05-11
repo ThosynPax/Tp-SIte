@@ -2,19 +2,6 @@ import { useState } from "react";
 import '../App.css';
 import TP from '../assets/thosyn-pax.JPG';
 
-const skills = [
-  { name: "React", img: reactLogo },
-  { name: "TailwindCSS", img: tailwindLogo },
-  { name: "Supabase", img: supabaseLogo },
-  { name: "Firebase", img: firebaseLogo },
-  { name: "Jira", img: jiraLogo },
-  { name: "Confluence", img: confluenceLogo },
-  { name: "Git", img: gitLogo },
-  { name: "Three.js", img: threejsLogo },
-  { name: "Figma", img: figmaLogo },
-  { name: "Notion", img: notionLogo },
-  { name: "Javascript", img: javascriptLogo },
-];
 
 const Main = () => {
   const [isOpen, setIsOpen] = useState(false);
