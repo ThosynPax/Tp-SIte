@@ -21,7 +21,6 @@ const Main = () => {
             font-weight: bold;
             color: #fff;
             margin-bottom: 1rem;
-            font-family: "AnnieUseYourTelescope
           }
 
           .description-list {
@@ -482,6 +481,10 @@ const Main = () => {
   font-size: 0.8em;
   color: inherit;
 }
+  .description-list li a {
+  color: #f4d4b7;
+  text-decoration: none;
+  }
 
 /* Or for the SVG version */
 .link-icon {
@@ -511,18 +514,19 @@ const Main = () => {
 
                     <h2 className="roles-grid">Current Roles & Impact</h2><br />
                       <ul className="description-list">
-                          <li>
+                        {/**   <li>
                             <b>Afriheals Careers</b><br />
                             Mentor & Tech Instructor
                           </li>
+                        */}
                           <li>
-                            <b>The Pax Company</b><br />
+                            <b><a href="https://thepaxcompany.xyz/" target="_blank">The Pax Company</a></b><br />
                             Startup Product Architect<br />
                             UX Engineer, Technical Product Designer
                           </li>
                           <li>
-                            <b>Inflect Innovations</b><br />
-                            Co-Founder and Team Lead
+                            <b><a href="https://www.inmail.ng" target="_blank">Inflect Innovations</a></b><br />
+                            Co-Founder and Team Lead/Technical Product Designer
                           </li>
                     </ul>
                 </section>       
@@ -552,8 +556,8 @@ const Main = () => {
                 <h3 className="project-name">Afriheals Careers</h3>
                 <p className="project-description">A Tech Community, connecting tech enthusiasts to job opportunities, bootcamps, webinars, courses, etc.</p>
                 <p className="project-link">
-                  <a href="https://www.afrihealscareers.com/" target="_blank" rel="noopener noreferrer">
-                    afrihealscareers.com <FontAwesomeIcon icon={faExternalLinkAlt} className="link-icon" />
+                  <a href="/works/afriheals-careers" rel="noopener noreferrer">
+                    read more <FontAwesomeIcon icon={faExternalLinkAlt} className="link-icon" />
                   </a>
                 </p>
               </div>
@@ -564,7 +568,11 @@ const Main = () => {
               <div className="project-content">
                 <h3 className="project-name">Afribreath</h3>
                 <p className="project-description">A Virtual Internship Startup for tech newbies and mid levels</p>
-                <p className="project-status">failed</p>
+                 <p className="project-link">
+                  <a href="/works/afribreath" rel="noopener noreferrer">
+                    read more <FontAwesomeIcon icon={faExternalLinkAlt} className="link-icon" />
+                  </a>
+                </p>
               </div>
             </div>
 
@@ -573,36 +581,42 @@ const Main = () => {
               <div className="project-content">
                 <h3 className="project-name">Karpture (Formerly ClipKip)</h3>
                 <p className="project-description">Chrome Extension to Save copied text to use anytime</p>
-                <p className="project-status">pending</p>
+                 <p className="project-link">
+                  <a href="#" target="_blank" rel="noopener noreferrer">
+                    read more <FontAwesomeIcon icon={faExternalLinkAlt} className="link-icon" />
+                  </a>
+                </p>
               </div>
             </div>
-
-            {/* Project 4 */}
+      {/** 
+             Project 4
             <div className="project-card">
               <div className="project-content">
                 <h3 className="project-name">PaxPlanner</h3>
                 <p className="project-description">Simple To-Do List Planner Chrome Extension</p>
-                <p className="project-status">pending</p>
+                 <p className="project-link">
+                  <a href="#" target="_blank" rel="noopener noreferrer">
+                    read more <FontAwesomeIcon icon={faExternalLinkAlt} className="link-icon" />
+                  </a>
+                </p>
               </div>
             </div>
+      */}
 
-            {/* Project 5 */}
-            <div className="project-card">
-              <div className="project-content">
-                <h3 className="project-name">LeadPay</h3>
-                <p className="project-description">Pay Quickly and Shop Seamlessly With One Click.</p>
-                <p className="project-status">Pending</p>
-              </div>
-            </div>
-
-            {/* Project 6 */}
+       {/** 
+            Project 6
             <div className="project-card">
               <div className="project-content">
                 <h3 className="project-name">Rabata NG</h3>
                 <p className="project-description">A VR eCommerce</p>
-                <p className="project-status">Failed</p>
+                <p className="project-link">
+                  <a href="#" target="_blank" rel="noopener noreferrer">
+                    read more <FontAwesomeIcon icon={faExternalLinkAlt} className="link-icon" />
+                  </a>
+                </p>
               </div>
             </div>
+      */}
           </div>
         </div>
     </div>
