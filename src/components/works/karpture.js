@@ -107,14 +107,16 @@ const KarptureStory = () => {
             <p>Instead, I ignored all that. I didn’t care if it looked ugly, because beauty doesn’t fix bugs. I only had one goal: Make it functional first. Pretty can come later.</p>
             <p>A functional app, no matter how simple or ugly, is 1000x better than a beautiful prototype that never ships.</p>
           </div>
-        </section>
 
-
-         {/* Image Section */}
+                   {/* Image Section */}
              <div className="image-wrapper">
                 {/* Replace with actual image */}
                 <img src={KarptureOld} alt="" />
             </div>
+
+        </section>
+
+
 
         <section className="section">
           <h2 className="subtitle">It’s Just Version 1, And That’s Okay</h2>
@@ -130,6 +132,11 @@ const KarptureStory = () => {
           <div className="quote">
             “Karpture isn’t fancy. But it works. It was born out of a need. It’s simple, and I plan to improve it. But version 1 is out there, nd that’s what matters.”
           </div>
+             {/* Image Section */}
+            <div className="image-wrapper">
+                {/* Replace with actual image */}
+                <img src={KarptureNew} alt="" />
+            </div>
         </section>
 
         <section className="section">
@@ -140,17 +147,13 @@ const KarptureStory = () => {
             <p>Don’t start with Figma. Don’t waste 2 months writing the perfect PRD. Don’t overthink the UI.</p>
             <p>Start by solving one clear problem. Ship something basic, something functional. Let your first version look like it was built in a weekend (because maybe it was).</p>
             <p>Truth is, if you wait until it’s perfect, you’ll either get stuck or quit.</p>
+
+            <p>Would you like to try out karpture?<a href="https://clipkip-site.vercel.app/" target='_blank'>Check it out right here</a></p>
           </div>
+          
+
         </section>
 
-         {/* Image Section */}
-             <div className="image-wrapper">
-                {/* Replace with actual image */}
-                <img src={KarptureNew} alt="" />
-            </div>
-         <section className="section">
-            <p>Would you like to try out karpture?<a href="https://clipkip-site.vercel.app/" target='_blank'>Check it out right here</a></p>
-        </section>
       </div>
     </main>
   );

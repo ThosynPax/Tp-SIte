@@ -582,3 +582,16 @@ body {
   margin-top: 20px;
 }
 
+ 
+.image-wrapper {
+  width: 100%;
+  margin: 2rem 0;
+  text-align: left;
+}
+
+.image-wrapper img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
