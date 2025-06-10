@@ -582,7 +582,7 @@ const Main = () => {
                 <h3 className="project-name">Karpture (Formerly ClipKip)</h3>
                 <p className="project-description">Chrome Extension to Save copied text to use anytime</p>
                  <p className="project-link">
-                  <a href="#" target="_blank" rel="noopener noreferrer">
+                  <a href="/works/karpture" target="_blank" rel="noopener noreferrer">
                     read more <FontAwesomeIcon icon={faExternalLinkAlt} className="link-icon" />
                   </a>
                 </p>

@@ -108,7 +108,7 @@ const AfrihealsCareers = () => {
         <section className="section">
           <h2 className="subtitle">LeadPay: The Next Chapter</h2>
           <div className="content">
-            <p>Out of the lessons and losses, we’re now building <strong>LeadPay</strong>, a modern payment experience for businesses and individuals—think Link.com by Stripe, but for Africa.</p>
+            <p>Out of the lessons and losses, we’re now building <strong>LeadPay</strong>, a modern payment experience for businesses and individuals, think Link.com by Stripe, but for Africa.</p>
             <p>This time, we’re starting small, validating every step, and keeping things lean. AfriBreath now serves as the holding company for this new wave of innovation.</p>
           </div>
         </section>

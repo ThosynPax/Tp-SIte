@@ -12,7 +12,7 @@ import './App.css';
 
 import AfrihealsCareers from './components/works/afriheals-careers';
 import Afribreath from './components/works/afribreath';
-
+import Karpture from './components/works/karpture';
 
 const App = () => {
   return (
@@ -29,6 +29,7 @@ const App = () => {
 
           <Route path="/works/afriheals-careers" element={<AfrihealsCareers />} />
           <Route path="/works/afribreath" element={<Afribreath />} />
+           <Route path="/works/karpture" element={<Karpture />} />
         </Routes>
         <Footer />
       </div>

@@ -1,6 +1,6 @@
 import React from 'react';
-import afrihealsImage1 from '../../assets/works/afriheals1.jpeg';
-import afrihealsImage2 from '../../assets/works/afriheals2.jpeg';
+import afrihealsImage1 from '../../assets/works/afriheals/afriheals1.jpeg';
+import afrihealsImage2 from '../../assets/works/afriheals/afriheals2.jpeg';
 
 const AfrihealsCareers = () => {
   return (
@@ -138,16 +138,10 @@ const AfrihealsCareers = () => {
         </section>
 
           {/* Video Section */}
-          <div className="media-container">
-            <div className="video-wrapper">
-              {/* Replace with actual video embed */}
-              <img 
-                src={afrihealsImage1} 
-                alt="Photos with my first students - Thosyn Pax" 
-                className="founder-image"
-                loading="lazy"
-              />
-            </div>
+           {/* Image Section */}
+          <div className="image-wrapper">
+            {/* Replace with actual image */}
+            <img src={afrihealsImage1} alt="" />
           </div>
 
         {/* My Story Section */}
