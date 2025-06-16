@@ -33,8 +33,7 @@ const Header = () => {
         <nav className="site-nav">
           <ul>
         {/* <li><a href="/story">Story</a></li> */}
-        {/* <li><a href="#">Learn</a></li> */}
-        {/* <li><a href="#">Startup Product Architect</a></li>  */}
+            <li><a href="https://learn.thosynpax.com/">Learn</a></li>
             <li><a href="https://trail.thosynpax.com/"  target='_blank'>Pax Trail</a></li>
             <li><a href="https://www.thosynpax.store/"  target='_blank'>Store</a></li>
           </ul>
@@ -52,6 +51,7 @@ const Header = () => {
             <ul>
            {/*    <li><a href="/works" onClick={toggleMenu}>My Story</a></li> */}
            {/*   <li><a href="/projects" onClick={toggleMenu}>Works</a></li>  */}
+           <li><a href="https://learn.thosynpax.com/" target='_blank' onClick={toggleMenu}>Learn</a></li>
               <li><a href="https://trail.thosynpax.com/" target='_blank' onClick={toggleMenu}>Pax Trail</a></li>
               <li><a href="https://www.thosynpax.store/" target='_blank' onClick={toggleMenu}>Store</a></li>
              

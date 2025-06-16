@@ -31,9 +31,14 @@ const Main = () => {
             font-family: 'Montserrat';
           }
 
+          .other-part {
+             font-size: 1.3rem;
+            color: #F4D4B7;
+          }
+
           .links a {
             font-size: 1.1rem;
-            color: #ffe666;
+            color: #F4D4B7;
             text-decoration: none;
             margin-right: 1.5rem;
             position: relative;
@@ -41,7 +46,7 @@ const Main = () => {
           }
 
           .links a:hover {
-            border-bottom: 2px solid #ffe666;
+            border-bottom: 2px solid #F4D4B7;
           }
 
           .section-image img {
@@ -94,8 +99,11 @@ const Main = () => {
             <header className="intro">
               <h1 className="intro-title">Hey 👋 I'm Thosyn Pax</h1>
               <h3 className="intro-current-job">
-               A Technical Product Designer, UX Engineer, and Startup Product Architect
+               A Technical Product Designer,UX Engineer & Technical Instructor
+              
               </h3>
+               <span className="other-part">Currently teaching future makers, and learning how to build the things we use every day, through industrial design.</span>
+               
             </header>
             {/* Image shown only on mobile */}
             <div className="image-content2 mobile-only">
