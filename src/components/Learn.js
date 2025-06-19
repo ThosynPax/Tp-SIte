@@ -471,8 +471,9 @@ const Learn = () => {
         </section>
         onials */}
 
-        {/* How to Join */}
+       
         <section className="section" id="apply">
+           {/* How to
           <h2 className="title">Let's Get Started</h2>
           <ol className="steps-list">
             <li>Click "Apply" and fill the short form</li>
@@ -480,6 +481,7 @@ const Learn = () => {
             <li>Make payment and choose your start date</li>
             <li>Join the Slack group, get your first brief — let's go!</li>
           </ol>
+           Join */}
 
           <div style={{ textAlign: "center", marginTop: "3rem" }}>
             <a href="https://wa.me/2347016619097" className="cta-button">

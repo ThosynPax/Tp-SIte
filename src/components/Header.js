@@ -33,10 +33,9 @@ const Header = () => {
         <nav className="site-nav">
           <ul>
         {/* <li><a href="/story">Story</a></li> */}
-         {/* <li><a href="/blocks">Beyond UX</a></li> */}
             <li><a href="/learn">Learn</a></li>
+            <li><a href="/blocks">Beyond UX</a></li>
             <li><a href="https://trail.thosynpax.com/"  target='_blank'>Pax Trail</a></li>
-            <li><a href="https://www.thosynpax.store/"  target='_blank'>Store</a></li>
           </ul>
         </nav>
 
@@ -51,10 +50,9 @@ const Header = () => {
           <nav>
             <ul>
            {/*    <li><a href="/works" onClick={toggleMenu}>My Story</a></li> */}
-           {/*   <li><a href="/projects" onClick={toggleMenu}>Works</a></li>  */}
-           <li><a href="/learn" target='_blank' onClick={toggleMenu}>Learn</a></li>
+              <li><a href="/learn" target='_blank' onClick={toggleMenu}>Learn</a></li>
+              <li><a href="/blocks" onClick={toggleMenu}>Beyond UX</a></li>
               <li><a href="https://trail.thosynpax.com/" target='_blank' onClick={toggleMenu}>Pax Trail</a></li>
-              <li><a href="https://www.thosynpax.store/" target='_blank' onClick={toggleMenu}>Store</a></li>
              
             </ul>
           </nav>

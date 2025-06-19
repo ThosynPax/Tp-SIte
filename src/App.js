@@ -8,6 +8,7 @@ import Projects from './components/Projects';
 import Story from './components/story';
 import Archives from './components/Archives';
 import Learn from './components/Learn';
+import UX from './components/BeyondUX';
 import './App.css';
 
 
@@ -26,7 +27,8 @@ const App = () => {
           <Route path="/projects" element={<Projects />} />
           <Route path="/story" element={<Story />} />
           <Route path="/Archives" element={<Archives />} />
-            <Route path="/learn" element={<Learn />} />
+          <Route path="/learn" element={<Learn />} />
+          <Route path="/blocks" element={<UX />} />
           {/* Add more routes here as needed */}
 
           <Route path="/works/afriheals-careers" element={<AfrihealsCareers />} />
