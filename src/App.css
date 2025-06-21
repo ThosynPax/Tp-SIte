@@ -595,3 +595,55 @@ body {
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
+
+/* Dynamic Label Styles */
+.dynamic-label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #F4D4B7; 
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 1.5rem 0;
+  text-align: left;
+  animation: fadeIn 0.8s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Menu Item Descriptions */
+.mobile-menu .menu-item {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 1rem;
+  text-align: left;
+
+}
+
+.mobile-menu .menu-title {
+  font-size: 2rem;
+  font-weight: 500;
+  color: #fff;
+  margin-bottom: 0.3rem;
+}
+
+.mobile-menu .menu-description {
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: #e6e6e6; /* Cream color */
+  letter-spacing: 0.5px;
+}
+
+/* Adjust mobile menu spacing */
+.mobile-menu ul li {
+  margin: 2rem 0;
+}
+
+/* Keep existing hover effects */
+.mobile-menu ul li a:hover .menu-title {
+  text-decoration: line-through;
+  color: #fff;
+}
+
