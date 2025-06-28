@@ -502,6 +502,27 @@ const Main = () => {
   vertical-align: middle;
 }
 
+.view-all-button-wrapper {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.view-all-button {
+  background-color: #f4d4b7;
+  color: #000;
+  padding: 0.75rem 2rem;
+  border-radius: 24px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.3s ease;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.view-all-button:hover {
+  background-color: #e2bc9f;
+}
+
+
           `}</style>
         </div>
          
@@ -596,36 +617,14 @@ const Main = () => {
                 </p>
               </div>
             </div>
-      {/** 
-             Project 4
-            <div className="project-card">
-              <div className="project-content">
-                <h3 className="project-name">PaxPlanner</h3>
-                <p className="project-description">Simple To-Do List Planner Chrome Extension</p>
-                 <p className="project-link">
-                  <a href="#" rel="noopener noreferrer">
-                    read more <FontAwesomeIcon icon={faExternalLinkAlt} className="link-icon" />
-                  </a>
-                </p>
-              </div>
-            </div>
-      */}
-
-       {/** 
-            Project 6
-            <div className="project-card">
-              <div className="project-content">
-                <h3 className="project-name">Rabata NG</h3>
-                <p className="project-description">A VR eCommerce</p>
-                <p className="project-link">
-                  <a href="#" rel="noopener noreferrer">
-                    read more <FontAwesomeIcon icon={faExternalLinkAlt} className="link-icon" />
-                  </a>
-                </p>
-              </div>
-            </div>
-      */}
           </div>
+         {/* All projects Button 
+          <div className="view-all-button-wrapper">
+              <Link to="/projects" className="view-all-button">
+                View All Projects
+              </Link>
+          </div>
+                   */}
         </div>
     </div>
 

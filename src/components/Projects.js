@@ -1,179 +1,226 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLink } from '@fortawesome/free-solid-svg-icons';
-import { faLock } from '@fortawesome/free-solid-svg-icons';
+import { faLink, faLock } from '@fortawesome/free-solid-svg-icons';
 
 const Projects = () => {
   return (
     <main className="site-body">
       <style>
         {`
+        .projects-container {
+          font-family: 'Noto Serif Display', serif;
+          color: #000;
+          width: 100vw;
+          margin-left: calc(-50vw + 50%);
+          overflow-x: hidden;
+          margin-top: -20px;
+        }
 
-          .main-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-            margin-top: 2rem;
-          }
+        .projects-teal-section {
+          background-color: #f4d4b7;
+          padding: 4rem 2rem 8rem 2rem;
+          width: 100vw;
+          margin-left: calc(-50vw + 50%);
+          animation: fadeIn 0.8s ease-out;
+        }
 
-          .svg-inline--fa {
-            display: var(--fa-display, inline-block);
-            height: 0.7em;
-            overflow: visible;
-            vertical-align: -0.125em;
-          }
+        .projects-teal-content {
+          max-width: 100%;
+          margin: 0 auto;
+          text-align: center;
+        }
 
-          .project {
-            background-color: #1a1a1a;
-            padding: 1.5rem;
-            border-radius: 10px;
-            transition: transform 0.2s ease;
-          }
+        .projects-title {
+          font-size: 2.2rem;
+          font-weight: 700;
+          margin-bottom: 1rem;
+          color: #000;
+          animation: slideUp 0.6s ease-out;
+        }
 
-          .project:hover {
-            transform: scale(1.05);
-          }
+        .projects-intro {
+          font-size: 1.1rem;
+          line-height: 1.6;
+          color: #000;
+          margin: 0 auto;
+          max-width: 90%;
+          animation: fadeIn 1s ease-out;
+          font-family: 'Montserrat', sans-serif;
+        }
 
-          .year {
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: #999;
-            margin-bottom: 0.5rem;
-          }
+        .projects-grid-container {
+          background-color: #000;
+          padding: 2rem 2rem;
+          width: 100vw;
+          margin-left: calc(-50vw + 50%);
+        }
 
-          .project-title {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-          }
+        .projects-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+          gap: 1.5rem;
+          max-width: 1200px;
+          margin: 0 auto;
+          margin-top: -120px;
+        }
 
-          .project-title a {
-            color: #ffffff;
-            text-decoration: none;
-          }
+        .project-card {
+          background-color: #111;
+          border-radius: 12px;
+          padding: 1.5rem;
+          transition: all 0.3s ease;
+          animation: fadeInUp 0.5s ease-out forwards;
+          opacity: 0;
+          transform: translateY(20px);
+        }
 
-          .project-description {
-           font-size: 15px;
-            line-height: 1.5;
-            color: #cccccc;
-            margin-bottom: 0.5rem;
-            font-family: "Montserrat";
-            font-weight: 400;
-          }
+        .project-card:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
 
-          .project-tags {
-            font-size: 0.9rem;
-            color: #66ffcc;
-          }
+        .project-name {
+          font-size: 1.3rem;
+          font-weight: 600;
+          margin-bottom: 0.8rem;
+          color: #fff;
+        }
 
-          @media (max-width: 1200px) {
-            .main-grid {
-              grid-template-columns: repeat(3, 1fr);
-            }
-          }
+        .project-description {
+          color: #aaa;
+          line-height: 1.5;
+          margin-bottom: 1rem;
+          font-size: 0.95rem;
+        }
 
-          @media (max-width: 768px) {
-            .main-grid {
-              grid-template-columns: repeat(2, 1fr);
-            }
-          }
+        .project-tags {
+          font-size: 0.9rem;
+          color: #66ffcc;
+        }
 
-          @media (max-width: 480px) {
-            .main-grid {
-              grid-template-columns: 1fr;
-            }
-          }
+        .link-icon {
+          margin-left: 4px;
+          font-size: 0.8em;
+          color: inherit;
+        }
+
+        .view-archive-wrapper {
+          margin-top: 2.5rem;
+          text-align: center;
+          background-color: #000;
+          padding-bottom: 4rem;
+          width: 100vw;
+          margin-left: calc(-50vw + 50%);
+        }
+
+        .view-archive-button {
+          background-color: #f4d4b7;
+          color: #000;
+          padding: 0.8rem 2rem;
+          border-radius: 24px;
+          font-weight: 600;
+          text-decoration: none;
+          font-family: 'Montserrat', sans-serif;
+          transition: all 0.3s ease;
+          display: inline-block;
+        }
+
+        .view-archive-button:hover {
+          background-color: #e2bc9f;
+          transform: scale(1.05);
+        }
+
+        @keyframes fadeIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+          from { opacity: 0; transform: translateY(20px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+          from { opacity: 0; transform: translateY(20px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
         `}
       </style>
 
-      <div className="wrapper">
-        {/** Moved the header outside the grid */}
-        <header className="intro">
-          <h1 className="intro-title">Projects</h1>
-          <h4 className="intro-current-job"> See the projects I've completed as a UX Unicorn and Software Engineer.<br /> 
-            Discover how I’ve combined user experience design and software engineering to create impactful
-             solutions and deliver successful results.</h4>
-        </header>
-
-        {/** Grid starts below the header */}
-        <div className="main-grid">
-
-          <div className="project">
-            <div className="project-details">
-              <div className="project-title">
-                <a target="_blank" href="#" className="project-link">
-               Quick Extractor <FontAwesomeIcon icon={faLock} className="link-icon" />
-                </a>
-              </div>
-              <div className="project-description">
-              Developed a web application capable of extracting and organizing contact details from various sources, such as emails, or web pages. 
-              </div>
-              <div className="project-tags">EJS • Mongodb • Figma</div>
-            </div>
+      <div className="projects-container">
+        <div className="projects-teal-section">
+          <div className="projects-teal-content">
+            <h1 className="projects-title">All Projects</h1>
+            <p className="projects-intro">
+              See the projects I've completed as a UX Unicorn and Software Engineer. Discover how I combine user experience design and full-stack development to create impactful solutions that ship.
+            </p>
           </div>
+        </div>
 
-           {/** Chrome Extension */}
-           <div className="project">
-            <div className="project-details">
-              <div className="project-title">
-                <a target="_blank" href="https://toplagy.eu/" className="project-link">
-                Toplagy.eu  <FontAwesomeIcon icon={faLink} className="link-icon" />
-                </a>
-              </div>
-              <div className="project-description">
-              Designed and crafted a tailor-made Shopify e-commerce website for a clothing brand, including the composition of raw Liquid scripts to enhance the platform's functionality.
-              </div>
-              <div className="project-tags">Shopify • Liquid • Figma</div>
+        <div className="projects-grid-container">
+          <div className="projects-grid">
+            {/* Project 1 */}
+            <div className="project-card">
+              <h3 className="project-name">
+                Quick Extractor <FontAwesomeIcon icon={faLock} className="link-icon" />
+              </h3>
+              <p className="project-description">
+                Web app that extracts and organizes contact details from emails or web pages.
+              </p>
+              <p className="project-tags">EJS • MongoDB • Figma</p>
             </div>
-          </div>
 
-          <div className="project">
-            <div className="project-details">
-              <div className="project-title">
-                <a target="_blank" href="https://www.t20luxury.eu/" className="project-link">
+            {/* Project 2 */}
+            <div className="project-card">
+              <h3 className="project-name">
+                Toplagy.eu <FontAwesomeIcon icon={faLink} className="link-icon" />
+              </h3>
+              <p className="project-description">
+                Custom Shopify store for a fashion brand. Liquid scripting and design optimization included.
+              </p>
+              <p className="project-tags">Shopify • Liquid • Figma</p>
+            </div>
+
+            {/* Project 3 */}
+            <div className="project-card">
+              <h3 className="project-name">
                 T20luxury.eu <FontAwesomeIcon icon={faLink} className="link-icon" />
-                </a>
-              </div>
-              <div className="project-description">
-              Designed and crafted a tailor-made Shopify e-commerce website for a clothing brand, including the composition of raw Liquid scripts to enhance the platform's functionality.
-              </div>
-              <div className="project-tags">Shopify • Liquid • Figma</div>
+              </h3>
+              <p className="project-description">
+                Another full Shopify e-commerce platform for a luxury fashion brand.
+              </p>
+              <p className="project-tags">Shopify • Liquid • Figma</p>
             </div>
-          </div>
 
-          <div className="project">
-            <div className="project-details">
-              <div className="project-title">
-                <a target="_blank" href="#" className="project-link">
-               CPD <FontAwesomeIcon icon={faLock} className="link-icon" />
-                </a>
-              </div>
-              <div className="project-description">
-              Developed a Complaint Management System designed to streamline the process of logging, tracking, and resolving customer complaints.
-              </div>
-              <div className="project-tags">PHP • Javascript • MYSQL</div>
+            {/* Project 4 */}
+            <div className="project-card">
+              <h3 className="project-name">
+                CPD <FontAwesomeIcon icon={faLock} className="link-icon" />
+              </h3>
+              <p className="project-description">
+                Complaint Management System for tracking and resolving customer issues.
+              </p>
+              <p className="project-tags">PHP • JS • MySQL</p>
             </div>
-          </div>
 
-          <div className="project">
-            <div className="project-details">
-              <div className="project-title">
-                <a target="_blank" href="#" className="project-link">
-              Injection Reports <FontAwesomeIcon icon={faLock} className="link-icon" />
-                </a>
-              </div>
-              <div className="project-description">
-              Oil and Gas report and analytics
-              </div>
-              <div className="project-tags">PHP • Javascript • MYSQL</div>
+            {/* Project 5 */}
+            <div className="project-card">
+              <h3 className="project-name">
+                Injection Reports <FontAwesomeIcon icon={faLock} className="link-icon" />
+              </h3>
+              <p className="project-description">
+                Internal analytics tool for oil & gas operations.
+              </p>
+              <p className="project-tags">PHP • JS • MySQL</p>
             </div>
           </div>
         </div>
 
-        <h2>
-           <a style={{ color: "#fff" }} href="/archives" className="project-link">
-         View All Project Archive</a>
-        </h2>
-        
+        <div className="view-archive-wrapper">
+          <a href="/archives" className="view-archive-button">
+            View All Project Archive
+          </a>
+        </div>
       </div>
     </main>
   );
