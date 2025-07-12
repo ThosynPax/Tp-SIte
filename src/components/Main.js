@@ -99,10 +99,10 @@ const Main = () => {
             <header className="intro">
               <h1 className="intro-title">Hey 👋 I'm Thosyn Pax</h1>
               <h3 className="intro-current-job">
-               A Technical Product Designer,UX Engineer & Technical Instructor
+               A Product Architect and Tech Entrepreneur
               
               </h3>
-               <span className="other-part">Currently teaching future makers, and learning how to build the things we use every day, through industrial design.</span>
+               <span className="other-part">I focus on turning complex problems into simple, working solutions that people actually want to use.</span>
                
             </header>
             {/* Image shown only on mobile */}
@@ -521,6 +521,9 @@ const Main = () => {
 .view-all-button:hover {
   background-color: #e2bc9f;
 }
+  em {
+  color: #f4d4b7;
+  }
 
 
           `}</style>
@@ -534,10 +537,13 @@ const Main = () => {
                 <section className="content-section container">
                   <div className="brief-content">
                           <p>
-                            My story isn't just about coding and designing, it's about crafting products that change how people interact with the digital world.
-                            I see each challenge as an opportunity to not only learn but to make a difference. 
-                            Every product I work on is part of a bigger picture, whether it’s simplifying complex systems or designing intuitive tools, 
-                            my goal has always been to turn ideas to real working product.
+                            My story isn't just about coding and designing, 
+                            I work with founders and early-stage teams to bring their ideas to life, 
+                            from the first sketch to a working product. Using my background in UX design,
+                             business analysis, and technical product design and development, 
+                             I help define what needs to be built, plan the right features, design smooth user experiences, and 
+                             guide the technical process until it’s launched. 
+                             I focus on making useful tools that people can actually use and businesses can grow with.
                           </p>
                   </div>
 
@@ -551,11 +557,13 @@ const Main = () => {
                           <li>
                             <b><a href="https://thepaxcompany.xyz/" target="_blank">The Pax Company</a></b><br />
                             Startup Product Architect<br />
-                            UX Engineer, Technical Product Designer
+                            UX Engineer, Technical Product Designer <br />
+                            <em>Building MVPs for startups in Fintech, Edtech, and Productivity. 3 startups in pipeline.</em>
                           </li>
                           <li>
                             <b><a href="https://www.inmail.ng" target="_blank">Inflect Innovations</a></b><br />
-                            Co-Founder and Team Lead/Technical Product Designer
+                            Technical Co-Founder <br />
+                            <em>Innovating Africa with Advanced Tecnology</em>
                           </li>
                     </ul>
                 </section>       
@@ -632,12 +640,11 @@ const Main = () => {
   <div className="collaboration-content">
     <h3 className="collaboration-title">Open for New Opportunities</h3>
     <p className="collaboration-text">
-      I'm currently available for <strong>UX Engineer</strong> and/or <strong>Technical Product Manager</strong> roles (remote).<br />
-      My toolkit includes <strong>Figma</strong>, <strong>React</strong>, <strong>Node.js</strong>, <strong>React Native</strong>, <strong>Miro</strong>, and <strong>Jira</strong>.
+      I collaborate with early-stage founders, investors, and teams to design, architect, and scale digital/physical products. Let’s build something bold together.
     </p>
     <div className="collaboration-buttons">
-      <a href="https://docs.google.com/document/d/1xYRY9FoARAuDF6BH_n0RGiFB5CtGAaY-krlOB_ErzI4/edit?usp=sharing" className="cta-button resume-button">
-        View Resume
+      <a href="https://www.thepaxcompany.xyz/" className="cta-button resume-button">
+       I have an Idea
       </a>
       <a href="mailto:thosynpax@gmail.com" className="cta-button email-button">
         Email Me
