@@ -9,7 +9,6 @@ const links = [
   { label: "🛍️ Shop – thosynpax.store", url: "https://www.thosynpax.store" },
   { label: "📓 Pax Trail – Personal Journal", url: "https://trail.thosynpax.com" },
   { label: "🐝 Hustle Hive – Newsletter", url: "https://substack.com/@thosynpax" },
-    { label: "💻 Code Meets Design – YouTube", url: "https://www.youtube.com/@thosynpax-2" },
   { label: "🚀  Startup Build Agency", url: "https://www.thepaxcompany.xyz/" },
 ];
 
@@ -68,7 +67,7 @@ export default function LinksPage() {
       <section className="equity-section">
         <h2>How Much Equity Should You Give Your Co-Founder?</h2>
         <p>Deciding how to split equity with your co-founder can make or break your startup. This FREE Equity Calculator helps you avoid drama, regret, and bad deals. Just answer a few key questions and get a smart, fair split, no guesswork, no Excel sheets.</p>
-        <a href="https://www.thepaxcompany.xyz/equity-calculator" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.thepaxcompany.xyz/qell" target="_blank" rel="noopener noreferrer">
           <button className="equity-button">Try It Now</button>
         </a>
       </section>
