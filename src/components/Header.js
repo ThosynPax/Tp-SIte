@@ -1,14 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import '../App.css';
 import logo from '../assets/logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
+
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [currentLabel, setCurrentLabel] = useState('Industrial Design • UX Engineering');
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const dropdownRef = useRef(null);
 
-  // Rotate through professional descriptors
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
+  // Rotate dynamic label
   useEffect(() => {
     const labels = [
       'Technical Product Designer',
@@ -25,32 +31,44 @@ const Header = () => {
     return () => clearInterval(interval);
   }, []);
 
-  // Menu items with descriptions
-const menuItems = [
-  {
-    name: "Home",
-    href: "/",
-  },
-  {
-    name: "Learn",
-    href: "/learn",
-    description: "Hands-on design classes, product tutorials, and downloadable resources for self-paced growth."
-  },
-  {
-    name: "Beyond UX",
-    href: "/blocks",
-    description: "Industrial design explorations, solo product concepts, customizable furniture, and tangible tech thinking."
-  },
-  {
-    name: "Pax Trail",
-    href: "https://trail.thosynpax.com/",
-    target: "_blank",
-    description: "My personal journal; thoughts on creativity, life, growth, and everything beyond the screen."
-  }
-];
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setDropdownOpen(false);
+      }
+    };
 
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  // Menu items split
+  const internalItems = [
+    {
+      name: "Home",
+      href: "/",
+    },
+    {
+      name: "Beyond UX",
+      href: "/blocks",
+      description: "Industrial design explorations, solo product concepts, customizable furniture, and tangible tech thinking."
+    }
+  ];
+
+  const externalItems = [
+    {
+      name: "Learn",
+      href: "/learn",
+      description: "Hands-on design classes, product tutorials, and downloadable resources for self-paced growth."
+    },
+    {
+      name: "Pax Trail",
+      href: "https://trail.thosynpax.com/",
+      target: "_blank",
+      description: "My personal journal; thoughts on creativity, life, growth, and everything beyond the screen."
+    }
+  ];
 
   return (
     <header className="site-header">
@@ -64,22 +82,52 @@ const menuItems = [
           </button>
         </div>
 
+        {/* Desktop Nav */}
         <nav className="site-nav">
           <ul>
-            {menuItems.map((item, index) => (
+            {internalItems.map((item, index) => (
               <li key={index}>
-                <a href={item.href} target={item.target}>{item.name}</a>
+                <a href={item.href}>{item.name}</a>
               </li>
             ))}
+
+            <li className="dropdown" ref={dropdownRef}>
+             <button 
+                className="dropdown-label" 
+                onClick={() => setDropdownOpen(!dropdownOpen)}
+                aria-expanded={dropdownOpen}
+                aria-haspopup="true"
+              >
+                More&nbsp;
+                <FontAwesomeIcon icon={dropdownOpen ? faChevronUp : faChevronDown} />
+              </button>
+
+              {dropdownOpen && (
+                <ul className="dropdown-menu">
+                  {externalItems.map((item, index) => (
+                    <li key={index}>
+                      <a
+                        href={item.href}
+                        target={item.target}
+                        rel="noopener noreferrer"
+                        onClick={() => setDropdownOpen(false)}
+                      >
+                        {item.name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </li>
           </ul>
         </nav>
 
-        {/* Enhanced Mobile Menu */}
+        {/* Mobile Menu */}
         <div className={`mobile-menu ${isMenuOpen ? 'active' : ''}`}>
           <button className="close-icon" onClick={toggleMenu}>
             <FontAwesomeIcon icon={faTimes} />
           </button>
-          
+
           {/* Dynamic Label */}
           <div className="dynamic-label">
             {currentLabel}
@@ -87,13 +135,14 @@ const menuItems = [
 
           <nav>
             <ul>
-              {menuItems.map((item, index) => (
+              {[...internalItems, ...externalItems].map((item, index) => (
                 <li key={index}>
                   <a 
                     href={item.href} 
                     target={item.target} 
                     onClick={toggleMenu}
                     className="menu-item"
+                    rel={item.target === "_blank" ? "noopener noreferrer" : undefined}
                   >
                     <span className="menu-title">{item.name}</span>
                     <span className="menu-description">{item.description}</span>

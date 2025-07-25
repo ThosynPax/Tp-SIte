@@ -647,3 +647,67 @@ body {
   color: #fff;
 }
 
+/* --- Dropdown (Desktop Only) --- */
+.site-nav .dropdown {
+  position: relative;
+}
+
+.site-nav .dropdown-label {
+  background: none;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  padding: 0.5em;
+  color: #fff;
+  font-weight: 500;
+}
+
+.site-nav .dropdown-label svg {
+  margin-left: 0.35em;
+  transition: transform 0.2s ease;
+  font-size: 0.75em;
+  vertical-align: middle;
+}
+
+
+/* Ensure vertical list and minimal style */
+.site-nav .dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  z-index: 10;
+  border: none;
+  box-shadow: none;
+  background: none;
+  display: block;
+  min-width: 120px;
+}
+
+/* Stack vertically */
+.site-nav .dropdown-menu li {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+.site-nav .dropdown-menu li a {
+  display: block;
+  padding: 0.5em 0;
+  color: #fff;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.site-nav .dropdown-menu li a:hover {
+  text-decoration: underline;
+}
+
+/* Hide desktop nav on mobile */
+@media (max-width: 768px) {
+  .site-nav {
+    display: none;
+  }
+}

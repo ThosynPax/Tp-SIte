@@ -102,7 +102,7 @@ const Main = () => {
                A Product Architect and Tech Entrepreneur
               
               </h3>
-               <span className="other-part">I focus on turning complex problems into simple, working solutions that people actually want to use.</span>
+               <span className="other-part">Basically, I focus on turning ideas into working solutions that people actually want to use.</span>
                
             </header>
             {/* Image shown only on mobile */}
