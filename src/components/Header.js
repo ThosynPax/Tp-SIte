@@ -59,7 +59,8 @@ const Header = () => {
   const externalItems = [
     {
       name: "Learn",
-      href: "/learn",
+      href: "https://www.paxschool.xyz/",
+      target: "_blank",
       description: "Hands-on design classes, product tutorials, and downloadable resources for self-paced growth."
     },
     {

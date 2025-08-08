@@ -4,9 +4,8 @@ import PageLink from "../assets/logo.png";
 
 const links = [
   { label: "🏠 Get to know me", url: "/" },
-  { label: "🎓 Mentorship", url: "/learn" },
+  { label: "🎓 Learn a Tech Skill", url: "https://www.paxschool.xyz/" },
   { label: "🧱 Beyond UX – My Industrial Design Story", url: "/blocks" },
-  { label: "🛍️ Shop – thosynpax.store", url: "https://www.thosynpax.store" },
   { label: "📓 Pax Trail – Personal Journal", url: "https://trail.thosynpax.com" },
   { label: "🐝 Hustle Hive – Newsletter", url: "https://substack.com/@thosynpax" },
   { label: "🚀  Startup Build Agency", url: "https://www.thepaxcompany.xyz/" },
