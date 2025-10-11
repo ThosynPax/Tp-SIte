@@ -586,7 +586,7 @@ const Main = () => {
           <a href="https://x.com/thosynpax" target="_blank" rel="noopener noreferrer" style={{ color: "#F4D4B7", fontWeight: 500 }}> X (Twitter)</a>, 
           I share lessons from tech, community, and mentorship through <strong>Debug School</strong> and <strong>PaST</strong>.  
           <br />Then 
-          <a href="https://instagram.com/thosynpax" target="_blank" rel="noopener noreferrer" style={{ color: "#F4D4B7", fontWeight: 500 }}> Instagram</a>  
+          <a href="https://instagram.com/thosynpax" target="_blank" rel="noopener noreferrer" style={{ color: "#F4D4B7", fontWeight: 500 }}> Instagram</a>   
            is where I express creativity through <strong>Muse</strong>, short reflections on growth, faith, and life.  
           Each platform tells a part of my story as a builder and creator.
         </p>
