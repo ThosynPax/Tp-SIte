@@ -580,14 +580,14 @@ const Main = () => {
       <div className="brief-content">
         <p>
           I share my journey across three spaces. On 
-          <a href="https://www.linkedin.com/in/thosynpax" target="_blank" rel="noopener noreferrer" style={{ color: "#F4D4B7", fontWeight: 500 }}> LinkedIn</a>, 
+          <a href="https://www.linkedin.com/in/thosyn-pax" target="_blank" rel="noopener noreferrer" style={{ color: "#F4D4B7", fontWeight: 500 }}> LinkedIn</a>, 
           I talk about startups, product strategy, and scaling ideas with <strong>The Pax Company</strong>, and publish my founder-focused series, <strong>Hustle Hive</strong>.  
           <br />On 
           <a href="https://x.com/thosynpax" target="_blank" rel="noopener noreferrer" style={{ color: "#F4D4B7", fontWeight: 500 }}> X (Twitter)</a>, 
           I share lessons from tech, community, and mentorship through <strong>Debug School</strong> and <strong>PaST</strong>.  
           <br />Then 
           <a href="https://instagram.com/thosynpax" target="_blank" rel="noopener noreferrer" style={{ color: "#F4D4B7", fontWeight: 500 }}> Instagram</a>  
-          is where I express creativity through <strong>Muse</strong>, short reflections on growth, faith, and life.  
+           is where I express creativity through <strong>Muse</strong>, short reflections on growth, faith, and life.  
           Each platform tells a part of my story as a builder and creator.
         </p>
       </div>
