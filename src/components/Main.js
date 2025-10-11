@@ -99,10 +99,10 @@ const Main = () => {
             <header className="intro">
               <h1 className="intro-title">Hey 👋 I'm Thosyn Pax</h1>
               <h3 className="intro-current-job">
-               A Product Architect and Tech Entrepreneur
+               A Product Architect, Tech Educator and Tech Entrepreneur
               
               </h3>
-               <span className="other-part">Basically, I focus on turning ideas into working solutions that people actually want to use.</span>
+      
                
             </header>
             {/* Image shown only on mobile */}
@@ -572,71 +572,31 @@ const Main = () => {
         
       </div>
 
-      <div className="projects-container">
-        {/* Teal-colored header section */}
-        <div className="projects-teal-section">
-          <div className="projects-teal-content">
-            <h1 className="projects-title">My Startup Projects</h1>
-            <p className="projects-intro">
-             I'm passionate about digital products. Extensive experience using various apps gave me valuable user insights.
-             <br /> Now I apply that perspective to design and build my own solutions that people love to use.
-            </p>
-          </div>
-        </div>
+ <div className="full-width-black">
+  <div className="black-section">
+    <section className="content-section container">
+      <div className="brief-content">
+        <h2 className="roles-grid">My Digital Presence</h2>
+      <div className="brief-content">
+        <p>
+          I share my journey across three spaces. On 
+          <a href="https://www.linkedin.com/in/thosynpax" target="_blank" rel="noopener noreferrer" style={{ color: "#F4D4B7", fontWeight: 500 }}> LinkedIn</a>, 
+          I talk about startups, product strategy, and scaling ideas with <strong>The Pax Company</strong>, and publish my founder-focused series, <strong>Hustle Hive</strong>.  
+          <br />On 
+          <a href="https://x.com/thosynpax" target="_blank" rel="noopener noreferrer" style={{ color: "#F4D4B7", fontWeight: 500 }}> X (Twitter)</a>, 
+          I share lessons from tech, community, and mentorship through <strong>Debug School</strong> and <strong>PaST</strong>.  
+          <br />Then 
+          <a href="https://instagram.com/thosynpax" target="_blank" rel="noopener noreferrer" style={{ color: "#F4D4B7", fontWeight: 500 }}> Instagram</a>  
+          is where I express creativity through <strong>Muse</strong>, short reflections on growth, faith, and life.  
+          Each platform tells a part of my story as a builder and creator.
+        </p>
+      </div>
 
-        {/* Grid starts immediately after teal section */}
-        <div className="projects-grid-container">
-          <div className="projects-grid">
-            {/* Project 1 */}
-            <div className="project-card">
-              <div className="project-content">
-                <h3 className="project-name">Afriheals Careers</h3>
-                <p className="project-description">A Tech Community, connecting tech enthusiasts to job opportunities, bootcamps, webinars, courses, etc.</p>
-                <p className="project-link">
-                  <a href="/works/afriheals-careers" rel="noopener noreferrer">
-                    read more <FontAwesomeIcon icon={faExternalLinkAlt} className="link-icon" />
-                  </a>
-                </p>
-              </div>
-            </div>
 
-            {/* Project 2 */}
-            <div className="project-card">
-              <div className="project-content">
-                <h3 className="project-name">Afribreath</h3>
-                <p className="project-description">A Virtual Internship Startup for tech newbies and mid levels</p>
-                 <p className="project-link">
-                  <a href="/works/afribreath" rel="noopener noreferrer">
-                    read more <FontAwesomeIcon icon={faExternalLinkAlt} className="link-icon" />
-                  </a>
-                </p>
-              </div>
-            </div>
 
-            {/* Project 3 */}
-            <div className="project-card">
-              <div className="project-content">
-                <h3 className="project-name">Karpture (Formerly ClipKip)</h3>
-                <p className="project-description">Chrome Extension to Save copied text to use anytime</p>
-                 <p className="project-link">
-                  <a href="/works/karpture" rel="noopener noreferrer">
-                    read more <FontAwesomeIcon icon={faExternalLinkAlt} className="link-icon" />
-                  </a>
-                </p>
-              </div>
-            </div>
-          </div>
-         {/* All projects Button 
-          <div className="view-all-button-wrapper">
-              <Link to="/projects" className="view-all-button">
-                View All Projects
-              </Link>
-          </div>
-                   */}
-        </div>
-    </div>
-
-    <div className="collaboration-section">
+      </div>
+    </section>
+     <div className="collaboration-section">
   <div className="collaboration-content">
     <h3 className="collaboration-title">Open for New Opportunities</h3>
     <p className="collaboration-text">
@@ -652,6 +612,12 @@ const Main = () => {
     </div>
   </div>
 </div>
+  </div>
+</div>
+
+
+
+   
       
   </main>
   );

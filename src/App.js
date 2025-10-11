@@ -5,7 +5,7 @@ import Main from './components/Main';
 import Footer from './components/Footer';
 import Bytes from './components/Bytes';
 import Projects from './components/Projects';
-import Story from './components/story';
+import DebugSchool from './components/DebugSchool';
 import Archives from './components/Archives';
 import Learn from './components/Learn';
 import UX from './components/BeyondUX';
@@ -37,7 +37,7 @@ const App = () => {
           <Route path="/" element={<Main />} />
           <Route path="/bytes" element={<Bytes />} />
           <Route path="/projects" element={<Projects />} />
-          <Route path="/story" element={<Story />} />
+          <Route path="/debug-school" element={<DebugSchool />} />
           <Route path="/Archives" element={<Archives />} />
           <Route path="/learn" element={<Learn />} />
           <Route path="/blocks" element={<UX />} />

@@ -10,7 +10,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="site-footer">
+    <footer className="site-footer"> <hr /> <br />
       <div className="wrapper">
         <div className="social-icons">
             <a href="https://www.linkedin.com/in/thosyn-pax/" target="_blank" rel="noopener noreferrer">
@@ -26,7 +26,7 @@ const Footer = () => {
               <BsGithub />
             </a> 
           </div>
-        <p>&copy; {currentYear} Thosyn Pax. All rights reserved. (V6) <br /> </p>
+        <p>&copy; 2015 - {currentYear} Thosyn Pax. All rights reserved. (V7) <br /> </p>
       </div>
     </footer>
   );

@@ -2,17 +2,12 @@ import React, { useState, useEffect, useRef } from 'react';
 import '../App.css';
 import logo from '../assets/logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 
-
 const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [currentLabel, setCurrentLabel] = useState('Industrial Design • UX Engineering');
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
-
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   // Rotate dynamic label
   useEffect(() => {
@@ -46,23 +41,20 @@ const Header = () => {
   // Menu items split
   const internalItems = [
     {
-      name: "Home",
+      name: "About",
       href: "/",
     },
     {
-      name: "Beyond UX",
+      name: "Blocks",
       href: "/blocks",
-      description: "Industrial design explorations, solo product concepts, customizable furniture, and tangible tech thinking."
-    }
+    },
+     {
+      name: "Debug School",
+      href: "/debug-school",
+    },
   ];
 
   const externalItems = [
-    {
-      name: "Learn",
-      href: "https://www.paxschool.xyz/",
-      target: "_blank",
-      description: "Hands-on design classes, product tutorials, and downloadable resources for self-paced growth."
-    },
     {
       name: "Pax Trail",
       href: "https://trail.thosynpax.com/",
@@ -78,13 +70,10 @@ const Header = () => {
           <a href='/'>
             <img src={logo} alt="Logo" className="logo" />
           </a>
-          <button className="hamburger-icon" onClick={toggleMenu} aria-label="Menu">
-            <FontAwesomeIcon icon={isMenuOpen ? faTimes : faBars} />
-          </button>
         </div>
 
         {/* Desktop Nav */}
-        <nav className="site-nav">
+        <nav className="site-nav desktop-nav">
           <ul>
             {internalItems.map((item, index) => (
               <li key={index}>
@@ -93,7 +82,7 @@ const Header = () => {
             ))}
 
             <li className="dropdown" ref={dropdownRef}>
-             <button 
+              <button 
                 className="dropdown-label" 
                 onClick={() => setDropdownOpen(!dropdownOpen)}
                 aria-expanded={dropdownOpen}
@@ -123,36 +112,28 @@ const Header = () => {
           </ul>
         </nav>
 
-        {/* Mobile Menu */}
-        <div className={`mobile-menu ${isMenuOpen ? 'active' : ''}`}>
-          <button className="close-icon" onClick={toggleMenu}>
-            <FontAwesomeIcon icon={faTimes} />
-          </button>
-
+        {/* Mobile Menu - Always visible on mobile */}
+        <nav className="mobile-nav">
           {/* Dynamic Label */}
           <div className="dynamic-label">
             {currentLabel}
           </div>
 
-          <nav>
-            <ul>
-              {[...internalItems, ...externalItems].map((item, index) => (
-                <li key={index}>
-                  <a 
-                    href={item.href} 
-                    target={item.target} 
-                    onClick={toggleMenu}
-                    className="menu-item"
-                    rel={item.target === "_blank" ? "noopener noreferrer" : undefined}
-                  >
-                    <span className="menu-title">{item.name}</span>
-                    <span className="menu-description">{item.description}</span>
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </nav>
-        </div>
+          <ul className="mobile-menu-list">
+            {[...internalItems, ...externalItems].map((item, index) => (
+              <li key={index}>
+                <a 
+                  href={item.href} 
+                  target={item.target} 
+                  className="menu-item"
+                  rel={item.target === "_blank" ? "noopener noreferrer" : undefined}
+                >
+                  <span className="menu-title">{item.name}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
       </div>
     </header>
   );
