@@ -3,12 +3,11 @@ import { motion } from "framer-motion";
 import PageLink from "../assets/logo.png";
 
 const links = [
-  { label: "🏠 Get to know me", url: "/" },
-  { label: "🎓 Learn a Tech Skill", url: "https://www.paxschool.xyz/" },
-  { label: "🧱 Beyond UX – My Industrial Design Story", url: "/blocks" },
-  { label: "📓 Pax Trail – Personal Journal", url: "https://trail.thosynpax.com" },
-  { label: "🐝 Hustle Hive – Newsletter", url: "https://substack.com/@thosynpax" },
-  { label: "🚀  Startup Build Agency", url: "https://www.thepaxcompany.xyz/" },
+  { label: "Who I Am & What I Do", url: "/" },
+  { label: "Tune In: The Debug School Podcast", url: "/debug-school" },
+  { label: "Follow My Journey on Pax Trail", url: "https://trail.thosynpax.com" },
+  { label: "Join the Hustle Hive Newsletter", url: "https://substack.com/@thosynpax" },
+  { label: "Build Your Startup with TPCo", url: "https://www.thepaxcompany.xyz/" },
 ];
 
 export default function LinksPage() {
@@ -26,7 +25,7 @@ export default function LinksPage() {
       >
         <img src={PageLink} alt="Thosyn Pax Logo" className="logo" />
         <h1>I'm Thosyn Pax</h1>
-        <p>Technical Product Designer • UX Engineer • Product Architect</p>
+        <p>Product Architect • Tech Educator • Entrepreneur</p>
       </motion.div>
 
       <div className="links-list">
@@ -45,21 +44,29 @@ export default function LinksPage() {
         ))}
       </div>
 
-      {/* 🎥 Code Meets Design 
-      <section className="youtube-section">
-        <h2>💻 Code Meets Design</h2>
-        <p>Front-end meets product thinking. See how I explore UI engineering, design systems, and building startups with code.</p>
-        <div className="video-container">
-          <iframe
-            src="https://www.youtube.com/embed/videoseries?list=UUQVpAiZ8HG6rAa6ntKJXY4g"
-            title="Code Meets Design – YouTube Channel"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          ></iframe>
-        </div>
-      </section>
-    – YouTube Preview */}
+    
+<section className="youtube-section">
+  <div className="content">
+    <h2>Learn. Build. Innovate.</h2>
+    <p>
+      Dive into my YouTube channel <strong>PaST, Pax School of Tech</strong> for
+      free tech lessons, product insights, and design thinking tips to elevate
+      your skills.
+    </p>
+  </div>
+
+  <div className="video-container">
+    <iframe
+      src="https://www.youtube.com/embed/0GVJo716pH4"
+      title="PaST – Pax School of Tech YouTube Channel"
+      frameBorder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowFullScreen
+    ></iframe>
+  </div>
+</section>
+
+   
 
 
       {/* 🧮 Equity Calculator */}

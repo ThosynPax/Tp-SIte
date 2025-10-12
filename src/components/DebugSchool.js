@@ -144,7 +144,7 @@ const DebugSchool = () => {
         <div className="wrapper">
           <h1 className="title">Debug School</h1>
           <p className="tagline">Where tech learning meets human understanding</p>
-          <a href="#" className="cta-button">Listen to Podcast</a>
+          <a href="https://open.spotify.com/show/6fCxwjIOauwOpBrmlgqODB?si=7Kw-5jaKTUSj6ldhFSsGcg" className="cta-button">LISTEN ON SPOTIFY</a>
         </div>
       </section>
 
@@ -176,7 +176,7 @@ const DebugSchool = () => {
             Debug School helps people slow down, find their "why," and build a path that truly fits them.
           </p>
 
-          <a href="#" className="cta-button">Start Listening</a>
+          <a href="https://open.spotify.com/show/6fCxwjIOauwOpBrmlgqODB?si=7Kw-5jaKTUSj6ldhFSsGcg" className="cta-button">Start Listening on SPOTIFY</a>
         </section>
       </div>
     </main>
