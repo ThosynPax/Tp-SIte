@@ -821,3 +821,83 @@ body {
 .blocks-page .intro-current-job {
   margin-bottom: 2rem;
 }
+
+.listen-label {
+  font-size: 1.8rem;
+  color: #fff;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  display: block;
+}
+
+.platform-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.platform-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  color: #F4D4B7;
+  padding: 0.8rem 1.2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: 2px solid #F4D4B7;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.platform-button:hover {
+  background: #F4D4B7;
+  color: #000000;
+  transform: translateY(-2px);
+}
+
+.platform-icon {
+  font-size: 1.5rem; /* Makes icons larger */
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .platform-icon {
+    font-size: 1.3rem; /* Slightly smaller on mobile but still visible */
+  }
+}
+@media (max-width: 768px) {
+  .platform-buttons {
+    gap: 0.8rem;
+  }
+  
+  .platform-button {
+    padding: 0.7rem 1rem;
+    font-size: 0.8rem;
+  }
+  
+  .platform-icon {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .platform-buttons {
+    gap: 0.5rem;
+  }
+  
+  .platform-button {
+    padding: 0.6rem 0.8rem;
+    font-size: 0.75rem;
+  }
+}

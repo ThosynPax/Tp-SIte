@@ -16,7 +16,6 @@ const DebugSchool = () => {
             background: #000000;
             padding: 4rem 0 2rem 0;
             text-align: center;
-            border-bottom: 2px solid #F4D4B7;
           }
 
           .title {
@@ -140,13 +139,23 @@ const DebugSchool = () => {
       </style>
 
       {/* Hero Section */}
-      <section className="hero-section">
-        <div className="wrapper">
-          <h1 className="title">Debug School</h1>
-          <p className="tagline">Where tech learning meets human understanding</p>
-          <a href="https://open.spotify.com/show/6fCxwjIOauwOpBrmlgqODB?si=7Kw-5jaKTUSj6ldhFSsGcg" className="cta-button">LISTEN ON SPOTIFY</a>
-        </div>
-      </section>
+<section className="hero-section">
+  <div className="wrapper">
+    <h1 className="title">Debug School</h1>
+    <p className="tagline">Where tech learning meets human understanding</p>
+    <span className="listen-label">Listen on</span>
+    <div className="platform-buttons">
+      <a  target='_blank' href="https://open.spotify.com/show/6fCxwjIOauwOpBrmlgqODB?si=7Kw-5jaKTUSj6ldhFSsGcg" className="platform-button">
+        <i className="fab fa-spotify platform-icon"></i>
+        SPOTIFY
+      </a>
+      <a  target='_blank' href="https://music.youtube.com/playlist?list=PLMk-yXty7nSn13LhpnE04Xk5g7AivLW0O" className="platform-button">
+        <i className="fab fa-youtube platform-icon"></i>
+        YOUTUBE MUSIC
+      </a>
+    </div>
+  </div>
+</section>
 
       <div className="wrapper">
         {/* About Section */}
@@ -175,8 +184,17 @@ const DebugSchool = () => {
             Many learners start tech journeys with excitement, but end up lost in tutorials, trends, and self-doubt. 
             Debug School helps people slow down, find their "why," and build a path that truly fits them.
           </p>
-
-          <a href="https://open.spotify.com/show/6fCxwjIOauwOpBrmlgqODB?si=7Kw-5jaKTUSj6ldhFSsGcg" className="cta-button">Start Listening on SPOTIFY</a>
+<span className="listen-label">Listen on</span>
+<div className="platform-buttons">
+  <a target='_blank' href="https://open.spotify.com/show/6fCxwjIOauwOpBrmlgqODB?si=7Kw-5jaKTUSj6ldhFSsGcg" className="platform-button">
+    <i className="fab fa-spotify platform-icon"></i>
+    SPOTIFY
+  </a>
+  <a target='_blank' href="https://music.youtube.com/playlist?list=PLMk-yXty7nSn13LhpnE04Xk5g7AivLW0O" className="platform-button">
+    <i className="fab fa-youtube platform-icon"></i>
+    YOUTUBE MUSIC
+  </a>
+</div>
         </section>
       </div>
     </main>

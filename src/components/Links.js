@@ -4,6 +4,7 @@ import PageLink from "../assets/logo.png";
 
 const links = [
   { label: "Who I Am & What I Do", url: "/" },
+  {/* { label: "Level Up with a New Tech Skill", url: "https://www.paxschool.xyz/" }, */},
   { label: "Tune In: The Debug School Podcast", url: "/debug-school" },
   { label: "Follow My Journey on Pax Trail", url: "https://trail.thosynpax.com" },
   { label: "Join the Hustle Hive Newsletter", url: "https://substack.com/@thosynpax" },
