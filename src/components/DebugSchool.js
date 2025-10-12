@@ -36,23 +36,52 @@ const DebugSchool = () => {
             margin-right: auto;
           }
 
-          .cta-button {
+          .listen-label {
+            font-size: 1.2rem;
+            color: #fff;
+            margin-bottom: 1rem;
+            font-weight: 500;
+            display: block;
+          }
+
+          .platform-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+          }
+
+          .platform-button {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
             background: transparent;
             color: #F4D4B7;
-            padding: 1rem 2rem;
+            padding: 0.8rem 1.2rem;
             border-radius: 8px;
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s ease;
-            display: inline-block;
             border: 2px solid #F4D4B7;
             font-family: "Montserrat", sans-serif;
+            font-size: 0.9rem;
+            white-space: nowrap;
           }
 
-          .cta-button:hover {
+          .platform-button:hover {
             background: #F4D4B7;
             color: #000000;
             transform: translateY(-2px);
+          }
+
+          .platform-icon {
+            font-size: 1.4rem;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
           }
 
           .content-section {
@@ -113,6 +142,14 @@ const DebugSchool = () => {
             margin: 0 auto;
           }
 
+          /* Desktop - all buttons in one row */
+          @media (min-width: 769px) {
+            .apple-podcast-mobile {
+              display: none;
+            }
+          }
+
+          /* Mobile styles */
           @media (max-width: 768px) {
             .title {
               font-size: 2.5rem;
@@ -134,28 +171,82 @@ const DebugSchool = () => {
             .description-list {
               font-size: 1.1rem;
             }
+
+            .platform-buttons {
+              gap: 0.8rem;
+            }
+            
+            .platform-button {
+              padding: 0.7rem 1rem;
+              font-size: 0.8rem;
+            }
+            
+            .platform-icon {
+              font-size: 1.2rem;
+            }
+
+            /* Hide Apple Podcasts in main row on mobile */
+            .platform-buttons .platform-button:nth-child(3) {
+              display: none;
+            }
+
+            .apple-podcast-mobile {
+              display: flex;
+              justify-content: center;
+              margin-top: 1rem;
+            }
+
+            .apple-podcast-mobile .platform-button {
+              display: flex;
+            }
+          }
+
+          @media (max-width: 480px) {
+            .platform-buttons {
+              gap: 0.5rem;
+            }
+            
+            .platform-button {
+              padding: 0.6rem 0.8rem;
+              font-size: 0.75rem;
+            }
+            
+            .platform-icon {
+              font-size: 1.1rem;
+            }
           }
         `}
       </style>
 
       {/* Hero Section */}
-<section className="hero-section">
-  <div className="wrapper">
-    <h1 className="title">Debug School</h1>
-    <p className="tagline">Where tech learning meets human understanding</p>
-    <span className="listen-label">Listen on</span>
-    <div className="platform-buttons">
-      <a  target='_blank' href="https://open.spotify.com/show/6fCxwjIOauwOpBrmlgqODB?si=7Kw-5jaKTUSj6ldhFSsGcg" className="platform-button">
-        <i className="fab fa-spotify platform-icon"></i>
-        SPOTIFY
-      </a>
-      <a  target='_blank' href="https://music.youtube.com/playlist?list=PLMk-yXty7nSn13LhpnE04Xk5g7AivLW0O" className="platform-button">
-        <i className="fab fa-youtube platform-icon"></i>
-        YOUTUBE MUSIC
-      </a>
-    </div>
-  </div>
-</section>
+      <section className="hero-section">
+        <div className="wrapper">
+          <h1 className="title">Debug School</h1>
+          <p className="tagline">Where tech learning meets human understanding</p>
+          <span className="listen-label">Listen on</span>
+          <div className="platform-buttons">
+            <a target='_blank' href="https://open.spotify.com/show/6fCxwjIOauwOpBrmlgqODB?si=7Kw-5jaKTUSj6ldhFSsGcg" className="platform-button">
+              <i className="fab fa-spotify platform-icon"></i>
+              SPOTIFY
+            </a>
+            <a target='_blank' href="https://music.youtube.com/playlist?list=PLMk-yXty7nSn13LhpnE04Xk5g7AivLW0O" className="platform-button">
+              <i className="fab fa-youtube platform-icon"></i>
+              YOUTUBE MUSIC
+            </a>
+            <a target='_blank' href="https://podcasts.apple.com/ng/podcast/debug-school-by-past/id1845675897" className="platform-button">
+              <i className="fas fa-podcast platform-icon"></i>
+              APPLE PODCASTS
+            </a>
+          </div>
+          {/* Apple Podcasts for mobile only */}
+          <div className="apple-podcast-mobile">
+            <a target='_blank' href="https://podcasts.apple.com/ng/podcast/debug-school-by-past/id1845675897" className="platform-button">
+              <i className="fas fa-podcast platform-icon"></i>
+              APPLE PODCASTS
+            </a>
+          </div>
+        </div>
+      </section>
 
       <div className="wrapper">
         {/* About Section */}
@@ -184,17 +275,28 @@ const DebugSchool = () => {
             Many learners start tech journeys with excitement, but end up lost in tutorials, trends, and self-doubt. 
             Debug School helps people slow down, find their "why," and build a path that truly fits them.
           </p>
-<span className="listen-label">Listen on</span>
-<div className="platform-buttons">
-  <a target='_blank' href="https://open.spotify.com/show/6fCxwjIOauwOpBrmlgqODB?si=7Kw-5jaKTUSj6ldhFSsGcg" className="platform-button">
-    <i className="fab fa-spotify platform-icon"></i>
-    SPOTIFY
-  </a>
-  <a target='_blank' href="https://music.youtube.com/playlist?list=PLMk-yXty7nSn13LhpnE04Xk5g7AivLW0O" className="platform-button">
-    <i className="fab fa-youtube platform-icon"></i>
-    YOUTUBE MUSIC
-  </a>
-</div>
+          <span className="listen-label">Listen on</span>
+          <div className="platform-buttons">
+            <a target='_blank' href="https://open.spotify.com/show/6fCxwjIOauwOpBrmlgqODB?si=7Kw-5jaKTUSj6ldhFSsGcg" className="platform-button">
+              <i className="fab fa-spotify platform-icon"></i>
+              SPOTIFY
+            </a>
+            <a target='_blank' href="https://music.youtube.com/playlist?list=PLMk-yXty7nSn13LhpnE04Xk5g7AivLW0O" className="platform-button">
+              <i className="fab fa-youtube platform-icon"></i>
+              YOUTUBE MUSIC
+            </a>
+            <a target='_blank' href="https://podcasts.apple.com/ng/podcast/debug-school-by-past/id1845675897" className="platform-button">
+              <i className="fas fa-podcast platform-icon"></i>
+              APPLE PODCASTS
+            </a>
+          </div>
+          {/* Apple Podcasts for mobile only */}
+          <div className="apple-podcast-mobile">
+            <a target='_blank' href="https://podcasts.apple.com/ng/podcast/debug-school-by-past/id1845675897" className="platform-button">
+              <i className="fas fa-podcast platform-icon"></i>
+              APPLE PODCASTS
+            </a>
+          </div>
         </section>
       </div>
     </main>
