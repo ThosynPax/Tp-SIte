@@ -1,6 +1,153 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 const DebugSchool = () => {
+  const [podcasts, setPodcasts] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    fetchPodcasts();
+  }, []);
+
+  const fetchPodcasts = async () => {
+    try {
+      setIsLoading(true);
+      setError(null);
+      
+      const proxies = [
+        'https://api.allorigins.win/raw?url=',
+        'https://cors-anywhere.herokuapp.com/',
+        'https://corsproxy.io/?'
+      ];
+      
+      const rssUrl = 'https://anchor.fm/s/ef8b43dc/podcast/rss';
+      
+      let response;
+      let lastError;
+      
+      for (const proxy of proxies) {
+        try {
+          response = await fetch(`${proxy}${encodeURIComponent(rssUrl)}`, {
+            headers: {
+              'Accept': 'application/rss+xml, application/xml, text/xml'
+            }
+          });
+          
+          if (response.ok) {
+            break;
+          }
+        } catch (err) {
+          lastError = err;
+          continue;
+        }
+      }
+      
+      if (!response || !response.ok) {
+        throw new Error(`Failed to fetch RSS feed: ${lastError?.message || 'Unknown error'}`);
+      }
+      
+      const xmlText = await response.text();
+      
+      const parser = new DOMParser();
+      const xmlDoc = parser.parseFromString(xmlText, 'text/xml');
+      
+      const parseError = xmlDoc.getElementsByTagName('parsererror')[0];
+      if (parseError) {
+        throw new Error('Failed to parse RSS feed');
+      }
+      
+      const items = xmlDoc.getElementsByTagName('item');
+      
+      const parsedPodcasts = [];
+      
+      for (let i = 0; i < items.length; i++) {
+        const item = items[i];
+        
+        const title = item.getElementsByTagName('title')[0]?.textContent || 
+                     item.querySelector('title')?.textContent || 
+                     `Episode ${i + 1}`;
+        
+        const enclosure = item.getElementsByTagName('enclosure')[0] || 
+                         item.querySelector('enclosure');
+        const url = enclosure?.getAttribute('url') || '';
+        
+        const duration = item.getElementsByTagName('itunes:duration')[0]?.textContent ||
+                        item.querySelector('itunes\\:duration, duration')?.textContent ||
+                        'Unknown';
+        
+        const pubDate = item.getElementsByTagName('pubDate')[0]?.textContent || 
+                       item.querySelector('pubDate')?.textContent ||
+                       '';
+        
+        const description = item.getElementsByTagName('description')[0]?.textContent || 
+                           item.querySelector('description')?.textContent ||
+                           '';
+        
+        if (url) {
+          parsedPodcasts.push({
+            id: `podcast-${i}-${Date.now()}`,
+            title: title.trim(),
+            url: url.trim(),
+            duration: formatDuration(duration),
+            pubDate: formatDate(pubDate),
+            description: cleanDescription(description)
+          });
+        }
+      }
+      
+      setPodcasts(parsedPodcasts);
+      
+      if (parsedPodcasts.length === 0) {
+        setError('No podcasts found in the RSS feed');
+      }
+      
+    } catch (err) {
+      setError(`Failed to load podcasts: ${err.message}`);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const formatDuration = (duration) => {
+    if (!duration || duration === 'Unknown') return 'Unknown';
+    
+    if (duration.includes(':')) {
+      return duration;
+    }
+    
+    const seconds = parseInt(duration);
+    if (!isNaN(seconds)) {
+      const minutes = Math.floor(seconds / 60);
+      const remainingSeconds = seconds % 60;
+      return `${minutes}:${remainingSeconds.toString().padStart(2, '0')}`;
+    }
+    
+    return duration;
+  };
+
+  const formatDate = (dateString) => {
+    try {
+      const date = new Date(dateString);
+      return date.toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric'
+      });
+    } catch {
+      return 'Unknown date';
+    }
+  };
+
+  const cleanDescription = (description) => {
+    if (!description) return '';
+    const clean = description.replace(/<[^>]*>/g, '').trim();
+    return clean.length > 150 ? clean.substring(0, 150) + '...' : clean;
+  };
+
+  const ClockIcon = () => <span style={{ fontSize: '14px' }}>⏱</span>;
+  const CalendarIcon = () => <span style={{ fontSize: '14px' }}>📅</span>;
+  const LoadingSpinner = () => <span style={{ fontSize: '48px', animation: 'spin 1s linear infinite' }}>⏳</span>;
+
   return (
     <main className="debug-school">
       <style>
@@ -142,14 +289,80 @@ const DebugSchool = () => {
             margin: 0 auto;
           }
 
-          /* Desktop - all buttons in one row */
+          .podcasts-section {
+            padding: 2rem 0;
+          }
+
+          .podcasts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+          }
+
+          .podcast-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(244, 212, 183, 0.2);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+          }
+
+          .podcast-card:hover {
+            transform: translateY(-4px);
+            border-color: #F4D4B7;
+            box-shadow: 0 8px 32px rgba(244, 212, 183, 0.1);
+          }
+
+          .podcast-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #F4D4B7;
+            margin: 0;
+            line-height: 1.4;
+            margin-bottom: 1rem;
+          }
+
+          .podcast-description {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 1rem;
+          }
+
+          .podcast-meta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.85rem;
+          }
+
+          .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+          }
+
+          .loading-state, .error-state {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: #F4D4B7;
+          }
+
+          @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+          }
+
           @media (min-width: 769px) {
             .apple-podcast-mobile {
               display: none;
             }
           }
 
-          /* Mobile styles */
           @media (max-width: 768px) {
             .title {
               font-size: 2.5rem;
@@ -185,7 +398,19 @@ const DebugSchool = () => {
               font-size: 1.2rem;
             }
 
-            /* Hide Apple Podcasts in main row on mobile */
+            .podcasts-grid {
+              grid-template-columns: 1fr;
+              gap: 1.5rem;
+            }
+
+            .podcast-card {
+              padding: 1.25rem;
+            }
+
+            .podcast-title {
+              font-size: 1.1rem;
+            }
+
             .platform-buttons .platform-button:nth-child(3) {
               display: none;
             }
@@ -218,7 +443,6 @@ const DebugSchool = () => {
         `}
       </style>
 
-      {/* Hero Section */}
       <section className="hero-section">
         <div className="wrapper">
           <h1 className="title">Debug School</h1>
@@ -238,7 +462,6 @@ const DebugSchool = () => {
               APPLE PODCASTS
             </a>
           </div>
-          {/* Apple Podcasts for mobile only */}
           <div className="apple-podcast-mobile">
             <a target='_blank' href="https://podcasts.apple.com/ng/podcast/debug-school-by-past/id1845675897" className="platform-button">
               <i className="fas fa-podcast platform-icon"></i>
@@ -249,7 +472,64 @@ const DebugSchool = () => {
       </section>
 
       <div className="wrapper">
-        {/* About Section */}
+        <section className="content-section podcasts-section">
+          <h2 className="section-title">Available Episodes</h2>
+          <p className="description">
+            Browse through all available podcast episodes from Debug School.
+          </p>
+
+          {isLoading && (
+            <div className="loading-state">
+              <LoadingSpinner />
+              <p>Loading episodes...</p>
+            </div>
+          )}
+
+          {error && (
+            <div className="error-state">
+              <p>{error}</p>
+              <button 
+                onClick={fetchPodcasts}
+                className="platform-button"
+                style={{ marginTop: '1rem' }}
+              >
+                Try Again
+              </button>
+            </div>
+          )}
+
+          {!isLoading && !error && podcasts.length > 0 && (
+            <div className="podcasts-grid">
+              {podcasts.map((podcast) => (
+                <div key={podcast.id} className="podcast-card">
+                  <h3 className="podcast-title">{podcast.title}</h3>
+                  
+                  {podcast.description && (
+                    <p className="podcast-description">{podcast.description}</p>
+                  )}
+                  
+                  <div className="podcast-meta">
+                    <div className="meta-item">
+                      <ClockIcon />
+                      <span>{podcast.duration}</span>
+                    </div>
+                    <div className="meta-item">
+                      <CalendarIcon />
+                      <span>{podcast.pubDate}</span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+
+          {!isLoading && !error && podcasts.length === 0 && (
+            <div className="error-state">
+              <p>No episodes available at the moment.</p>
+            </div>
+          )}
+        </section>
+
         <section className="content-section">
           <h2 className="section-title">About Debug School</h2>
           <p className="description">
@@ -290,7 +570,6 @@ const DebugSchool = () => {
               APPLE PODCASTS
             </a>
           </div>
-          {/* Apple Podcasts for mobile only */}
           <div className="apple-podcast-mobile">
             <a target='_blank' href="https://podcasts.apple.com/ng/podcast/debug-school-by-past/id1845675897" className="platform-button">
               <i className="fas fa-podcast platform-icon"></i>
