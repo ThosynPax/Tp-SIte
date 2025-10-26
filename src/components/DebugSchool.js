@@ -453,7 +453,7 @@ const DebugSchool = () => {
               <i className="fab fa-spotify platform-icon"></i>
               SPOTIFY
             </a>
-            <a target='_blank' href="https://www.youtube.com/playlist?list=PLMop3IuYMLYdnZW9LWefbMj8uKUEBgrlp" className="platform-button">
+            <a target='_blank' href="https://music.youtube.com/playlist?list=PLMop3IuYMLYdnZW9LWefbMj8uKUEBgrlp&si=s_nUcoOXcjmPtI3s" className="platform-button">
               <i className="fab fa-youtube platform-icon"></i>
               YOUTUBE MUSIC
             </a>
@@ -561,7 +561,7 @@ const DebugSchool = () => {
               <i className="fab fa-spotify platform-icon"></i>
               SPOTIFY
             </a>
-            <a target='_blank' href="https://www.youtube.com/playlist?list=PLMop3IuYMLYdnZW9LWefbMj8uKUEBgrlp" className="platform-button">
+            <a target='_blank' href="https://music.youtube.com/playlist?list=PLMop3IuYMLYdnZW9LWefbMj8uKUEBgrlp&si=s_nUcoOXcjmPtI3s" className="platform-button">
               <i className="fab fa-youtube platform-icon"></i>
               YOUTUBE MUSIC
             </a>
