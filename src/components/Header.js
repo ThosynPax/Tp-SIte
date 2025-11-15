@@ -38,30 +38,6 @@ const Header = () => {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  // Menu items split
-  const internalItems = [
-    {
-      name: "About",
-      href: "/",
-    },
-    {
-      name: "Blocks",
-      href: "/blocks",
-    },
-     {
-      name: "Debug School",
-      href: "/debug-school",
-    },
-  ];
-
-  const externalItems = [
-    {
-      name: "Pax Trail",
-      href: "https://trail.thosynpax.com/",
-      target: "_blank",
-      description: "My personal journal; thoughts on creativity, life, growth, and everything beyond the screen."
-    }
-  ];
 
   return (
     <header className="site-header">
@@ -71,69 +47,6 @@ const Header = () => {
             <img src={logo} alt="Logo" className="logo" />
           </a>
         </div>
-
-        {/* Desktop Nav */}
-        <nav className="site-nav desktop-nav">
-          <ul>
-            {internalItems.map((item, index) => (
-              <li key={index}>
-                <a href={item.href}>{item.name}</a>
-              </li>
-            ))}
-
-            <li className="dropdown" ref={dropdownRef}>
-              <button 
-                className="dropdown-label" 
-                onClick={() => setDropdownOpen(!dropdownOpen)}
-                aria-expanded={dropdownOpen}
-                aria-haspopup="true"
-              >
-                More&nbsp;
-                <FontAwesomeIcon icon={dropdownOpen ? faChevronUp : faChevronDown} />
-              </button>
-
-              {dropdownOpen && (
-                <ul className="dropdown-menu">
-                  {externalItems.map((item, index) => (
-                    <li key={index}>
-                      <a
-                        href={item.href}
-                        target={item.target}
-                        rel="noopener noreferrer"
-                        onClick={() => setDropdownOpen(false)}
-                      >
-                        {item.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </li>
-          </ul>
-        </nav>
-
-        {/* Mobile Menu - Always visible on mobile */}
-        <nav className="mobile-nav">
-          {/* Dynamic Label */}
-          <div className="dynamic-label">
-            {currentLabel}
-          </div>
-
-          <ul className="mobile-menu-list">
-            {[...internalItems, ...externalItems].map((item, index) => (
-              <li key={index}>
-                <a 
-                  href={item.href} 
-                  target={item.target} 
-                  className="menu-item"
-                  rel={item.target === "_blank" ? "noopener noreferrer" : undefined}
-                >
-                  <span className="menu-title">{item.name}</span>
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
       </div>
     </header>
   );
