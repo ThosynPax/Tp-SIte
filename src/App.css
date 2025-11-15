@@ -210,8 +210,8 @@ header {
 /* --- Footer --- */
 .site-footer {
   margin-top: 4rem;
-  padding: 20px 0;
-  font-size: 14px;
+  padding: 20px 30px;
+  font-size: 12px;
   color: #fff;
   text-align: left;
 }

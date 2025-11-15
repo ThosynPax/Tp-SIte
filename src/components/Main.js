@@ -30,6 +30,9 @@ const Main = () => {
           .intro-title { font-size: 1.6rem; }
           ul li { font-size: 1.1rem; }
           .wrapper { padding: 1rem; }
+          .full-width-black {
+            margin-top: -100px;
+          }
         }
       `}</style>
 

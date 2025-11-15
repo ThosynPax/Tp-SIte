@@ -11,7 +11,7 @@ const Footer = () => {
 
   return (
     <footer className="site-footer">
-        <p>&copy; 2015 - {currentYear} Thosyn Pax. All rights reserved. (V7) <br /> </p>
+        <p>&copy; 2015 - {currentYear} Thosyn Pax. All rights reserved. (V7.0.2) <br /> </p>
     </footer>
   );
 };
