@@ -125,7 +125,7 @@ const Main = () => {
                 <ul>
                   <li>
                     I run <a href={addRef("https://www.thepaxcompany.xyz")} target="_blank" rel="noopener noreferrer" className="teal-link">TPCo</a>,
-                    where I once helped founders turn ideas into usable products. Now building 
+                    where I once helped founders turn ideas into usable products. Now building
                     my own ideas and products.
                   </li>
 
@@ -163,7 +163,7 @@ const Main = () => {
               {/* WRITING */}
               <div className="brief-content">
                 <h2 className="roles-grid">Writing</h2>
-          
+
                 <ul>
                   <li>
                     I keep an online journal called
@@ -175,18 +175,6 @@ const Main = () => {
                     On
                     <a href={addRef("https://www.linkedin.com/in/thosyn-pax")} target="_blank" rel="noopener noreferrer" className="teal-link"> LinkedIn</a>,
                     I write about startups, product strategy, learning tech, and building ideas.
-                  </li>
-
-                  <li>
-                    On
-                    <a href={addRef("https://x.com/thosynpax")} target="_blank" rel="noopener noreferrer" className="teal-link"> X (Twitter)</a>,
-                    I share my thoughts and what I'm learning along the way.
-                  </li>
-
-                  <li>
-                    On
-                    <a href={addRef("https://instagram.com/thosynpax")} target="_blank" rel="noopener noreferrer" className="teal-link"> Instagram</a>,
-                    I post <strong>Muse</strong>, short reflections on life, faith, and creativity.
                   </li>
                 </ul>
               </div>
