@@ -148,14 +148,12 @@ const Main = () => {
 
                   <li>
                     Currently building an
-                    <a href={addRef("https://www.thepaxcompany.xyz/ai-directory")} target="_blank" rel="noopener noreferrer" className="teal-link"> AI Directory</a>
-                    to help people find useful AI tools faster.
+                    <a href={addRef("https://www.thepaxcompany.xyz/ai-directory")} target="_blank" rel="noopener noreferrer" className="teal-link"> AI Directory</a> to help people find useful AI tools faster.
                   </li>
 
                   <li>
                     Created an
-                    <a href={addRef("https://www.thepaxcompany.xyz/qell")} target="_blank" rel="noopener noreferrer" className="teal-link"> Equity Calculator</a>
-                    that helps founders understand equity splits.
+                    <a href={addRef("https://www.thepaxcompany.xyz/qell")} target="_blank" rel="noopener noreferrer" className="teal-link"> Equity Calculator</a> that helps founders understand equity splits.
                   </li>
                 </ul>
               </div>
@@ -175,6 +173,22 @@ const Main = () => {
                     On
                     <a href={addRef("https://www.linkedin.com/in/thosyn-pax")} target="_blank" rel="noopener noreferrer" className="teal-link"> LinkedIn</a>,
                     I write about startups, product strategy, learning tech, and building ideas.
+                  </li>
+                </ul>
+              </div>
+
+              <div className="brief-content">
+                <h2 className="roles-grid">Misc</h2>
+
+                <ul>
+                  <li>
+                    I enjoy watching sitcoms. Some of my favorites include The Marvelous Mrs. Maisel,
+                    The Fresh Prince of Bel-Air, Two and a Half Men, The Upshaws, and Abbott Elementary.
+                  </li>
+
+                  <li>
+                    Not much of a gamer, but I occasionally play small adventure games. Uncharted has
+                    been my favorite so far.
                   </li>
                 </ul>
               </div>
