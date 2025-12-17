@@ -1,0 +1,31 @@
+{
+  "redirects": [
+    {
+      "source": "/cre8fast",
+      "destination": "https://cre8fast.thosynpax.com",
+      "permanent": true
+    },
+    {
+      "source": "/cre8fast/:path*",
+      "destination": "https://cre8fast.thosynpax.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/cre8fast",
+      "destination": "https://cre8fast.thosynpax.com",
+      "permanent": true,
+      "has": [
+        { "type": "host", "value": "www.thosynpax.com" }
+      ]
+    },
+    {
+      "source": "/cre8fast/:path*",
+      "destination": "https://cre8fast.thosynpax.com/:path*",
+      "permanent": true,
+      "has": [
+        { "type": "host", "value": "www.thosynpax.com" }
+      ]
+    }
+  ]
+}
+
