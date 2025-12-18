@@ -1,17 +1,18 @@
 import React from 'react';
 import '../App.css';
-import { BsLinkedin, 
+import {
+  BsLinkedin,
   BsInstagram,
   BsTwitterX,
   BsGithub,
-  } from 'react-icons/bs'; 
+} from 'react-icons/bs';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
     <footer className="site-footer">
-        <p>&copy; 2015 - {currentYear} Thosyn Pax. All rights reserved. (V7.0.2) <br /> </p>
+      <p>&copy; 2015 - {currentYear} Thosyn Pax. All rights reserved. (V7.0.3) </p>
     </footer>
   );
 };
