@@ -124,9 +124,8 @@ const Main = () => {
                 <h2 className="roles-grid">Recent Roles & Impact</h2>
                 <ul>
                   <li>
-                    I run <a href={addRef("https://www.thepaxcompany.xyz")} target="_blank" rel="noopener noreferrer" className="teal-link">TPCo</a>,
-                    where I once helped founders turn ideas into usable products. Now building
-                    my own ideas and products.
+                    I stopped freelancing and agency work to start <a href={addRef("https://cre8fast.thosynpax.com")} target="_blank" rel="noopener noreferrer" className="teal-link">Cre8fast</a>,
+                    a product lab where I build products for myself and for founders and entrepreneurs.
                   </li>
 
                   <li>
@@ -135,7 +134,7 @@ const Main = () => {
                   </li>
 
                   <li>
-                    As a tech educator, I founded
+                    As a Tech Educator, I founded
                     <a href={addRef("https://www.paxschool.xyz/")} target="_blank" rel="noopener noreferrer" className="teal-link"> PASTE</a>,
                     where I teach beginners through podcasts, newsletters, YouTube, community resources, workshops, and mentorship.
                   </li>
@@ -144,16 +143,6 @@ const Main = () => {
                     Co-founded
                     <a href={addRef("https://www.inmail.ng/")} target="_blank" rel="noopener noreferrer" className="teal-link"> InFlect Innovations</a>,
                     supporting ideas that push technology forward.
-                  </li>
-
-                  <li>
-                    Currently building an
-                    <a href={addRef("https://www.thepaxcompany.xyz/ai-directory")} target="_blank" rel="noopener noreferrer" className="teal-link"> AI Directory</a> to help people find useful AI tools faster.
-                  </li>
-
-                  <li>
-                    Created an
-                    <a href={addRef("https://www.thepaxcompany.xyz/qell")} target="_blank" rel="noopener noreferrer" className="teal-link"> Equity Calculator</a> that helps founders understand equity splits.
                   </li>
                 </ul>
               </div>
@@ -189,6 +178,16 @@ const Main = () => {
                   <li>
                     Not much of a gamer, but I occasionally play small adventure games. Uncharted has
                     been my favorite so far.
+                  </li>
+                </ul>
+              </div>
+
+              <div className="brief-content">
+                <h2 className="roles-grid">Publication</h2>
+
+                <ul>
+                  <li>
+                    One of my Medium articles was published on the <a href={addRef("https://peopleofcolorintech.com/articles/tech-jobstorming-how-to-build-a-professional-network-in-the-tech-industry/")} target="_blank" rel="noopener noreferrer" className="teal-link">POCIT website</a>.
                   </li>
                 </ul>
               </div>
