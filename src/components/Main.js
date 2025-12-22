@@ -16,16 +16,21 @@ const Main = () => {
   return (
     <main className="site-body" style={{ marginTop: 0, paddingTop: 0 }}>
       <style>{`
-        .wrapper { padding: 0; }
+        .wrapper { 
+          padding: 0; 
+          font-family: 'Space Mono', monospace;
+        }
         .content-section { margin-bottom: 2rem; }
         .brief-content { margin-bottom: 2.5rem; }
         h2.roles-grid { 
+          font-family: 'Space Mono', monospace;
           font-size: 1.8rem; 
           margin-bottom: 1rem; 
           font-weight: 600; 
           line-height: 1.3;
         }
         .intro-title { 
+          font-family: 'Space Mono', monospace;
           font-size: 2rem; 
           font-weight: 600; 
           margin-bottom: 0.75rem;
@@ -114,9 +119,9 @@ const Main = () => {
               {/* INTRO */}
               <div className="brief-content">
                 <header className="intro">
-                  <h3 className="intro-title">Hey 👋 I'm Thosyn Pax</h3>
+                  <h3 className="intro-title">Hey, I'm Thosyn Pax 👋</h3>
                 </header>
-                <p>I build simple, helpful tools that solve real problems for people and help businesses grow.</p>
+                <p>I build simple tools that solve real problems and help businesses grow.</p>
               </div>
 
               {/* RECENT ROLES */}
@@ -124,25 +129,21 @@ const Main = () => {
                 <h2 className="roles-grid">Recent Roles & Impact</h2>
                 <ul>
                   <li>
-                    I stopped freelancing and agency work to start <a href={addRef("https://cre8fast.thosynpax.com")} target="_blank" rel="noopener noreferrer" className="teal-link">Cre8fast</a>,
-                    a product lab where I build products for myself and for founders and entrepreneurs.
+                    I started <a href={addRef("https://thepaxcompany.xyz")} target="_blank" rel="noopener noreferrer" className="teal-link">TPCo</a>, a studio venture.
+                  </li>
+                  <li>
+                    I run <a href={addRef("https://cre8fast.thosynpax.com")} target="_blank" rel="noopener noreferrer" className="teal-link">Cre8fast</a>, a product lab where I build tools for myself and other founders.
                   </li>
 
                   <li>
-                    I built <a href={addRef("https://karpture.vercel.app")} target="_blank" rel="noopener noreferrer" className="teal-link">Karpture</a>,
-                    a Chrome extension that lets you save, copy, and reuse anytime.
-                  </li>
-
-                  <li>
-                    As a Tech Educator, I founded
+                    I founded
                     <a href={addRef("https://www.paxschool.xyz/")} target="_blank" rel="noopener noreferrer" className="teal-link"> PASTE</a>,
-                    where I teach beginners through podcasts, newsletters, YouTube, community resources, workshops, and mentorship.
+                    where I teach beginners how to build things with tech.
                   </li>
 
                   <li>
-                    Co-founded
-                    <a href={addRef("https://www.inmail.ng/")} target="_blank" rel="noopener noreferrer" className="teal-link"> InFlect Innovations</a>,
-                    supporting ideas that push technology forward.
+                    I co-founded
+                    <a href={addRef("https://www.inmail.ng/")} target="_blank" rel="noopener noreferrer" className="teal-link"> InFlect Innovations</a> to support new tech ideas.
                   </li>
                 </ul>
               </div>
@@ -153,15 +154,14 @@ const Main = () => {
 
                 <ul>
                   <li>
-                    I keep an online journal called
-                    <a href={addRef("https://trail.thosynpax.com/")} target="_blank" rel="noopener noreferrer" className="teal-link"> Pax Trail</a>,
-                    where I document my growth and tell personal stories.
+                    <a href={addRef("https://cut.thosynpax.com")} target="_blank" rel="noopener noreferrer" className="teal-link">Builder's Cut</a> is a newsletter where I share behind-the-scenes lessons on building products and companies.
+                  </li>
+                  <li>
+                    I write <a href={addRef("https://trail.thosynpax.com/")} target="_blank" rel="noopener noreferrer" className="teal-link">Pax Trail</a>, a blog about my personal journey and growth.
                   </li>
 
                   <li>
-                    On
-                    <a href={addRef("https://www.linkedin.com/in/thosyn-pax")} target="_blank" rel="noopener noreferrer" className="teal-link"> LinkedIn</a>,
-                    I write about startups, product strategy, learning tech, and building ideas.
+                    I post on <a href={addRef("https://www.linkedin.com/in/thosyn-pax")} target="_blank" rel="noopener noreferrer" className="teal-link">LinkedIn</a> about startups, product strategy, and tech.
                   </li>
                 </ul>
               </div>
@@ -171,13 +171,11 @@ const Main = () => {
 
                 <ul>
                   <li>
-                    I enjoy watching sitcoms. Some of my favorites include The Marvelous Mrs. Maisel,
-                    The Fresh Prince of Bel-Air, Two and a Half Men, The Upshaws, and Abbott Elementary.
+                    I love watching sitcoms. My favorites include The Marvelous Mrs. Maisel, The Fresh Prince, and Abbott Elementary.
                   </li>
 
                   <li>
-                    Not much of a gamer, but I occasionally play small adventure games. Uncharted has
-                    been my favorite so far.
+                    I'm not much of a gamer, but I like small adventure games. Uncharted is my favorite so far.
                   </li>
                 </ul>
               </div>
@@ -187,7 +185,7 @@ const Main = () => {
 
                 <ul>
                   <li>
-                    One of my Medium articles was published on the <a href={addRef("https://peopleofcolorintech.com/articles/tech-jobstorming-how-to-build-a-professional-network-in-the-tech-industry/")} target="_blank" rel="noopener noreferrer" className="teal-link">POCIT website</a>.
+                    One of my articles was published on the <a href={addRef("https://peopleofcolorintech.com/articles/tech-jobstorming-how-to-build-a-professional-network-in-the-tech-industry/")} target="_blank" rel="noopener noreferrer" className="teal-link">POCIT website</a>.
                   </li>
                 </ul>
               </div>
