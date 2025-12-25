@@ -4,8 +4,18 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 
-const Main = () => {
+const Main = ({ theme, season }) => {
   const [isOpen, setIsOpen] = useState(false);
+
+  const getSeasonEmoji = (s) => {
+    switch (s) {
+      case 'Spring': return '🌸';
+      case 'Summer': return '☀️';
+      case 'Autumn': return '🍂';
+      case 'Winter': return '❄️';
+      default: return '';
+    }
+  };
 
   const addRef = (url) => {
     return url.includes("?")
@@ -50,14 +60,15 @@ const Main = () => {
           line-height: 1.6; 
           font-size: 1.05rem;
           padding: 0;
+          color: var(--text-color);
         }
         .teal-link {
-          color: #f3d4b7;
+          color: var(--accent-color);
           font-weight: 500;
           text-decoration: none;
         }
         .teal-link:hover {
-          color: #f3d4b7;
+          color: var(--accent-color);
           text-decoration: underline;
         }
         
@@ -113,13 +124,13 @@ const Main = () => {
 
       <div className="wrapper">
         <div className="full-width-black">
-          <div className="black-section">
+          <div className="black-section" style={{ background: 'transparent' }}>
             <section className="content-section container" style={{ maxWidth: "760px", margin: "0 auto", textAlign: "left" }}>
 
               {/* INTRO */}
               <div className="brief-content">
                 <header className="intro">
-                  <h3 className="intro-title">Hey, I'm Thosyn Pax 👋</h3>
+                  <h3 className="intro-title">Hey, I'm Thosyn Pax {getSeasonEmoji(season)}</h3>
                 </header>
                 <p>I build simple tools that solve real problems and help businesses grow.</p>
               </div>

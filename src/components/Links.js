@@ -45,29 +45,29 @@ export default function LinksPage() {
         ))}
       </div>
 
-    
-<section className="youtube-section">
-  <div className="content">
-    <h2>Learn. Build. Innovate.</h2>
-    <p>
-      Dive into my YouTube channel <strong>PaST, Pax School of Tech</strong> for
-      free tech lessons, product insights, and design thinking tips to elevate
-      your skills.
-    </p>
-  </div>
 
-  <div className="video-container">
-    <iframe
-      src="https://www.youtube.com/embed/0GVJo716pH4"
-      title="PaST – Pax School of Tech YouTube Channel"
-      frameBorder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowFullScreen
-    ></iframe>
-  </div>
-</section>
+      <section className="youtube-section">
+        <div className="content">
+          <h2>Learn. Build. Innovate.</h2>
+          <p>
+            Dive into my YouTube channel <strong>PaST, Pax School of Tech</strong> for
+            free tech lessons, product insights, and design thinking tips to elevate
+            your skills.
+          </p>
+        </div>
 
-   
+        <div className="video-container">
+          <iframe
+            src="https://www.youtube.com/embed/0GVJo716pH4"
+            title="PaST – Pax School of Tech YouTube Channel"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
+        </div>
+      </section>
+
+
 
 
       {/* 🧮 Equity Calculator */}
@@ -102,13 +102,15 @@ export default function LinksPage() {
 
       <style>{`
         .links-wrapper {
-          color: #fff;
+          color: var(--text-color);
           min-height: 100vh;
           padding: 2rem 1rem;
           display: flex;
           flex-direction: column;
           align-items: center;
           text-align: center;
+          background-color: var(--bg-color);
+          transition: background-color var(--transition-speed), color var(--transition-speed);
         }
 
         .header-section .logo {
@@ -121,12 +123,13 @@ export default function LinksPage() {
         p {
           line-height: 1.6;
           font-size: 0.8rem;
+          color: var(--brief-text);
         }
 
         h1 {
           margin: 0;
           font-size: 2rem;
-          color: #f4d4b7;
+          color: var(--accent-color);
         }
 
         .links-list {
@@ -142,16 +145,16 @@ export default function LinksPage() {
           padding: 1rem;
           border-radius: 12px;
           text-decoration: none;
-          background-color: #1f1f1f;
-          color: #fff;
-          border: 1px solid #333;
+          background-color: var(--card-bg);
+          color: var(--text-color);
+          border: 1px solid rgba(var(--accent-color), 0.2);
           font-weight: 500;
           transition: all 0.3s ease;
         }
 
         .link-button:hover {
-          background-color: #f4d4b7;
-          color: #000;
+          background-color: var(--accent-color);
+          color: var(--bg-color);
         }
 
         .youtube-section {
@@ -162,7 +165,7 @@ export default function LinksPage() {
 
         .youtube-section h2 {
           font-size: 1.5rem;
-          color: #f4d4b7;
+          color: var(--accent-color);
           margin-bottom: 0.5rem;
         }
 
@@ -180,21 +183,24 @@ export default function LinksPage() {
           left: 0;
           width: 100%;
           height: 100%;
+          border: 1px solid rgba(var(--accent-color), 0.2);
+          border-radius: 12px;
         }
 
         .equity-section {
-          background: #1f1f1f;
+          background: var(--card-bg);
           margin-top: 4rem;
           padding: 4rem 2rem;
           width: 100%;
           max-width: 800px;
           border-radius: 1.5rem;
           text-align: center;
+          border: 1px solid rgba(var(--accent-color), 0.1);
         }
 
         .equity-section h2 {
           font-size: 1.8rem;
-          color: #f4d4b7;
+          color: var(--accent-color);
         }
 
         .equity-button {
@@ -203,21 +209,22 @@ export default function LinksPage() {
           font-size: 1rem;
           border: none;
           border-radius: 1rem;
-          background-color: #f4d4b7;
-          color: #000;
+          background-color: var(--accent-color);
+          color: var(--bg-color);
           font-weight: bold;
           cursor: pointer;
           transition: 0.3s;
         }
 
         .equity-button:hover {
-          background-color: #fff;
+          background-color: var(--text-color);
+          color: var(--bg-color);
         }
 
         .footer {
           margin-top: 4rem;
           font-size: 0.9rem;
-          color: #fff;
+          color: var(--text-color);
         }
       `}</style>
     </div>

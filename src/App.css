@@ -2,14 +2,60 @@
 @charset "UTF-8";
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
+:root {
+  --bg-color: #000;
+  --text-color: #ffffff;
+  --accent-color: #F4D4B7;
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --brief-text: #ccc;
+  --transition-speed: 0.5s;
+}
+
+.theme-light {
+  --bg-color: #ffffff;
+  --text-color: #1a1a1a;
+  --card-bg: rgba(0, 0, 0, 0.05);
+  --brief-text: #444;
+}
+
+.theme-dark {
+  --bg-color: #000;
+  --text-color: #ffffff;
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --brief-text: #ccc;
+}
+
+/* Seasonal overrides for accent-color */
+.season-spring {
+  --accent-color: #a8e6cf;
+}
+
+/* Fresh Green */
+.season-summer {
+  --accent-color: #ffb7b2;
+}
+
+/* Warm Peach */
+.season-autumn {
+  --accent-color: #ffdac1;
+}
+
+/* Autumnal Orange/Tan */
+.season-winter {
+  --accent-color: #F4D4B7;
+}
+
+/* Classic Tan */
+
 body {
-  background-color: #000;
-  border-top: 20px solid #F4D4B7;
+  background-color: var(--bg-color);
+  border-top: 20px solid var(--accent-color);
   font-family: 'Inter', sans-serif;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  color: #fff;
+  color: var(--text-color);
+  transition: background-color var(--transition-speed), color var(--transition-speed);
 }
 
 * {
@@ -44,7 +90,7 @@ header {
 }
 
 .site-nav ul li a {
-  color: #fff;
+  color: var(--text-color);
   text-decoration: none;
   font-size: 16px;
   font-weight: 500;
@@ -65,7 +111,7 @@ header {
 /* --- Intro Section --- */
 .intro-title {
   font-weight: 700;
-  color: #F4D4B7;
+  color: var(--accent-color);
   font-size: 45px;
   margin: 20px 0 10px 0;
 }
@@ -77,25 +123,31 @@ header {
 }
 
 @media (max-width: 768px) {
-  .intro-title { font-size: 28px; }
-  .intro-current-job { font-size: 26px; margin-bottom: 30px; }
+  .intro-title {
+    font-size: 28px;
+  }
+
+  .intro-current-job {
+    font-size: 26px;
+    margin-bottom: 30px;
+  }
 }
 
 /* --- Brief Content --- */
 .brief-content {
-  color: #ccc;
+  color: var(--brief-text);
   font-size: 22px;
   line-height: 1.5;
   margin: 40px 0;
 }
 
 .inner-brief-content {
-  color: #fff;
+  color: var(--text-color);
   font-size: 22px;
 }
 
 .inner-brief-content a {
-  color: #fff;
+  color: var(--text-color);
   text-decoration: none;
 }
 
@@ -106,7 +158,7 @@ header {
   font-family: "Noto Serif Display", serif;
   font-size: 20px;
   font-weight: 400;
-  color: #F4D4B7;
+  color: var(--accent-color);
   margin-top: 40px;
 }
 
@@ -132,8 +184,8 @@ header {
 }
 
 .project-card {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(244, 212, 183, 0.2);
+  background: var(--card-bg);
+  border: 1px solid rgba(var(--accent-color), 0.2);
   border-radius: 12px;
   padding: 1.5rem;
   transition: 0.3s ease;
@@ -141,7 +193,7 @@ header {
 }
 
 .project-card:hover {
-  border-color: #F4D4B7;
+  border-color: var(--accent-color);
   transform: translateY(-2px);
 }
 
@@ -149,12 +201,12 @@ header {
   font-family: "Noto Serif Display", serif;
   font-size: 1.5rem;
   font-weight: 600;
-  color: #F4D4B7;
+  color: var(--accent-color);
   margin-bottom: 0.3rem;
 }
 
 .project-description {
-  color: #ddd;
+  color: var(--brief-text);
   font-size: 0.95rem;
   line-height: 1.6;
   margin-bottom: 1.2rem;
@@ -163,8 +215,8 @@ header {
 .project-link {
   display: inline-block;
   padding: 0.7rem 1.2rem;
-  color: #F4D4B7;
-  border: 1px solid #F4D4B7;
+  color: var(--accent-color);
+  border: 1px solid var(--accent-color);
   text-decoration: none;
   border-radius: 6px;
   font-weight: 500;
@@ -173,8 +225,8 @@ header {
 }
 
 .project-link:hover {
-  background: #F4D4B7;
-  color: #000;
+  background: var(--accent-color);
+  color: var(--bg-color);
 }
 
 /* --- Buttons (Podcast / Platform Buttons) --- */
@@ -191,11 +243,11 @@ header {
   align-items: center;
   gap: 0.5rem;
   background: transparent;
-  color: #F4D4B7;
+  color: var(--accent-color);
   padding: 0.8rem 1.2rem;
   border-radius: 8px;
   text-decoration: none;
-  border: 2px solid #F4D4B7;
+  border: 2px solid var(--accent-color);
   font-weight: 600;
   transition: 0.3s ease;
   font-size: 0.9rem;
@@ -203,8 +255,8 @@ header {
 }
 
 .platform-button:hover {
-  background: #F4D4B7;
-  color: #000;
+  background: var(--accent-color);
+  color: var(--bg-color);
 }
 
 /* --- Footer --- */
@@ -212,7 +264,7 @@ header {
   margin-top: 4rem;
   padding: 20px 30px;
   font-size: 12px;
-  color: #fff;
+  color: var(--text-color);
   text-align: left;
 }
 
@@ -222,7 +274,7 @@ header {
 }
 
 .social-icons a {
-  color: #fff;
+  color: var(--text-color);
   font-size: 22px;
   text-decoration: none;
 }
