@@ -147,14 +147,12 @@ const Main = ({ theme, season }) => {
                   </li>
 
                   <li>
-                    I founded
-                    <a href={addRef("https://www.paxschool.xyz/")} target="_blank" rel="noopener noreferrer" className="teal-link"> PASTE</a>,
+                    I founded <a href={addRef("https://www.withpaste.com/")} target="_blank" rel="noopener noreferrer" className="teal-link">PASTE</a>,
                     where I teach beginners how to build things with tech.
                   </li>
 
                   <li>
-                    I co-founded
-                    <a href={addRef("https://www.inmail.ng/")} target="_blank" rel="noopener noreferrer" className="teal-link"> InFlect Innovations</a> to support new tech ideas.
+                    I co-founded <a href={addRef("https://www.inmail.ng/")} target="_blank" rel="noopener noreferrer" className="teal-link">InFlect Innovations</a> to support new tech ideas.
                   </li>
                 </ul>
               </div>
@@ -173,6 +171,10 @@ const Main = ({ theme, season }) => {
 
                   <li>
                     I post on <a href={addRef("https://www.linkedin.com/in/thosyn-pax")} target="_blank" rel="noopener noreferrer" className="teal-link">LinkedIn</a> about startups, product strategy, and tech.
+                  </li>
+
+                  <li> 
+                     I have my old writings archived on <a href={addRef("https://medium.com/@thosynpax")} target="_blank" rel="noopener noreferrer" className="teal-link">Medium</a>.
                   </li>
                 </ul>
               </div>
