@@ -87,8 +87,8 @@ export default function LinksPage() {
             width="16"
             height="16"
             viewBox="0 0 24 24"
-            fill="#f4d4b7"
-            style={{ margin: '0 4px', verticalAlign: 'middle' }}
+            fill="currentColor"
+            style={{ margin: '0 4px', verticalAlign: 'middle', color: 'var(--link-color)' }}
           >
             <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 6 
                   4 4 6.5 4c1.74 0 3.41 1.01 
@@ -129,7 +129,7 @@ export default function LinksPage() {
         h1 {
           margin: 0;
           font-size: 2rem;
-          color: var(--accent-color);
+          color: var(--header-color);
         }
 
         .links-list {
@@ -165,7 +165,7 @@ export default function LinksPage() {
 
         .youtube-section h2 {
           font-size: 1.5rem;
-          color: var(--accent-color);
+          color: var(--header-color);
           margin-bottom: 0.5rem;
         }
 
@@ -200,7 +200,7 @@ export default function LinksPage() {
 
         .equity-section h2 {
           font-size: 1.8rem;
-          color: var(--accent-color);
+          color: var(--header-color);
         }
 
         .equity-button {
@@ -209,7 +209,7 @@ export default function LinksPage() {
           font-size: 1rem;
           border: none;
           border-radius: 1rem;
-          background-color: var(--accent-color);
+          background-color: var(--link-color);
           color: var(--bg-color);
           font-weight: bold;
           cursor: pointer;

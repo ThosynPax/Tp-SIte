@@ -38,6 +38,7 @@ const Main = ({ theme, season }) => {
           margin-bottom: 1rem; 
           font-weight: 600; 
           line-height: 1.3;
+          color: var(--header-color);
         }
         .intro-title { 
           font-family: 'Space Mono', monospace;
@@ -45,6 +46,7 @@ const Main = ({ theme, season }) => {
           font-weight: 600; 
           margin-bottom: 0.75rem;
           line-height: 1.3;
+          color: var(--header-color);
         }
         .intro p {
           font-size: 1.1rem;
@@ -63,12 +65,12 @@ const Main = ({ theme, season }) => {
           color: var(--text-color);
         }
         .teal-link {
-          color: var(--accent-color);
+          color: var(--link-color);
           font-weight: 500;
           text-decoration: none;
         }
         .teal-link:hover {
-          color: var(--accent-color);
+          color: var(--link-color);
           text-decoration: underline;
         }
         
@@ -170,11 +172,14 @@ const Main = ({ theme, season }) => {
                   </li>
 
                   <li>
+                    I post jobs on <a href={addRef("https://www.threads.net/@thosynpax")} target="_blank" rel="noopener noreferrer" className="teal-link">Threads</a>.
+                  </li>
+                  <li>
                     I post on <a href={addRef("https://www.linkedin.com/in/thosyn-pax")} target="_blank" rel="noopener noreferrer" className="teal-link">LinkedIn</a> about startups, product strategy, and tech.
                   </li>
 
-                  <li> 
-                     I have my old writings archived on <a href={addRef("https://medium.com/@thosynpax")} target="_blank" rel="noopener noreferrer" className="teal-link">Medium</a>.
+                  <li>
+                    I have my old writings archived on <a href={addRef("https://medium.com/@thosynpax")} target="_blank" rel="noopener noreferrer" className="teal-link">Medium</a>.
                   </li>
                 </ul>
               </div>
@@ -201,6 +206,14 @@ const Main = ({ theme, season }) => {
                     One of my articles was published on the <a href={addRef("https://peopleofcolorintech.com/articles/tech-jobstorming-how-to-build-a-professional-network-in-the-tech-industry/")} target="_blank" rel="noopener noreferrer" className="teal-link">POCIT website</a>.
                   </li>
                 </ul>
+              </div>
+
+              <div className="brief-content">
+                <h2 className="roles-grid">Contact</h2>
+
+                <p>
+                  The fastest way to reach me is by email. For personal messages, enquiries, teaching, or similar matters, please write to <a href="mailto:thosynpax@gmail.com" className="teal-link">thosynpax@gmail.com</a>. For project-related matters, publications, or collaborations, please use <a href="mailto:me@thosynpax.com" className="teal-link">me@thosynpax.com</a>.
+                </p>
               </div>
 
             </section>

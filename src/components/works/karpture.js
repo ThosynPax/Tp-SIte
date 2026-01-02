@@ -19,7 +19,7 @@ const KarptureStory = () => {
           .section {
             margin-bottom: 4rem;
             text-align: left;
-            color: #fff;
+            color: var(--text-color);
           }
 
           .title {
@@ -27,14 +27,14 @@ const KarptureStory = () => {
             font-weight: 700;
             margin-bottom: 1.5rem;
             line-height: initial;
-            color: #f4d4b7;
+            color: var(--header-color);
           }
 
           .subtitle {
             font-size: 1.5rem;
             font-weight: 600;
             margin-bottom: 1rem;
-            color: #f4d4b7;
+            color: var(--header-color);
           }
 
           .content {
@@ -46,15 +46,15 @@ const KarptureStory = () => {
           .quote {
             font-style: italic;
             font-size: 1.3rem;
-            color: #008080;
+            color: var(--bg-color);
             padding: 2rem;
-            background: #f4d4b7;
-            border-left: 4px solid #f4d4b7;
+            background: var(--accent-color);
+            border-left: 4px solid var(--accent-color);
             max-width: 700px;
           }
         
           a {
-            color: #f4d4b7;
+            color: var(--link-color);
             text-decoration: none;
             margin: 0 1rem;
           }
@@ -108,11 +108,11 @@ const KarptureStory = () => {
             <p>A functional app, no matter how simple or ugly, is 1000x better than a beautiful prototype that never ships.</p>
           </div>
 
-                   {/* Image Section */}
-             <div className="image-wrapper">
-                {/* Replace with actual image */}
-                <img src={KarptureOld} alt="" />
-            </div>
+          {/* Image Section */}
+          <div className="image-wrapper">
+            {/* Replace with actual image */}
+            <img src={KarptureOld} alt="" />
+          </div>
 
         </section>
 
@@ -132,11 +132,11 @@ const KarptureStory = () => {
           <div className="quote">
             “Karpture isn’t fancy. But it works. It was born out of a need. It’s simple, and I plan to improve it. But version 1 is out there, nd that’s what matters.”
           </div>
-             {/* Image Section */}
-            <div className="image-wrapper">
-                {/* Replace with actual image */}
-                <img src={KarptureNew} alt="" />
-            </div>
+          {/* Image Section */}
+          <div className="image-wrapper">
+            {/* Replace with actual image */}
+            <img src={KarptureNew} alt="" />
+          </div>
         </section>
 
         <section className="section">
@@ -150,7 +150,7 @@ const KarptureStory = () => {
 
             <p>Would you like to try out karpture?<a href="https://clipkip-site.vercel.app/" target='_blank'>Check it out right here</a></p>
           </div>
-          
+
 
         </section>
 

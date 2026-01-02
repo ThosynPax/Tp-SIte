@@ -17,7 +17,7 @@ const AfrihealsCareers = () => {
           .section {
             margin-bottom: 4rem;
             text-align: left;
-            color: #fff;
+            color: var(--text-color);
           }
           
           .title {
@@ -25,14 +25,14 @@ const AfrihealsCareers = () => {
             font-weight: 700;
             margin-bottom: 1.5rem;
             line-height: initial;
-            color: #f4d4b7;
+            color: var(--header-color);
           }
           
           .subtitle {
             font-size: 1.5rem;
             font-weight: 600;
             margin-bottom: 1rem;
-            color: #f4d4b7;
+            color: var(--header-color);
           }
           
           .content {
@@ -44,10 +44,10 @@ const AfrihealsCareers = () => {
           .quote {
             font-style: italic;
             font-size: 1.3rem;
-            color: #008080;
+            color: var(--bg-color);
             padding: 2rem;
-            background: #f4d4b7;
-            border-left: 4px solid #f4d4b7;
+            background: var(--accent-color);
+            border-left: 4px solid var(--accent-color);
             max-width: 700px;
           }
         `}
