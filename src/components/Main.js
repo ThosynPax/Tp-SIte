@@ -148,10 +148,10 @@ const Main = ({ theme, season }) => {
                   I later launched <a href={addRef("https://cre8fast.thosynpax.com")} target="_blank" rel="noopener noreferrer" className="teal-link">Cre8fast</a>, a product lab where I build practical tools and internal products for myself and other founders.
                 </li>
 
-<li>
-  I founded <a href={addRef("https://www.withpaste.com/")} target="_blank" rel="noopener noreferrer" className="teal-link">PASTE (Pax School of Technology)</a>,
-  an applied tech education ecosystem where people learn by building, collaborating, and shipping real-world products.
-</li>
+                <li>
+                  I founded <a href={addRef("https://www.withpaste.com/")} target="_blank" rel="noopener noreferrer" className="teal-link">PASTE (Pax School of Technology)</a>,
+                  an applied tech education ecosystem where people learn by building, collaborating, and shipping real-world products.
+                </li>
 
 
 
