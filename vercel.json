@@ -15,7 +15,10 @@
       "destination": "https://cre8fast.thosynpax.com",
       "permanent": true,
       "has": [
-        { "type": "host", "value": "www.thosynpax.com" }
+        {
+          "type": "host",
+          "value": "www.thosynpax.com"
+        }
       ]
     },
     {
@@ -23,9 +26,43 @@
       "destination": "https://cre8fast.thosynpax.com/:path*",
       "permanent": true,
       "has": [
-        { "type": "host", "value": "www.thosynpax.com" }
+        {
+          "type": "host",
+          "value": "www.thosynpax.com"
+        }
+      ]
+    },
+    {
+      "source": "/muse",
+      "destination": "https://muse.thosynpax.com",
+      "permanent": true
+    },
+    {
+      "source": "/muse/:path*",
+      "destination": "https://muse.thosynpax.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/muse",
+      "destination": "https://muse.thosynpax.com",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.thosynpax.com"
+        }
+      ]
+    },
+    {
+      "source": "/muse/:path*",
+      "destination": "https://muse.thosynpax.com/:path*",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.thosynpax.com"
+        }
       ]
     }
   ]
 }
-

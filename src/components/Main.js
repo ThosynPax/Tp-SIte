@@ -141,17 +141,17 @@ const Main = ({ theme, season }) => {
               <div className="brief-content">
                 <h2 className="roles-grid">Recent Roles & Impact</h2>
                 <ul>
-                 <li>
-                  I started <a href={addRef("https://thepaxcompany.xyz")} target="_blank" rel="noopener noreferrer" className="teal-link">TPCo</a> as a product development agency, and it has since evolved into my parent studio for product, design, and venture work.
-                </li>
-                <li>
-                  I later launched <a href={addRef("https://cre8fast.thosynpax.com")} target="_blank" rel="noopener noreferrer" className="teal-link">Cre8fast</a>, a product lab where I build practical tools and internal products for myself and other founders.
-                </li>
+                  <li>
+                    I started <a href={addRef("https://thepaxcompany.xyz")} target="_blank" rel="noopener noreferrer" className="teal-link">TPCo</a> as a product development agency, and it has since evolved into my parent studio for product, design, and venture work.
+                  </li>
+                  <li>
+                    I later launched <a href={addRef("https://cre8fast.thosynpax.com")} target="_blank" rel="noopener noreferrer" className="teal-link">Cre8fast</a>, a product lab where I build practical tools and internal products for myself and other founders.
+                  </li>
 
-                <li>
-                  I founded <a href={addRef("https://www.withpaste.com/")} target="_blank" rel="noopener noreferrer" className="teal-link">PASTE (Pax School of Technology)</a>,
-                  an applied tech education ecosystem where people learn by building, collaborating, and shipping real-world products.
-                </li>
+                  <li>
+                    I founded <a href={addRef("https://www.withpaste.com/")} target="_blank" rel="noopener noreferrer" className="teal-link">PASTE (Pax School of Technology)</a>,
+                    an applied tech education ecosystem where people learn by building, collaborating, and shipping real-world products.
+                  </li>
 
 
 
@@ -171,11 +171,11 @@ const Main = ({ theme, season }) => {
                     <a href={addRef("https://cut.thosynpax.com")} target="_blank" rel="noopener noreferrer" className="teal-link">Builder's Cut</a> is a newsletter where I share behind-the-scenes lessons on building products and companies.
                   </li>
                   <li>
-                    I write <a href={addRef("https://trail.thosynpax.com/")} target="_blank" rel="noopener noreferrer" className="teal-link">Pax Trail</a>, a blog about my personal journey and growth.
+                    My Personal Journal is here on <a href={addRef("https://trail.thosynpax.com/")} target="_blank" rel="noopener noreferrer" className="teal-link">Pax Trail</a>.
                   </li>
 
                   <li>
-                    I post jobs on <a href={addRef("https://www.threads.net/@thosynpax")} target="_blank" rel="noopener noreferrer" className="teal-link">Threads</a>.
+                    I post jobs and learning resources on <a href={addRef("https://www.threads.net/@thosynpax")} target="_blank" rel="noopener noreferrer" className="teal-link">Threads</a>.
                   </li>
                   <li>
                     I post on <a href={addRef("https://www.linkedin.com/in/thosyn-pax")} target="_blank" rel="noopener noreferrer" className="teal-link">LinkedIn</a> about startups, product strategy, and tech.
@@ -183,6 +183,10 @@ const Main = ({ theme, season }) => {
 
                   <li>
                     I have my old writings archived on <a href={addRef("https://medium.com/@thosynpax")} target="_blank" rel="noopener noreferrer" className="teal-link">Medium</a>.
+                  </li>
+
+                  <li>
+                    <a href={addRef("https://muse.thosynpax.com")} target="_blank" rel="noopener noreferrer" className="teal-link">Muse</a> is a page where I share my personal thoughts and reflections.
                   </li>
                 </ul>
               </div>
