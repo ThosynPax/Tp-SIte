@@ -1,8 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import '../App.css';
 import logo from '../assets/logo.png';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 
 const Header = () => {
   const [currentLabel, setCurrentLabel] = useState('Industrial Design • UX Engineering');

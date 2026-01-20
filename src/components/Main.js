@@ -1,8 +1,5 @@
 import { useState } from "react";
 import '../App.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
-import { Link } from 'react-router-dom';
 
 const Main = ({ theme, season }) => {
   const [isOpen, setIsOpen] = useState(false);
