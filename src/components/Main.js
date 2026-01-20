@@ -1,8 +1,6 @@
-import { useState } from "react";
 import '../App.css';
 
 const Main = ({ theme, season }) => {
-  const [isOpen, setIsOpen] = useState(false);
 
   const getSeasonEmoji = (s) => {
     switch (s) {
