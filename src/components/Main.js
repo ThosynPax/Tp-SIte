@@ -169,10 +169,10 @@ const Main = ({ theme, season }) => {
 
                 <ul>
                   <li>
-                    <strong>YouTube Channel:</strong> Architecture deep dives, AI strategy, and technical breakdowns. <a href="https://www.youtube.com/@thosynpaxlab" target="_blank" rel="noopener noreferrer" className="teal-link">Subscribe on YouTube</a>.
+                    <strong>Product Lab by Thosyn Pax:</strong> Architecture deep dives, AI strategy, and technical breakdowns. <a href="https://www.youtube.com/@thosynpaxlab" target="_blank" rel="noopener noreferrer" className="teal-link">Subscribe on YouTube</a>.
                   </li>
                   <li>
-                    <strong>The Podcast:</strong> Conversations on building for scale, product strategy, and the future of technology. Available on:
+                    <strong>The Product Lab Conversations:</strong> Conversations on building for scale, product strategy, and the future of technology. Available on:
                     <div className="platform-links" style={{ marginTop: "0.8rem", display: "flex", gap: "1rem", flexWrap: "wrap" }}>
                       <a href="https://open.spotify.com/show/6fCxwjIOauwOpBrmlgqODB" target="_blank" rel="noopener noreferrer" className="teal-link" style={{ fontSize: "0.9rem" }}>
                         <i className="fab fa-spotify"></i> Spotify
@@ -186,7 +186,18 @@ const Main = ({ theme, season }) => {
                     </div>
                   </li>
                   <li>
-                    <strong>The Newsletter:</strong> Behind-the-scenes lessons on building products and companies. <a href="https://cut.thosynpax.com" target="_blank" rel="noopener noreferrer" className="teal-link">Read Product Lab Newsletter by Thosyn Pax</a>.
+                    <strong>Product Lab: The Weekly Architecture Audit:</strong> Behind-the-scenes lessons on building products and companies. Available on:
+                    <div className="platform-links" style={{ marginTop: "0.8rem", display: "flex", gap: "1rem", flexWrap: "wrap" }}>
+                      <a href="https://cut.thosynpax.com" target="_blank" rel="noopener noreferrer" className="teal-link" style={{ fontSize: "0.9rem" }}>
+                        <i className="fas fa-pen-nib"></i> Ghost
+                      </a>
+                      <a href="https://substack.com/@thosynpax" target="_blank" rel="noopener noreferrer" className="teal-link" style={{ fontSize: "0.9rem" }}>
+                        <i className="fas fa-envelope-open-text"></i> Substack
+                      </a>
+                      <a href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7325566398129225728" target="_blank" rel="noopener noreferrer" className="teal-link" style={{ fontSize: "0.9rem" }}>
+                        <i className="fab fa-linkedin"></i> LinkedIn
+                      </a>
+                    </div>
                   </li>
                 </ul>
               </div>
@@ -198,13 +209,6 @@ const Main = ({ theme, season }) => {
                 <ul>
                   <li>
                     My Personal Journal is here on <a href={addRef("https://trail.thosynpax.com/")} target="_blank" rel="noopener noreferrer" className="teal-link">Pax Trail</a>.
-                  </li>
-
-                  <li>
-                    I post jobs and learning resources on <a href={addRef("https://www.threads.net/@thosynpax")} target="_blank" rel="noopener noreferrer" className="teal-link">Threads</a>.
-                  </li>
-                  <li>
-                    I post on <a href={addRef("https://www.linkedin.com/in/thosyn-pax")} target="_blank" rel="noopener noreferrer" className="teal-link">LinkedIn</a> about startups, product strategy, and tech.
                   </li>
 
                   <li>
