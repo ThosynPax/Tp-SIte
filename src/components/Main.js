@@ -166,7 +166,7 @@ const Main = ({ theme, season }) => {
               <div className="brief-content">
                 <h2 className="roles-grid">The Lab</h2>
                 <p style={{ marginBottom: "1rem" }}>Welcome to <strong>The Product Lab</strong>. I'm documenting the journey of building high-scale tech systems and global careers.</p>
-                
+
                 <ul>
                   <li>
                     <strong>YouTube Channel:</strong> Architecture deep dives, AI strategy, and technical breakdowns. <a href="https://www.youtube.com/@thosynpaxlab" target="_blank" rel="noopener noreferrer" className="teal-link">Subscribe on YouTube</a>.
@@ -183,10 +183,10 @@ const Main = ({ theme, season }) => {
                       <a href="https://podcasts.apple.com/ng/podcast/debug-school-by-paste/id1845675897" target="_blank" rel="noopener noreferrer" className="teal-link" style={{ fontSize: "0.9rem" }}>
                         <i className="fab fa-apple"></i> Apple
                       </a>
-                      <a href="https://substack.com/@thosynpax" target="_blank" rel="noopener noreferrer" className="teal-link" style={{ fontSize: "0.9rem" }}>
-                        <i className="fas fa-envelope-open-text"></i> Substack
-                      </a>
                     </div>
+                  </li>
+                  <li>
+                    <strong>The Newsletter:</strong> Behind-the-scenes lessons on building products and companies. <a href="https://cut.thosynpax.com" target="_blank" rel="noopener noreferrer" className="teal-link">Read Product Lab Newsletter by Thosyn Pax</a>.
                   </li>
                 </ul>
               </div>
@@ -196,9 +196,6 @@ const Main = ({ theme, season }) => {
                 <h2 className="roles-grid">Writing</h2>
 
                 <ul>
-                  <li>
-                    <a href={addRef("https://cut.thosynpax.com")} target="_blank" rel="noopener noreferrer" className="teal-link">Builder's Cut</a> is a newsletter where I share behind-the-scenes lessons on building products and companies.
-                  </li>
                   <li>
                     My Personal Journal is here on <a href={addRef("https://trail.thosynpax.com/")} target="_blank" rel="noopener noreferrer" className="teal-link">Pax Trail</a>.
                   </li>
