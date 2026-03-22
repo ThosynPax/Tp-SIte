@@ -127,9 +127,14 @@ const Main = ({ theme, season }) => {
               {/* INTRO */}
               <div className="brief-content">
                 <header className="intro">
-                  <h3 className="intro-title">Hey, I'm Thosyn Pax {getSeasonEmoji(season)}</h3>
+                  <h3 className="intro-title" style={{ fontSize: "2.2rem" }}>I am a Product Architect and Tech Educator {getSeasonEmoji(season)}</h3>
                 </header>
-                <p>I build simple tools that solve real problems and help businesses grow.</p>
+                <p style={{ marginTop: "1rem" }}>
+                  As a <strong>Product Architect</strong>, I build stable, scalable products at <a href="https://cre8fast.thosynpax.com" target="_blank" rel="noopener noreferrer" className="teal-link">Cre8fast</a> and help Founders & CEOs avoid the "Vibecoding" trap.
+                </p>
+                <p style={{ marginTop: "0.5rem" }}>
+                  As a <strong>Tech Educator</strong>, I help professionals engineer high-earning, global careers through <a href="https://www.withpaste.com/" target="_blank" rel="noopener noreferrer" className="teal-link">PASTE</a>.
+                </p>
               </div>
 
               {/* RECENT ROLES */}
@@ -153,6 +158,35 @@ const Main = ({ theme, season }) => {
 
                   <li>
                     I co-founded <a href={addRef("https://www.inmail.ng/")} target="_blank" rel="noopener noreferrer" className="teal-link">InFlect Innovations</a> to support new tech ideas.
+                  </li>
+                </ul>
+              </div>
+
+              {/* THE LAB */}
+              <div className="brief-content">
+                <h2 className="roles-grid">The Lab</h2>
+                <p style={{ marginBottom: "1rem" }}>Welcome to <strong>The Product Lab</strong>. I'm documenting the journey of building high-scale tech systems and global careers.</p>
+                
+                <ul>
+                  <li>
+                    <strong>YouTube Channel:</strong> Architecture deep dives, AI strategy, and technical breakdowns. <a href="https://www.youtube.com/@thosynpaxlab" target="_blank" rel="noopener noreferrer" className="teal-link">Subscribe on YouTube</a>.
+                  </li>
+                  <li>
+                    <strong>The Podcast:</strong> Conversations on building for scale, product strategy, and the future of technology. Available on:
+                    <div className="platform-links" style={{ marginTop: "0.8rem", display: "flex", gap: "1rem", flexWrap: "wrap" }}>
+                      <a href="https://open.spotify.com/show/6fCxwjIOauwOpBrmlgqODB" target="_blank" rel="noopener noreferrer" className="teal-link" style={{ fontSize: "0.9rem" }}>
+                        <i className="fab fa-spotify"></i> Spotify
+                      </a>
+                      <a href="https://music.youtube.com/playlist?list=PLMop3IuYMLYdnZW9LWefbMj8uKUEBgrlp" target="_blank" rel="noopener noreferrer" className="teal-link" style={{ fontSize: "0.9rem" }}>
+                        <i className="fab fa-youtube"></i> YouTube Music
+                      </a>
+                      <a href="https://podcasts.apple.com/ng/podcast/debug-school-by-paste/id1845675897" target="_blank" rel="noopener noreferrer" className="teal-link" style={{ fontSize: "0.9rem" }}>
+                        <i className="fab fa-apple"></i> Apple
+                      </a>
+                      <a href="https://substack.com/@thosynpax" target="_blank" rel="noopener noreferrer" className="teal-link" style={{ fontSize: "0.9rem" }}>
+                        <i className="fas fa-envelope-open-text"></i> Substack
+                      </a>
+                    </div>
                   </li>
                 </ul>
               </div>

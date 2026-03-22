@@ -287,3 +287,42 @@ header {
 .social-icons a:hover {
   color: #969A9F;
 }
+
+/* --- Media & Platform Links --- */
+.platform-links {
+  margin-top: 0.8rem;
+  display: flex;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+}
+
+.platform-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--card-bg);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: 0.3s ease;
+  font-size: 0.95rem;
+  text-decoration: none !important;
+}
+
+.theme-light .platform-links a {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.platform-links a:hover {
+  border-color: var(--accent-color);
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateY(-2px);
+}
+
+.theme-light .platform-links a:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.platform-links i {
+  font-size: 1.1rem;
+}
