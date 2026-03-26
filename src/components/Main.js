@@ -142,18 +142,13 @@ const Main = ({ theme, season }) => {
                 <h2 className="roles-grid">Recent Roles & Impact</h2>
                 <ul>
                   <li>
-                    I started <a href={addRef("https://thepaxcompany.xyz")} target="_blank" rel="noopener noreferrer" className="teal-link">TPCo</a> as a product development agency, and it has since evolved into my parent studio for product, design, and venture work.
-                  </li>
-                  <li>
-                    I later launched <a href={addRef("https://cre8fast.thosynpax.com")} target="_blank" rel="noopener noreferrer" className="teal-link">Cre8fast</a>, a product lab where I build practical tools and internal products for myself and other founders.
+                    I launched <a href={addRef("https://cre8fast.thosynpax.com")} target="_blank" rel="noopener noreferrer" className="teal-link">Cre8fast</a>, a product lab where I build practical tools and internal products for myself and other founders.
                   </li>
 
                   <li>
                     I founded <a href={addRef("https://www.withpaste.com/")} target="_blank" rel="noopener noreferrer" className="teal-link">PASTE (Pax School of Technology)</a>,
                     an applied tech education ecosystem where people learn by building, collaborating, and shipping real-world products.
                   </li>
-
-
 
 
                   <li>
@@ -177,7 +172,7 @@ const Main = ({ theme, season }) => {
                       <a href="https://open.spotify.com/show/6fCxwjIOauwOpBrmlgqODB" target="_blank" rel="noopener noreferrer" className="teal-link" style={{ fontSize: "0.9rem" }}>
                         <i className="fab fa-spotify"></i> Spotify
                       </a>
-                      <a href="https://music.youtube.com/playlist?list=PLMop3IuYMLYdnZW9LWefbMj8uKUEBgrlp" target="_blank" rel="noopener noreferrer" className="teal-link" style={{ fontSize: "0.9rem" }}>
+                      <a href="https://music.youtube.com/playlist?list=PLMk-yXty7nSn13LhpnE04Xk5g7AivLW0O" target="_blank" rel="noopener noreferrer" className="teal-link" style={{ fontSize: "0.9rem" }}>
                         <i className="fab fa-youtube"></i> YouTube Music
                       </a>
                       <a href="https://podcasts.apple.com/ng/podcast/debug-school-by-paste/id1845675897" target="_blank" rel="noopener noreferrer" className="teal-link" style={{ fontSize: "0.9rem" }}>
