@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import '../App.css';
 
 const Main = ({ theme, season }) => {
@@ -160,41 +161,12 @@ const Main = ({ theme, season }) => {
               {/* THE LAB */}
               <div className="brief-content">
                 <h2 className="roles-grid">The Lab</h2>
-                <p style={{ marginBottom: "1rem" }}>Welcome to <strong>The Product Lab</strong>. I'm documenting the journey of building high-scale tech systems and global careers.</p>
-
-                <ul>
-                  <li>
-                    <strong>Product Lab by Thosyn Pax:</strong> Architecture deep dives, AI strategy, and technical breakdowns. <a href="https://www.youtube.com/@thosynpaxlab" target="_blank" rel="noopener noreferrer" className="teal-link">Subscribe on YouTube</a>.
-                  </li>
-                  <li>
-                    <strong>The Product Lab Conversations:</strong> Conversations on building for scale, product strategy, and the future of technology. Available on:
-                    <div className="platform-links" style={{ marginTop: "0.8rem", display: "flex", gap: "1rem", flexWrap: "wrap" }}>
-                      <a href="https://open.spotify.com/show/6fCxwjIOauwOpBrmlgqODB" target="_blank" rel="noopener noreferrer" className="teal-link" style={{ fontSize: "0.9rem" }}>
-                        <i className="fab fa-spotify"></i> Spotify
-                      </a>
-                      <a href="https://music.youtube.com/playlist?list=PLMk-yXty7nSn13LhpnE04Xk5g7AivLW0O" target="_blank" rel="noopener noreferrer" className="teal-link" style={{ fontSize: "0.9rem" }}>
-                        <i className="fab fa-youtube"></i> YouTube Music
-                      </a>
-                      <a href="https://podcasts.apple.com/ng/podcast/debug-school-by-paste/id1845675897" target="_blank" rel="noopener noreferrer" className="teal-link" style={{ fontSize: "0.9rem" }}>
-                        <i className="fab fa-apple"></i> Apple
-                      </a>
-                    </div>
-                  </li>
-                  <li>
-                    <strong>Product Lab: The Weekly Architecture Audit:</strong> Behind-the-scenes lessons on building products and companies. Available on:
-                    <div className="platform-links" style={{ marginTop: "0.8rem", display: "flex", gap: "1rem", flexWrap: "wrap" }}>
-                      <a href="https://cut.thosynpax.com" target="_blank" rel="noopener noreferrer" className="teal-link" style={{ fontSize: "0.9rem" }}>
-                        <i className="fas fa-pen-nib"></i> Ghost
-                      </a>
-                      <a href="https://substack.com/@thosynpax" target="_blank" rel="noopener noreferrer" className="teal-link" style={{ fontSize: "0.9rem" }}>
-                        <i className="fas fa-envelope-open-text"></i> Substack
-                      </a>
-                      <a href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7325566398129225728" target="_blank" rel="noopener noreferrer" className="teal-link" style={{ fontSize: "0.9rem" }}>
-                        <i className="fab fa-linkedin"></i> LinkedIn
-                      </a>
-                    </div>
-                  </li>
-                </ul>
+                <p style={{ marginBottom: "1rem" }}>
+                  Welcome to <strong>The Product Lab</strong>. I'm documenting the journey of building high-scale tech systems and global careers. 
+                </p>
+                <p>
+                  <Link to="/lab" className="teal-link project-link" style={{ marginTop: "0.5rem" }}>Enter The Lab →</Link>
+                </p>
               </div>
 
               {/* WRITING */}

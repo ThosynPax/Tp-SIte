@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Main from './components/Main';
 import Footer from './components/Footer';
 import Link from './components/Links';
+import Lab from './components/Lab';
 import useEnvironment from './hooks/useEnvironment';
 import SeasonalOverlay from './components/SeasonalOverlay';
 import './App.css';
@@ -36,6 +37,7 @@ const App = () => {
         <LayoutWrapper>
           <Routes>
             <Route path="/" element={<Main theme={theme} season={season} />} />
+            <Route path="/lab" element={<Lab theme={theme} season={season} />} />
             <Route path="/links" element={<Link />} />
           </Routes>
         </LayoutWrapper>
