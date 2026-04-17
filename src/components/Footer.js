@@ -11,7 +11,7 @@ const Footer = () => {
         <a href="https://open.spotify.com" target="_blank" rel="noopener noreferrer" title="Podcast"><i className="fas fa-podcast"></i></a>
         <a href="https://instagram.com/thosynpax" target="_blank" rel="noopener noreferrer" title="Instagram"><i className="fab fa-instagram"></i></a>
       </div>
-      <p>&copy; 2015 - {currentYear} Thosyn Pax. All rights reserved. (V7.0.9) </p>
+      <p>&copy; 2015 - {currentYear} Thosyn Pax. All rights reserved. (V7.0.10) </p>
     </footer>
   );
 };
