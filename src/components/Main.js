@@ -1,17 +1,12 @@
 import { Link } from 'react-router-dom';
 import '../App.css';
+import useSEO from '../hooks/useSEO';
 
-const Main = ({ theme, season }) => {
-
-  const getSeasonEmoji = (s) => {
-    switch (s) {
-      case 'Spring': return '🌸';
-      case 'Summer': return '☀️';
-      case 'Autumn': return '🍂';
-      case 'Winter': return '❄️';
-      default: return '';
-    }
-  };
+const Main = ({ theme }) => {
+  useSEO({
+    title: 'Thosyn Pax | Product Architect',
+    description: 'I lead with a Product Architect mindset—bridging the gap between deep technical infrastructure and market-ready products.',
+  });
 
   const addRef = (url) => {
     return url.includes("?")
@@ -60,13 +55,13 @@ const Main = ({ theme, season }) => {
           padding: 0;
           color: var(--text-color);
         }
-        .teal-link {
+        .brand-link {
           color: var(--link-color);
           font-weight: 500;
           text-decoration: none;
         }
-        .teal-link:hover {
-          color: var(--link-color);
+        .brand-link:hover {
+          color: var(--text-color);
           text-decoration: underline;
         }
         
@@ -128,13 +123,13 @@ const Main = ({ theme, season }) => {
               {/* INTRO */}
               <div className="brief-content">
                 <header className="intro">
-                  <h3 className="intro-title" style={{ fontSize: "2.2rem" }}>I am a Product Architect and Tech Educator {getSeasonEmoji(season)}</h3>
+                  <h3 className="intro-title" style={{ fontSize: "2.2rem" }}>I am a Product Architect and Tech Educator</h3>
                 </header>
                 <p style={{ marginTop: "1rem" }}>
-                  As a <strong>Product Architect</strong>, I build stable, scalable products at <a href="https://cre8fast.thosynpax.com" target="_blank" rel="noopener noreferrer" className="teal-link">Cre8fast</a> and help Founders & CEOs avoid the "Vibecoding" trap.
+                  As a <strong>Product Architect</strong>, I build stable, scalable products at <a href="https://cre8fast.thosynpax.com" target="_blank" rel="noopener noreferrer" className="brand-link">Cre8fast</a> and help Founders & CEOs avoid the "Vibecoding" trap.
                 </p>
                 <p style={{ marginTop: "0.5rem" }}>
-                  As a <strong>Tech Educator</strong>, I help professionals engineer high-earning, global careers through <a href="https://www.withpaste.com/" target="_blank" rel="noopener noreferrer" className="teal-link">PASTE</a>.
+                  As a <strong>Tech Educator</strong>, I help professionals engineer high-earning, global careers through <a href="https://www.withpaste.com/" target="_blank" rel="noopener noreferrer" className="brand-link">PASTE</a>.
                 </p>
               </div>
 
@@ -143,29 +138,30 @@ const Main = ({ theme, season }) => {
                 <h2 className="roles-grid">Recent Roles & Impact</h2>
                 <ul>
                   <li>
-                    I launched <a href={addRef("https://cre8fast.thosynpax.com")} target="_blank" rel="noopener noreferrer" className="teal-link">Cre8fast</a>, a product lab where I build practical tools and internal products for myself and other founders.
+                    I launched <a href={addRef("https://cre8fast.thosynpax.com")} target="_blank" rel="noopener noreferrer" className="brand-link">Cre8fast</a>, a product lab where I build practical tools and internal products for myself and other founders.
                   </li>
 
                   <li>
-                    I founded <a href={addRef("https://www.withpaste.com/")} target="_blank" rel="noopener noreferrer" className="teal-link">PASTE (Pax School of Technology)</a>,
+                    I founded <a href={addRef("https://www.withpaste.com/")} target="_blank" rel="noopener noreferrer" className="brand-link">PASTE (Pax School of Technology)</a>,
                     an applied tech education ecosystem where people learn by building, collaborating, and shipping real-world products.
                   </li>
 
 
                   <li>
-                    I co-founded <a href={addRef("https://www.inmail.ng/")} target="_blank" rel="noopener noreferrer" className="teal-link">InFlect Innovations</a> to support new tech ideas.
+                    I co-founded <a href={addRef("https://www.inmail.ng/")} target="_blank" rel="noopener noreferrer" className="brand-link">InFlect Innovations</a> to support new tech ideas.
                   </li>
                 </ul>
               </div>
 
               {/* THE LAB */}
-              <div className="brief-content">
+              <div style={{ marginTop: "4rem" }}>
                 <h2 className="roles-grid">The Lab</h2>
-                <p style={{ marginBottom: "1rem" }}>
+                
+                <p style={{ marginTop: "1rem", lineHeight: "1.6" }}>
                   Welcome to <strong>The Product Lab</strong>. I'm documenting the journey of building high-scale tech systems and global careers. 
                 </p>
-                <p>
-                  <Link to="/lab" className="teal-link project-link" style={{ marginTop: "0.5rem" }}>Enter The Lab →</Link>
+                <p style={{ marginTop: "1.5rem" }}>
+                  <Link to="/lab" className="project-link">Enter The Lab →</Link>
                 </p>
               </div>
 
@@ -175,15 +171,15 @@ const Main = ({ theme, season }) => {
 
                 <ul>
                   <li>
-                    My Personal Journal is here on <a href={addRef("https://trail.thosynpax.com/")} target="_blank" rel="noopener noreferrer" className="teal-link">Pax Trail</a>.
+                    My Personal Journal is here on <a href={addRef("https://trail.thosynpax.com/")} target="_blank" rel="noopener noreferrer" className="brand-link">Pax Trail</a>.
                   </li>
 
                   <li>
-                    I have my old writings archived on <a href={addRef("https://medium.com/@thosynpax")} target="_blank" rel="noopener noreferrer" className="teal-link">Medium</a>.
+                    I have my old writings archived on <a href={addRef("https://medium.com/@thosynpax")} target="_blank" rel="noopener noreferrer" className="brand-link">Medium</a>.
                   </li>
 
                   <li>
-                    <a href={addRef("https://muse.thosynpax.com")} target="_blank" rel="noopener noreferrer" className="teal-link">Muse</a> is a page where I share my personal thoughts and reflections.
+                    <a href={addRef("https://muse.thosynpax.com")} target="_blank" rel="noopener noreferrer" className="brand-link">Muse</a> is a page where I share my personal thoughts and reflections.
                   </li>
                 </ul>
               </div>
@@ -207,7 +203,7 @@ const Main = ({ theme, season }) => {
 
                 <ul>
                   <li>
-                    One of my articles was published on the <a href={addRef("https://peopleofcolorintech.com/articles/tech-jobstorming-how-to-build-a-professional-network-in-the-tech-industry/")} target="_blank" rel="noopener noreferrer" className="teal-link">POCIT website</a>.
+                    One of my articles was published on the <a href={addRef("https://peopleofcolorintech.com/articles/tech-jobstorming-how-to-build-a-professional-network-in-the-tech-industry/")} target="_blank" rel="noopener noreferrer" className="brand-link">POCIT website</a>.
                   </li>
                 </ul>
               </div>
@@ -216,7 +212,7 @@ const Main = ({ theme, season }) => {
                 <h2 className="roles-grid">Contact</h2>
 
                 <p>
-                  The fastest way to reach me is by email. For personal messages, enquiries, teaching, or similar matters, please write to <a href="mailto:thosynpax@gmail.com" className="teal-link">thosynpax@gmail.com</a>. For project-related matters, publications, or collaborations, please use <a href="mailto:me@thosynpax.com" className="teal-link">me@thosynpax.com</a>.
+                  The fastest way to reach me is by email. For personal messages, enquiries, teaching, or similar matters, please write to <a href="mailto:thosynpax@gmail.com" className="brand-link">thosynpax@gmail.com</a>. For project-related matters, publications, or collaborations, please use <a href="mailto:me@thosynpax.com" className="brand-link">me@thosynpax.com</a>.
                 </p>
               </div>
 

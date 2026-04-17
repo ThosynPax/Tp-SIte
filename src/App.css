@@ -5,9 +5,10 @@
 :root {
   --bg-color: #000;
   --text-color: #ffffff;
-  --accent-color: #F4D4B7;
-  --link-color: var(--accent-color);
-  --header-color: var(--accent-color);
+  --accent-color: #071b34;
+  --link-color: #F4D4B7;
+  --header-color: #ffffff;
+  --top-border-color: #ffffff;
   --card-bg: rgba(255, 255, 255, 0.05);
   --brief-text: #ccc;
   --transition-speed: 0.5s;
@@ -16,8 +17,9 @@
 .theme-light {
   --bg-color: #ffffff;
   --text-color: #1a1a1a;
-  --link-color: #008080;
+  --link-color: #071b34;
   --header-color: var(--text-color);
+  --top-border-color: #071b34;
   --accent-color: var(--link-color) !important;
   --card-bg: rgba(0, 0, 0, 0.05);
   --brief-text: #444;
@@ -30,31 +32,9 @@
   --brief-text: #ccc;
 }
 
-/* Seasonal overrides for accent-color */
-.season-spring {
-  --accent-color: #a8e6cf;
-}
-
-/* Fresh Green */
-.season-summer {
-  --accent-color: #ffb7b2;
-}
-
-/* Warm Peach */
-.season-autumn {
-  --accent-color: #ffdac1;
-}
-
-/* Autumnal Orange/Tan */
-.season-winter {
-  --accent-color: #F4D4B7;
-}
-
-/* Classic Tan */
-
 body {
   background-color: var(--bg-color);
-  border-top: 20px solid var(--accent-color);
+  border-top: 20px solid var(--top-border-color);
   font-family: 'Inter', sans-serif;
   margin: 0;
   padding: 0;
@@ -198,7 +178,7 @@ header {
 }
 
 .project-card:hover {
-  border-color: var(--accent-color);
+  border-color: rgba(255, 255, 255, 0.4);
   transform: translateY(-2px);
 }
 
@@ -230,7 +210,7 @@ header {
 }
 
 .project-link:hover {
-  background: var(--accent-color);
+  background: var(--text-color);
   color: var(--bg-color);
 }
 
