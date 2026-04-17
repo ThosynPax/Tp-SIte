@@ -364,7 +364,6 @@ const Lab = ({ theme }) => {
               <p className="item-desc">Behind-the-scenes lessons on building products and companies.</p>
               <div className="item-links" style={{ flexDirection: 'column', gap: '0.6rem' }}>
                 <a href="https://cut.thosynpax.com" target="_blank" rel="noopener noreferrer" className="item-link"><i className="fas fa-pen-nib" style={{ marginRight: '6px' }}></i> Ghost ↗</a>
-                <a href="https://substack.com/@thosynpax" target="_blank" rel="noopener noreferrer" className="item-link"><i className="fas fa-envelope-open-text" style={{ marginRight: '6px' }}></i> Substack ↗</a>
                 <a href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7325566398129225728" target="_blank" rel="noopener noreferrer" className="item-link"><i className="fab fa-linkedin" style={{ marginRight: '6px' }}></i> LinkedIn ↗</a>
               </div>
             </div>
