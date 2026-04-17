@@ -55,6 +55,12 @@ const Main = ({ theme }) => {
           padding: 0;
           color: var(--text-color);
         }
+        .styled-p, .contact-links p {
+          line-height: 1.6;
+          font-size: 1.05rem;
+          color: var(--text-color);
+          margin-bottom: 0.8rem;
+        }
         .brand-link {
           color: var(--link-color);
           font-weight: 500;
@@ -134,9 +140,12 @@ const Main = ({ theme }) => {
               </div>
 
               {/* RECENT ROLES */}
-              <div className="brief-content">
+              <div style={{ marginTop: "4rem" }}>
                 <h2 className="roles-grid">Recent Roles & Impact</h2>
                 <ul>
+                  <li>
+                    I lead <a href={addRef("https://afribreath.com")} target="_blank" rel="noopener noreferrer" className="brand-link">Afribreath</a>, a global digital infrastructure firm powering the digital frontier. We provision high-scale IT services, systems analysis, and elite talent pipelines for international partners.
+                  </li>
                   <li>
                     I launched <a href={addRef("https://cre8fast.thosynpax.com")} target="_blank" rel="noopener noreferrer" className="brand-link">Cre8fast</a>, a product lab where I build practical tools and internal products for myself and other founders.
                   </li>
@@ -156,13 +165,43 @@ const Main = ({ theme }) => {
               {/* THE LAB */}
               <div style={{ marginTop: "4rem" }}>
                 <h2 className="roles-grid">The Lab</h2>
-                
-                <p style={{ marginTop: "1rem", lineHeight: "1.6" }}>
-                  Welcome to <strong>The Product Lab</strong>. I'm documenting the journey of building high-scale tech systems and global careers. 
+
+                <p className="styled-p" style={{ marginTop: "1rem" }}>
+                  Welcome to <strong>The Product Lab</strong>. I'm documenting the journey of building high-scale tech systems and global careers.
                 </p>
                 <p style={{ marginTop: "1.5rem" }}>
                   <Link to="/lab" className="project-link">Enter The Lab →</Link>
                 </p>
+              </div>
+
+              {/* CONTACT & SOCIAL */}
+              <div style={{ marginTop: "4rem" }}>
+                <h2 className="roles-grid">Connect</h2>
+                <div className="contact-links" style={{ display: "flex", flexDirection: "column", gap: "1rem", marginTop: "1rem" }}>
+                  <p style={{ margin: 0 }}>
+                    <strong>Email:</strong>{" "}
+                    <a href="mailto:thosynpax@gmail.com" className="brand-link">
+                      thosynpax@gmail.com
+                    </a>
+                  </p>
+                  <p style={{ margin: 0 }}>
+                    <strong>X (Twitter):</strong>{" "}
+                    <a href="https://x.com/thosynpax" target="_blank" rel="noopener noreferrer" className="brand-link">
+                      @thosynpax
+                    </a>
+                  </p>
+                  <p style={{ margin: 0 }}>
+                    <strong>LinkedIn:</strong>{" "}
+                    <a href="https://linkedin.com/in/thosynpax" target="_blank" rel="noopener noreferrer" className="brand-link">
+                      Oluwatosin "Pax"
+                    </a>
+                  </p>
+                  <p style={{ margin: 0, marginTop: "1rem" }}>
+                    <a href="mailto:thosynpax@gmail.com" className="project-link" style={{ display: 'inline-block' }}>
+                      Get in touch →
+                    </a>
+                  </p>
+                </div>
               </div>
 
               {/* WRITING */}
@@ -211,7 +250,7 @@ const Main = ({ theme }) => {
               <div className="brief-content">
                 <h2 className="roles-grid">Contact</h2>
 
-                <p>
+                <p className="styled-p">
                   The fastest way to reach me is by email. For personal messages, enquiries, teaching, or similar matters, please write to <a href="mailto:thosynpax@gmail.com" className="brand-link">thosynpax@gmail.com</a>. For project-related matters, publications, or collaborations, please use <a href="mailto:me@thosynpax.com" className="brand-link">me@thosynpax.com</a>.
                 </p>
               </div>

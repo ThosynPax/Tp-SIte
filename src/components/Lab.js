@@ -59,7 +59,7 @@ const Lab = ({ theme }) => {
         .lab-left-bg {
           position: absolute;
           inset: 0;
-          background-image: url('/Podcast.png');
+          background-image: url('/Podcast.jpg');
           background-size: cover;
           background-position: center;
           z-index: 0;
@@ -114,7 +114,7 @@ const Lab = ({ theme }) => {
           flex: 1;
           border-radius: 20px;
           background-color: #0b0b0b;
-          background-image: linear-gradient(rgba(11, 11, 11, 0.88), rgba(11, 11, 11, 0.96)), url('/hero.png');
+          background-image: linear-gradient(rgba(11, 11, 11, 0.88), rgba(11, 11, 11, 0.96)), url('/hero.jpg');
           background-size: cover;
           background-position: center;
           border: 1px solid rgba(255,255,255,0.05);
