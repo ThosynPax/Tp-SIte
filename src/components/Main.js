@@ -4,7 +4,7 @@ import useSEO from '../hooks/useSEO';
 
 const Main = ({ theme }) => {
   useSEO({
-    title: 'Thosyn Pax | Product Architect',
+    title: 'Thosyn Pax | Product Architect & Tech Educator',
     description: 'I lead with a Product Architect mindset—bridging the gap between deep technical infrastructure and market-ready products.',
   });
 
@@ -13,6 +13,8 @@ const Main = ({ theme }) => {
       ? `${url}&ref=thosynpax.com`
       : `${url}?ref=thosynpax.com`;
   };
+
+  const imageSrc = theme?.toLowerCase() === 'dark' ? '/tp-black.png' : '/tp-light.png';
 
   return (
     <main className="site-body" style={{ marginTop: 0, paddingTop: 0 }}>
@@ -129,9 +131,9 @@ const Main = ({ theme }) => {
               {/* INTRO */}
               <div className="brief-content">
                 <header className="intro">
-                  <h3 className="intro-title" style={{ fontSize: "2.2rem" }}>I am a Product Architect and Tech Educator</h3>
+                  <h3 className="intro-title" style={{ fontSize: "2.2rem" }}>I'm Thosyn Pax! I'm a Product Architect and Tech Educator</h3>
                 </header>
-                <p style={{ marginTop: "1rem" }}>
+                <p style={{ marginTop: "0.5rem" }}>
                   As a <strong>Product Architect</strong>, I build stable, scalable products at <a href="https://cre8fast.thosynpax.com" target="_blank" rel="noopener noreferrer" className="brand-link">Cre8fast</a> and help Founders & CEOs avoid the "Vibecoding" trap.
                 </p>
                 <p style={{ marginTop: "0.5rem" }}>
@@ -141,10 +143,23 @@ const Main = ({ theme }) => {
 
               {/* RECENT ROLES */}
               <div style={{ marginTop: "4rem" }}>
+                <div style={{ textAlign: "center", marginBottom: "2rem" }}>
+                  <img
+                    src={imageSrc}
+                    alt="Thosyn Pax"
+                    style={{ display: "inline-block", width: "100%", maxWidth: "100%" }}
+                  />
+                </div>
                 <h2 className="roles-grid">Recent Roles & Impact</h2>
                 <ul>
                   <li>
+                    I have been a freelancer since 2015, then later started a digital agency which I shut down to focus on my dream of becoming a Product Architect.
+                  </li>
+                  <li>
                     I lead <a href={addRef("https://afribreath.com")} target="_blank" rel="noopener noreferrer" className="brand-link">Afribreath</a>, a global digital infrastructure firm powering the digital frontier. We provision high-scale IT services, systems analysis, and elite talent pipelines for international partners.
+                  </li>
+                  <li>
+                    In 2022, I began teaching practical tech skills and have since trained over 5,000 people, which helped position me as an excellent tech educator.
                   </li>
                   <li>
                     I launched <a href={addRef("https://cre8fast.thosynpax.com")} target="_blank" rel="noopener noreferrer" className="brand-link">Cre8fast</a>, a product lab where I build practical tools and internal products for myself and other founders.
@@ -174,36 +189,6 @@ const Main = ({ theme }) => {
                 </p>
               </div>
 
-              {/* CONTACT & SOCIAL */}
-              <div style={{ marginTop: "4rem" }}>
-                <h2 className="roles-grid">Connect</h2>
-                <div className="contact-links" style={{ display: "flex", flexDirection: "column", gap: "1rem", marginTop: "1rem" }}>
-                  <p style={{ margin: 0 }}>
-                    <strong>Email:</strong>{" "}
-                    <a href="mailto:thosynpax@gmail.com" className="brand-link">
-                      thosynpax@gmail.com
-                    </a>
-                  </p>
-                  <p style={{ margin: 0 }}>
-                    <strong>X (Twitter):</strong>{" "}
-                    <a href="https://x.com/thosynpax" target="_blank" rel="noopener noreferrer" className="brand-link">
-                      @thosynpax
-                    </a>
-                  </p>
-                  <p style={{ margin: 0 }}>
-                    <strong>LinkedIn:</strong>{" "}
-                    <a href="https://linkedin.com/in/thosynpax" target="_blank" rel="noopener noreferrer" className="brand-link">
-                      Oluwatosin "Pax"
-                    </a>
-                  </p>
-                  <p style={{ margin: 0, marginTop: "1rem" }}>
-                    <a href="mailto:thosynpax@gmail.com" className="project-link" style={{ display: 'inline-block' }}>
-                      Get in touch →
-                    </a>
-                  </p>
-                </div>
-              </div>
-
               {/* WRITING */}
               <div className="brief-content">
                 <h2 className="roles-grid">Writing</h2>
@@ -228,11 +213,15 @@ const Main = ({ theme }) => {
 
                 <ul>
                   <li>
-                    I love watching sitcoms. My favorites include The Marvelous Mrs. Maisel, The Fresh Prince, and Abbott Elementary.
+                    I love watching sitcoms. My favorites include The Marvelous Mrs. Maisel, The Fresh Prince, Two and Half Men, Friends, and Abbott Elementary.
                   </li>
 
                   <li>
-                    I'm not much of a gamer, but I like small adventure games. Uncharted is my favorite so far.
+                    I do fantasize about speaking different languages, so I started learning French and later plan to learn Spanish too.
+                  </li>
+
+                  <li>
+                    I'm not much of a gamer, but I like a few adventure games. Uncharted is my favorite so far.
                   </li>
                 </ul>
               </div>
