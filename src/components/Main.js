@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 import '../App.css';
 import useSEO from '../hooks/useSEO';
 
@@ -15,10 +16,23 @@ const Main = ({ theme }) => {
   };
 
   const imageSrc = theme?.toLowerCase() === 'dark' ? '/tp-black.png' : '/tp-light.png';
+  const [imgLoaded, setImgLoaded] = useState(false);
+
+  // Preload both variants so they're cached regardless of theme
+  useEffect(() => {
+    ['/tp-black.png', '/tp-light.png'].forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
+  }, []);
 
   return (
     <main className="site-body" style={{ marginTop: 0, paddingTop: 0 }}>
       <style>{`
+        @keyframes skeletonPulse {
+          0%, 100% { opacity: 1; }
+          50% { opacity: 0.4; }
+        }
         .wrapper { 
           padding: 0; 
           font-family: 'Space Mono', monospace;
@@ -144,10 +158,33 @@ const Main = ({ theme }) => {
               {/* RECENT ROLES */}
               <div style={{ marginTop: "4rem" }}>
                 <div style={{ textAlign: "center", marginBottom: "2rem" }}>
+                  {/* Skeleton shown while image loads */}
+                  {!imgLoaded && (
+                    <div
+                      style={{
+                        width: "100%",
+                        aspectRatio: "16/9",
+                        background: theme?.toLowerCase() === 'dark'
+                          ? "rgba(255,255,255,0.05)"
+                          : "rgba(0,0,0,0.06)",
+                        borderRadius: "8px",
+                        animation: "skeletonPulse 1.5s ease-in-out infinite",
+                      }}
+                    />
+                  )}
                   <img
                     src={imageSrc}
                     alt="Thosyn Pax"
-                    style={{ display: "inline-block", width: "100%", maxWidth: "100%" }}
+                    fetchpriority="high"
+                    loading="eager"
+                    onLoad={() => setImgLoaded(true)}
+                    style={{
+                      display: imgLoaded ? "inline-block" : "none",
+                      width: "100%",
+                      maxWidth: "100%",
+                      opacity: imgLoaded ? 1 : 0,
+                      transition: "opacity 0.4s ease",
+                    }}
                   />
                 </div>
                 <h2 className="roles-grid">Recent Roles & Impact</h2>
