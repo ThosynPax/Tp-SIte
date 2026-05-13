@@ -262,6 +262,27 @@ header {
   color: var(--text-color);
   font-size: 22px;
   text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.threads-icon {
+  width: 22px;
+  height: 22px;
+  filter: brightness(0) invert(1);
+  transition: 0.3s ease;
+}
+
+.theme-light .threads-icon {
+  filter: brightness(0);
+}
+
+.social-icons a:hover .threads-icon {
+  filter: brightness(0) invert(1) opacity(0.6);
+}
+
+.theme-light .social-icons a:hover .threads-icon {
+  filter: brightness(0) opacity(0.6);
 }
 
 .social-icons a:hover {
