@@ -387,10 +387,17 @@ const Lab = ({ theme }) => {
               <span className="p-link"></span>
             </div>
 
-            <a href="https://trykarpture.com/?ref=tp" target="_blank" rel="noopener noreferrer" className="project-row">
+            <a href="https://trykarpture.com/?ref=thosynpax.com" target="_blank" rel="noopener noreferrer" className="project-row">
               <span className="p-name">Karpture</span>
               <span className="p-status">LIVE</span>
               <span className="p-domain">Chrome Extension</span>
+              <span className="p-link">↗</span>
+            </a>
+
+            <a href="https://withpaste.com/?ref=thosynpax.com" target="_blank" rel="noopener noreferrer" className="project-row">
+              <span className="p-name">PASTE</span>
+              <span className="p-status">LIVE</span>
+              <span className="p-domain">Tech Education</span>
               <span className="p-link">↗</span>
             </a>
           </div>
