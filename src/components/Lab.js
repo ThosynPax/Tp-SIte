@@ -20,13 +20,13 @@ const Lab = ({ theme }) => {
         
         .lab-page-layout {
           display: flex;
-          padding: 1rem;
+          padding: 1rem 1rem 0 1rem;
           box-sizing: border-box;
           gap: 1rem;
           background-color: transparent;
           font-family: 'Inter', sans-serif;
           align-items: stretch;
-          height: calc(100vh - 160px);
+          height: calc(100vh - 110px);
           min-height: 550px;
         }
 
@@ -118,7 +118,7 @@ const Lab = ({ theme }) => {
           background-size: cover;
           background-position: center;
           border: 1px solid rgba(255,255,255,0.05);
-          padding: 2.5rem 3rem;
+          padding: 1.75rem 3rem;
           display: flex;
           flex-direction: column;
           position: relative;
@@ -163,7 +163,7 @@ const Lab = ({ theme }) => {
         .project-row:hover .p-link { color: #fff; }
 
         .lab-projects-wrapper {
-          margin-top: 4rem;
+          margin-top: 2rem;
         }
 
         @media (max-width: 900px) {
@@ -180,7 +180,7 @@ const Lab = ({ theme }) => {
           display: flex;
           justify-content: space-between;
           align-items: center;
-          margin-bottom: 2rem;
+          margin-bottom: 1.25rem;
           font-size: 0.9rem;
           flex-wrap: wrap;
           gap: 1rem;
@@ -217,7 +217,7 @@ const Lab = ({ theme }) => {
         .lab-grid {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
-          gap: 2.5rem 1.5rem;
+          gap: 1.5rem 1.5rem;
         }
 
         @media (max-width: 1100px) {
@@ -232,7 +232,7 @@ const Lab = ({ theme }) => {
           color: rgba(255, 255, 255, 0.3);
           font-size: 0.8rem;
           text-transform: uppercase;
-          margin-bottom: 1.5rem;
+          margin-bottom: 0.8rem;
           letter-spacing: 0.5px;
         }
 
@@ -296,6 +296,10 @@ const Lab = ({ theme }) => {
         }
         .cta-button:hover {
           transform: scale(1.05);
+        }
+
+        .site-footer {
+          margin-top: 1.5rem !important;
         }
       `}</style>
 
@@ -365,6 +369,16 @@ const Lab = ({ theme }) => {
               <div className="item-links" style={{ flexDirection: 'column', gap: '0.6rem' }}>
                 <a href="https://cut.thosynpax.com" target="_blank" rel="noopener noreferrer" className="item-link"><i className="fas fa-pen-nib" style={{ marginRight: '6px' }}></i> Ghost ↗</a>
                 <a href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7325566398129225728" target="_blank" rel="noopener noreferrer" className="item-link"><i className="fab fa-linkedin" style={{ marginRight: '6px' }}></i> LinkedIn ↗</a>
+              </div>
+            </div>
+
+            <div className="col-header" style={{ marginTop: '1.75rem' }}>THE BOOK</div>
+            
+            <div className="grid-item">
+              <h3 className="item-title">The Vibecoder's Playbook</h3>
+              <p className="item-desc">Build products with AI without losing your mind.</p>
+              <div className="item-links">
+                <a href="#" className="item-link">Link to Buy →</a>
               </div>
             </div>
           </div>

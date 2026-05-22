@@ -16,8 +16,10 @@ const LayoutWrapper = ({ children, theme }) => {
   useEffect(() => {
     if (isLabPage) {
       document.body.className = `theme-dark`;
+      document.body.style.borderTop = 'none';
     } else {
       document.body.className = `theme-${theme}`;
+      document.body.style.borderTop = '';
     }
   }, [isLabPage, theme]);
 
