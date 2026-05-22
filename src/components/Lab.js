@@ -378,7 +378,7 @@ const Lab = ({ theme }) => {
               <h3 className="item-title">The Vibecoder's Playbook</h3>
               <p className="item-desc">Build products with AI without losing your mind.</p>
               <div className="item-links">
-                <a href="#" className="item-link">Link to Buy →</a>
+                <a href="https://thosynpax.com/book" target="_blank" rel="noopener noreferrer" className="item-link">Link to Buy →</a>
               </div>
             </div>
           </div>
