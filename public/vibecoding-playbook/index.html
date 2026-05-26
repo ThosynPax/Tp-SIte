@@ -1,0 +1,1395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The VibeCoder's Playbook — Build Products with AI Without Losing Your Mind</title>
+  <meta name="description" content="The 8-phase system for vibecoders and non-technical founders. Stop rebuilding from scratch. Start shipping products that actually work. By Thosyn Pax, The Product Lab.">
+  <meta property="og:title" content="The VibeCoder's Playbook by Thosyn Pax">
+  <meta property="og:description" content="Build products with AI without losing your mind. 8 phases, 6 templates, field-tested by a practicing Product Architect.">
+  <meta property="og:image" content="https://thosynpax.com/Podcast.jpg">
+  <meta property="og:url" content="https://thosynpax.com/vibecoding-playbook">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://thosynpax.com/vibecoding-playbook">
+
+  <!-- Typography & Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* --- CSS Custom Properties & Design System --- */
+    :root {
+      --navy-deep:    #0d1b2e;   /* primary background */
+      --navy-mid:     #112240;   /* secondary background */
+      --navy-light:   #1a3358;   /* tertiary background */
+      --navy-panel:   #0f2035;   /* darkest panels */
+      --gold:         #c9a84c;   /* primary gold accent */
+      --gold-light:   #e8cc7a;   /* secondary gold accent */
+      --blue-line:    #2e5fa3;   /* blueprint lines */
+      --white:        #ffffff;   /* primary text */
+      --off-white:    #d8e4f0;   /* body text */
+      --dim:          #7a9ab8;   /* muted text */
+      --rule:         #1e3d6e;   /* dividers */
+      --field-bg:     #0a1626;   /* input/panel background */
+      --red-accent:   #c8401a;   /* agitation accent */
+      
+      --font-display: 'Syne', sans-serif;
+      --font-mono: 'DM Mono', monospace;
+      --font-body: 'Inter', sans-serif;
+      
+      --transition-speed: 0.25s;
+    }
+
+    /* --- Base Resets & Global Styles --- */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--navy-deep);
+      color: var(--off-white);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: color var(--transition-speed) ease;
+    }
+
+    /* --- Layout Utilities --- */
+    .container {
+      max-width: 1350px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    section {
+      position: relative;
+      padding: 80px 0;
+      border-left: 5px solid var(--gold);
+    }
+
+    .eyebrow {
+      font-family: var(--font-mono);
+      font-weight: 500;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--gold);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(28px, 4vw, 42px);
+      color: var(--white);
+      line-height: 1.1;
+      margin-bottom: 24px;
+    }
+
+    /* --- Blueprint Pattern Overlay --- */
+    .blueprint-overlay {
+      position: relative;
+    }
+    .blueprint-overlay::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(46, 95, 163, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(46, 95, 163, 0.06) 1px, transparent 1px);
+      background-size: 32px 32px;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .blueprint-overlay > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* --- SECTION 1 — TOP NAVIGATION BAR --- */
+    .top-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 56px;
+      background-color: var(--navy-panel);
+      z-index: 100;
+      border-left: 4px solid var(--gold);
+      border-bottom: 1px solid transparent;
+      transition: border-bottom var(--transition-speed) ease;
+    }
+    .top-nav.scrolled {
+      border-bottom: 1px solid var(--gold);
+    }
+    .top-nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 100%;
+      padding: 0 1.5rem;
+    }
+    .nav-logo {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.25em;
+      color: var(--gold);
+    }
+    .nav-logo span {
+      color: var(--dim);
+    }
+    .nav-logo .slash {
+      color: var(--dim);
+      margin: 0 4px;
+    }
+    .btn-return {
+      background: transparent;
+      border: 1px solid var(--rule);
+      color: var(--dim);
+      font-family: var(--font-body);
+      font-size: 12px;
+      padding: 6px 14px;
+      border-radius: 4px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      transition: all var(--transition-speed) ease;
+    }
+    .btn-return:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    /* --- SECTION 2 — HERO SECTION --- */
+    .hero-section {
+      min-height: 100vh;
+      padding: 120px 0 80px 0;
+      display: flex;
+      align-items: center;
+      border-left: none; /* No spine on hero for layout balance */
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 4rem;
+      align-items: center;
+    }
+    .hero-eyebrow::before {
+      content: "";
+      display: inline-block;
+      width: 32px;
+      height: 2px;
+      background-color: var(--gold);
+    }
+    .hero-title {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: clamp(28px, 4.5vw, 54px);
+      line-height: 1;
+      color: var(--white);
+      margin-bottom: 1.5rem;
+      white-space: nowrap;
+    }
+    .hero-title span {
+      color: var(--gold);
+      display: block;
+    }
+    .hero-subheading {
+      font-family: var(--font-body);
+      font-size: 18px;
+      color: var(--off-white);
+      margin-bottom: 0.5rem;
+      max-width: 600px;
+    }
+    .hero-tagline {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      font-style: italic;
+      color: var(--dim);
+      margin-bottom: 1.8rem;
+    }
+    .hero-divider {
+      width: 100%;
+      height: 1px;
+      background-color: var(--gold);
+      margin: 24px 0;
+    }
+    .stats-row {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+    .stat-item {
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+    }
+    .stat-num {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 32px;
+      color: var(--gold);
+    }
+    .stat-label {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      text-transform: uppercase;
+      color: var(--dim);
+      letter-spacing: 0.1em;
+    }
+    .stats-divider {
+      width: 1px;
+      height: 32px;
+      background-color: var(--rule);
+    }
+    .cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    .btn {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 14px 28px;
+      border-radius: 4px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+      text-align: center;
+    }
+    .btn:active {
+      transform: scale(0.98);
+    }
+    .btn-gold {
+      background-color: var(--gold);
+      color: var(--navy-deep);
+      border: none;
+    }
+    .btn-gold:hover {
+      background-color: var(--gold-light);
+      transform: scale(1.02);
+    }
+    .btn-outline {
+      background-color: transparent;
+      color: var(--gold);
+      border: 1px solid var(--gold);
+    }
+    .btn-outline:hover {
+      background-color: rgba(201, 168, 76, 0.08);
+      transform: scale(1.02);
+    }
+    .trust-line {
+      font-size: 12px;
+      color: var(--dim);
+      margin-top: 12px;
+    }
+
+    /* --- CSS 3D BOOK MOCKUP --- */
+    .book-visual {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      width: 100%;
+    }
+    .hero-book-img {
+      width: 95%;
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      border: 1px solid var(--rule);
+      box-shadow: 0 35px 70px rgba(0, 0, 0, 0.7);
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+      animation: float 5s ease-in-out infinite;
+    }
+    .hero-book-img:hover {
+      transform: translateY(-10px) scale(1.015);
+      box-shadow: 0 35px 75px rgba(0, 0, 0, 0.8);
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-12px); }
+    }
+
+    /* --- SECTION 3 — PROBLEM / AGITATION SECTION --- */
+    .problem-section {
+      background-color: var(--navy-panel);
+      border-left: 5px solid var(--gold);
+    }
+    .problem-content {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    .problem-p {
+      font-family: var(--font-body);
+      font-size: 17px;
+      color: var(--off-white);
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+    .agitation-title {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 20px;
+      color: var(--gold-light);
+      margin: 2rem 0 1rem 0;
+    }
+    .problem-panel {
+      background-color: var(--field-bg);
+      border-left: 3px solid var(--red-accent);
+      padding: 24px 28px;
+      border-radius: 0 4px 4px 0;
+      margin: 1.5rem 0 2rem 0;
+    }
+    .problem-list {
+      list-style: none;
+    }
+    .problem-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-family: var(--font-body);
+      font-size: 15px;
+      color: var(--off-white);
+      margin-bottom: 12px;
+    }
+    .problem-item:last-child {
+      margin-bottom: 0;
+    }
+    .problem-item::before {
+      content: "✕";
+      font-weight: bold;
+      color: var(--red-accent);
+      flex-shrink: 0;
+    }
+    .bold-statement {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: clamp(24px, 3vw, 36px);
+      color: var(--gold);
+      text-align: center;
+      margin-top: 3.5rem;
+    }
+    .bold-statement-line {
+      width: 60px;
+      height: 1px;
+      background-color: var(--gold);
+      margin: 15px auto 0 auto;
+    }
+
+    /* --- SECTION 4 — WHO THIS IS FOR --- */
+    .who-section {
+      background-color: var(--navy-deep);
+    }
+    .who-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    .who-card {
+      background-color: var(--navy-mid);
+      border: 1px solid var(--rule);
+      border-top: 3px solid var(--gold);
+      padding: 36px 32px;
+      border-radius: 4px;
+      transition: border-color var(--transition-speed) ease;
+    }
+    .who-card:hover {
+      border-color: rgba(201, 168, 76, 0.4);
+    }
+    .who-card-icon {
+      font-size: 28px;
+      color: var(--gold);
+      margin-bottom: 1rem;
+      font-family: var(--font-mono);
+      font-weight: bold;
+    }
+    .who-card-title {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 22px;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+    .who-card-desc {
+      font-family: var(--font-body);
+      font-size: 15px;
+      color: var(--off-white);
+      line-height: 1.7;
+      margin-bottom: 1.8rem;
+    }
+    .who-card-list {
+      list-style: none;
+    }
+    .who-card-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-family: var(--font-body);
+      font-size: 14px;
+      color: var(--dim);
+      margin-bottom: 10px;
+    }
+    .who-card-item:last-child {
+      margin-bottom: 0;
+    }
+    .who-card-item::before {
+      content: "→";
+      color: var(--gold);
+      font-weight: bold;
+      flex-shrink: 0;
+    }
+
+    /* --- SECTION 5 — WHAT IS INSIDE (THE 8 PHASES) --- */
+    .phases-section {
+      background-color: var(--navy-panel);
+    }
+    .phases-subtext {
+      font-family: var(--font-body);
+      font-size: 16px;
+      color: var(--dim);
+      margin-top: -12px;
+      margin-bottom: 3rem;
+    }
+    .phase-list {
+      display: flex;
+      flex-direction: column;
+      border-top: 1px solid var(--rule);
+    }
+    .phase-row {
+      display: flex;
+      align-items: center;
+      background-color: var(--navy-mid);
+      border-bottom: 1px solid var(--rule);
+      padding: 0;
+      transition: background-color var(--transition-speed) ease;
+      cursor: pointer;
+    }
+    .phase-row:hover {
+      background-color: var(--navy-light);
+    }
+    .phase-num {
+      width: 64px;
+      min-height: 84px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 18px;
+      color: var(--gold);
+      flex-shrink: 0;
+      align-self: stretch;
+    }
+    .phase-content {
+      flex: 1;
+      padding: 1.25rem 2rem;
+    }
+    .phase-title {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 16px;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+    .phase-desc {
+      font-family: var(--font-body);
+      font-size: 14px;
+      color: var(--off-white);
+      line-height: 1.6;
+    }
+    .phase-arrow {
+      width: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      color: var(--dim);
+      flex-shrink: 0;
+      transition: color var(--transition-speed) ease;
+    }
+    .phase-row:hover .phase-arrow {
+      color: var(--gold);
+    }
+
+    /* --- SECTION 6 — THE TOOLKIT --- */
+    .toolkit-section {
+      background-color: var(--navy-deep);
+    }
+    .toolkit-subtext {
+      font-family: var(--font-body);
+      font-size: 16px;
+      color: var(--off-white);
+      margin-top: -12px;
+      margin-bottom: 3rem;
+    }
+    .toolkit-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    .toolkit-card {
+      background-color: var(--navy-mid);
+      border: 1px solid var(--rule);
+      border-left: 3px solid var(--blue-line);
+      padding: 28px 24px;
+      border-radius: 0 4px 4px 0;
+    }
+    .toolkit-num {
+      font-family: var(--font-mono);
+      font-weight: 700;
+      font-size: 11px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 6px;
+    }
+    .toolkit-title {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 16px;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+    .toolkit-desc {
+      font-family: var(--font-body);
+      font-size: 13.5px;
+      color: var(--off-white);
+      line-height: 1.6;
+    }
+
+    /* --- SECTION 7 — ABOUT THE AUTHOR --- */
+    .about-section {
+      background-color: var(--navy-panel);
+    }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 4rem;
+    }
+    .author-name {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 28px;
+      color: var(--white);
+    }
+    .author-title {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--gold);
+      margin-top: 4px;
+    }
+    .author-line {
+      width: 40px;
+      height: 2px;
+      background-color: var(--gold);
+      margin: 16px 0;
+    }
+    .author-p {
+      font-family: var(--font-body);
+      font-size: 15px;
+      color: var(--off-white);
+      line-height: 1.8;
+      margin-bottom: 1.25rem;
+    }
+    .author-socials {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .social-link {
+      font-family: var(--font-body);
+      font-size: 13px;
+      color: var(--dim);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .social-link:hover {
+      color: var(--gold-light);
+    }
+    
+    .lab-channels {
+      display: flex;
+      flex-direction: column;
+    }
+    .channels-header {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+    .channel-card {
+      background-color: var(--navy-mid);
+      border-left: 2px solid var(--blue-line);
+      padding: 18px 20px;
+      margin-bottom: 10px;
+      border-radius: 0 4px 4px 0;
+    }
+    .channel-card:last-child {
+      margin-bottom: 0;
+    }
+    .channel-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--dim);
+      margin-bottom: 4px;
+    }
+    .channel-title {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 14px;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+    .channel-desc {
+      font-family: var(--font-body);
+      font-size: 12.5px;
+      color: var(--off-white);
+      line-height: 1.5;
+    }
+
+    /* --- SECTION 8 — PRICING / CTA --- */
+    .pricing-section {
+      background-color: var(--navy-deep);
+      text-align: center;
+    }
+    .pricing-eyebrow {
+      justify-content: center;
+    }
+    .pricing-title {
+      font-size: clamp(32px, 5vw, 52px);
+      margin-bottom: 8px;
+    }
+    .pricing-subtext {
+      font-family: var(--font-body);
+      font-size: 17px;
+      color: var(--dim);
+      margin-bottom: 3.5rem;
+    }
+    .pricing-wrapper {
+      display: grid;
+      grid-template-columns: 1.1fr 1.2fr;
+      gap: 4rem;
+      max-width: 920px;
+      margin: 0 auto 2rem auto;
+      align-items: center;
+      text-align: left;
+    }
+    .pricing-preview {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+    .pricing-preview-img {
+      width: 100%;
+      max-width: 440px;
+      height: auto;
+      border-radius: 8px;
+      border: 1px solid var(--rule);
+      box-shadow: 0 25px 55px rgba(0, 0, 0, 0.65);
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+      animation: float 5s ease-in-out infinite;
+    }
+    .pricing-preview-img:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 35px 75px rgba(0, 0, 0, 0.8);
+    }
+    .pricing-card {
+      background-color: var(--navy-mid);
+      border: 1px solid var(--rule);
+      border-top: 3px solid var(--gold);
+      border-radius: 4px;
+      padding: 40px 36px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .version-badge {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      text-transform: uppercase;
+      background-color: rgba(201, 168, 76, 0.12);
+      color: var(--gold);
+      padding: 4px 12px;
+      border-radius: 2px;
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.1em;
+    }
+    .price-amount {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 56px;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .price-alt {
+      font-family: var(--font-mono);
+      font-size: 14px;
+      color: var(--dim);
+      margin-top: 4px;
+      margin-bottom: 1.8rem;
+    }
+    .included-list {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+    .included-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-body);
+      font-size: 15px;
+      color: var(--off-white);
+      margin-bottom: 12px;
+    }
+    .included-item::before {
+      content: "✓";
+      color: var(--gold);
+      font-weight: bold;
+      flex-shrink: 0;
+    }
+    .pricing-divider {
+      height: 1px;
+      background-color: var(--rule);
+      margin: 24px 0;
+    }
+    .pricing-card .btn {
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 16px;
+    }
+    .pricing-card .btn:last-of-type {
+      margin-bottom: 12px;
+    }
+    .pricing-card-footer {
+      font-family: var(--font-body);
+      font-size: 12px;
+      color: var(--dim);
+      text-align: center;
+    }
+
+    .pricing-notice {
+      max-width: 820px;
+      margin: 4rem auto 0 auto;
+      text-align: center;
+      border-top: 1px solid var(--rule);
+      padding-top: 2.5rem;
+    }
+    .pricing-notice-text {
+      font-family: var(--font-body);
+      font-size: 15px;
+      color: var(--dim);
+      line-height: 1.8;
+    }
+
+    /* --- SECTION 9 — FOOTER --- */
+    .footer-section {
+      background-color: var(--navy-panel);
+      padding: 48px 0;
+      border-top: 1px solid var(--rule);
+      border-left: none; /* No spine on footer */
+    }
+    .footer-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+    .footer-left {
+      display: flex;
+      flex-direction: column;
+    }
+    .footer-logo {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      color: var(--gold);
+      margin-bottom: 4px;
+    }
+    .footer-left-sub {
+      font-family: var(--font-body);
+      font-size: 13px;
+      color: var(--dim);
+    }
+    .footer-center {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-style: italic;
+      color: var(--dim);
+    }
+    .footer-right {
+      font-family: var(--font-body);
+      font-size: 12px;
+      color: var(--dim);
+    }
+
+    /* --- SCROLL REVEAL ANIMATIONS --- */
+    .reveal-section {
+      opacity: 0;
+      transform: translateY(25px);
+      transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal-section.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* --- RESPONSIVE BREAKPOINTS --- */
+    @media (max-width: 1024px) {
+      .hero-grid {
+        gap: 2rem;
+      }
+      .about-grid {
+        gap: 2rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      html, body {
+        overflow-x: hidden;
+        width: 100%;
+        max-width: 100vw;
+      }
+      .container {
+        padding: 0 2.5rem;
+      }
+      .top-nav {
+        height: auto;
+        padding: 12px 0;
+      }
+      .top-nav-container {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+      }
+
+      section {
+        padding: 60px 0;
+      }
+      
+      .hero-section {
+        padding-top: 160px;
+        padding-bottom: 80px;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 4.5rem;
+      }
+
+      .hero-eyebrow {
+        justify-content: center;
+      }
+
+      .hero-title {
+        font-size: clamp(20px, 7vw, 38px);
+        letter-spacing: -0.01em;
+      }
+
+      .book-visual {
+        justify-content: center;
+      }
+
+      .hero-divider {
+        margin: 20px 0;
+      }
+
+      .stats-row {
+        justify-content: center;
+        gap: 0.75rem;
+        flex-wrap: nowrap;
+      }
+      .stat-num {
+        font-size: 24px;
+      }
+      .stat-label {
+        font-size: 9px;
+      }
+
+      .cta-group {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .who-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .toolkit-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .footer-container {
+        flex-direction: column;
+        text-align: center;
+      }
+      .pricing-wrapper {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SECTION 1 — TOP NAVIGATION BAR -->
+  <nav class="top-nav">
+    <div class="top-nav-container">
+      <div class="nav-logo">
+        THE PRODUCT LAB <span class="slash">/</span> <span>thosynpax.com/lab</span>
+      </div>
+      <div>
+        <a href="/lab" class="btn-return">← Return to Lab</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- SECTION 2 — HERO SECTION -->
+  <header class="hero-section blueprint-overlay">
+    <div class="container">
+      <div class="hero-grid">
+        <!-- Content Left -->
+        <div>
+          <div class="eyebrow hero-eyebrow">THE PRODUCT LAB PRESENTS</div>
+          <h1 class="hero-title">
+            THE
+            <span>VIBECODER'S</span>
+            PLAYBOOK
+          </h1>
+          <p class="hero-subheading">Build products with AI without losing your mind.</p>
+          <p class="hero-tagline">"Build it right, or rebuild it twice."</p>
+          
+          <div class="hero-divider"></div>
+          
+          <!-- Stats Row -->
+          <div class="stats-row">
+            <div class="stat-item">
+              <span class="stat-num">8</span>
+              <span class="stat-label">Phases</span>
+            </div>
+            <div class="stats-divider"></div>
+            <div class="stat-item">
+              <span class="stat-num">6</span>
+              <span class="stat-label">Templates</span>
+            </div>
+            <div class="stats-divider"></div>
+            <div class="stat-item">
+              <span class="stat-num">23</span>
+              <span class="stat-label">Pages</span>
+            </div>
+          </div>
+
+          <!-- Buttons Group -->
+          <div class="cta-group">
+            <a href="https://thosynpax.gumroad.com/l/the-vibecoder-playbook" target="_blank" rel="noopener noreferrer" class="btn btn-gold">Buy on Gumroad — $4.99</a>
+            <a href="https://afriheals.selar.com/3397973089" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Buy on Selar — ₦5,000</a>
+          </div>
+          <div class="trust-line">Instant download · PDF format · v1.0</div>
+        </div>
+
+        <!-- Book Visual Right -->
+        <div class="book-visual">
+          <img src="/ebook1.png" alt="The VibeCoder's Playbook Mockup" class="hero-book-img">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- SECTION 3 — PROBLEM / AGITATION SECTION -->
+  <section class="problem-section">
+    <div class="container">
+      <div class="problem-content">
+        <div class="eyebrow">THE REALITY</div>
+        <h2 class="section-title">You have seen the tweets.</h2>
+        
+        <p class="problem-p">Someone built a full SaaS in a weekend using AI. No code experience. Just prompts and vibes. And now you want to do the same.</p>
+        
+        <h3 class="agitation-title">Here is what that tweet does not show:</h3>
+        
+        <!-- Muted Red Border Panel -->
+        <div class="problem-panel">
+          <ul class="problem-list">
+            <li class="problem-item">The 3 rebuilds nobody talks about</li>
+            <li class="problem-item">The database that corrupted on day 5</li>
+            <li class="problem-item">The authentication bug that let anyone log in as anyone</li>
+            <li class="problem-item">Users with access to the admin dashboard</li>
+            <li class="problem-item">The founder who rage-closed their laptop and never opened the project again</li>
+          </ul>
+        </div>
+        
+        <p class="problem-p">VibeCoding is real, and it does work. But it comes with a new category of failure — not from writing bad code, but from building without a system.</p>
+        
+        <div class="bold-statement">
+          This playbook is that system.
+          <div class="bold-statement-line"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4 — WHO THIS IS FOR -->
+  <section class="who-section blueprint-overlay">
+    <div class="container">
+      <div class="eyebrow">WHO THIS IS FOR</div>
+      <h2 class="section-title">Built for Two Kinds of Builders</h2>
+      
+      <div class="who-grid">
+        <!-- Card 1 -->
+        <div class="who-card">
+          <div class="who-card-icon">&gt;_</div>
+          <h3 class="who-card-title">Vibecoders</h3>
+          <p class="who-card-desc">People using AI tools like Claude, Cursor, Bolt, or Lovable to build apps without a traditional engineering background.</p>
+          <ul class="who-card-list">
+            <li class="who-card-item">You use AI to generate most of your code</li>
+            <li class="who-card-item">You can navigate a codebase but could not write it from scratch</li>
+            <li class="who-card-item">You have had at least one project fall apart mid-build</li>
+          </ul>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="who-card">
+          <div class="who-card-icon" style="font-size: 24px; line-height: 28px;">✦</div>
+          <h3 class="who-card-title">Non-Technical Founders</h3>
+          <p class="who-card-desc">People with a product vision who are either building themselves or managing someone who is vibecoding for them.</p>
+          <ul class="who-card-list">
+            <li class="who-card-item">You have a product idea and the drive to build it</li>
+            <li class="who-card-item">You rely on AI or contractors to do the actual coding</li>
+            <li class="who-card-item">You want to understand what you are building well enough to direct it</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5 — WHAT IS INSIDE (THE 8 PHASES) -->
+  <section class="phases-section">
+    <div class="container">
+      <div class="eyebrow">WHAT IS INSIDE</div>
+      <h2 class="section-title">The 8-Phase System</h2>
+      <p class="phases-subtext">23 pages. Every phase addresses a specific failure point in the vibe-building process.</p>
+      
+      <div class="phase-list">
+        <!-- Phase 01 -->
+        <div class="phase-row">
+          <div class="phase-num" style="background-color: #1a4a7a;">01</div>
+          <div class="phase-content">
+            <h3 class="phase-title">Define Before You Build</h3>
+            <p class="phase-desc">Use AI to run feasibility studies and write your product brief before you touch any tool. The most important phase that almost everyone skips.</p>
+          </div>
+          <div class="phase-arrow">→</div>
+        </div>
+
+        <!-- Phase 02 -->
+        <div class="phase-row">
+          <div class="phase-num" style="background-color: #1a5c8a;">02</div>
+          <div class="phase-content">
+            <h3 class="phase-title">Choose Your Stack Deliberately</h3>
+            <p class="phase-desc">Match your tools to your product complexity. Understand what deployment actually means. Stop picking your stack because an influencer used it.</p>
+          </div>
+          <div class="phase-arrow">→</div>
+        </div>
+
+        <!-- Phase 03 -->
+        <div class="phase-row">
+          <div class="phase-num" style="background-color: #1e6b7a;">03</div>
+          <div class="phase-content">
+            <h3 class="phase-title">Architect Before You Prompt</h3>
+            <p class="phase-desc">The phase I have had to fix most on client projects. Learn the minimum architecture work — screen map, schema, naming conventions — that lets the AI build consistently.</p>
+          </div>
+          <div class="phase-arrow">→</div>
+        </div>
+
+        <!-- Phase 04 -->
+        <div class="phase-row">
+          <div class="phase-num" style="background-color: #1a5c4a;">04</div>
+          <div class="phase-content">
+            <h3 class="phase-title">Build in Phases, Not in Bursts</h3>
+            <p class="phase-desc">One feature at a time, fully working, before moving to the next. The discipline that separates products from projects.</p>
+          </div>
+          <div class="phase-arrow">→</div>
+        </div>
+
+        <!-- Phase 05 -->
+        <div class="phase-row">
+          <div class="phase-num" style="background-color: #3a3a7a;">05</div>
+          <div class="phase-content">
+            <h3 class="phase-title">Manage AI Like a Junior Developer</h3>
+            <p class="phase-desc">You are the senior developer. The AI is fast, has read everything, and will confidently give you wrong code if you do not manage it correctly.</p>
+          </div>
+          <div class="phase-arrow">→</div>
+        </div>
+
+        <!-- Phase 06 -->
+        <div class="phase-row">
+          <div class="phase-num" style="background-color: #4a1a6a;">06</div>
+          <div class="phase-content">
+            <h3 class="phase-title">Debug Like a Detective</h3>
+            <p class="phase-desc">Stop panic-prompting. Learn a methodical approach: isolate, read the error, revert, fix. Eight copy-paste debug prompts included in the Toolkit.</p>
+          </div>
+          <div class="phase-arrow">→</div>
+        </div>
+
+        <!-- Phase 07 -->
+        <div class="phase-row">
+          <div class="phase-num" style="background-color: #6a2a1a;">07</div>
+          <div class="phase-content">
+            <h3 class="phase-title">Ship Small, Then Improve</h3>
+            <p class="phase-desc">Perfection is the most expensive thing you can chase in product development. Define your launch criteria and ship the smallest version that delivers real value.</p>
+          </div>
+          <div class="phase-arrow">→</div>
+        </div>
+
+        <!-- Phase 08 -->
+        <div class="phase-row">
+          <div class="phase-num" style="background-color: #1a4a5c;">08</div>
+          <div class="phase-content">
+            <h3 class="phase-title">Maintain Like It Is a Business</h3>
+            <p class="phase-desc">Post-launch is where most vibe projects quietly die. Build the weekly rhythm that keeps a product alive, improving, and worth using.</p>
+          </div>
+          <div class="phase-arrow">→</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6 — THE TOOLKIT -->
+  <section class="toolkit-section blueprint-overlay">
+    <div class="container">
+      <div class="eyebrow">INCLUDED FREE</div>
+      <h2 class="section-title">The VibeCoder's Toolkit</h2>
+      <p class="toolkit-subtext">Six ready-to-use templates designed to be filled in immediately. A separate PDF delivered with every purchase.</p>
+      
+      <div class="toolkit-grid">
+        <!-- Template 1 -->
+        <div class="toolkit-card">
+          <div class="toolkit-num">Template 01</div>
+          <h3 class="toolkit-title">Product Brief Template</h3>
+          <p class="toolkit-desc">Fill this in before you open any AI tool. 8 sections covering the product, the problem, user flow, MVP features, data entities, and stack decision.</p>
+        </div>
+
+        <!-- Template 2 -->
+        <div class="toolkit-card">
+          <div class="toolkit-num">Template 02</div>
+          <h3 class="toolkit-title">Project Context Document</h3>
+          <p class="toolkit-desc">Paste this at the start of every AI session. Your stack, schema, naming conventions, build status, and session task in one block.</p>
+        </div>
+
+        <!-- Template 3 -->
+        <div class="toolkit-card">
+          <div class="toolkit-num">Template 03</div>
+          <h3 class="toolkit-title">Architecture Sheet</h3>
+          <p class="toolkit-desc">Screen map, component map, data flow, database schema, shared logic decisions, and build order — all in one place.</p>
+        </div>
+
+        <!-- Template 4 -->
+        <div class="toolkit-card">
+          <div class="toolkit-num">Template 04</div>
+          <h3 class="toolkit-title">Launch Checklist</h3>
+          <p class="toolkit-desc">8 sections to complete before you share your product with anyone. Core flows, security basics, deployment, cross-device, and monitoring.</p>
+        </div>
+
+        <!-- Template 5 -->
+        <div class="toolkit-card">
+          <div class="toolkit-num">Template 05</div>
+          <h3 class="toolkit-title">Debug Prompt Library</h3>
+          <p class="toolkit-desc">8 copy-paste prompts for every debugging and building situation. Never write a vague prompt again.</p>
+        </div>
+
+        <!-- Template 6 -->
+        <div class="toolkit-card">
+          <div class="toolkit-num">Template 06</div>
+          <h3 class="toolkit-title">Weekly Product Review</h3>
+          <p class="toolkit-desc">Your 30-minute weekly ritual. Last week review, bug tracking, user feedback, health check, and this week's plan.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 7 — ABOUT THE AUTHOR -->
+  <section class="about-section">
+    <div class="container">
+      <div class="eyebrow">THE AUTHOR</div>
+      <div class="about-grid">
+        <!-- Left Info -->
+        <div>
+          <h3 class="author-name">Thosyn Pax</h3>
+          <div class="author-title">Product Architect</div>
+          <div class="author-line"></div>
+          
+          <p class="author-p">I bridge deep technical infrastructure and market-ready products. Since 2015, I have been building systems, and since 2022, I have trained over 5,000 people in practical tech skills.</p>
+          <p class="author-p">In 2026 alone, I have worked on over 6 projects that did not start from scratch. Founders had already vibecoded them and got lost. Some codebases were so scattered that crashes were not a matter of if — they were a matter of when.</p>
+          <p class="author-p">This playbook is the structured version of what I tell every founder before they start building.</p>
+          
+          <div class="author-socials">
+            <a href="https://www.threads.net/@thosynpax" target="_blank" rel="noopener noreferrer" class="social-link">Threads: @thosynpax</a>
+            <a href="https://linkedin.com/in/thosyn-pax" target="_blank" rel="noopener noreferrer" class="social-link">LinkedIn: Thosyn Pax</a>
+            <a href="https://youtube.com/@theproductlab" target="_blank" rel="noopener noreferrer" class="social-link">YouTube: Product Lab</a>
+            <a href="https://instagram.com/thosynpax" target="_blank" rel="noopener noreferrer" class="social-link">Instagram: @thosynpax</a>
+          </div>
+        </div>
+
+        <!-- Right Lab Channels -->
+        <div class="lab-channels">
+          <div class="channels-header">THE PRODUCT LAB</div>
+          
+          <!-- Card A -->
+          <div class="channel-card">
+            <div class="channel-eyebrow">THE PODCAST</div>
+            <h4 class="channel-title">The Product Lab Conversations</h4>
+            <p class="channel-desc">Conversations on building for scale, product strategy, and the future of technology. New episode every Sunday at 13:00.</p>
+          </div>
+
+          <!-- Card B -->
+          <div class="channel-card">
+            <div class="channel-eyebrow">VIDEO CONTENT</div>
+            <h4 class="channel-title">Product Lab by Thosyn Pax</h4>
+            <p class="channel-desc">Architecture deep dives, AI strategy, and technical breakdowns.</p>
+          </div>
+
+          <!-- Card C -->
+          <div class="channel-card">
+            <div class="channel-eyebrow">THE NEWSLETTER</div>
+            <h4 class="channel-title">The Weekly Architecture Audit</h4>
+            <p class="channel-desc">Behind-the-scenes lessons on building products and companies. Honest, practical, no filler.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 8 — PRICING / CTA -->
+  <section class="pricing-section blueprint-overlay">
+    <div class="container">
+      <div class="eyebrow pricing-eyebrow">GET THE PLAYBOOK</div>
+      <h2 class="section-title pricing-title">Start Building the Right Way</h2>
+      <p class="pricing-subtext">Two PDFs. Instant download. Everything you need to go from vague idea to real product.</p>
+      
+      <!-- Pricing Wrapper -->
+      <div class="pricing-wrapper">
+        <div class="pricing-card">
+          <div class="version-badge">VERSION 1.0</div>
+          <div class="price-amount">$4.99</div>
+          <div class="price-alt">or ₦5,000</div>
+          
+          <ul class="included-list">
+            <li class="included-item">The VibeCoder's Playbook PDF — 23 pages</li>
+            <li class="included-item">The VibeCoder's Toolkit PDF — 6 templates</li>
+            <li class="included-item">Instant download after purchase</li>
+            <li class="included-item">v2.0 update pricing when released</li>
+          </ul>
+          
+          <div class="pricing-divider"></div>
+          
+          <a href="https://thosynpax.gumroad.com/l/the-vibecoder-playbook" target="_blank" rel="noopener noreferrer" class="btn btn-gold">Buy on Gumroad — $4.99</a>
+          <a href="https://afriheals.selar.com/3397973089" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Buy on Selar — ₦5,000</a>
+          
+          <div class="pricing-card-footer">30-day money back guarantee · Secure checkout</div>
+        </div>
+        <div class="pricing-preview">
+          <img src="/ebook1.png" alt="The VibeCoder's Playbook Cover" class="pricing-preview-img">
+        </div>
+      </div>
+
+      <!-- v2.0 Notice Block -->
+      <div class="pricing-notice">
+        <p class="pricing-notice-text">
+          This is v1.0, priced for access. Version 2.0 will include real case studies, visual architecture diagrams, and video walkthroughs. The price increases at v2.0. Buy now and get more value per dollar than anything else in your toolkit.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 9 — FOOTER -->
+  <footer class="footer-section">
+    <div class="container footer-container">
+      <div class="footer-left">
+        <div class="footer-logo">THE PRODUCT LAB</div>
+        <div class="footer-left-sub">thosynpax.com/lab</div>
+      </div>
+      <div class="footer-center">
+        "Theory meets the factory floor."
+      </div>
+      <div class="footer-right">
+        © 2026 Thosyn Pax. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- --- SCRIPTS (IntersectionObserver & Interactions) --- -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // 1. IntersectionObserver for Reveal Animations
+      const sections = document.querySelectorAll("section, header, footer");
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+          }
+        });
+      }, {
+        threshold: 0.05
+      });
+
+      sections.forEach(section => {
+        section.classList.add("reveal-section");
+        observer.observe(section);
+      });
+
+      // 2. Sticky Nav Border Bottom Transition
+      const nav = document.querySelector(".top-nav");
+      const hero = document.querySelector(".hero-section");
+      
+      const checkNavScroll = () => {
+        if (window.scrollY > 80) {
+          nav.classList.add("scrolled");
+        } else {
+          nav.classList.remove("scrolled");
+        }
+      };
+      
+      window.addEventListener("scroll", checkNavScroll);
+      checkNavScroll(); // run once on load
+    });
+  </script>
+</body>
+</html>

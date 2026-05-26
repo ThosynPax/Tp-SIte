@@ -374,11 +374,14 @@ const Lab = ({ theme }) => {
 
             <div className="col-header" style={{ marginTop: '1.75rem' }}>THE BOOK</div>
             
-            <div className="grid-item">
-              <h3 className="item-title">The Vibecoder's Playbook</h3>
-              <p className="item-desc">Build products with AI without losing your mind.</p>
-              <div className="item-links">
-                <a href="https://thosynpax.com/book" target="_blank" rel="noopener noreferrer" className="item-link">Link to Buy →</a>
+            <div className="grid-item" style={{ display: 'flex', gap: '1.25rem', alignItems: 'flex-start' }}>
+              <img src="/ebook2.jpg" alt="The Vibecoder's Playbook Cover" style={{ width: '64px', height: '90px', borderRadius: '4px', border: '1px solid rgba(255,255,255,0.1)', objectFit: 'cover', flexShrink: 0, boxShadow: '0 8px 20px rgba(0,0,0,0.4)' }} />
+              <div>
+                <h3 className="item-title">The Vibecoder's Playbook</h3>
+                <p className="item-desc" style={{ marginBottom: '0.8rem' }}>Build products with AI without losing your mind.</p>
+                <div className="item-links">
+                  <a href="/vibecoding-playbook/?v=2.1" target="_blank" rel="noopener noreferrer" className="item-link">Link to Buy →</a>
+                </div>
               </div>
             </div>
           </div>
