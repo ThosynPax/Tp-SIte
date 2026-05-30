@@ -357,6 +357,16 @@ const Lab = ({ theme }) => {
                 <a href="https://podcasts.apple.com/ng/podcast/debug-school-by-paste/id1845675897" target="_blank" rel="noopener noreferrer" className="item-link"><i className="fab fa-apple" style={{ marginRight: '6px' }}></i> Apple Podcasts ↗</a>
               </div>
             </div>
+
+            <div className="col-header" style={{ marginTop: '1.75rem' }}>RESOURCES</div>
+            
+            <div className="grid-item">
+              <h3 className="item-title">Product Lab Resources</h3>
+              <p className="item-desc">Free templates, technical blueprints, and tools.</p>
+              <div className="item-links">
+                <a href="https://cut.thosynpax.com/the-product-lab-resources/" target="_blank" rel="noopener noreferrer" className="item-link"><i className="fas fa-folder-open" style={{ marginRight: '6px' }}></i> Access Resources ↗</a>
+              </div>
+            </div>
           </div>
 
           {/* Column 3 */}
