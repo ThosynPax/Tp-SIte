@@ -1,4 +1,9 @@
 {
+  "rewrites": [
+    { "source": "/sitemap.xml", "destination": "/sitemap.xml" },
+    { "source": "/robots.txt", "destination": "/robots.txt" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ],
   "redirects": [
     {
       "source": "/cre8fast",
