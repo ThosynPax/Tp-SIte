@@ -355,6 +355,8 @@ const Lab = ({ theme }) => {
                 <a href="https://open.spotify.com/show/6fCxwjIOauwOpBrmlgqODB" target="_blank" rel="noopener noreferrer" className="item-link"><i className="fab fa-spotify" style={{ marginRight: '6px' }}></i> Spotify ↗</a>
                 <a href="https://music.youtube.com/playlist?list=PLMk-yXty7nSn13LhpnE04Xk5g7AivLW0O" target="_blank" rel="noopener noreferrer" className="item-link"><i className="fab fa-youtube" style={{ marginRight: '6px' }}></i> YouTube Music ↗</a>
                 <a href="https://podcasts.apple.com/ng/podcast/debug-school-by-paste/id1845675897" target="_blank" rel="noopener noreferrer" className="item-link"><i className="fab fa-apple" style={{ marginRight: '6px' }}></i> Apple Podcasts ↗</a>
+                <a href="https://pca.st/odaxzkhn" target="_blank" rel="noopener noreferrer" className="item-link"><i className="fas fa-podcast" style={{ marginRight: '6px' }}></i> Pocket Casts ↗</a>
+                <a href="https://player.fm/series/the-product-lab-conversations" target="_blank" rel="noopener noreferrer" className="item-link"><i className="fas fa-play-circle" style={{ marginRight: '6px' }}></i> Player FM ↗</a>
               </div>
             </div>
 
