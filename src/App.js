@@ -5,13 +5,14 @@ import Main from './components/Main';
 import Footer from './components/Footer';
 import Link from './components/Links';
 import Lab from './components/Lab';
+import Resources from './components/Resources';
 import useEnvironment from './hooks/useEnvironment';
 import './App.css';
 
 const LayoutWrapper = ({ children, theme }) => {
   const location = useLocation();
   const hideHeaderFooter = location.pathname === '/links';
-  const isLabPage = location.pathname === '/lab';
+  const isLabPage = location.pathname === '/lab' || location.pathname === '/resources';
 
   useEffect(() => {
     if (isLabPage) {
@@ -42,6 +43,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Main theme={theme} />} />
             <Route path="/lab" element={<Lab theme={theme} />} />
+            <Route path="/resources" element={<Resources theme={theme} />} />
             <Route path="/links" element={<Link />} />
           </Routes>
         </LayoutWrapper>

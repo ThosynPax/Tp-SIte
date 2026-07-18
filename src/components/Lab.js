@@ -172,7 +172,38 @@ const Lab = ({ theme }) => {
         }
 
         @media (max-width: 650px) {
-          .project-row { grid-template-columns: 2fr 1.2fr 2.5fr 15px; justify-content: stretch; font-size: 0.8rem; gap: 0.5rem; }
+          .project-row {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            padding: 1.2rem 0;
+            gap: 0.6rem;
+          }
+          .p-name {
+            flex: 1 1 100%;
+            font-size: 1.15rem;
+            color: #fff;
+            margin-bottom: 0.2rem;
+          }
+          .p-status {
+            font-size: 0.8rem;
+            padding: 0.25rem 0.6rem;
+            background: rgba(255,255,255,0.15);
+            border-radius: 6px;
+            color: #fff;
+          }
+          .p-domain {
+            font-size: 0.95rem;
+            flex: 1;
+            color: rgba(255,255,255,0.7);
+          }
+          .p-link {
+            font-size: 1.2rem;
+            color: #fff;
+          }
+          .header-row {
+            display: none;
+          }
         }
 
         /* Top Nav inside Right Panel */
@@ -301,6 +332,19 @@ const Lab = ({ theme }) => {
         .site-footer {
           margin-top: 1.5rem !important;
         }
+
+        @media (max-width: 650px) {
+          .item-title { font-size: 1.15rem; margin-bottom: 0.5rem; }
+          .item-desc { font-size: 1rem; margin-bottom: 1rem; color: rgba(255,255,255,0.75); }
+          .item-link { font-size: 1.05rem; padding: 0.4rem 0; display: block; }
+          .col-header { font-size: 0.95rem; margin-bottom: 1.2rem; }
+          .top-link { font-size: 1.05rem; padding: 0.5rem 0; }
+          .lab-top-right { font-size: 1rem; }
+          .lab-title { font-size: 2.2rem; line-height: 1.1; margin-bottom: 0.5rem; }
+          .lab-intro h2 { font-size: 1.4rem; margin-bottom: 0.8rem; }
+          .lab-intro p { font-size: 1.05rem; margin-bottom: 1.2rem; }
+          .cta-button { font-size: 1.05rem; padding: 1.2rem 2rem; width: 100%; box-sizing: border-box; }
+        }
       `}</style>
 
       {/* --- Left Panel --- */}
@@ -366,7 +410,7 @@ const Lab = ({ theme }) => {
               <h3 className="item-title">Product Lab Resources</h3>
               <p className="item-desc">Free templates, technical blueprints, and tools.</p>
               <div className="item-links">
-                <a href="https://cut.thosynpax.com/the-product-lab-resources/" target="_blank" rel="noopener noreferrer" className="item-link"><i className="fas fa-folder-open" style={{ marginRight: '6px' }}></i> Access Resources ↗</a>
+                <Link to="/resources" className="item-link"><i className="fas fa-folder-open" style={{ marginRight: '6px' }}></i> Access Resources →</Link>
               </div>
             </div>
           </div>
@@ -379,7 +423,7 @@ const Lab = ({ theme }) => {
               <h3 className="item-title">The Weekly Architecture Audit</h3>
               <p className="item-desc">Behind-the-scenes lessons on building products and companies.</p>
               <div className="item-links" style={{ flexDirection: 'column', gap: '0.6rem' }}>
-                <a href="https://cut.thosynpax.com" target="_blank" rel="noopener noreferrer" className="item-link"><i className="fas fa-pen-nib" style={{ marginRight: '6px' }}></i> Ghost ↗</a>
+                <a href="https://substack.com/@thosynpax" target="_blank" rel="noopener noreferrer" className="item-link"><i className="fas fa-pen-nib" style={{ marginRight: '6px' }}></i> Substack ↗</a>
                 <a href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7325566398129225728" target="_blank" rel="noopener noreferrer" className="item-link"><i className="fab fa-linkedin" style={{ marginRight: '6px' }}></i> LinkedIn ↗</a>
               </div>
             </div>
@@ -427,6 +471,20 @@ const Lab = ({ theme }) => {
               <span className="p-name">PASTE</span>
               <span className="p-status">LIVE</span>
               <span className="p-domain">Tech Education</span>
+              <span className="p-link">↗</span>
+            </a>
+
+            <a href="https://cre8fast.thosynpax.com/qell" target="_blank" rel="noopener noreferrer" className="project-row">
+              <span className="p-name">QELL</span>
+              <span className="p-status">LIVE</span>
+              <span className="p-domain">Cre8fast Product Lab</span>
+              <span className="p-link">↗</span>
+            </a>
+
+            <a href="https://cut.thosynpax.com/" target="_blank" rel="noopener noreferrer" className="project-row">
+              <span className="p-name">ReMake</span>
+              <span className="p-status">LIVE</span>
+              <span className="p-domain">A curator.</span>
               <span className="p-link">↗</span>
             </a>
           </div>
