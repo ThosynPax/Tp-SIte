@@ -247,13 +247,10 @@ const Lab = ({ theme }) => {
 
         .lab-grid {
           display: grid;
-          grid-template-columns: repeat(3, 1fr);
+          grid-template-columns: repeat(2, 1fr);
           gap: 1.5rem 1.5rem;
         }
 
-        @media (max-width: 1100px) {
-          .lab-grid { grid-template-columns: repeat(2, 1fr); }
-        }
         @media (max-width: 650px) {
           .lab-grid { grid-template-columns: 1fr; }
         }
@@ -377,19 +374,6 @@ const Lab = ({ theme }) => {
           
           {/* Column 1 */}
           <div>
-            <div className="col-header">Video Content</div>
-            
-            <div className="grid-item">
-              <h3 className="item-title">Product Lab by Thosyn Pax</h3>
-              <p className="item-desc">Architecture deep dives, AI strategy, and technical breakdowns.</p>
-              <div className="item-links">
-                <a href="https://www.youtube.com/@thosynpaxlab" target="_blank" rel="noopener noreferrer" className="item-link"><i className="fab fa-youtube" style={{ marginRight: '6px' }}></i> Subscribe on YouTube ↗</a>
-              </div>
-            </div>
-          </div>
-
-          {/* Column 2 */}
-          <div>
             <div className="col-header">The Podcast</div>
             
             <div className="grid-item">
@@ -415,7 +399,7 @@ const Lab = ({ theme }) => {
             </div>
           </div>
 
-          {/* Column 3 */}
+          {/* Column 2 */}
           <div>
             <div className="col-header">The Newsletter</div>
             
