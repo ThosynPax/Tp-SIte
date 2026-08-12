@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, Outlet, useLocation } from 'react-router-dom';
 import '../App.css';
 import useSEO from '../hooks/useSEO';
@@ -11,6 +11,14 @@ const Lab = ({ theme }) => {
 
   const location = useLocation();
   const [hoveredRecord, setHoveredRecord] = useState(null);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 900);
+
+  // Resize listener for responsive layout calculations
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 900);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   // Get active menu ID from URL route path
   const getActiveId = () => {
@@ -165,10 +173,10 @@ const Lab = ({ theme }) => {
         .crate-compact-wrapper {
           display: flex;
           justify-content: center;
-          margin: 0 auto 2.5rem auto;
+          margin: 0.5rem auto 2.5rem auto;
           width: 100%;
           max-width: 800px;
-          height: 170px;
+          height: 340px;
           position: relative;
           padding: 0 1.5rem;
           box-sizing: border-box;
@@ -177,8 +185,8 @@ const Lab = ({ theme }) => {
 
         .crate-shelf {
           position: relative;
-          width: 530px;
-          height: 140px;
+          width: 460px;
+          height: 320px;
           perspective: 1200px;
           display: flex;
           justify-content: center;
@@ -188,13 +196,15 @@ const Lab = ({ theme }) => {
         /* Vinyl sleeve */
         .vinyl-sleeve {
           position: absolute;
-          width: 100px;
-          height: 100px;
+          width: 200px;
+          height: 200px;
+          left: calc(50% - 100px);
+          bottom: 20px;
           background-color: #111;
-          border-radius: 6px;
-          box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6), 0 1px 3px rgba(255, 255, 255, 0.05);
+          border-radius: 8px;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), 0 2px 5px rgba(255, 255, 255, 0.05);
           cursor: pointer;
-          transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.3s ease, border-color 0.2s;
+          transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s ease, border-color 0.3s;
           border: 1px solid rgba(255, 255, 255, 0.15);
           overflow: hidden;
           display: flex;
@@ -205,7 +215,7 @@ const Lab = ({ theme }) => {
         }
 
         .sleeve-label-overlay {
-          padding: 0.5rem;
+          padding: 0.85rem;
           background: linear-gradient(to top, rgba(0,0,0,0.95) 40%, rgba(0,0,0,0.6) 80%, rgba(0,0,0,0) 100%);
           z-index: 2;
           width: 100%;
@@ -213,7 +223,7 @@ const Lab = ({ theme }) => {
         }
 
         .sleeve-title {
-          font-size: 0.75rem;
+          font-size: 0.95rem;
           font-weight: 700;
           color: #fff;
           margin: 0;
@@ -223,7 +233,7 @@ const Lab = ({ theme }) => {
         }
 
         .sleeve-artist {
-          font-size: 0.55rem;
+          font-size: 0.7rem;
           color: rgba(255,255,255,0.5);
           margin: 0;
           white-space: nowrap;
@@ -235,15 +245,16 @@ const Lab = ({ theme }) => {
         .crate-box-border {
           position: absolute;
           bottom: 10px;
-          width: 550px;
-          height: 50px;
+          width: 320px;
+          height: 100px;
+          left: calc(50% - 160px);
           background-color: rgba(255, 255, 255, 0.01);
-          border: 1px solid rgba(255, 255, 255, 0.06);
-          border-radius: 8px;
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          border-radius: 12px;
           transform: rotateX(25deg);
-          box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+          box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8), inset 0 2px 10px rgba(255,255,255,0.05);
           pointer-events: none;
-          z-index: 12;
+          z-index: 15;
         }
 
         /* --- Nested Subpage Render Container --- */
@@ -591,35 +602,40 @@ const Lab = ({ theme }) => {
           }
 
           .crate-compact-wrapper {
-            height: 140px;
+            height: 260px;
           }
 
           .crate-shelf {
-            width: 100%;
-            height: 100px;
+            width: 300px;
+            height: 220px;
             perspective: 800px;
           }
 
           .crate-box-border {
-            width: 100%;
-            display: none;
+            width: 220px;
+            height: 70px;
+            left: calc(50% - 110px);
+            bottom: 5px;
+            z-index: 15;
           }
 
           .vinyl-sleeve {
-            width: 64px;
-            height: 64px;
+            width: 140px;
+            height: 140px;
+            left: calc(50% - 70px);
+            bottom: 10px;
           }
 
           .sleeve-label-overlay {
-            padding: 0.25rem;
+            padding: 0.5rem;
           }
 
           .sleeve-title {
-            font-size: 0.55rem;
+            font-size: 0.75rem;
           }
 
           .sleeve-artist {
-            display: none;
+            font-size: 0.55rem;
           }
 
           .track-header-row {
@@ -680,30 +696,29 @@ const Lab = ({ theme }) => {
             const isHovered = hoveredRecord === index;
             const isActive = activeRecordId === record.id;
 
-            // Spacing calculations: 7 records centered horizontally
-            const horizontalSpan = 70; // gap spacing
-            const totalSpan = 6 * horizontalSpan; // width of overlap span
-            const startOffset = -totalSpan / 2; // offset to center them
-            const leftPosition = `calc(50% + ${startOffset + (index * horizontalSpan)}px)`;
+            // 3D positioning parameters for fanned depth stack
+            const yStep = isMobile ? -20 : -32;
+            const zStep = isMobile ? 12 : 20;
+            const hoverLift = isMobile ? -35 : -55;
+            const activeLift = isMobile ? -20 : -30;
 
-            // 3D positioning
-            const zTranslate = index * 5; // Layering depth back-to-front
-            const yTranslate = index * -2; // Slightly step-up heights in back
-            const xRotate = 15; // standard tilt
-            const yRotate = -8; // slight fanned tilt
+            const yTranslate = index * yStep;
+            const zTranslate = (6 - index) * zStep;
+            const xRotate = 15 - (index * 3);
+            const yRotate = -5 + (index * 1.5); // slight fan angle
 
             let transformStyle = `translate3d(0, ${yTranslate}px, ${zTranslate}px) rotateX(${xRotate}deg) rotateY(${yRotate}deg)`;
-            let zIndex = index + 1;
+            let zIndex = 10 - index;
 
             // Active state styling (stands out slightly raised and straight)
             if (isActive) {
-              transformStyle = `translate3d(0, -16px, 30px) rotateX(0deg) rotateY(0deg) scale(1.05)`;
+              transformStyle = `translate3d(0, ${yTranslate + activeLift}px, ${zTranslate + 20}px) rotateX(5deg) rotateY(0deg) scale(1.03)`;
               zIndex = 40;
             }
 
             // Hover state overrides (pulls record sleeve up to the top z-index layer)
             if (isHovered) {
-              transformStyle = `translate3d(0, -28px, 45px) rotateX(5deg) rotateY(0deg) scale(1.08)`;
+              transformStyle = `translate3d(0, ${yTranslate + hoverLift}px, ${zTranslate + 40}px) rotateX(8deg) rotateY(0deg) scale(1.08)`;
               zIndex = 100;
             }
 
@@ -713,7 +728,6 @@ const Lab = ({ theme }) => {
                 to={record.link}
                 className="vinyl-sleeve"
                 style={{
-                  left: leftPosition,
                   transform: transformStyle,
                   zIndex: zIndex,
                   borderColor: isHovered || isActive ? record.color : 'rgba(255, 255, 255, 0.15)',
