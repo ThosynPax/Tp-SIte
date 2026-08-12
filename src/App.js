@@ -6,13 +6,20 @@ import Footer from './components/Footer';
 import Link from './components/Links';
 import Lab from './components/Lab';
 import Resources from './components/Resources';
+import LabStory from './components/lab/LabStory';
+import LabProducts from './components/lab/LabProducts';
+import LabStore from './components/lab/LabStore';
+import LabPodcast from './components/lab/LabPodcast';
+import LabNewsletter from './components/lab/LabNewsletter';
+import LabMagazine from './components/lab/LabMagazine';
+import LabResources from './components/lab/LabResources';
 import useEnvironment from './hooks/useEnvironment';
 import './App.css';
 
 const LayoutWrapper = ({ children, theme }) => {
   const location = useLocation();
   const hideHeaderFooter = location.pathname === '/links';
-  const isLabPage = location.pathname === '/lab' || location.pathname === '/resources';
+  const isLabPage = location.pathname.startsWith('/lab') || location.pathname === '/resources';
 
   useEffect(() => {
     if (isLabPage) {
@@ -42,7 +49,16 @@ const App = () => {
         <LayoutWrapper theme={theme}>
           <Routes>
             <Route path="/" element={<Main theme={theme} />} />
-            <Route path="/lab" element={<Lab theme={theme} />} />
+            <Route path="/lab" element={<Lab theme={theme} />}>
+              <Route index element={<LabStory />} />
+              <Route path="story" element={<LabStory />} />
+              <Route path="products" element={<LabProducts />} />
+              <Route path="store" element={<LabStore />} />
+              <Route path="podcast" element={<LabPodcast />} />
+              <Route path="newsletter" element={<LabNewsletter />} />
+              <Route path="magazine" element={<LabMagazine />} />
+              <Route path="resources" element={<LabResources />} />
+            </Route>
             <Route path="/resources" element={<Resources theme={theme} />} />
             <Route path="/links" element={<Link />} />
           </Routes>
