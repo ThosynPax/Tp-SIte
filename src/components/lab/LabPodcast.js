@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const LabPodcast = () => {
   const podcasts = [
@@ -40,27 +41,37 @@ const LabPodcast = () => {
   ];
 
   return (
-    <div className="lab-podcast-container" style={{ animation: 'fadeIn 0.5s ease' }}>
-      <div className="album-grid">
-        {podcasts.map((pod) => (
-          <a 
-            key={pod.id} 
-            href={pod.url} 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="album-card"
-            style={{ textDecoration: 'none' }}
-          >
-            <div className="album-cover-wrapper">
-              <img src={pod.cover} alt={pod.title} className="album-cover" />
-              <button className="card-play-btn"><i className="fas fa-play"></i></button>
-            </div>
-            <div className="album-info">
-              <h4 className="album-title">{pod.title}</h4>
-              <p className="album-subtext">{pod.desc}</p>
-            </div>
-          </a>
-        ))}
+    <div className="lab-subpage-wrapper">
+      <div className="lab-subpage-container">
+        <Link to="/lab" className="lab-back-link">
+          <i className="fas fa-arrow-left"></i> Back to Product Lab
+        </Link>
+        
+        <h1 className="lab-subpage-title">Podcast</h1>
+
+        <div className="lab-podcast-container" style={{ animation: 'fadeIn 0.5s ease' }}>
+          <div className="album-grid">
+            {podcasts.map((pod) => (
+              <a 
+                key={pod.id} 
+                href={pod.url} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="album-card"
+                style={{ textDecoration: 'none' }}
+              >
+                <div className="album-cover-wrapper">
+                  <img src={pod.cover} alt={pod.title} className="album-cover" />
+                  <button className="card-play-btn"><i className="fas fa-play"></i></button>
+                </div>
+                <div className="album-info">
+                  <h4 className="album-title">{pod.title}</h4>
+                  <p className="album-subtext">{pod.desc}</p>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );

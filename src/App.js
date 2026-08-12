@@ -19,21 +19,25 @@ import './App.css';
 const LayoutWrapper = ({ children, theme }) => {
   const location = useLocation();
   const hideHeaderFooter = location.pathname === '/links';
-  const isLabPage = location.pathname.startsWith('/lab') || location.pathname === '/resources';
+  const isLabPage = location.pathname.startsWith('/lab');
+  const isResourcesPage = location.pathname === '/resources';
 
   useEffect(() => {
     if (isLabPage) {
+      document.body.className = `theme-lab`;
+      document.body.style.borderTop = 'none';
+    } else if (isResourcesPage) {
       document.body.className = `theme-dark`;
       document.body.style.borderTop = 'none';
     } else {
       document.body.className = `theme-${theme}`;
       document.body.style.borderTop = '';
     }
-  }, [isLabPage, theme]);
+  }, [isLabPage, isResourcesPage, theme]);
 
   return (
-    <div className={isLabPage ? `theme-dark` : `theme-${theme}`}>
-      {!(hideHeaderFooter || isLabPage) && <Header />}
+    <div className={isLabPage ? `theme-lab` : (isResourcesPage ? `theme-dark` : `theme-${theme}`)}>
+      {!(hideHeaderFooter || isLabPage || isResourcesPage) && <Header />}
       {children}
       {!hideHeaderFooter && <Footer />}
     </div>

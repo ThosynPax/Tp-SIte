@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const LabMagazine = () => {
   const issues = [
@@ -23,20 +24,30 @@ const LabMagazine = () => {
   ];
 
   return (
-    <div className="lab-magazine-container" style={{ animation: 'fadeIn 0.5s ease' }}>
-      <div className="album-grid">
-        {issues.map((issue) => (
-          <div key={issue.id} className="album-card">
-            <div className="album-cover-wrapper">
-              <img src={issue.cover} alt={issue.title} className="album-cover" />
-              <button className="card-play-btn"><i className="fas fa-book-open"></i></button>
-            </div>
-            <div className="album-info">
-              <h4 className="album-title">{issue.title}</h4>
-              <p className="album-subtext">{issue.desc}</p>
-            </div>
+    <div className="lab-subpage-wrapper">
+      <div className="lab-subpage-container">
+        <Link to="/lab" className="lab-back-link">
+          <i className="fas fa-arrow-left"></i> Back to Product Lab
+        </Link>
+        
+        <h1 className="lab-subpage-title">Magazine</h1>
+
+        <div className="lab-magazine-container" style={{ animation: 'fadeIn 0.5s ease' }}>
+          <div className="album-grid">
+            {issues.map((issue) => (
+              <div key={issue.id} className="album-card">
+                <div className="album-cover-wrapper">
+                  <img src={issue.cover} alt={issue.title} className="album-cover" />
+                  <button className="card-play-btn"><i className="fas fa-book-open"></i></button>
+                </div>
+                <div className="album-info">
+                  <h4 className="album-title">{issue.title}</h4>
+                  <p className="album-subtext">{issue.desc}</p>
+                </div>
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
       </div>
     </div>
   );
