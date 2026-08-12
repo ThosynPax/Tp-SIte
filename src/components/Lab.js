@@ -293,58 +293,7 @@ const Lab = ({ theme }) => {
           cursor: not-allowed;
         }
 
-        .top-bar-meta {
-          display: flex;
-          align-items: center;
-          gap: 0.75rem;
-          flex-wrap: wrap;
-        }
-
-        .meta-pill {
-          background-color: rgba(255, 255, 255, 0.05);
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          color: rgba(255, 255, 255, 0.75);
-          font-family: 'Space Mono', monospace;
-          font-size: 0.75rem;
-          padding: 0.35rem 0.75rem;
-          border-radius: 100px;
-          display: flex;
-          align-items: center;
-          gap: 0.4rem;
-        }
-
-        .meta-pill .dot {
-          width: 6px;
-          height: 6px;
-          border-radius: 50%;
-          background-color: #10b981; /* green */
-          display: inline-block;
-        }
-
-        .profile-avatar-pill {
-          display: flex;
-          align-items: center;
-          gap: 0.5rem;
-          background-color: rgba(0, 0, 0, 0.6);
-          border-radius: 100px;
-          padding: 0.2rem 0.6rem 0.2rem 0.2rem;
-          border: 1px solid rgba(255,255,255,0.05);
-          cursor: pointer;
-        }
-
-        .avatar-img {
-          width: 24px;
-          height: 24px;
-          border-radius: 50%;
-          object-fit: cover;
-          background-color: #3b82f6;
-        }
-
-        .avatar-name {
-          font-size: 0.8rem;
-          font-weight: 600;
-          color: #fff;
-        }
+        /* Removed top-bar-meta styles */
 
         /* --- Artist Hero Section --- */
         .artist-hero {
@@ -1156,22 +1105,7 @@ const Lab = ({ theme }) => {
               </button>
             </div>
 
-            <div className="top-bar-meta">
-              <div className="meta-pill">
-                <span className="dot"></span>
-                <span>SYSTEM STATUS: STABLE</span>
-              </div>
-              <div className="meta-pill">
-                <span>TEAM: CRE8FAST</span>
-              </div>
 
-              <div className="profile-avatar-pill" onClick={() => navigate('/')}>
-                <div className="avatar-img" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#071b34' }}>
-                  <i className="fas fa-user" style={{ fontSize: '0.7rem', color: '#fff' }}></i>
-                </div>
-                <span className="avatar-name">Thosyn Pax</span>
-              </div>
-            </div>
           </div>
 
           {/* --- Story Hero Header --- */}
