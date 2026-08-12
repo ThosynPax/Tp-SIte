@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import '../App.css';
 import useSEO from '../hooks/useSEO';
 
@@ -9,11 +9,11 @@ const Lab = ({ theme }) => {
     description: 'Welcome to The Product Lab. I am documenting the journey of building high-scale tech systems and global careers. This is where theory meets the factory floor.',
   });
 
-  const navigate = useNavigate();
   const mainContentRef = useRef(null);
 
-  // Layout navigation state
-  const [activeSection, setActiveSection] = useState('story');
+  // Active state tracks which record is expanded (null if crate view)
+  const [activeRecord, setActiveRecord] = useState(null);
+  const [hoveredRecord, setHoveredRecord] = useState(null);
 
   // Bottom music player simulation state
   const [isPlaying, setIsPlaying] = useState(false);
@@ -39,19 +39,6 @@ const Lab = ({ theme }) => {
     'pod-spotify': false,
     'mag-01': true,
   });
-
-  // Scroll to section helper
-  const scrollToSection = (id) => {
-    setActiveSection(id);
-    const element = document.getElementById(id);
-    if (element && mainContentRef.current) {
-      const topPos = element.offsetTop - 80; // Offset for sticky top bar
-      mainContentRef.current.scrollTo({
-        top: topPos,
-        behavior: 'smooth'
-      });
-    }
-  };
 
   // Mock player timer ticker
   useEffect(() => {
@@ -105,15 +92,71 @@ const Lab = ({ theme }) => {
     }));
   };
 
-  // Menu links configuration
-  const menuItems = [
-    { id: 'story', label: 'Story', icon: 'fa-user-astronaut' },
-    { id: 'products', label: 'Products', icon: 'fa-laptop-code' },
-    { id: 'store', label: 'Store', icon: 'fa-shopping-bag' },
-    { id: 'podcast', label: 'Podcast', icon: 'fa-podcast' },
-    { id: 'newsletter', label: 'Newsletter', icon: 'fa-envelope-open-text' },
-    { id: 'magazine', label: 'Magazine', icon: 'fa-scroll' },
-    { id: 'resources', label: 'Resources', icon: 'fa-folder-open' },
+  // Vinyl records metadata definitions
+  const records = [
+    {
+      id: 'story',
+      title: 'The Story',
+      artist: 'Thosyn Pax biography',
+      cover: '/Podcast.jpg',
+      color: '#3b82f6', // blue
+      trackCount: 3,
+      desc: 'Behind the Product Architect mindset and execution rules.'
+    },
+    {
+      id: 'products',
+      title: 'Lab Projects',
+      artist: 'Live products & status',
+      cover: '/hero.jpg',
+      color: '#10b981', // green
+      trackCount: 5,
+      desc: 'Explore PaxVTO, Karpture, PASTE, QELL, and ReMake.'
+    },
+    {
+      id: 'store',
+      title: 'New Release eBook',
+      artist: 'Buy playbooks & guides',
+      cover: '/ebook2.jpg',
+      color: '#ec4899', // pink
+      trackCount: 1,
+      desc: "Get your copy of The Vibecoder's Playbook."
+    },
+    {
+      id: 'podcast',
+      title: 'Podcast Episodes',
+      artist: 'The Product Lab Conversations',
+      cover: '/Podcast.jpg',
+      color: '#8b5cf6', // purple
+      trackCount: 5,
+      desc: 'Listen on Spotify, Apple Podcasts, YouTube Music, etc.'
+    },
+    {
+      id: 'newsletter',
+      title: 'The Newsletters',
+      artist: 'Substack & LinkedIn posts',
+      cover: '/hero.jpg',
+      color: '#f59e0b', // orange
+      trackCount: 2,
+      desc: 'Weekly Architecture Audit and tech breakdowns.'
+    },
+    {
+      id: 'magazine',
+      title: 'Lab Magazine',
+      artist: 'Technical architecture issues',
+      cover: '/hero.jpg',
+      color: '#06b6d4', // cyan
+      trackCount: 3,
+      desc: 'Deep dives on scaling systems, AI loops, and prompts.'
+    },
+    {
+      id: 'resources',
+      title: 'Technical Templates',
+      artist: 'Blueprints & utilities',
+      cover: '/hero.jpg',
+      color: '#ef4444', // red
+      trackCount: 1,
+      desc: 'Direct access to templates and database models.'
+    }
   ];
 
   return (
@@ -122,7 +165,7 @@ const Lab = ({ theme }) => {
         body {
           margin: 0;
           padding: 0;
-          background: #000;
+          background: #050505;
           overflow: hidden;
         }
 
@@ -131,255 +174,391 @@ const Lab = ({ theme }) => {
           flex-direction: column;
           height: 100vh;
           width: 100vw;
-          background-color: #000;
+          background-color: #050505;
           color: #fff;
           font-family: 'Inter', sans-serif;
           overflow: hidden;
         }
 
-        .lab-main-layout {
-          display: flex;
+        /* --- Main Crate View --- */
+        .crate-view-container {
           flex: 1;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
           height: calc(100vh - 90px);
           overflow: hidden;
-        }
-
-        /* --- Left Sidebar --- */
-        .lab-sidebar {
-          width: 240px;
-          background-color: #000;
-          display: flex;
-          flex-direction: column;
-          padding: 1.5rem 1rem;
-          border-right: 1px solid rgba(255, 255, 255, 0.05);
-          box-sizing: border-box;
-          flex-shrink: 0;
-          justify-content: space-between;
-        }
-
-        .sidebar-top {
-          display: flex;
-          flex-direction: column;
-        }
-
-        .sidebar-brand {
-          font-family: 'Space Mono', monospace;
-          font-size: 1.2rem;
-          font-weight: 700;
-          color: #fff;
-          margin-bottom: 2rem;
-          padding-left: 0.5rem;
-          display: flex;
-          align-items: center;
-          gap: 0.75rem;
-          letter-spacing: -0.5px;
-          text-decoration: none;
-        }
-
-        .brand-icon {
-          color: #3b82f6; /* Accent color */
-        }
-
-        .sidebar-menu {
-          display: flex;
-          flex-direction: column;
-          gap: 0.5rem;
-        }
-
-        .sidebar-link {
-          display: flex;
-          align-items: center;
-          gap: 1rem;
-          padding: 0.75rem 1rem;
-          border-radius: 8px;
-          color: #a0a0a0;
-          text-decoration: none;
-          font-size: 0.9rem;
-          font-weight: 500;
-          cursor: pointer;
-          transition: all 0.2s ease-in-out;
-        }
-
-        .sidebar-link:hover {
-          color: #fff;
-          background-color: rgba(255, 255, 255, 0.05);
-        }
-
-        .sidebar-link.active {
-          color: #fff;
-          background-color: rgba(59, 130, 246, 0.15);
-          border-left: 3px solid #3b82f6;
-        }
-
-        .sidebar-link i {
-          font-size: 1.1rem;
-          width: 20px;
-          text-align: center;
-        }
-
-        .sidebar-footer {
-          padding-top: 1rem;
-          border-top: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .return-btn {
-          display: flex;
-          align-items: center;
-          gap: 0.75rem;
-          padding: 0.75rem 1rem;
-          color: #a0a0a0;
-          text-decoration: none;
-          font-size: 0.85rem;
-          border-radius: 8px;
-          transition: color 0.2s;
-        }
-
-        .return-btn:hover {
-          color: #fff;
-          background-color: rgba(255, 255, 255, 0.05);
-        }
-
-        /* --- Main Content Panel --- */
-        .lab-content-panel {
-          flex: 1;
-          background: linear-gradient(to bottom, #061930 0%, #0d0d0d 350px, #070707 100%);
-          overflow-y: auto;
           position: relative;
+          background: radial-gradient(circle at center, #0a1f3d 0%, #050505 100%);
+          padding: 2rem;
           box-sizing: border-box;
-          scroll-behavior: smooth;
         }
 
-        /* --- Top Bar Header --- */
-        .lab-top-bar {
-          position: sticky;
-          top: 0;
-          height: 64px;
-          background-color: rgba(13, 13, 13, 0.75);
-          backdrop-filter: blur(12px);
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          padding: 0 2rem;
-          z-index: 10;
-          border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+        .crate-header {
+          text-align: center;
+          margin-bottom: 2.5rem;
+          z-index: 5;
         }
 
-        .top-bar-nav {
-          display: flex;
-          align-items: center;
-          gap: 1rem;
-        }
-
-        .nav-arrow {
-          width: 32px;
-          height: 32px;
-          border-radius: 50%;
-          background-color: rgba(0, 0, 0, 0.6);
-          color: #fff;
+        .crate-logo {
+          font-family: 'Space Mono', monospace;
+          font-size: 0.95rem;
+          letter-spacing: 3px;
+          text-transform: uppercase;
+          color: #3b82f6;
+          font-weight: 700;
+          margin-bottom: 0.5rem;
           display: flex;
           align-items: center;
           justify-content: center;
-          cursor: pointer;
-          transition: background-color 0.2s;
-          border: none;
+          gap: 0.5rem;
         }
 
-        .nav-arrow:hover {
-          background-color: rgba(255, 255, 255, 0.1);
+        .crate-title {
+          font-family: 'Space Mono', monospace;
+          font-size: 2.5rem;
+          font-weight: 800;
+          margin: 0 0 0.5rem 0;
+          letter-spacing: -1.5px;
+          line-height: 1.1;
         }
 
-        .nav-arrow.disabled {
-          opacity: 0.4;
-          cursor: not-allowed;
+        .crate-subtitle {
+          font-size: 0.9rem;
+          color: rgba(255, 255, 255, 0.5);
+          margin: 0;
         }
 
-        /* Removed top-bar-meta styles */
-
-        /* --- Artist Hero Section --- */
-        .artist-hero {
+        /* 3D Crate Box Layout */
+        .crate-3d-wrapper {
+          width: 580px;
+          height: 380px;
           position: relative;
-          height: 280px;
+          perspective: 1200px;
+          display: flex;
+          justify-content: center;
+          align-items: flex-end;
+          padding-bottom: 50px;
+          z-index: 3;
+        }
+
+        /* Crate visual physical container border */
+        .crate-box-border {
+          position: absolute;
+          bottom: 20px;
+          width: 600px;
+          height: 140px;
+          background-color: rgba(255, 255, 255, 0.02);
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          border-radius: 12px;
+          transform: rotateX(25deg);
+          box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), inset 0 2px 10px rgba(255,255,255,0.05);
+          pointer-events: none;
+          z-index: 10;
+        }
+
+        .crate-box-front-bar {
+          position: absolute;
+          bottom: 20px;
+          width: 580px;
+          height: 12px;
+          background-color: rgba(59, 130, 246, 0.3);
+          border-radius: 20px;
+          z-index: 11;
+          filter: blur(4px);
+          pointer-events: none;
+        }
+
+        /* Vinyl sleeve sleeves array */
+        .vinyl-sleeve {
+          position: absolute;
+          width: 240px;
+          height: 240px;
+          background-color: #111;
+          border-radius: 8px;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), 0 2px 5px rgba(255, 255, 255, 0.05);
+          cursor: pointer;
+          transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s ease, border-color 0.3s;
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          overflow: hidden;
           display: flex;
           flex-direction: column;
           justify-content: flex-end;
-          padding: 2.5rem 2rem;
           box-sizing: border-box;
-          background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 40%, rgba(13, 13, 13, 0.95) 100%), url('/Podcast.jpg');
-          background-size: cover;
-          background-position: center 30%;
+        }
+
+        .vinyl-sleeve-glow {
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0) 50%);
+          pointer-events: none;
+        }
+
+        .sleeve-label-overlay {
+          padding: 1.25rem 1rem;
+          background: linear-gradient(to top, rgba(0,0,0,0.95) 40%, rgba(0,0,0,0.6) 80%, rgba(0,0,0,0) 100%);
+          z-index: 2;
+          width: 100%;
+          box-sizing: border-box;
+        }
+
+        .sleeve-category-tag {
+          font-family: 'Space Mono', monospace;
+          font-size: 0.65rem;
+          font-weight: 700;
+          text-transform: uppercase;
+          margin-bottom: 0.3rem;
+          display: inline-block;
+          letter-spacing: 0.5px;
+        }
+
+        .sleeve-title {
+          font-size: 1.05rem;
+          font-weight: 700;
+          color: #fff;
+          margin: 0 0 0.2rem 0;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+
+        .sleeve-artist {
+          font-size: 0.75rem;
+          color: rgba(255,255,255,0.5);
+          margin: 0;
+        }
+
+        /* --- Detail View Section --- */
+        .detail-view-container {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          height: calc(100vh - 90px);
+          overflow: hidden;
+          background: linear-gradient(to bottom, #061930 0%, #080808 300px, #050505 100%);
+          animation: fadeIn 0.4s ease;
+        }
+
+        .detail-top-nav {
+          height: 64px;
+          display: flex;
+          align-items: center;
+          padding: 0 2rem;
+          border-bottom: 1px solid rgba(255,255,255,0.03);
+          background-color: rgba(8, 8, 8, 0.4);
+          backdrop-filter: blur(10px);
+          justify-content: space-between;
+          z-index: 5;
+        }
+
+        .back-crate-btn {
+          background: none;
+          border: none;
+          color: rgba(255, 255, 255, 0.7);
+          font-size: 0.9rem;
+          font-weight: 600;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          gap: 0.6rem;
+          transition: color 0.2s;
+        }
+
+        .back-crate-btn:hover {
           color: #fff;
         }
 
-        .verified-badge {
+        .back-crate-btn i {
+          font-size: 0.8rem;
+          transition: transform 0.2s;
+        }
+
+        .back-crate-btn:hover i {
+          transform: translateX(-4px);
+        }
+
+        .detail-main-layout {
+          display: flex;
+          flex: 1;
+          overflow: hidden;
+        }
+
+        /* Left Side: Sleeve + Spinning Vinyl */
+        .detail-visual-col {
+          width: 40%;
+          min-width: 320px;
           display: flex;
           align-items: center;
-          gap: 0.5rem;
-          font-size: 0.8rem;
-          font-weight: 600;
-          text-transform: uppercase;
-          letter-spacing: 1px;
-          color: #3b82f6;
-          margin-bottom: 0.5rem;
+          justify-content: center;
+          position: relative;
+          border-right: 1px solid rgba(255,255,255,0.03);
+          background-color: rgba(0, 0, 0, 0.2);
+          overflow: hidden;
         }
 
-        .artist-name {
+        .visual-vinyl-player {
+          width: 320px;
+          height: 280px;
+          position: relative;
+          display: flex;
+          align-items: center;
+        }
+
+        /* Sleeve inside detail view */
+        .player-sleeve-cover {
+          width: 200px;
+          height: 200px;
+          border-radius: 8px;
+          overflow: hidden;
+          box-shadow: 10px 15px 35px rgba(0, 0, 0, 0.7);
+          border: 1px solid rgba(255,255,255,0.1);
+          z-index: 3;
+          position: absolute;
+          left: 10px;
+          background-color: #111;
+          background-size: cover;
+          background-position: center;
+          transition: transform 0.3s;
+        }
+
+        /* Spinning Vinyl Disc */
+        .player-vinyl-disc {
+          width: 196px;
+          height: 196px;
+          border-radius: 50%;
+          position: absolute;
+          left: 105px;
+          z-index: 2;
+          background: radial-gradient(circle, #0b0b0b 35%, #181818 36%, #0b0b0b 38%, #252525 40%, #111 41%, #000 45%, #0f0f0f 48%, #202020 50%, #111 60%, #000 70%);
+          border: 1px solid rgba(255,255,255,0.08);
+          box-shadow: 5px 10px 25px rgba(0,0,0,0.6);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .player-vinyl-disc::before {
+          content: '';
+          position: absolute;
+          width: 190px;
+          height: 190px;
+          border-radius: 50%;
+          border: 1px dashed rgba(255, 255, 255, 0.05);
+          pointer-events: none;
+        }
+
+        .vinyl-center-label {
+          width: 70px;
+          height: 70px;
+          border-radius: 50%;
+          background-color: #3b82f6;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          overflow: hidden;
+          border: 3px solid #000;
+          box-shadow: inset 0 0 5px rgba(0,0,0,0.5);
+          color: #fff;
           font-family: 'Space Mono', monospace;
-          font-size: clamp(2.2rem, 5vw, 4rem);
-          font-weight: 800;
-          margin: 0 0 0.75rem 0;
-          letter-spacing: -2px;
-          line-height: 0.9;
+          font-size: 0.5rem;
+          font-weight: 700;
+          text-align: center;
+          line-height: 1.1;
+          padding: 0.5rem;
+          box-sizing: border-box;
+          background-size: cover;
+          background-position: center;
         }
 
-        .artist-description {
+        .vinyl-center-hole {
+          position: absolute;
+          width: 12px;
+          height: 12px;
+          background-color: #050505;
+          border-radius: 50%;
+          border: 2px solid rgba(255,255,255,0.2);
+          z-index: 10;
+        }
+
+        /* Vinyl rotating animation rules */
+        .spin-animation {
+          animation: spinRecord 6s linear infinite;
+        }
+
+        @keyframes spinRecord {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+
+        /* Right Side: Scrollable details listing */
+        .detail-content-col {
+          flex: 1;
+          overflow-y: auto;
+          padding: 2.5rem 3rem;
+          box-sizing: border-box;
+        }
+
+        .detail-content-col::-webkit-scrollbar { display: none; }
+        .detail-content-col { -ms-overflow-style: none; scrollbar-width: none; }
+
+        .content-panel-header {
+          margin-bottom: 2rem;
+        }
+
+        .content-panel-category {
+          font-family: 'Space Mono', monospace;
+          font-size: 0.75rem;
+          text-transform: uppercase;
+          color: #3b82f6;
+          font-weight: 700;
+          letter-spacing: 1px;
+          margin-bottom: 0.4rem;
+        }
+
+        .content-panel-title {
+          font-family: 'Space Mono', monospace;
+          font-size: 2.2rem;
+          font-weight: 800;
+          margin: 0 0 0.8rem 0;
+          letter-spacing: -1px;
+          color: #fff;
+        }
+
+        .content-panel-desc {
           font-size: 0.95rem;
+          color: rgba(255, 255, 255, 0.6);
           line-height: 1.5;
-          color: rgba(255, 255, 255, 0.75);
           max-width: 600px;
           margin: 0;
         }
 
-        .artist-stats {
-          margin-top: 0.75rem;
-          font-size: 0.85rem;
-          color: rgba(255, 255, 255, 0.5);
-          display: flex;
-          gap: 1rem;
-        }
-
-        /* --- Content Panels / Blocks --- */
-        .lab-sections-container {
-          padding: 1.5rem 2rem 5rem 2rem;
+        /* --- Story Section Content CSS --- */
+        .story-layout {
           display: flex;
           flex-direction: column;
-          gap: 3.5rem;
+          gap: 1.5rem;
+          color: rgba(255,255,255,0.8);
+          font-size: 0.95rem;
+          line-height: 1.6;
+          max-width: 650px;
         }
 
-        .section-header {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          margin-bottom: 1.2rem;
-          border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-          padding-bottom: 0.5rem;
-        }
-
-        .section-title {
-          font-size: 1.3rem;
-          font-weight: 700;
+        .story-layout p {
           margin: 0;
-          letter-spacing: -0.5px;
+        }
+
+        .story-highlight-quote {
+          border-left: 3px solid #3b82f6;
+          padding-left: 1.25rem;
+          font-style: italic;
           color: #fff;
+          font-size: 1.05rem;
+          margin: 1rem 0;
         }
 
-        /* --- Grid Split (Products and Store) --- */
-        .split-grid {
-          display: grid;
-          grid-template-columns: 1.8fr 1.2fr;
-          gap: 2rem;
-        }
-
-        /* --- Popular Products Tracklist --- */
+        /* --- Products Section Content CSS --- */
         .track-table {
           display: flex;
           flex-direction: column;
@@ -388,7 +567,7 @@ const Lab = ({ theme }) => {
 
         .track-header-row {
           display: grid;
-          grid-template-columns: 40px 2fr 1fr 1fr 40px;
+          grid-template-columns: 40px 2fr 1.2fr 1fr 40px;
           padding: 0.5rem 1rem;
           font-size: 0.75rem;
           color: rgba(255, 255, 255, 0.4);
@@ -400,8 +579,8 @@ const Lab = ({ theme }) => {
 
         .track-row {
           display: grid;
-          grid-template-columns: 40px 2fr 1fr 1fr 40px;
-          padding: 0.75rem 1rem;
+          grid-template-columns: 40px 2fr 1.2fr 1fr 40px;
+          padding: 0.8rem 1rem;
           align-items: center;
           border-radius: 6px;
           cursor: pointer;
@@ -411,11 +590,11 @@ const Lab = ({ theme }) => {
         }
 
         .track-row:hover {
-          background-color: rgba(255, 255, 255, 0.08);
+          background-color: rgba(255, 255, 255, 0.06);
         }
 
         .track-row.active-playing {
-          background-color: rgba(59, 130, 246, 0.1);
+          background-color: rgba(59, 130, 246, 0.08);
         }
 
         .track-row.active-playing .track-title {
@@ -444,12 +623,6 @@ const Lab = ({ theme }) => {
           display: inline-block;
         }
 
-        .track-title-container {
-          display: flex;
-          align-items: center;
-          gap: 0.75rem;
-        }
-
         .track-title {
           font-weight: 600;
           color: #fff;
@@ -461,22 +634,23 @@ const Lab = ({ theme }) => {
           font-size: 0.7rem;
           font-weight: 700;
           text-transform: uppercase;
+          display: inline-block;
         }
 
         .status-live {
-          background-color: rgba(16, 185, 129, 0.15);
+          background-color: rgba(16, 185, 129, 0.12);
           color: #10b981;
-          border: 1px solid rgba(16, 185, 129, 0.3);
+          border: 1px solid rgba(16, 185, 129, 0.25);
         }
 
         .status-dev {
-          background-color: rgba(245, 158, 11, 0.15);
+          background-color: rgba(245, 158, 11, 0.12);
           color: #f59e0b;
-          border: 1px solid rgba(245, 158, 11, 0.3);
+          border: 1px solid rgba(245, 158, 11, 0.25);
         }
 
         .track-domain {
-          color: rgba(255, 255, 255, 0.6);
+          color: rgba(255, 255, 255, 0.55);
         }
 
         .track-link-col {
@@ -486,7 +660,7 @@ const Lab = ({ theme }) => {
         }
 
         .track-heart {
-          color: rgba(255, 255, 255, 0.3);
+          color: rgba(255, 255, 255, 0.25);
           cursor: pointer;
           transition: color 0.2s;
         }
@@ -505,118 +679,70 @@ const Lab = ({ theme }) => {
           color: #fff;
         }
 
-        /* --- Featured Store / eBook Card --- */
-        .new-release-card {
-          background-color: #0d0d0d;
+        /* --- Store Content Section CSS --- */
+        .new-release-layout {
+          background-color: rgba(255,255,255,0.01);
           border: 1px solid rgba(255, 255, 255, 0.05);
           border-radius: 12px;
-          padding: 1.5rem;
+          padding: 2rem;
           display: flex;
-          gap: 1.25rem;
+          gap: 2rem;
           align-items: flex-start;
-          transition: background-color 0.2s;
+          max-width: 650px;
         }
 
-        .new-release-card:hover {
-          background-color: rgba(255, 255, 255, 0.02);
-        }
-
-        .release-cover-wrapper {
-          position: relative;
-          flex-shrink: 0;
-        }
-
-        .release-cover {
-          width: 90px;
-          height: 126px;
+        .release-book-cover {
+          width: 120px;
+          height: 168px;
           object-fit: cover;
           border-radius: 6px;
-          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
           border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .release-play-btn {
-          position: absolute;
-          bottom: -8px;
-          right: -8px;
-          width: 36px;
-          height: 36px;
-          border-radius: 50%;
-          background-color: #3b82f6;
-          color: #fff;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-          border: none;
-          cursor: pointer;
-          transform: translateY(4px);
-          opacity: 0;
-          transition: all 0.2s ease;
-        }
-
-        .new-release-card:hover .release-play-btn {
-          transform: translateY(0);
-          opacity: 1;
+          flex-shrink: 0;
         }
 
         .release-info {
           display: flex;
           flex-direction: column;
-          gap: 0.4rem;
-        }
-
-        .release-info-top {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-        }
-
-        .release-tag {
-          font-family: 'Space Mono', monospace;
-          font-size: 0.7rem;
-          color: #3b82f6;
-          text-transform: uppercase;
-          letter-spacing: 0.5px;
-          font-weight: 600;
+          gap: 0.6rem;
         }
 
         .release-title {
-          font-size: 1.15rem;
+          font-size: 1.25rem;
           font-weight: 700;
           margin: 0;
           color: #fff;
         }
 
         .release-desc {
-          font-size: 0.8rem;
-          color: rgba(255, 255, 255, 0.65);
-          line-height: 1.4;
+          font-size: 0.85rem;
+          color: rgba(255, 255, 255, 0.6);
+          line-height: 1.5;
           margin: 0 0 0.5rem 0;
         }
 
         .release-btn {
           display: inline-flex;
           align-items: center;
-          gap: 0.5rem;
-          background-color: #061930;
+          gap: 0.6rem;
+          background-color: #071b34;
           color: #fff;
           text-decoration: none;
-          padding: 0.5rem 1rem;
+          padding: 0.65rem 1.25rem;
           border-radius: 40px;
-          font-size: 0.8rem;
+          font-size: 0.85rem;
           font-weight: 600;
-          border: 1px solid rgba(59, 130, 246, 0.4);
+          border: 1px solid rgba(59, 130, 246, 0.3);
           align-self: flex-start;
           transition: all 0.2s;
         }
 
         .release-btn:hover {
           background-color: #3b82f6;
-          transform: scale(1.05);
+          transform: scale(1.04);
         }
 
-        /* --- Album / Playlist Grids (Podcast, Newsletter, Magazine) --- */
+        /* --- Podcast / Album Grids --- */
         .album-grid {
           display: grid;
           grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
@@ -624,19 +750,18 @@ const Lab = ({ theme }) => {
         }
 
         .album-card {
-          background-color: #0b0b0b;
-          border: 1px solid rgba(255, 255, 255, 0.03);
+          background-color: rgba(255, 255, 255, 0.02);
+          border: 1px solid rgba(255, 255, 255, 0.04);
           border-radius: 8px;
           padding: 1rem;
           cursor: pointer;
           transition: all 0.3s ease;
           display: flex;
           flex-direction: column;
-          position: relative;
         }
 
         .album-card:hover {
-          background-color: rgba(255, 255, 255, 0.08);
+          background-color: rgba(255, 255, 255, 0.06);
           transform: translateY(-4px);
         }
 
@@ -665,8 +790,8 @@ const Lab = ({ theme }) => {
           position: absolute;
           bottom: 8px;
           right: 8px;
-          width: 40px;
-          height: 40px;
+          width: 36px;
+          height: 36px;
           border-radius: 50%;
           background-color: #3b82f6;
           color: #fff;
@@ -686,25 +811,20 @@ const Lab = ({ theme }) => {
           transform: translateY(0);
         }
 
-        .card-play-btn:hover {
-          transform: scale(1.08) !important;
-          background-color: #2563eb;
-        }
-
         .album-info {
           display: flex;
           flex-direction: column;
-          gap: 0.25rem;
+          gap: 0.2rem;
         }
 
         .album-title {
           font-weight: 700;
           font-size: 0.85rem;
           color: #fff;
+          margin: 0;
           white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;
-          margin: 0;
         }
 
         .album-subtext {
@@ -718,9 +838,9 @@ const Lab = ({ theme }) => {
           overflow: hidden;
         }
 
-        /* --- Large Resources Section --- */
+        /* --- Technical Resources Block --- */
         .resources-banner {
-          background: linear-gradient(135deg, #071b34 0%, #0d0d0d 100%);
+          background: linear-gradient(135deg, rgba(7, 27, 52, 0.4) 0%, rgba(13, 13, 13, 0.5) 100%);
           border: 1px solid rgba(59, 130, 246, 0.15);
           border-radius: 12px;
           padding: 2.5rem 2rem;
@@ -728,7 +848,7 @@ const Lab = ({ theme }) => {
           justify-content: space-between;
           align-items: center;
           gap: 2rem;
-          transition: background 0.3s;
+          max-width: 700px;
         }
 
         .resources-banner:hover {
@@ -736,11 +856,11 @@ const Lab = ({ theme }) => {
         }
 
         .resources-banner-info {
-          max-width: 550px;
+          max-width: 480px;
         }
 
         .resources-banner-title {
-          font-size: 1.5rem;
+          font-size: 1.4rem;
           font-weight: 700;
           margin: 0 0 0.5rem 0;
           color: #fff;
@@ -748,7 +868,7 @@ const Lab = ({ theme }) => {
 
         .resources-banner-desc {
           font-size: 0.9rem;
-          color: rgba(255, 255, 255, 0.7);
+          color: rgba(255, 255, 255, 0.6);
           line-height: 1.5;
           margin: 0;
         }
@@ -757,9 +877,9 @@ const Lab = ({ theme }) => {
           flex-shrink: 0;
           background-color: #3b82f6;
           color: #fff;
-          font-size: 0.9rem;
+          font-size: 0.85rem;
           font-weight: 700;
-          padding: 0.9rem 2rem;
+          padding: 0.8rem 1.75rem;
           border-radius: 40px;
           text-decoration: none;
           transition: all 0.2s;
@@ -779,7 +899,7 @@ const Lab = ({ theme }) => {
           left: 0;
           right: 0;
           height: 90px;
-          background-color: #0b0b0b;
+          background-color: #0a0a0a;
           border-top: 1px solid rgba(255, 255, 255, 0.05);
           display: flex;
           align-items: center;
@@ -831,7 +951,7 @@ const Lab = ({ theme }) => {
         }
 
         .player-track-heart {
-          color: rgba(255, 255, 255, 0.3);
+          color: rgba(255, 255, 255, 0.25);
           cursor: pointer;
           margin-left: 0.5rem;
           transition: color 0.2s;
@@ -841,7 +961,7 @@ const Lab = ({ theme }) => {
           color: #3b82f6;
         }
 
-        /* Middle Controls */
+        /* Middle controls */
         .player-controls {
           display: flex;
           flex-direction: column;
@@ -868,10 +988,6 @@ const Lab = ({ theme }) => {
 
         .control-btn:hover {
           color: #fff;
-        }
-
-        .control-btn.active {
-          color: #3b82f6;
         }
 
         .btn-play-pause {
@@ -937,7 +1053,7 @@ const Lab = ({ theme }) => {
           display: block;
         }
 
-        /* Right Volume Controls */
+        /* Right controls */
         .player-volume-info {
           display: flex;
           align-items: center;
@@ -965,81 +1081,73 @@ const Lab = ({ theme }) => {
           background-color: #3b82f6;
         }
 
-        /* --- Responsive Queries --- */
+        /* --- Transitions --- */
+        @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(10px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- Responsive layouts --- */
         @media (max-width: 900px) {
-          .lab-main-layout {
-            flex-direction: column;
-            height: auto;
-            overflow: visible;
+          .crate-3d-wrapper {
+            width: 90%;
+            height: 320px;
           }
 
-          .lab-sidebar {
+          .crate-box-border {
+            width: 95%;
+          }
+
+          .crate-box-front-bar {
+            width: 90%;
+          }
+
+          .vinyl-sleeve {
+            width: 160px;
+            height: 160px;
+          }
+
+          .detail-main-layout {
+            flex-direction: column;
+            overflow-y: auto;
+          }
+
+          .detail-main-layout::-webkit-scrollbar { display: none; }
+          .detail-main-layout { -ms-overflow-style: none; scrollbar-width: none; }
+
+          .detail-visual-col {
             width: 100%;
-            height: auto;
-            position: sticky;
-            top: 0;
-            z-index: 100;
+            height: 240px;
             border-right: none;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            flex-direction: row;
-            align-items: center;
-            padding: 0.75rem 1rem;
-          }
-
-          .sidebar-top {
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-between;
-            width: 100%;
-          }
-
-          .sidebar-brand {
-            margin-bottom: 0;
-            padding-left: 0;
-          }
-
-          .sidebar-menu {
-            display: none; /* Hide vertical links on mobile */
-          }
-
-          .sidebar-footer {
-            display: none;
-          }
-
-          .lab-content-panel {
-            height: auto;
-            overflow: visible;
-          }
-
-          .lab-top-bar {
-            display: none; /* Hide top bar on mobile */
-          }
-
-          .artist-hero {
-            height: 220px;
-            padding: 1.5rem;
-            background-position: center;
-          }
-
-          .split-grid {
-            grid-template-columns: 1fr;
-          }
-
-          .lab-sections-container {
-            padding: 1.5rem 1rem 7rem 1rem;
-            gap: 2.5rem;
-          }
-
-          .resources-banner {
-            flex-direction: column;
-            text-align: center;
+            border-bottom: 1px solid rgba(255,255,255,0.03);
             padding: 1.5rem;
           }
 
-          .resources-banner-btn {
+          .visual-vinyl-player {
+            width: 260px;
+            height: 200px;
+          }
+
+          .player-sleeve-cover {
+            width: 140px;
+            height: 140px;
+          }
+
+          .player-vinyl-disc {
+            width: 136px;
+            height: 136px;
+            left: 80px;
+          }
+
+          .vinyl-center-label {
+            width: 50px;
+            height: 50px;
+          }
+
+          .detail-content-col {
             width: 100%;
-            text-align: center;
-            box-sizing: border-box;
+            overflow-y: visible;
+            padding: 1.5rem;
           }
 
           .lab-player-bar {
@@ -1048,7 +1156,7 @@ const Lab = ({ theme }) => {
           }
 
           .player-volume-info {
-            display: none; /* volume control hidden on mobile */
+            display: none;
           }
 
           .player-track-info {
@@ -1061,453 +1169,519 @@ const Lab = ({ theme }) => {
         }
       `}</style>
 
-      <div className="lab-main-layout">
-        {/* --- Left Sidebar --- */}
-        <aside className="lab-sidebar">
-          <div className="sidebar-top">
-            <Link to="/" className="sidebar-brand">
-              <i className="fas fa-layer-group brand-icon"></i>
-              <span>THE PRODUCT LAB</span>
-            </Link>
-
-            <nav className="sidebar-menu">
-              {menuItems.map((item) => (
-                <div
-                  key={item.id}
-                  onClick={() => scrollToSection(item.id)}
-                  className={`sidebar-link ${activeSection === item.id ? 'active' : ''}`}
-                >
-                  <i className={`fas ${item.icon}`}></i>
-                  <span>{item.label}</span>
-                </div>
-              ))}
-            </nav>
+      {/* --- Main Crate View (Browsing mode) --- */}
+      {activeRecord === null ? (
+        <div className="crate-view-container">
+          <div className="crate-header">
+            <div className="crate-logo">
+              <i className="fas fa-compact-disc"></i>
+              <span>Crate Room</span>
+            </div>
+            <h1 className="crate-title">THE PRODUCT LAB</h1>
+            <p className="crate-subtitle">Click a record sleeve to pull it out and explore.</p>
           </div>
 
-          <div className="sidebar-footer">
-            <Link to="/" className="return-btn">
-              <i className="fas fa-arrow-left"></i>
-              <span>Return to Base</span>
-            </Link>
-          </div>
-        </aside>
-
-        {/* --- Main Content Panel --- */}
-        <main className="lab-content-panel" ref={mainContentRef}>
-          {/* --- Top Sticky Bar --- */}
-          <div className="lab-top-bar">
-            <div className="top-bar-nav">
-              <button onClick={() => navigate('/')} className="nav-arrow" title="Back to Base">
-                <i className="fas fa-chevron-left"></i>
-              </button>
-              <button className="nav-arrow disabled" disabled>
-                <i className="fas fa-chevron-right"></i>
-              </button>
-            </div>
-
-
-          </div>
-
-          {/* --- Story Hero Header --- */}
-          <section id="story" className="artist-hero">
-            <div className="verified-badge">
-              <i className="fas fa-check-circle"></i>
-              <span>Verified Product Architect</span>
-            </div>
-            <h1 className="artist-name">Thosyn Pax</h1>
-            <p className="artist-description">
-              Welcome to The Product Lab. I am documenting the journey of building high-scale tech systems and global careers. I lead with a "Product Architect" mindset—bridging the gap between deep technical infrastructure and market-ready products.
-            </p>
-            <div className="artist-stats">
-              <span><strong>12,450</strong> monthly readers</span>
-              <span>•</span>
-              <span><strong>5+</strong> live products</span>
-            </div>
-          </section>
-
-          {/* --- Scrollable Content Container --- */}
-          <div className="lab-sections-container">
-            
-            {/* Grid Layout containing Products (tracklist) and eBook (new release) */}
-            <div className="split-grid">
+          <div className="crate-3d-wrapper">
+            {records.map((record, index) => {
+              const isHovered = hoveredRecord === index;
               
-              {/* Products Section */}
-              <section id="products">
-                <div className="section-header">
-                  <h2 className="section-title">Popular Projects</h2>
+              // Calculate 3D card layout parameters
+              const zTranslate = index * 30; // Closer records have higher Z-values
+              const yTranslate = index * -15; // Cascading height steps
+              const xRotate = 25; // Tilt back angle
+              
+              // Hover adjustments (pulls record slightly up and to the front)
+              const transformStyle = isHovered
+                ? `translate3d(0, ${yTranslate - 55}px, ${zTranslate + 25}px) rotateX(12deg)`
+                : `translate3d(0, ${yTranslate}px, ${zTranslate}px) rotateX(${xRotate}deg)`;
+                
+              const zIndex = isHovered ? 50 : index + 1;
+
+              return (
+                <div
+                  key={record.id}
+                  className="vinyl-sleeve"
+                  style={{
+                    transform: transformStyle,
+                    zIndex: zIndex,
+                    borderColor: isHovered ? record.color : 'rgba(255, 255, 255, 0.15)',
+                    // Cover artwork style
+                    backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.4) 60%, rgba(0, 0, 0, 0) 100%), url(${record.cover})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                  }}
+                  onMouseEnter={() => setHoveredRecord(index)}
+                  onMouseLeave={() => setHoveredRecord(null)}
+                  onClick={() => {
+                    setActiveRecord(record.id);
+                    // Dynamically queue section-related soundtrack/track
+                    if (record.id === 'products') {
+                      handlePlayItem('paxvto', 'PaxVTO Project Specs', 'AR Commerce Lab Session', '/Podcast.jpg', 180);
+                    } else if (record.id === 'store') {
+                      handlePlayItem('playbook', "The Vibecoder's Playbook Audiobook", 'eBook Audiobook Preview', '/ebook2.jpg', 320);
+                    } else if (record.id === 'podcast') {
+                      handlePlayItem('pod-spotify', 'Spotify Podcast Channel', 'Product Lab Conversations', '/Podcast.jpg', 2700);
+                    } else {
+                      handlePlayItem(record.id, `${record.title} Track`, record.artist, record.cover, 180);
+                    }
+                  }}
+                >
+                  <div className="vinyl-sleeve-glow" />
+                  <div className="sleeve-label-overlay">
+                    <span className="sleeve-category-tag" style={{ color: record.color }}>
+                      {record.id}
+                    </span>
+                    <h3 className="sleeve-title">{record.title}</h3>
+                    <p className="sleeve-artist">{record.desc}</p>
+                  </div>
                 </div>
-                <div className="track-table">
-                  <div className="track-header-row">
-                    <span>#</span>
-                    <span>Title</span>
-                    <span>Domain</span>
-                    <span>Status</span>
-                    <span></span>
-                  </div>
+              );
+            })}
 
-                  {/* PaxVTO */}
-                  <div 
-                    className={`track-row ${currentTrack.id === 'paxvto' ? 'active-playing' : ''}`}
-                    onClick={() => handlePlayItem('paxvto', 'PaxVTO Project Specs', 'AR Commerce Lab Session', '/Podcast.jpg', 180)}
-                  >
-                    <div className="track-number-box">
-                      <span className="track-num">1</span>
-                      <i className="fas fa-play track-play-icon"></i>
-                    </div>
-                    <div className="track-title-container">
-                      <span className="track-title">PaxVTO</span>
-                    </div>
-                    <div className="track-domain">AR Commerce</div>
-                    <div>
-                      <span className="track-status status-dev">In-Dev</span>
-                    </div>
-                    <div className="track-link-col">
-                      <i 
-                        className={`fas fa-heart track-heart ${likedTracks['paxvto'] ? 'liked' : ''}`}
-                        onClick={(e) => handleToggleLike('paxvto', e)}
-                      ></i>
-                      <span className="track-link-btn"><i className="fas fa-external-link-alt"></i></span>
-                    </div>
-                  </div>
+            {/* Crate front physical box visual overlay */}
+            <div className="crate-box-border"></div>
+            <div className="crate-box-front-bar"></div>
+          </div>
+        </div>
+      ) : (
+        /* --- Detail view panels (Active sleeve mode) --- */
+        <div className="detail-view-container">
+          {/* Header toolbar */}
+          <div className="detail-top-nav">
+            <button className="back-crate-btn" onClick={() => setActiveRecord(null)}>
+              <i className="fas fa-arrow-left"></i>
+              <span>Slide Record back in Crate</span>
+            </button>
+            <div className="crate-logo" style={{ margin: 0, fontSize: '0.85rem' }}>
+              <i className="fas fa-compact-disc"></i>
+              <span>Side A Playing</span>
+            </div>
+          </div>
 
-                  {/* Karpture */}
-                  <div 
-                    className={`track-row ${currentTrack.id === 'karpture' ? 'active-playing' : ''}`}
-                    onClick={() => handlePlayItem('karpture', 'Karpture Chrome Integration', 'Chrome Extension Demo', '/hero.jpg', 210)}
-                  >
-                    <div className="track-number-box">
-                      <span className="track-num">2</span>
-                      <i className="fas fa-play track-play-icon"></i>
-                    </div>
-                    <div className="track-title-container">
-                      <span className="track-title">Karpture</span>
-                    </div>
-                    <div className="track-domain">Chrome Extension</div>
-                    <div>
-                      <span className="track-status status-live">Live</span>
-                    </div>
-                    <div className="track-link-col">
-                      <i 
-                        className={`fas fa-heart track-heart ${likedTracks['karpture'] ? 'liked' : ''}`}
-                        onClick={(e) => handleToggleLike('karpture', e)}
-                      ></i>
-                      <a href="https://trykarpture.com/?ref=thosynpax.com" target="_blank" rel="noopener noreferrer" className="track-link-btn" onClick={(e) => e.stopPropagation()}>
-                        <i className="fas fa-external-link-alt"></i>
-                      </a>
-                    </div>
-                  </div>
-
-                  {/* PASTE */}
-                  <div 
-                    className={`track-row ${currentTrack.id === 'paste' ? 'active-playing' : ''}`}
-                    onClick={() => handlePlayItem('paste', 'PASTE Education Portal', 'Tech Education Session', '/Podcast.jpg', 240)}
-                  >
-                    <div className="track-number-box">
-                      <span className="track-num">3</span>
-                      <i className="fas fa-play track-play-icon"></i>
-                    </div>
-                    <div className="track-title-container">
-                      <span className="track-title">PASTE</span>
-                    </div>
-                    <div className="track-domain">Tech Education</div>
-                    <div>
-                      <span className="track-status status-live">Live</span>
-                    </div>
-                    <div className="track-link-col">
-                      <i 
-                        className={`fas fa-heart track-heart ${likedTracks['paste'] ? 'liked' : ''}`}
-                        onClick={(e) => handleToggleLike('paste', e)}
-                      ></i>
-                      <a href="https://withpaste.com/?ref=thosynpax.com" target="_blank" rel="noopener noreferrer" className="track-link-btn" onClick={(e) => e.stopPropagation()}>
-                        <i className="fas fa-external-link-alt"></i>
-                      </a>
-                    </div>
-                  </div>
-
-                  {/* QELL */}
-                  <div 
-                    className={`track-row ${currentTrack.id === 'qell' ? 'active-playing' : ''}`}
-                    onClick={() => handlePlayItem('qell', 'QELL Architecture Breakdown', 'Cre8fast Product Lab', '/hero.jpg', 190)}
-                  >
-                    <div className="track-number-box">
-                      <span className="track-num">4</span>
-                      <i className="fas fa-play track-play-icon"></i>
-                    </div>
-                    <div className="track-title-container">
-                      <span className="track-title">QELL</span>
-                    </div>
-                    <div className="track-domain">Cre8fast Product Lab</div>
-                    <div>
-                      <span className="track-status status-live">Live</span>
-                    </div>
-                    <div className="track-link-col">
-                      <i 
-                        className={`fas fa-heart track-heart ${likedTracks['qell'] ? 'liked' : ''}`}
-                        onClick={(e) => handleToggleLike('qell', e)}
-                      ></i>
-                      <a href="https://cre8fast.thosynpax.com/qell" target="_blank" rel="noopener noreferrer" className="track-link-btn" onClick={(e) => e.stopPropagation()}>
-                        <i className="fas fa-external-link-alt"></i>
-                      </a>
-                    </div>
-                  </div>
-
-                  {/* ReMake */}
-                  <div 
-                    className={`track-row ${currentTrack.id === 'remake' ? 'active-playing' : ''}`}
-                    onClick={() => handlePlayItem('remake', 'ReMake Curator Blueprint', 'Media Curation Session', '/Podcast.jpg', 150)}
-                  >
-                    <div className="track-number-box">
-                      <span className="track-num">5</span>
-                      <i className="fas fa-play track-play-icon"></i>
-                    </div>
-                    <div className="track-title-container">
-                      <span className="track-title">ReMake</span>
-                    </div>
-                    <div className="track-domain">A Curator</div>
-                    <div>
-                      <span className="track-status status-live">Live</span>
-                    </div>
-                    <div className="track-link-col">
-                      <i 
-                        className={`fas fa-heart track-heart ${likedTracks['remake'] ? 'liked' : ''}`}
-                        onClick={(e) => handleToggleLike('remake', e)}
-                      ></i>
-                      <a href="https://cut.thosynpax.com/" target="_blank" rel="noopener noreferrer" className="track-link-btn" onClick={(e) => e.stopPropagation()}>
-                        <i className="fas fa-external-link-alt"></i>
-                      </a>
-                    </div>
-                  </div>
-
-                </div>
-              </section>
-
-              {/* eBook Section (Store / New Release) */}
-              <section id="store">
-                <div className="section-header">
-                  <h2 className="section-title">New Release</h2>
-                </div>
-                <div className="new-release-card">
-                  <div className="release-cover-wrapper">
-                    <img src="/ebook2.jpg" alt="The Vibecoder's Playbook Cover" className="release-cover" />
-                    <button 
-                      className="release-play-btn"
-                      onClick={() => handlePlayItem('playbook', "The Vibecoder's Playbook Audiobook", 'eBook Audiobook Preview', '/ebook2.jpg', 320)}
+          <div className="detail-main-layout">
+            {/* Left Col: Visual Record player */}
+            <div className="detail-visual-col">
+              {(() => {
+                const currentRecordMeta = records.find(r => r.id === activeRecord);
+                if (!currentRecordMeta) return null;
+                return (
+                  <div className="visual-vinyl-player">
+                    {/* Spinning vinyl record disc */}
+                    <div 
+                      className={`player-vinyl-disc ${isPlaying ? 'spin-animation' : ''}`}
+                      style={{
+                        transform: isPlaying ? 'none' : 'rotate(45deg)'
+                      }}
                     >
-                      <i className="fas fa-play"></i>
-                    </button>
-                  </div>
-                  <div className="release-info">
-                    <div className="release-info-top">
-                      <span className="release-tag">EBOOK</span>
+                      <div 
+                        className="vinyl-center-label"
+                        style={{
+                          backgroundImage: `url(${currentRecordMeta.cover})`,
+                          borderColor: currentRecordMeta.color
+                        }}
+                      >
+                        <div style={{ marginTop: '35px', textShadow: '0 2px 4px #000' }}>
+                          SIDE A
+                        </div>
+                      </div>
+                      <div className="vinyl-center-hole"></div>
                     </div>
-                    <h3 className="release-title">The Vibecoder's Playbook</h3>
-                    <p className="release-desc">
-                      Build products with AI without losing your mind. High-impact operational blueprints.
-                    </p>
-                    <a href="/vibecoding-playbook/?v=2.1" target="_blank" rel="noopener noreferrer" className="release-btn">
-                      <i className="fas fa-shopping-cart"></i>
-                      <span>Buy Now</span>
-                    </a>
-                  </div>
-                </div>
-              </section>
 
+                    {/* Sleeve Cover Card */}
+                    <div 
+                      className="player-sleeve-cover"
+                      style={{
+                        backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.2) 60%, rgba(0, 0, 0, 0) 100%), url(${currentRecordMeta.cover})`
+                      }}
+                    />
+                  </div>
+                );
+              })()}
             </div>
 
-            {/* Podcasts Section */}
-            <section id="podcast">
-              <div className="section-header">
-                <h2 className="section-title">The Podcast</h2>
-              </div>
-              <div className="album-grid">
-                
-                {/* Spotify */}
-                <div className="album-card" onClick={() => handlePlayItem('pod-spotify', 'Spotify Podcast Channel', 'Product Lab Conversations', '/Podcast.jpg', 2700)}>
-                  <div className="album-cover-wrapper">
-                    <img src="/Podcast.jpg" alt="Spotify Podcast" className="album-cover" />
-                    <button className="card-play-btn">
-                      <i className="fas fa-play"></i>
-                    </button>
+            {/* Right Col: Section Content panels */}
+            <div className="detail-content-col" ref={mainContentRef}>
+              
+              {/* --- 1. Story Record details --- */}
+              {activeRecord === 'story' && (
+                <div>
+                  <div className="content-panel-header">
+                    <span className="content-panel-category">Profile Sleeve</span>
+                    <h2 className="content-panel-title">Thosyn Pax</h2>
+                    <p className="content-panel-desc">Documenting the journey of building high-scale tech systems and global careers.</p>
                   </div>
-                  <div className="album-info">
-                    <h4 className="album-title">Spotify</h4>
-                    <p className="album-subtext">The Product Lab Conversations</p>
-                  </div>
-                </div>
-
-                {/* YouTube Music */}
-                <div className="album-card" onClick={() => handlePlayItem('pod-ytmusic', 'YouTube Music playlist', 'Product Lab Audio', '/Podcast.jpg', 2900)}>
-                  <div className="album-cover-wrapper">
-                    <img src="/Podcast.jpg" alt="YouTube Music" className="album-cover" />
-                    <button className="card-play-btn">
-                      <i className="fas fa-play"></i>
-                    </button>
-                  </div>
-                  <div className="album-info">
-                    <h4 className="album-title">YouTube Music</h4>
-                    <p className="album-subtext">Playlists & episodes</p>
+                  <div className="story-layout">
+                    <p>
+                      I lead with a "Product Architect" mindset—bridging the gap between deep technical infrastructure and market-ready products. I specialize in scaling operational engines, guiding developer frameworks, and structuring code architectures for speed.
+                    </p>
+                    <div className="story-highlight-quote">
+                      "Theoretical designs are blueprint artifacts. The factory floor is where products are tested, shipped, and scaled. My role is to bridge that chasm."
+                    </div>
+                    <p>
+                      Currently managing product operations at Cre8fast. Running fast execution loops, exploring next-generation AI agent integration layers, and compiling code design blueprints.
+                    </p>
                   </div>
                 </div>
+              )}
 
-                {/* Apple Podcasts */}
-                <div className="album-card" onClick={() => handlePlayItem('pod-apple', 'Debug School Apple Podcasts', 'Debug School Sessions', '/Podcast.jpg', 2200)}>
-                  <div className="album-cover-wrapper">
-                    <img src="/Podcast.jpg" alt="Apple Podcasts" className="album-cover" />
-                    <button className="card-play-btn">
-                      <i className="fas fa-play"></i>
-                    </button>
+              {/* --- 2. Products Record details --- */}
+              {activeRecord === 'products' && (
+                <div>
+                  <div className="content-panel-header">
+                    <span className="content-panel-category">Tracklist Sleeve</span>
+                    <h2 className="content-panel-title">Popular Projects</h2>
+                    <p className="content-panel-desc">A selection of live products, utilities, and integrations deployed from the Product Lab.</p>
                   </div>
-                  <div className="album-info">
-                    <h4 className="album-title">Apple Podcasts</h4>
-                    <p className="album-subtext">Debug School by PASTE</p>
+                  <div className="track-table">
+                    <div className="track-header-row">
+                      <span>#</span>
+                      <span>Title</span>
+                      <span>Domain</span>
+                      <span>Status</span>
+                      <span></span>
+                    </div>
+
+                    {/* PaxVTO */}
+                    <div 
+                      className={`track-row ${currentTrack.id === 'paxvto' ? 'active-playing' : ''}`}
+                      onClick={() => handlePlayItem('paxvto', 'PaxVTO Project Specs', 'AR Commerce Lab Session', '/Podcast.jpg', 180)}
+                    >
+                      <div className="track-number-box">
+                        <span className="track-num">1</span>
+                        <i className="fas fa-play track-play-icon"></i>
+                      </div>
+                      <div className="track-title">PaxVTO</div>
+                      <div className="track-domain">AR Commerce</div>
+                      <div>
+                        <span className="track-status status-dev">In-Dev</span>
+                      </div>
+                      <div className="track-link-col">
+                        <i 
+                          className={`fas fa-heart track-heart ${likedTracks['paxvto'] ? 'liked' : ''}`}
+                          onClick={(e) => handleToggleLike('paxvto', e)}
+                        ></i>
+                        <span className="track-link-btn"><i className="fas fa-external-link-alt"></i></span>
+                      </div>
+                    </div>
+
+                    {/* Karpture */}
+                    <div 
+                      className={`track-row ${currentTrack.id === 'karpture' ? 'active-playing' : ''}`}
+                      onClick={() => handlePlayItem('karpture', 'Karpture Chrome Integration', 'Chrome Extension Demo', '/hero.jpg', 210)}
+                    >
+                      <div className="track-number-box">
+                        <span className="track-num">2</span>
+                        <i className="fas fa-play track-play-icon"></i>
+                      </div>
+                      <div className="track-title">Karpture</div>
+                      <div className="track-domain">Chrome Extension</div>
+                      <div>
+                        <span className="track-status status-live">Live</span>
+                      </div>
+                      <div className="track-link-col">
+                        <i 
+                          className={`fas fa-heart track-heart ${likedTracks['karpture'] ? 'liked' : ''}`}
+                          onClick={(e) => handleToggleLike('karpture', e)}
+                        ></i>
+                        <a href="https://trykarpture.com/?ref=thosynpax.com" target="_blank" rel="noopener noreferrer" className="track-link-btn" onClick={(e) => e.stopPropagation()}>
+                          <i className="fas fa-external-link-alt"></i>
+                        </a>
+                      </div>
+                    </div>
+
+                    {/* PASTE */}
+                    <div 
+                      className={`track-row ${currentTrack.id === 'paste' ? 'active-playing' : ''}`}
+                      onClick={() => handlePlayItem('paste', 'PASTE Education Portal', 'Tech Education Session', '/Podcast.jpg', 240)}
+                    >
+                      <div className="track-number-box">
+                        <span className="track-num">3</span>
+                        <i className="fas fa-play track-play-icon"></i>
+                      </div>
+                      <div className="track-title">PASTE</div>
+                      <div className="track-domain">Tech Education</div>
+                      <div>
+                        <span className="track-status status-live">Live</span>
+                      </div>
+                      <div className="track-link-col">
+                        <i 
+                          className={`fas fa-heart track-heart ${likedTracks['paste'] ? 'liked' : ''}`}
+                          onClick={(e) => handleToggleLike('paste', e)}
+                        ></i>
+                        <a href="https://withpaste.com/?ref=thosynpax.com" target="_blank" rel="noopener noreferrer" className="track-link-btn" onClick={(e) => e.stopPropagation()}>
+                          <i className="fas fa-external-link-alt"></i>
+                        </a>
+                      </div>
+                    </div>
+
+                    {/* QELL */}
+                    <div 
+                      className={`track-row ${currentTrack.id === 'qell' ? 'active-playing' : ''}`}
+                      onClick={() => handlePlayItem('qell', 'QELL Architecture Breakdown', 'Cre8fast Product Lab', '/hero.jpg', 190)}
+                    >
+                      <div className="track-number-box">
+                        <span className="track-num">4</span>
+                        <i className="fas fa-play track-play-icon"></i>
+                      </div>
+                      <div className="track-title">QELL</div>
+                      <div className="track-domain">Cre8fast Product Lab</div>
+                      <div>
+                        <span className="track-status status-live">Live</span>
+                      </div>
+                      <div className="track-link-col">
+                        <i 
+                          className={`fas fa-heart track-heart ${likedTracks['qell'] ? 'liked' : ''}`}
+                          onClick={(e) => handleToggleLike('qell', e)}
+                        ></i>
+                        <a href="https://cre8fast.thosynpax.com/qell" target="_blank" rel="noopener noreferrer" className="track-link-btn" onClick={(e) => e.stopPropagation()}>
+                          <i className="fas fa-external-link-alt"></i>
+                        </a>
+                      </div>
+                    </div>
+
+                    {/* ReMake */}
+                    <div 
+                      className={`track-row ${currentTrack.id === 'remake' ? 'active-playing' : ''}`}
+                      onClick={() => handlePlayItem('remake', 'ReMake Curator Blueprint', 'Media Curation Session', '/Podcast.jpg', 150)}
+                    >
+                      <div className="track-number-box">
+                        <span className="track-num">5</span>
+                        <i className="fas fa-play track-play-icon"></i>
+                      </div>
+                      <div className="track-title">ReMake</div>
+                      <div className="track-domain">A Curator</div>
+                      <div>
+                        <span className="track-status status-live">Live</span>
+                      </div>
+                      <div className="track-link-col">
+                        <i 
+                          className={`fas fa-heart track-heart ${likedTracks['remake'] ? 'liked' : ''}`}
+                          onClick={(e) => handleToggleLike('remake', e)}
+                        ></i>
+                        <a href="https://cut.thosynpax.com/" target="_blank" rel="noopener noreferrer" className="track-link-btn" onClick={(e) => e.stopPropagation()}>
+                          <i className="fas fa-external-link-alt"></i>
+                        </a>
+                      </div>
+                    </div>
                   </div>
                 </div>
+              )}
 
-                {/* Pocket Casts */}
-                <div className="album-card" onClick={() => handlePlayItem('pod-pocketcasts', 'Pocket Casts feed', 'Product Lab Feed', '/Podcast.jpg', 2400)}>
-                  <div className="album-cover-wrapper">
-                    <img src="/Podcast.jpg" alt="Pocket Casts" className="album-cover" />
-                    <button className="card-play-btn">
-                      <i className="fas fa-play"></i>
-                    </button>
+              {/* --- 3. Store Record details --- */}
+              {activeRecord === 'store' && (
+                <div>
+                  <div className="content-panel-header">
+                    <span className="content-panel-category">Store Sleeve</span>
+                    <h2 className="content-panel-title">eBook Store</h2>
+                    <p className="content-panel-desc">Operational guides and blueprints to optimize engineering output.</p>
                   </div>
-                  <div className="album-info">
-                    <h4 className="album-title">Pocket Casts</h4>
-                    <p className="album-subtext">Audio episodes and feeds</p>
+                  <div className="new-release-layout">
+                    <img src="/ebook2.jpg" alt="The Vibecoder's Playbook Cover" className="release-book-cover" />
+                    <div className="release-info">
+                      <span className="sleeve-category-tag" style={{ color: '#ec4899' }}>EBOOK RELEASE</span>
+                      <h3 className="release-title">The Vibecoder's Playbook</h3>
+                      <p className="release-desc">
+                        Build high-performance tech products with AI assistant orchestration without losing your mind. Full framework logs and structures.
+                      </p>
+                      <a href="/vibecoding-playbook/?v=2.1" target="_blank" rel="noopener noreferrer" className="release-btn">
+                        <i className="fas fa-shopping-cart"></i>
+                        <span>Buy Playbook →</span>
+                      </a>
+                    </div>
                   </div>
                 </div>
+              )}
 
-                {/* Player FM */}
-                <div className="album-card" onClick={() => handlePlayItem('pod-playerfm', 'Player FM stream', 'Product Lab Episodes', '/Podcast.jpg', 2600)}>
-                  <div className="album-cover-wrapper">
-                    <img src="/Podcast.jpg" alt="Player FM" className="album-cover" />
-                    <button className="card-play-btn">
-                      <i className="fas fa-play"></i>
-                    </button>
+              {/* --- 4. Podcast Record details --- */}
+              {activeRecord === 'podcast' && (
+                <div>
+                  <div className="content-panel-header">
+                    <span className="content-panel-category">Audio Sleeve</span>
+                    <h2 className="content-panel-title">The Product Lab Conversations</h2>
+                    <p className="content-panel-desc">Conversations detailing high-scale system design, tech strategy, and global developer careers.</p>
                   </div>
-                  <div className="album-info">
-                    <h4 className="album-title">Player FM</h4>
-                    <p className="album-subtext">Technical podcast episodes</p>
+                  <div className="album-grid">
+                    
+                    {/* Spotify */}
+                    <div className="album-card" onClick={() => handlePlayItem('pod-spotify', 'Spotify Podcast Channel', 'Product Lab Conversations', '/Podcast.jpg', 2700)}>
+                      <div className="album-cover-wrapper">
+                        <img src="/Podcast.jpg" alt="Spotify Podcast" className="album-cover" />
+                        <button className="card-play-btn"><i className="fas fa-play"></i></button>
+                      </div>
+                      <div className="album-info">
+                        <h4 className="album-title">Spotify</h4>
+                        <p className="album-subtext">The Product Lab Conversations</p>
+                      </div>
+                    </div>
+
+                    {/* YouTube Music */}
+                    <div className="album-card" onClick={() => handlePlayItem('pod-ytmusic', 'YouTube Music playlist', 'Product Lab Audio', '/Podcast.jpg', 2900)}>
+                      <div className="album-cover-wrapper">
+                        <img src="/Podcast.jpg" alt="YouTube Music" className="album-cover" />
+                        <button className="card-play-btn"><i className="fas fa-play"></i></button>
+                      </div>
+                      <div className="album-info">
+                        <h4 className="album-title">YouTube Music</h4>
+                        <p className="album-subtext">Playlists & episodes</p>
+                      </div>
+                    </div>
+
+                    {/* Apple Podcasts */}
+                    <div className="album-card" onClick={() => handlePlayItem('pod-apple', 'Debug School Apple Podcasts', 'Debug School Sessions', '/Podcast.jpg', 2200)}>
+                      <div className="album-cover-wrapper">
+                        <img src="/Podcast.jpg" alt="Apple Podcasts" className="album-cover" />
+                        <button className="card-play-btn"><i className="fas fa-play"></i></button>
+                      </div>
+                      <div className="album-info">
+                        <h4 className="album-title">Apple Podcasts</h4>
+                        <p className="album-subtext">Debug School by PASTE</p>
+                      </div>
+                    </div>
+
+                    {/* Pocket Casts */}
+                    <div className="album-card" onClick={() => handlePlayItem('pod-pocketcasts', 'Pocket Casts feed', 'Product Lab Feed', '/Podcast.jpg', 2400)}>
+                      <div className="album-cover-wrapper">
+                        <img src="/Podcast.jpg" alt="Pocket Casts" className="album-cover" />
+                        <button className="card-play-btn"><i className="fas fa-play"></i></button>
+                      </div>
+                      <div className="album-info">
+                        <h4 className="album-title">Pocket Casts</h4>
+                        <p className="album-subtext">Audio episodes and feeds</p>
+                      </div>
+                    </div>
+
+                    {/* Player FM */}
+                    <div className="album-card" onClick={() => handlePlayItem('pod-playerfm', 'Player FM stream', 'Product Lab Episodes', '/Podcast.jpg', 2600)}>
+                      <div className="album-cover-wrapper">
+                        <img src="/Podcast.jpg" alt="Player FM" className="album-cover" />
+                        <button className="card-play-btn"><i className="fas fa-play"></i></button>
+                      </div>
+                      <div className="album-info">
+                        <h4 className="album-title">Player FM</h4>
+                        <p className="album-subtext">Technical podcast episodes</p>
+                      </div>
+                    </div>
+
                   </div>
                 </div>
+              )}
 
-              </div>
-            </section>
+              {/* --- 5. Newsletter Record details --- */}
+              {activeRecord === 'newsletter' && (
+                <div>
+                  <div className="content-panel-header">
+                    <span className="content-panel-category">Press Sleeve</span>
+                    <h2 className="content-panel-title">The Newsletters</h2>
+                    <p className="content-panel-desc">Behind-the-scenes insights on scaling products, prompt design, and dev systems.</p>
+                  </div>
+                  <div className="album-grid">
+                    
+                    {/* Substack */}
+                    <div className="album-card" onClick={() => handlePlayItem('news-substack', 'Substack Editorial Feed', 'The Weekly Architecture Audit', '/hero.jpg', 600)}>
+                      <div className="album-cover-wrapper">
+                        <img src="/hero.jpg" alt="Substack" className="album-cover" />
+                        <button className="card-play-btn"><i className="fas fa-play"></i></button>
+                      </div>
+                      <div className="album-info">
+                        <h4 className="album-title">Substack</h4>
+                        <p className="album-subtext">The Weekly Architecture Audit</p>
+                      </div>
+                    </div>
 
-            {/* Newsletter Section */}
-            <section id="newsletter">
-              <div className="section-header">
-                <h2 className="section-title">The Newsletter</h2>
-              </div>
-              <div className="album-grid">
-                
-                {/* Substack */}
-                <div className="album-card" onClick={() => handlePlayItem('news-substack', 'Substack Editorial Feed', 'The Weekly Architecture Audit', '/hero.jpg', 600)}>
-                  <div className="album-cover-wrapper">
-                    <img src="/hero.jpg" alt="Substack" className="album-cover" />
-                    <button className="card-play-btn">
-                      <i className="fas fa-play"></i>
-                    </button>
-                  </div>
-                  <div className="album-info">
-                    <h4 className="album-title">Substack</h4>
-                    <p className="album-subtext">The Weekly Architecture Audit</p>
-                  </div>
-                </div>
+                    {/* LinkedIn */}
+                    <div className="album-card" onClick={() => handlePlayItem('news-linkedin', 'LinkedIn Newsletter Postings', 'Career & Engineering Insights', '/hero.jpg', 500)}>
+                      <div className="album-cover-wrapper">
+                        <img src="/hero.jpg" alt="LinkedIn" className="album-cover" />
+                        <button className="card-play-btn"><i className="fas fa-play"></i></button>
+                      </div>
+                      <div className="album-info">
+                        <h4 className="album-title">LinkedIn</h4>
+                        <p className="album-subtext">Weekly professional posts</p>
+                      </div>
+                    </div>
 
-                {/* LinkedIn */}
-                <div className="album-card" onClick={() => handlePlayItem('news-linkedin', 'LinkedIn Newsletter Postings', 'Career & Engineering Insights', '/hero.jpg', 500)}>
-                  <div className="album-cover-wrapper">
-                    <img src="/hero.jpg" alt="LinkedIn" className="album-cover" />
-                    <button className="card-play-btn">
-                      <i className="fas fa-play"></i>
-                    </button>
-                  </div>
-                  <div className="album-info">
-                    <h4 className="album-title">LinkedIn</h4>
-                    <p className="album-subtext">Weekly professional posts</p>
-                  </div>
-                </div>
-
-              </div>
-            </section>
-
-            {/* Magazine Section */}
-            <section id="magazine">
-              <div className="section-header">
-                <h2 className="section-title">The Product Lab Magazine</h2>
-              </div>
-              <div className="album-grid">
-                
-                {/* Issue #1 */}
-                <div className="album-card" onClick={() => handlePlayItem('mag-01', 'Architects Journal: Issue 01', 'Zero to 10M Users', '/hero.jpg', 900)}>
-                  <div className="album-cover-wrapper">
-                    <img src="/hero.jpg" alt="Magazine Issue 1" className="album-cover" />
-                    <button className="card-play-btn">
-                      <i className="fas fa-play"></i>
-                    </button>
-                  </div>
-                  <div className="album-info">
-                    <h4 className="album-title">Issue #1: Scaling</h4>
-                    <p className="album-subtext">Zero to 10 Million Users - Core architectures</p>
                   </div>
                 </div>
+              )}
 
-                {/* Issue #2 */}
-                <div className="album-card" onClick={() => handlePlayItem('mag-02', 'Architects Journal: Issue 02', 'Designing AI Agents', '/hero.jpg', 1200)}>
-                  <div className="album-cover-wrapper">
-                    <img src="/hero.jpg" alt="Magazine Issue 2" className="album-cover" />
-                    <button className="card-play-btn">
-                      <i className="fas fa-play"></i>
-                    </button>
+              {/* --- 6. Magazine Record details --- */}
+              {activeRecord === 'magazine' && (
+                <div>
+                  <div className="content-panel-header">
+                    <span className="content-panel-category">Journal Sleeve</span>
+                    <h2 className="content-panel-title">The Product Lab Magazine</h2>
+                    <p className="content-panel-desc">Deep technical essays structured to optimize engineering velocity.</p>
                   </div>
-                  <div className="album-info">
-                    <h4 className="album-title">Issue #2: AI Agents</h4>
-                    <p className="album-subtext">Designing robust AI agent loops and LLM pipelines</p>
+                  <div className="album-grid">
+                    
+                    {/* Issue #1 */}
+                    <div className="album-card" onClick={() => handlePlayItem('mag-01', 'Architects Journal: Issue 01', 'Zero to 10M Users', '/hero.jpg', 900)}>
+                      <div className="album-cover-wrapper">
+                        <img src="/hero.jpg" alt="Magazine Issue 1" className="album-cover" />
+                        <button className="card-play-btn"><i className="fas fa-play"></i></button>
+                      </div>
+                      <div className="album-info">
+                        <h4 className="album-title">Issue #1: Scaling</h4>
+                        <p className="album-subtext">Zero to 10 Million Users - Core architectures</p>
+                      </div>
+                    </div>
+
+                    {/* Issue #2 */}
+                    <div className="album-card" onClick={() => handlePlayItem('mag-02', 'Architects Journal: Issue 02', 'Designing AI Agents', '/hero.jpg', 1200)}>
+                      <div className="album-cover-wrapper">
+                        <img src="/hero.jpg" alt="Magazine Issue 2" className="album-cover" />
+                        <button className="card-play-btn"><i className="fas fa-play"></i></button>
+                      </div>
+                      <div className="album-info">
+                        <h4 className="album-title">Issue #2: AI Agents</h4>
+                        <p className="album-subtext">Designing robust AI agent loops and LLM pipelines</p>
+                      </div>
+                    </div>
+
+                    {/* Issue #3 */}
+                    <div className="album-card" onClick={() => handlePlayItem('mag-03', 'Architects Journal: Issue 03', 'Vibecoding Blueprints', '/hero.jpg', 1100)}>
+                      <div className="album-cover-wrapper">
+                        <img src="/hero.jpg" alt="Magazine Issue 3" className="album-cover" />
+                        <button className="card-play-btn"><i className="fas fa-play"></i></button>
+                      </div>
+                      <div className="album-info">
+                        <h4 className="album-title">Issue #3: Dev Speed</h4>
+                        <p className="album-subtext">The Vibecoder's Playbook excerpts & prompt strategies</p>
+                      </div>
+                    </div>
+
                   </div>
                 </div>
+              )}
 
-                {/* Issue #3 */}
-                <div className="album-card" onClick={() => handlePlayItem('mag-03', 'Architects Journal: Issue 03', 'Vibecoding Blueprints', '/hero.jpg', 1100)}>
-                  <div className="album-cover-wrapper">
-                    <img src="/hero.jpg" alt="Magazine Issue 3" className="album-cover" />
-                    <button className="card-play-btn">
-                      <i className="fas fa-play"></i>
-                    </button>
+              {/* --- 7. Resources Record details --- */}
+              {activeRecord === 'resources' && (
+                <div>
+                  <div className="content-panel-header">
+                    <span className="content-panel-category">Download Sleeve</span>
+                    <h2 className="content-panel-title">Templates & Blueprints</h2>
+                    <p className="content-panel-desc">Quickly scale up operations with deployment-ready checklists.</p>
                   </div>
-                  <div className="album-info">
-                    <h4 className="album-title">Issue #3: Dev Speed</h4>
-                    <p className="album-subtext">The Vibecoder's Playbook excerpts & prompt strategies</p>
+                  <div className="resources-banner">
+                    <div className="resources-banner-info">
+                      <h3 className="resources-banner-title">Product Lab Templates</h3>
+                      <p className="resources-banner-desc">
+                        Access free database schemas, wireframe assets, and technical templates optimized for rapid execution.
+                      </p>
+                    </div>
+                    <Link to="/resources" className="resources-banner-btn">
+                      <span>Access Resources →</span>
+                    </Link>
                   </div>
                 </div>
+              )}
 
-              </div>
-            </section>
-
-            {/* Resources Section */}
-            <section id="resources">
-              <div className="section-header">
-                <h2 className="section-title">Technical Resources</h2>
-              </div>
-              <div className="resources-banner">
-                <div className="resources-banner-info">
-                  <h3 className="resources-banner-title">Product Lab Technical Templates</h3>
-                  <p className="resources-banner-desc">
-                    Access free technical blueprints, database model templates, and developer utility tools specifically structured to jumpstart your build.
-                  </p>
-                </div>
-                <Link to="/resources" className="resources-banner-btn">
-                  <span>Access Resources</span>
-                  <i className="fas fa-arrow-right" style={{ marginLeft: '8px' }}></i>
-                </Link>
-              </div>
-            </section>
-
+            </div>
           </div>
-        </main>
-      </div>
+        </div>
+      )}
 
-      {/* --- Bottom Mock Audio Player Bar --- */}
+      {/* --- Bottom Player Bar (Persistent Audio Controller) --- */}
       <footer className="lab-player-bar">
         {/* Left Track Info */}
         <div className="player-track-info">
@@ -1522,7 +1696,7 @@ const Lab = ({ theme }) => {
           ></i>
         </div>
 
-        {/* Center Control Knobs */}
+        {/* Center Controls */}
         <div className="player-controls">
           <div className="control-buttons">
             <button className="control-btn" title="Shuffle"><i className="fas fa-random"></i></button>
@@ -1559,7 +1733,7 @@ const Lab = ({ theme }) => {
           </div>
         </div>
 
-        {/* Right Volume Controls */}
+        {/* Right Volume / Extras */}
         <div className="player-volume-info">
           <button className="control-btn" title="Lyrics"><i className="fas fa-music"></i></button>
           <button className="control-btn" title="Queue"><i className="fas fa-list-ul"></i></button>
