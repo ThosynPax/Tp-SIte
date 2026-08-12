@@ -34,7 +34,7 @@ const Lab = ({ theme }) => {
 
   const activeRecordId = getActiveId();
 
-  // Custom record menu setup (One-word titles + short subtexts + local covers)
+  // Custom record menu setup (One-word titles + short subtexts + local covers + FontAwesome icons)
   const menuRecords = [
     {
       id: 'story',
@@ -42,6 +42,7 @@ const Lab = ({ theme }) => {
       desc: 'Bio & mission',
       cover: '/Podcast.jpg',
       color: '#3b82f6', // blue
+      icon: 'fa-user-astronaut',
       link: '/lab'
     },
     {
@@ -50,6 +51,7 @@ const Lab = ({ theme }) => {
       desc: 'Live projects',
       cover: '/hero.jpg',
       color: '#10b981', // green
+      icon: 'fa-laptop-code',
       link: '/lab/products'
     },
     {
@@ -58,6 +60,7 @@ const Lab = ({ theme }) => {
       desc: 'eBook shop',
       cover: '/ebook2.jpg',
       color: '#ec4899', // pink
+      icon: 'fa-shopping-bag',
       link: '/lab/store'
     },
     {
@@ -66,6 +69,7 @@ const Lab = ({ theme }) => {
       desc: 'Conversations',
       cover: '/Podcast.jpg',
       color: '#8b5cf6', // purple
+      icon: 'fa-podcast',
       link: '/lab/podcast'
     },
     {
@@ -74,6 +78,7 @@ const Lab = ({ theme }) => {
       desc: 'Tech press',
       cover: '/hero.jpg',
       color: '#f59e0b', // orange
+      icon: 'fa-envelope-open-text',
       link: '/lab/newsletter'
     },
     {
@@ -82,6 +87,7 @@ const Lab = ({ theme }) => {
       desc: 'Code essays',
       cover: '/hero.jpg',
       color: '#06b6d4', // cyan
+      icon: 'fa-scroll',
       link: '/lab/magazine'
     },
     {
@@ -90,6 +96,7 @@ const Lab = ({ theme }) => {
       desc: 'Templates',
       cover: '/hero.jpg',
       color: '#ef4444', // red
+      icon: 'fa-folder-open',
       link: '/lab/resources'
     }
   ];
@@ -122,7 +129,7 @@ const Lab = ({ theme }) => {
           gap: 2rem;
           max-width: 800px;
           width: 100%;
-          margin: 2.5rem auto 1.5rem auto;
+          margin: 2.5rem auto 1rem auto;
           padding: 0 1.5rem;
           box-sizing: border-box;
         }
@@ -173,10 +180,10 @@ const Lab = ({ theme }) => {
         .crate-compact-wrapper {
           display: flex;
           justify-content: center;
-          margin: 0.5rem auto 2.5rem auto;
+          margin: 1.5rem auto 3.5rem auto;
           width: 100%;
           max-width: 800px;
-          height: 340px;
+          height: 640px;
           position: relative;
           padding: 0 1.5rem;
           box-sizing: border-box;
@@ -185,9 +192,9 @@ const Lab = ({ theme }) => {
 
         .crate-shelf {
           position: relative;
-          width: 460px;
-          height: 320px;
-          perspective: 1200px;
+          width: 500px;
+          height: 600px;
+          perspective: 1500px;
           display: flex;
           justify-content: center;
           align-items: flex-end;
@@ -196,30 +203,72 @@ const Lab = ({ theme }) => {
         /* Vinyl sleeve */
         .vinyl-sleeve {
           position: absolute;
-          width: 200px;
-          height: 200px;
-          left: calc(50% - 100px);
+          width: 320px;
+          height: 320px;
+          left: calc(50% - 160px);
           bottom: 20px;
           background-color: #111;
-          border-radius: 8px;
-          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), 0 2px 5px rgba(255, 255, 255, 0.05);
+          border-radius: 12px;
+          box-shadow: 0 20px 45px rgba(0, 0, 0, 0.85), 0 2px 10px rgba(255, 255, 255, 0.05);
           cursor: pointer;
           transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s ease, border-color 0.3s;
-          border: 1px solid rgba(255, 255, 255, 0.15);
+          border: 2px solid rgba(255, 255, 255, 0.12);
           overflow: hidden;
           display: flex;
           flex-direction: column;
-          justify-content: flex-end;
+          justify-content: space-between;
           box-sizing: border-box;
           text-decoration: none;
         }
 
+        /* Sleeve Header Tab */
+        .sleeve-header {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 0.65rem 1rem;
+          background-color: rgba(12, 12, 12, 0.9);
+          border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+          z-index: 3;
+          height: 38px;
+          box-sizing: border-box;
+        }
+
+        .sleeve-tab-title {
+          font-family: 'Space Mono', monospace;
+          font-size: 0.85rem;
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          color: #fff;
+        }
+
+        .sleeve-tab-icon {
+          font-size: 0.95rem;
+        }
+
+        /* Sleeve Artwork Body */
+        .sleeve-artwork {
+          flex: 1;
+          background-size: cover;
+          background-position: center;
+          position: relative;
+          width: 100%;
+        }
+
+        .sleeve-artwork-glow {
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0) 100%);
+        }
+
         .sleeve-label-overlay {
           padding: 0.85rem;
-          background: linear-gradient(to top, rgba(0,0,0,0.95) 40%, rgba(0,0,0,0.6) 80%, rgba(0,0,0,0) 100%);
           z-index: 2;
           width: 100%;
           box-sizing: border-box;
+          position: absolute;
+          bottom: 0;
         }
 
         .sleeve-title {
@@ -245,9 +294,9 @@ const Lab = ({ theme }) => {
         .crate-box-border {
           position: absolute;
           bottom: 10px;
-          width: 320px;
-          height: 100px;
-          left: calc(50% - 160px);
+          width: 360px;
+          height: 120px;
+          left: calc(50% - 180px);
           background-color: rgba(255, 255, 255, 0.01);
           border: 1px solid rgba(255, 255, 255, 0.08);
           border-radius: 12px;
@@ -602,40 +651,43 @@ const Lab = ({ theme }) => {
           }
 
           .crate-compact-wrapper {
-            height: 260px;
+            height: 400px;
+            margin-bottom: 1.5rem;
           }
 
           .crate-shelf {
-            width: 300px;
-            height: 220px;
+            width: 100%;
+            height: 380px;
             perspective: 800px;
           }
 
           .crate-box-border {
-            width: 220px;
-            height: 70px;
-            left: calc(50% - 110px);
+            width: 240px;
+            height: 80px;
+            left: calc(50% - 120px);
             bottom: 5px;
             z-index: 15;
           }
 
           .vinyl-sleeve {
-            width: 140px;
-            height: 140px;
-            left: calc(50% - 70px);
+            width: 200px;
+            height: 200px;
+            left: calc(50% - 100px);
             bottom: 10px;
+            border-width: 1.5px;
           }
 
-          .sleeve-label-overlay {
-            padding: 0.5rem;
+          .sleeve-header {
+            height: 30px;
+            padding: 0.4rem 0.7rem;
           }
 
-          .sleeve-title {
+          .sleeve-tab-title {
+            font-size: 0.7rem;
+          }
+
+          .sleeve-tab-icon {
             font-size: 0.75rem;
-          }
-
-          .sleeve-artist {
-            font-size: 0.55rem;
           }
 
           .track-header-row {
@@ -697,14 +749,14 @@ const Lab = ({ theme }) => {
             const isActive = activeRecordId === record.id;
 
             // 3D positioning parameters for fanned depth stack
-            const yStep = isMobile ? -20 : -32;
-            const zStep = isMobile ? 12 : 20;
-            const hoverLift = isMobile ? -35 : -55;
-            const activeLift = isMobile ? -20 : -30;
+            const yStep = isMobile ? -28 : -45;
+            const zStep = isMobile ? 15 : 25;
+            const hoverLift = isMobile ? -45 : -70;
+            const activeLift = isMobile ? -25 : -40;
 
             const yTranslate = index * yStep;
             const zTranslate = (6 - index) * zStep;
-            const xRotate = 15 - (index * 3);
+            const xRotate = 16 - (index * 3.5);
             const yRotate = -5 + (index * 1.5); // slight fan angle
 
             let transformStyle = `translate3d(0, ${yTranslate}px, ${zTranslate}px) rotateX(${xRotate}deg) rotateY(${yRotate}deg)`;
@@ -731,15 +783,23 @@ const Lab = ({ theme }) => {
                   transform: transformStyle,
                   zIndex: zIndex,
                   borderColor: isHovered || isActive ? record.color : 'rgba(255, 255, 255, 0.15)',
-                  backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.3) 60%, rgba(0, 0, 0, 0) 100%), url(${record.cover})`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
                 }}
                 onMouseEnter={() => setHoveredRecord(index)}
                 onMouseLeave={() => setHoveredRecord(null)}
               >
+                {/* Header Tab with Solid top border & category title */}
+                <div className="sleeve-header" style={{ borderTop: `4px solid ${record.color}` }}>
+                  <span className="sleeve-tab-title">{record.title}</span>
+                  <i className={`fas ${record.icon} sleeve-tab-icon`} style={{ color: record.color }}></i>
+                </div>
+
+                {/* Sleeve Cover Body Artwork */}
+                <div className="sleeve-artwork" style={{ backgroundImage: `url(${record.cover})` }}>
+                  <div className="sleeve-artwork-glow" />
+                </div>
+
+                {/* Footer description details */}
                 <div className="sleeve-label-overlay">
-                  <h3 className="sleeve-title">{record.title}</h3>
                   <p className="sleeve-artist">{record.desc}</p>
                 </div>
               </Link>
