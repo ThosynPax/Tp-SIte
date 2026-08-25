@@ -6,7 +6,6 @@ const links = [
   { label: "Who I Am & What I Do", url: "/" },
   { label: "Level Up with a New Skill", url: "https://www.withpaste.com/" },
   { label: "Tune In: The Product Lab", url: "https://thosynpax.com/lab" },
-  { label: "Build Your Startup with Cre8fast", url: "https://cre8fast.thosynpax.com/" },
   { label: "Grants, AI Credits & Startup Opportunities", url: "https://remake.thosynpax.com/" },
 ];
 
