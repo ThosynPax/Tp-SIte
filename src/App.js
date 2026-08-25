@@ -53,16 +53,14 @@ const App = () => {
         <LayoutWrapper theme={theme}>
           <Routes>
             <Route path="/" element={<Main theme={theme} />} />
-            <Route path="/lab" element={<Lab theme={theme} />}>
-              <Route index element={<LabStory />} />
-              <Route path="story" element={<LabStory />} />
-              <Route path="products" element={<LabProducts />} />
-              <Route path="store" element={<LabStore />} />
-              <Route path="podcast" element={<LabPodcast />} />
-              <Route path="newsletter" element={<LabNewsletter />} />
-              <Route path="magazine" element={<LabMagazine />} />
-              <Route path="resources" element={<LabResources />} />
-            </Route>
+            <Route path="/lab" element={<Lab theme={theme} />} />
+            <Route path="/lab/story" element={<LabStory theme={theme} />} />
+            <Route path="/lab/products" element={<LabProducts theme={theme} />} />
+            <Route path="/lab/store" element={<LabStore theme={theme} />} />
+            <Route path="/lab/podcast" element={<LabPodcast theme={theme} />} />
+            <Route path="/lab/newsletter" element={<LabNewsletter theme={theme} />} />
+            <Route path="/lab/magazine" element={<LabMagazine theme={theme} />} />
+            <Route path="/lab/resources" element={<LabResources theme={theme} />} />
             <Route path="/resources" element={<Resources theme={theme} />} />
             <Route path="/links" element={<Link />} />
           </Routes>
