@@ -4,11 +4,9 @@ import PageLink from "../assets/logo.png";
 
 const links = [
   { label: "Who I Am & What I Do", url: "/" },
-  { label: "Level Up with a New Tech Skill", url: "https://www.paxschool.xyz/" },
-  { label: "Tune In: The Debug School Podcast", url: "/debug-school" },
-  { label: "Follow My Journey on Pax Trail", url: "https://trail.thosynpax.com" },
-  { label: "Join the Hustle Hive Newsletter", url: "https://substack.com/@thosynpax" },
-  { label: "Build Your Startup with TPCo", url: "https://www.thepaxcompany.xyz/" },
+  { label: "Level Up with a New Skill", url: "https://www.withpaste.com/" },
+  { label: "Tune In: The Product Lab", url: "https://thosynpax.com/lab" },
+  { label: "Grants, AI Credits & Startup Opportunities", url: "https://remake.thosynpax.com/" },
 ];
 
 export default function LinksPage() {
@@ -45,39 +43,19 @@ export default function LinksPage() {
         ))}
       </div>
 
-
-      <section className="youtube-section">
-        <div className="content">
-          <h2>Learn. Build. Innovate.</h2>
-          <p>
-            Dive into my YouTube channel <strong>PaST, Pax School of Tech</strong> for
-            free tech lessons, product insights, and design thinking tips to elevate
-            your skills.
-          </p>
-        </div>
-
-        <div className="video-container">
-          <iframe
-            src="https://www.youtube.com/embed/0GVJo716pH4"
-            title="PaST – Pax School of Tech YouTube Channel"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          ></iframe>
-        </div>
-      </section>
-
-
-
-
-      {/* 🧮 Equity Calculator */}
-      <section className="equity-section">
-        <h2>How Much Equity Should You Give Your Co-Founder?</h2>
-        <p>Deciding how to split equity with your co-founder can make or break your startup. This FREE Equity Calculator helps you avoid drama, regret, and bad deals. Just answer a few key questions and get a smart, fair split, no guesswork, no Excel sheets.</p>
-        <a href="https://www.thepaxcompany.xyz/qell" target="_blank" rel="noopener noreferrer">
-          <button className="equity-button">Try It Now</button>
+      {/* 🚀 Premium Startup CTA */}
+      <motion.section 
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+        className="cta-card"
+      >
+        <h3>Launch Your Idea with Cre8fast</h3>
+        <p>We build and ship high-scale tech products in weeks, not months. Get developer execution, AI orchestration, and scaling blueprints.</p>
+        <a href="https://cre8fast.thosynpax.com/" target="_blank" rel="noopener noreferrer" className="cta-button">
+          Start Building →
         </a>
-      </section>
+      </motion.section>
 
       <footer className="footer">
         <p>
@@ -157,68 +135,55 @@ export default function LinksPage() {
           color: var(--bg-color);
         }
 
-        .youtube-section {
-          margin-top: 4rem;
-          text-align: center;
-          padding: 2rem 1rem;
-        }
-
-        .youtube-section h2 {
-          font-size: 1.5rem;
-          color: var(--header-color);
-          margin-bottom: 0.5rem;
-        }
-
-        .video-container {
-          position: relative;
-          width: 100%;
-          max-width: 600px;
-          padding-top: 56.25%;
-          margin: 1rem auto;
-        }
-
-        .video-container iframe {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          border: 1px solid rgba(var(--accent-color), 0.2);
-          border-radius: 12px;
-        }
-
-        .equity-section {
+        .cta-card {
+          margin-top: 3.5rem;
           background: var(--card-bg);
-          margin-top: 4rem;
-          padding: 4rem 2rem;
+          padding: 2.5rem 1.5rem;
           width: 100%;
-          max-width: 800px;
-          border-radius: 1.5rem;
+          max-width: 500px;
+          border-radius: 16px;
+          border: 1px solid rgba(255, 255, 255, 0.08);
           text-align: center;
-          border: 1px solid rgba(var(--accent-color), 0.1);
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+          transition: border-color 0.3s ease, transform 0.3s ease;
         }
 
-        .equity-section h2 {
-          font-size: 1.8rem;
+        .cta-card:hover {
+          border-color: rgba(59, 130, 246, 0.3);
+          transform: translateY(-4px);
+        }
+
+        .cta-card h3 {
+          margin: 0 0 0.5rem 0;
+          font-size: 1.3rem;
           color: var(--header-color);
+          font-weight: 700;
         }
 
-        .equity-button {
-          margin-top: 1.5rem;
-          padding: 1rem 2rem;
-          font-size: 1rem;
-          border: none;
-          border-radius: 1rem;
+        .cta-card p {
+          margin: 0 0 1.5rem 0;
+          font-size: 0.85rem;
+          line-height: 1.5;
+          color: var(--brief-text);
+        }
+
+        .cta-button {
+          display: inline-block;
+          padding: 0.85rem 1.85rem;
+          font-size: 0.9rem;
+          font-weight: 700;
+          border-radius: 40px;
           background-color: var(--link-color);
           color: var(--bg-color);
-          font-weight: bold;
-          cursor: pointer;
-          transition: 0.3s;
+          text-decoration: none;
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+          transition: all 0.3s ease;
         }
 
-        .equity-button:hover {
+        .cta-button:hover {
           background-color: var(--text-color);
           color: var(--bg-color);
+          transform: scale(1.05);
         }
 
         .footer {
