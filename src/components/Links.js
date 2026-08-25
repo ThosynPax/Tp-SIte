@@ -4,11 +4,10 @@ import PageLink from "../assets/logo.png";
 
 const links = [
   { label: "Who I Am & What I Do", url: "/" },
-  { label: "Level Up with a New Tech Skill", url: "https://www.paxschool.xyz/" },
-  { label: "Tune In: The Debug School Podcast", url: "/debug-school" },
-  { label: "Follow My Journey on Pax Trail", url: "https://trail.thosynpax.com" },
-  { label: "Join the Hustle Hive Newsletter", url: "https://substack.com/@thosynpax" },
-  { label: "Build Your Startup with TPCo", url: "https://www.thepaxcompany.xyz/" },
+  { label: "Level Up with a New Skill", url: "https://www.withpaste.com/" },
+  { label: "Tune In: The Product Lab", url: "https://thosynpax.com/lab" },
+  { label: "Build Your Startup with Cre8fast", url: "https://cre8fast.thosynpax.com/" },
+  { label: "Grants, AI Credits & Startup Opportunities", url: "https://remake.thosynpax.com/" },
 ];
 
 export default function LinksPage() {
@@ -44,40 +43,6 @@ export default function LinksPage() {
           </motion.a>
         ))}
       </div>
-
-
-      <section className="youtube-section">
-        <div className="content">
-          <h2>Learn. Build. Innovate.</h2>
-          <p>
-            Dive into my YouTube channel <strong>PaST, Pax School of Tech</strong> for
-            free tech lessons, product insights, and design thinking tips to elevate
-            your skills.
-          </p>
-        </div>
-
-        <div className="video-container">
-          <iframe
-            src="https://www.youtube.com/embed/0GVJo716pH4"
-            title="PaST – Pax School of Tech YouTube Channel"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          ></iframe>
-        </div>
-      </section>
-
-
-
-
-      {/* 🧮 Equity Calculator */}
-      <section className="equity-section">
-        <h2>How Much Equity Should You Give Your Co-Founder?</h2>
-        <p>Deciding how to split equity with your co-founder can make or break your startup. This FREE Equity Calculator helps you avoid drama, regret, and bad deals. Just answer a few key questions and get a smart, fair split, no guesswork, no Excel sheets.</p>
-        <a href="https://www.thepaxcompany.xyz/qell" target="_blank" rel="noopener noreferrer">
-          <button className="equity-button">Try It Now</button>
-        </a>
-      </section>
 
       <footer className="footer">
         <p>
@@ -154,70 +119,6 @@ export default function LinksPage() {
 
         .link-button:hover {
           background-color: var(--accent-color);
-          color: var(--bg-color);
-        }
-
-        .youtube-section {
-          margin-top: 4rem;
-          text-align: center;
-          padding: 2rem 1rem;
-        }
-
-        .youtube-section h2 {
-          font-size: 1.5rem;
-          color: var(--header-color);
-          margin-bottom: 0.5rem;
-        }
-
-        .video-container {
-          position: relative;
-          width: 100%;
-          max-width: 600px;
-          padding-top: 56.25%;
-          margin: 1rem auto;
-        }
-
-        .video-container iframe {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          border: 1px solid rgba(var(--accent-color), 0.2);
-          border-radius: 12px;
-        }
-
-        .equity-section {
-          background: var(--card-bg);
-          margin-top: 4rem;
-          padding: 4rem 2rem;
-          width: 100%;
-          max-width: 800px;
-          border-radius: 1.5rem;
-          text-align: center;
-          border: 1px solid rgba(var(--accent-color), 0.1);
-        }
-
-        .equity-section h2 {
-          font-size: 1.8rem;
-          color: var(--header-color);
-        }
-
-        .equity-button {
-          margin-top: 1.5rem;
-          padding: 1rem 2rem;
-          font-size: 1rem;
-          border: none;
-          border-radius: 1rem;
-          background-color: var(--link-color);
-          color: var(--bg-color);
-          font-weight: bold;
-          cursor: pointer;
-          transition: 0.3s;
-        }
-
-        .equity-button:hover {
-          background-color: var(--text-color);
           color: var(--bg-color);
         }
 
