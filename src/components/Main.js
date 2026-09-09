@@ -233,12 +233,6 @@ const Main = ({ theme }) => {
                 <p className="styled-p">
                   I write a monthly letter called <a href="https://thosynpax.substack.com/" target="_blank" rel="noopener noreferrer" className="brand-link">Letters from Pax</a> — one honest letter, once a month, written from the middle of building things.
                 </p>
-                <p className="styled-p">
-                  What's happening across my ventures — The Product Lab, PASTE, Cre8fast, Karpture, and whatever else I'm in the middle of. What it's teaching me. Something I want you to see. And one line worth keeping.
-                </p>
-                <p className="styled-p">
-                  No daily emails. No weekly roundups. Just one letter a month.
-                </p>
               </div>
 
               <div className="brief-content">
