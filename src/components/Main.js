@@ -231,7 +231,7 @@ const Main = ({ theme }) => {
                 <h2 className="roles-grid">Writing</h2>
 
                 <p className="styled-p">
-                  I write a monthly letter called <a href="https://thosynpax.substack.com/" target="_blank" rel="noopener noreferrer" className="brand-link">Letters from Pax</a> — one honest letter, once a month, written from the middle of building things.
+                  I write a monthly letter called <a href="https://thosynpax.substack.com/" target="_blank" rel="noopener noreferrer" className="brand-link">Letters from Pax</a>. One honest letter, once a month, written from the middle of building things.
                 </p>
               </div>
 
