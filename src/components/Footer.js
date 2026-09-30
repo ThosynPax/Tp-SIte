@@ -12,7 +12,7 @@ const Footer = () => {
         <a href="https://www.threads.net/@thosynpax" target="_blank" rel="noopener noreferrer" title="Threads"><img src="/threads.svg" alt="Threads" className="threads-icon" /></a>
         <a href="https://linkedin.com/in/thosyn-pax" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i className="fab fa-linkedin-in"></i></a>
       </div>
-      <p>&copy; 2015 - {currentYear} Thosyn Pax. All rights reserved. (V7.1.2) </p>
+      <p>&copy; 2015 - {currentYear} Thosyn Pax. All rights reserved. (V7.1.2)</p>
     </footer>
   );
 };
