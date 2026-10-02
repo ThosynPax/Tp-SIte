@@ -10,6 +10,7 @@ const LabMagazine = () => {
   const [activeFilter, setActiveFilter] = useState('all');
   const [selectedArticle, setSelectedArticle] = useState(null);
   const [emailInput, setEmailInput] = useState('');
+  const [subscribed, setSubscribed] = useState(false);
   const [volumePage, setVolumePage] = useState(1);
 
   // Close modal on escape key
@@ -53,7 +54,13 @@ const LabMagazine = () => {
     ? articles
     : articles.filter(a => a.category === activeFilter);
 
-
+  const handleSubscribe = (e) => {
+    e.preventDefault();
+    if (emailInput.trim()) {
+      setSubscribed(true);
+      setEmailInput('');
+    }
+  };
 
   const archiveEditions = [
     {
@@ -367,7 +374,35 @@ const LabMagazine = () => {
 
             </div>
 
-
+            {/* Direct Email Fallback */}
+            <div className="mag-nl-direct-strip">
+              <div className="mag-nl-direct-info">
+                <span className="mag-nl-direct-label">Prefer Direct Inbox Delivery?</span>
+                <p className="mag-nl-direct-sub">Get every Dispatch emailed the moment it is published.</p>
+              </div>
+              <div className="mag-nl-direct-form-wrap">
+                {subscribed ? (
+                  <div className="mag-nl-success">
+                    <span className="mag-nl-icon"><i className="fas fa-check-circle"></i></span>
+                    <p>You’re on the dispatch list! First issue arriving shortly.</p>
+                  </div>
+                ) : (
+                  <form className="mag-nl-form" onSubmit={handleSubscribe}>
+                    <input
+                      type="email"
+                      required
+                      placeholder="your@email.com"
+                      className="mag-nl-input"
+                      value={emailInput}
+                      onChange={(e) => setEmailInput(e.target.value)}
+                    />
+                    <button type="submit" className="mag-nl-btn">
+                      Subscribe Direct
+                    </button>
+                  </form>
+                )}
+              </div>
+            </div>
 
           </div>
         </div>
@@ -406,7 +441,8 @@ const LabMagazine = () => {
 
               {/* Cover Hero */}
               <div className="mag-modal-hero-img-wrap">
-                <img loading="lazy"                   src={selectedArticle.cover}
+                <img
+                  src={selectedArticle.cover}
                   alt={selectedArticle.title}
                   className="mag-modal-hero-img"
                 />

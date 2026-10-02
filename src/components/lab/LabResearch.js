@@ -144,7 +144,7 @@ const LabResearch = () => {
           </div>
           <div className="story-intro-right" style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', width: '100%', gap: '1rem' }}>
             <p style={{ fontSize: '1rem', color: '#111', margin: 0, lineHeight: '1.6', fontFamily: "'Space Mono', monospace", maxWidth: '80%' }}>An investigation into building resilient data systems in low-trust, high-latency environments.</p>
-            <a href="#" download style={{ width: '45px', height: '45px', backgroundColor: '#111', color: '#fff', borderRadius: '50%', display: 'flex', justifyContent: 'center', alignItems: 'center', textDecoration: 'none', flexShrink: 0 }}>
+            <a href="#!" download style={{ width: '45px', height: '45px', backgroundColor: '#111', color: '#fff', borderRadius: '50%', display: 'flex', justifyContent: 'center', alignItems: 'center', textDecoration: 'none', flexShrink: 0 }}>
               <i className="fas fa-arrow-down"></i>
             </a>
           </div>
@@ -161,7 +161,7 @@ const LabResearch = () => {
           </div>
           <div className="story-intro-right" style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', width: '100%', gap: '1rem' }}>
             <p style={{ fontSize: '1rem', color: '#111', margin: 0, lineHeight: '1.6', fontFamily: "'Space Mono', monospace", maxWidth: '80%' }}>How multi-agent systems are redefining the solo builder's capacity to ship complex software.</p>
-            <a href="#" download style={{ width: '45px', height: '45px', backgroundColor: '#111', color: '#fff', borderRadius: '50%', display: 'flex', justifyContent: 'center', alignItems: 'center', textDecoration: 'none', flexShrink: 0 }}>
+            <a href="#!" download style={{ width: '45px', height: '45px', backgroundColor: '#111', color: '#fff', borderRadius: '50%', display: 'flex', justifyContent: 'center', alignItems: 'center', textDecoration: 'none', flexShrink: 0 }}>
               <i className="fas fa-arrow-down"></i>
             </a>
           </div>
@@ -178,7 +178,7 @@ const LabResearch = () => {
           </div>
           <div className="story-intro-right" style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', width: '100%', gap: '1rem' }}>
             <p style={{ fontSize: '1rem', color: '#111', margin: 0, lineHeight: '1.6', fontFamily: "'Space Mono', monospace", maxWidth: '80%' }}>Building products with AI without losing your mind. A practical guide to agentic workflows.</p>
-            <a href="#" download style={{ width: '45px', height: '45px', backgroundColor: '#111', color: '#fff', borderRadius: '50%', display: 'flex', justifyContent: 'center', alignItems: 'center', textDecoration: 'none', flexShrink: 0 }}>
+            <a href="#!" download style={{ width: '45px', height: '45px', backgroundColor: '#111', color: '#fff', borderRadius: '50%', display: 'flex', justifyContent: 'center', alignItems: 'center', textDecoration: 'none', flexShrink: 0 }}>
               <i className="fas fa-arrow-down"></i>
             </a>
           </div>
