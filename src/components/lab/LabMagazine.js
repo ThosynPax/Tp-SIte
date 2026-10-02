@@ -9,7 +9,6 @@ const LabMagazine = () => {
 
   const [activeFilter, setActiveFilter] = useState('all');
   const [selectedArticle, setSelectedArticle] = useState(null);
-  const [emailInput, setEmailInput] = useState('');
   const [volumePage, setVolumePage] = useState(1);
 
   // Close modal on escape key
