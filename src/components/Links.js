@@ -22,7 +22,7 @@ export default function LinksPage() {
         transition={{ duration: 0.6 }}
         className="header-section"
       >
-        <img src={PageLink} alt="Thosyn Pax Logo" className="logo" />
+        <img loading="lazy" src={PageLink} alt="Thosyn Pax Logo" className="logo" />
         <h1>I'm Thosyn Pax</h1>
         <p>Product Architect • Tech Educator • Entrepreneur</p>
       </motion.div>

@@ -40,7 +40,7 @@ const LabNewsletter = () => {
                 style={{ textDecoration: 'none' }}
               >
                 <div className="album-cover-wrapper">
-                  <img src={feed.cover} alt={feed.title} className="album-cover" />
+                  <img loading="lazy" src={feed.cover} alt={feed.title} className="album-cover" />
                   <button className="card-play-btn"><i className="fas fa-play"></i></button>
                 </div>
                 <div className="album-info">

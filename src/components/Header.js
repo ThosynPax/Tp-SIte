@@ -10,7 +10,7 @@ const Header = () => {
       <div className="wrapper">
         <div className="header-content">
           <a href='/'>
-            <img src={logo} alt="Logo" className="logo" />
+            <img loading="lazy" src={logo} alt="Logo" className="logo" />
           </a>
         </div>
       </div>
