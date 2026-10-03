@@ -3,6 +3,7 @@
 
 <head>
   <meta charset="utf-8" />
+  <link rel="icon" type="image/svg+xml" href="%PUBLIC_URL%/favicon.svg" />
   <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#000000" />
@@ -28,7 +29,28 @@
     content="Product Architect, Tech Educator, and Founder of The Product Lab and PASTE. Explore projects, links, and the Vibecoder's Playbook." />
   <meta property="twitter:image" content="https://thosynpax.com/tp-light.png" />
 
+  <!-- AI SEO & Search Engine Structured Data -->
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   <link rel="canonical" href="https://thosynpax.com/" />
+  <link rel="author" href="https://thosynpax.com/" />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Thosyn Pax",
+      "jobTitle": "Product Architect & Tech Educator",
+      "url": "https://thosynpax.com",
+      "sameAs": [
+        "https://github.com/thosynpax",
+        "https://linkedin.com/in/thosynpax",
+        "https://youtube.com/@thosynpaxlab"
+      ],
+      "worksFor": {
+        "@type": "Organization",
+        "name": "The Product Lab"
+      }
+    }
+  </script>
   <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
   <!--
       manifest.json provides metadata used when your web app is installed on a
@@ -53,6 +75,22 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
   <title>Thosyn Pax — Product Architect, Tech Educator, and Founder</title>
+
+  <!-- Anti-flash: Apply correct bg before React mounts -->
+  <style>
+    /* Default dark bg (non-lab routes) */
+    body { background-color: #000; border-top: 20px solid #fff; }
+  </style>
+  <script>
+    (function() {
+      var path = window.location.pathname;
+      if (path === '/lab' || path.indexOf('/lab/') === 0) {
+        document.documentElement.style.setProperty('--bg-color', '#f7f7f7');
+        document.documentElement.style.setProperty('--top-border-color', '#f7f7f7');
+        document.write('<style>body{background-color:#f7f7f7!important;border-top:20px solid #f7f7f7!important;}</style>');
+      }
+    })();
+  </script>
 </head>
 
 <body>

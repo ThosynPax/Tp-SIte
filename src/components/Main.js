@@ -303,8 +303,7 @@ const Main = ({ theme }) => {
                     }}
                   />
                 )}
-                <img
-                  src={imageSrc}
+                <img src={imageSrc}
                   alt="Thosyn Pax"
                   fetchpriority="high"
                   loading="eager"

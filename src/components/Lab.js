@@ -1,501 +1,249 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import '../App.css';
 import useSEO from '../hooks/useSEO';
+import LabContact from './lab/LabContact';
 
 const Lab = ({ theme }) => {
   useSEO({
     title: 'The Product Lab | Thosyn Pax',
-    description: 'Welcome to The Product Lab. I am documenting the journey of building high-scale tech systems and global careers. This is where theory meets the factory floor.',
+    description: 'Welcome to The Product Lab. This is where theory meets the factory floor.',
   });
 
+  const [activeSlide, setActiveSlide] = useState(0);
+
+  // Auto-advance carousel every 8 seconds
   useEffect(() => {
-    window.scrollTo(0, 0);
+    const total = 5; // number of records
+    const timer = setInterval(() => {
+      setActiveSlide(prev => (prev + 1) % total);
+    }, 8000);
+    return () => clearInterval(timer);
   }, []);
 
+  // Custom record menu setup (One-word titles + short subtexts + local covers + FontAwesome icons)
+  const menuRecords = [
+    {
+      id: 'store',
+      title: 'Store',
+      desc: 'eBook shop',
+      cover: '/ebook2.jpg',
+      color: '#ec4899',
+      icon: 'fa-shopping-bag',
+      link: '/lab/store'
+    },
+    {
+      id: 'podcast',
+      title: 'Podcast',
+      desc: 'Conversations',
+      cover: '/lab/carousel/Podcast.png',
+      color: '#8b5cf6',
+      icon: 'fa-podcast',
+      link: '/lab/podcast'
+    },
+    {
+      id: 'newsletter',
+      title: 'Newsletter',
+      desc: 'Architecture Audit',
+      cover: '/lab/carousel/Newsletter.png',
+      color: '#f59e0b',
+      icon: 'fa-envelope-open-text',
+      link: '/lab/podcast'
+    },
+    {
+      id: 'youtube',
+      title: 'YouTube',
+      desc: 'The Lab Channel',
+      cover: '/lab/carousel/Youtube.png',
+      color: '#ef4444',
+      icon: 'fa-youtube',
+      link: '/lab/podcast#youtube-section'
+    }
+  ];
+
   return (
-    <div className="lab-page-layout">
-      <style>{`
-        body { margin: 0; padding: 0; background: #000; }
-        
-        .lab-page-layout {
-          display: flex;
-          padding: 1rem 1rem 0 1rem;
-          box-sizing: border-box;
-          gap: 1rem;
-          background-color: transparent;
-          font-family: 'Inter', sans-serif;
-          align-items: stretch;
-          height: calc(100vh - 110px);
-          min-height: 550px;
-        }
+    <div className="lab-layout-wrapper" style={{ backgroundColor: '#f7f7f7', color: '#111' }}>
 
-        @media (max-width: 900px) {
-          .lab-page-layout {
-            flex-direction: column;
-            height: auto;
-            min-height: 100vh;
-          }
-        }
+      {/* ── Hektor-style Hero Header ── */}
+      <header className="lab-hero-header">
 
-        /* --- Left Panel --- */
-        .lab-left {
-          flex: 0 0 35%;
-          position: relative;
-          border-radius: 20px;
-          overflow: hidden;
-          background-color: #111;
-          display: flex;
-          flex-direction: column;
-        }
+        {/* Left: text content */}
+        <div className="lab-hero-left">
+          <span className="lab-hero-label">&#123; The Product Lab &#125;</span>
 
-        @media (max-width: 900px) {
-          .lab-left {
-            flex: none;
-            height: 70vh;
-          }
-        }
+          <h1 className="lab-hero-headline">
+            <span style={{ display: 'inline-block', whiteSpace: 'nowrap' }}>
+              The{' '}
+              <span className="lab-hero-inline-img-wrap">
+                <img loading="lazy"                   src="/Podcast.jpg"
+                  alt="Thosyn Pax"
+                  className="lab-hero-inline-vinyl"
+                />
+              </span>
+              {' '}lab where
+            </span>
+            <br />
+            <span style={{ display: 'inline-block', whiteSpace: 'nowrap' }}>
+              builders{' '}
+              <span className="lab-hero-inline-disc-wrap">
+                <span className="hero-vinyl-disc" title="The Product Lab Vinyl">
+                  <span className="vinyl-disc-grooves"></span>
+                  <span className="vinyl-disc-label">
+                    <span className="vinyl-label-text">TPL</span>
+                    <span className="vinyl-center-hole"></span>
+                  </span>
+                </span>
+              </span>
+              {' '}think.
+            </span>
+          </h1>
 
-        .lab-left-bg {
-          position: absolute;
-          inset: 0;
-          background-image: url('/Podcast.jpg');
-          background-size: cover;
-          background-position: center;
-          z-index: 0;
-        }
-
-        .lab-left-overlay {
-          position: absolute;
-          inset: 0;
-          background: linear-gradient(to bottom, rgba(0,0,0,0) 40%, rgba(0,0,0,0.85) 100%);
-          z-index: 1;
-        }
-
-        .lab-left-content {
-          position: relative;
-          z-index: 2;
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
-          height: 100%;
-          padding: 2.5rem;
-          color: #fff;
-        }
-
-        .lab-title {
-          font-family: 'Space Mono', monospace;
-          font-size: 2.5rem;
-          font-weight: 700;
-          margin: 0;
-          letter-spacing: -1px;
-        }
-
-        .lab-intro {
-          margin-top: auto;
-        }
-
-        .lab-intro h2 {
-          font-size: 1.25rem;
-          margin: 0 0 0.8rem 0;
-          font-weight: 600;
-        }
-
-        .lab-intro p {
-          font-size: 0.95rem;
-          line-height: 1.6;
-          color: rgba(255, 255, 255, 0.7);
-          margin: 0 0 1rem 0;
-          max-width: 95%;
-        }
-
-        /* --- Right Panel --- */
-        .lab-right {
-          flex: 1;
-          border-radius: 20px;
-          background-color: #0b0b0b;
-          background-image: linear-gradient(rgba(11, 11, 11, 0.88), rgba(11, 11, 11, 0.96)), url('/hero.jpg');
-          background-size: cover;
-          background-position: center;
-          border: 1px solid rgba(255,255,255,0.05);
-          padding: 1.75rem 3rem;
-          display: flex;
-          flex-direction: column;
-          position: relative;
-          overflow-y: auto;
-        }
-
-        @media (max-width: 900px) {
-          .lab-right {
-            padding: 2rem 1.5rem;
-            overflow-y: visible;
-          }
-        }
-
-        /* Hide Scrollbar */
-        .lab-right::-webkit-scrollbar { display: none; }
-        .lab-right { -ms-overflow-style: none; scrollbar-width: none; }
-
-        .project-list {
-          display: flex;
-          flex-direction: column;
-          font-size: 0.9rem;
-        }
-        .project-row {
-          display: grid;
-          grid-template-columns: 6.5rem 4.5rem 10rem 20px;
-          justify-content: start;
-          gap: 1.5rem;
-          padding: 0.6rem 0;
-          text-decoration: none;
-          color: #a0a0a0;
-          transition: color 0.2s;
-          border-bottom: 1px solid rgba(255,255,255,0.03);
-        }
-        .project-row:last-child { border-bottom: none; }
-        .project-row:hover { color: #fff; }
-        .header-row { color: #888; padding-bottom: 0.4rem; border-bottom: none; pointer-events: none; }
-        .p-name { color: #d0d0d0; transition: color 0.2s; font-weight: 500; }
-        .project-row:hover .p-name { color: #fff; }
-        .p-status, .p-domain { color: #666; transition: color 0.2s; }
-        .project-row:hover .p-status, .project-row:hover .p-domain { color: #aaa; }
-        .p-link { color: #444; transition: color 0.2s; text-align: right; font-weight: 600; }
-        .project-row:hover .p-link { color: #fff; }
-
-        .lab-projects-wrapper {
-          margin-top: 2rem;
-        }
-
-        @media (max-width: 900px) {
-          .lab-projects-wrapper { order: 4; margin-top: 2rem; margin-bottom: 2rem; }
-          .lab-bottom { order: 3; padding-top: 3rem; }
-        }
-
-        @media (max-width: 650px) {
-          .project-row {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            padding: 1.2rem 0;
-            gap: 0.6rem;
-          }
-          .p-name {
-            flex: 1 1 100%;
-            font-size: 1.15rem;
-            color: #fff;
-            margin-bottom: 0.2rem;
-          }
-          .p-status {
-            font-size: 0.8rem;
-            padding: 0.25rem 0.6rem;
-            background: rgba(255,255,255,0.15);
-            border-radius: 6px;
-            color: #fff;
-          }
-          .p-domain {
-            font-size: 0.95rem;
-            flex: 1;
-            color: rgba(255,255,255,0.7);
-          }
-          .p-link {
-            font-size: 1.2rem;
-            color: #fff;
-          }
-          .header-row {
-            display: none;
-          }
-        }
-
-        /* Top Nav inside Right Panel */
-        .lab-top {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          margin-bottom: 1.25rem;
-          font-size: 0.9rem;
-          flex-wrap: wrap;
-          gap: 1rem;
-        }
-
-        .lab-top-right {
-          display: flex;
-          align-items: center;
-          gap: 0.8rem;
-          color: rgba(255,255,255,0.3);
-          font-size: 0.85rem;
-          flex-wrap: wrap;
-        }
-        
-        @media (max-width: 650px) {
-          .lab-top {
-            flex-direction: column;
-            align-items: flex-start;
-          }
-          .lab-top-right {
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 0.3rem;
-          }
-        }
-        
-        .top-link {
-          color: rgba(255, 255, 255, 0.5);
-          text-decoration: none;
-          transition: color 0.2s;
-        }
-        .top-link:hover { color: #fff; }
-
-        .lab-grid {
-          display: grid;
-          grid-template-columns: repeat(2, 1fr);
-          gap: 1.5rem 1.5rem;
-        }
-
-        @media (max-width: 650px) {
-          .lab-grid { grid-template-columns: 1fr; }
-        }
-
-        .col-header {
-          font-family: 'Space Mono', monospace;
-          color: rgba(255, 255, 255, 0.3);
-          font-size: 0.8rem;
-          text-transform: uppercase;
-          margin-bottom: 0.8rem;
-          letter-spacing: 0.5px;
-        }
-
-        .grid-item {
-          margin-bottom: 1.5rem;
-        }
-
-        .item-title {
-          color: #fff;
-          font-size: 1rem;
-          font-weight: 500;
-          margin: 0 0 0.4rem 0;
-        }
-
-        .item-desc {
-          color: rgba(255, 255, 255, 0.5);
-          font-size: 0.85rem;
-          line-height: 1.5;
-          margin: 0 0 0.8rem 0;
-        }
-
-        .item-links {
-          display: flex;
-          gap: 1rem;
-          flex-wrap: wrap;
-        }
-
-        .item-link {
-          color: rgba(255, 255, 255, 0.4);
-          font-size: 0.85rem;
-          text-decoration: none;
-          transition: color 0.2s;
-        }
-        .item-link:hover { color: #fff; }
-        
-        /* Bottom Area */
-        .lab-bottom {
-          margin-top: auto;
-          padding-top: 2rem;
-          display: flex;
-          justify-content: space-between;
-          align-items: flex-end;
-          gap: 2rem;
-        }
-
-        @media (max-width: 650px) {
-          .lab-bottom { flex-direction: column; align-items: stretch; padding-top: 3rem; }
-        }
-
-        .cta-button {
-          background-color: #071b34;
-          color: #fff;
-          padding: 1rem 2rem;
-          border-radius: 40px;
-          text-decoration: none;
-          font-weight: 600;
-          font-size: 0.95rem;
-          transition: transform 0.2s;
-          display: inline-block;
-          text-align: center;
-        }
-        .cta-button:hover {
-          transform: scale(1.05);
-        }
-
-        .site-footer {
-          margin-top: 1.5rem !important;
-        }
-
-        @media (max-width: 650px) {
-          .item-title { font-size: 1.15rem; margin-bottom: 0.5rem; }
-          .item-desc { font-size: 1rem; margin-bottom: 1rem; color: rgba(255,255,255,0.75); }
-          .item-link { font-size: 1.05rem; padding: 0.4rem 0; display: block; }
-          .col-header { font-size: 0.95rem; margin-bottom: 1.2rem; }
-          .top-link { font-size: 1.05rem; padding: 0.5rem 0; }
-          .lab-top-right { font-size: 1rem; }
-          .lab-title { font-size: 2.2rem; line-height: 1.1; margin-bottom: 0.5rem; }
-          .lab-intro h2 { font-size: 1.4rem; margin-bottom: 0.8rem; }
-          .lab-intro p { font-size: 1.05rem; margin-bottom: 1.2rem; }
-          .cta-button { font-size: 1.05rem; padding: 1.2rem 2rem; width: 100%; box-sizing: border-box; }
-        }
-      `}</style>
-
-      {/* --- Left Panel --- */}
-      <div className="lab-left">
-        <div className="lab-left-bg" />
-        <div className="lab-left-overlay" />
-        
-        <div className="lab-left-content">
-          <h1 className="lab-title">THE PRODUCT LAB</h1>
-          
-          <div className="lab-intro">
-            <h2>Thosyn Pax</h2>
-            <p>Welcome to The Product Lab. I am documenting the journey of building high-scale tech systems and global careers.</p>
-            <p>"I lead with a 'Product Architect' mindset—bridging the gap between deep technical infrastructure and market-ready products."</p>
-          </div>
-        </div>
-      </div>
-
-      {/* --- Right Panel --- */}
-      <div className="lab-right">
-        
-        <div className="lab-top">
-          <Link to="/" className="top-link">← Return to Base</Link>
-          <div className="lab-top-right">
-            <span>Theory meets the factory floor</span>
-          </div>
+          <p className="lab-hero-sub">
+            Media. Products. Education. Built from Lagos for the world.
+          </p>
         </div>
 
-        <div className="lab-grid">
-          
-          {/* Column 1 */}
-          <div>
-            <div className="col-header">The Podcast</div>
-            
-            <div className="grid-item">
-              <h3 className="item-title">The Product Lab Conversations</h3>
-              <p className="item-desc">Conversations on building for scale, product strategy, and the future of technology.</p>
-              <div className="item-links" style={{ flexDirection: 'column', gap: '0.6rem' }}>
-                <a href="https://open.spotify.com/show/6fCxwjIOauwOpBrmlgqODB" target="_blank" rel="noopener noreferrer" className="item-link"><i className="fab fa-spotify" style={{ marginRight: '6px' }}></i> Spotify ↗</a>
-                <a href="https://music.youtube.com/playlist?list=PLMk-yXty7nSn13LhpnE04Xk5g7AivLW0O" target="_blank" rel="noopener noreferrer" className="item-link"><i className="fab fa-youtube" style={{ marginRight: '6px' }}></i> YouTube Music ↗</a>
-                <a href="https://podcasts.apple.com/ng/podcast/debug-school-by-paste/id1845675897" target="_blank" rel="noopener noreferrer" className="item-link"><i className="fab fa-apple" style={{ marginRight: '6px' }}></i> Apple Podcasts ↗</a>
-                <a href="https://pca.st/odaxzkhn" target="_blank" rel="noopener noreferrer" className="item-link"><i className="fas fa-podcast" style={{ marginRight: '6px' }}></i> Pocket Casts ↗</a>
-                <a href="https://player.fm/series/the-product-lab-conversations" target="_blank" rel="noopener noreferrer" className="item-link"><i className="fas fa-play-circle" style={{ marginRight: '6px' }}></i> Player FM ↗</a>
-              </div>
+        {/* Right profile photo column */}
+        <div className="lab-hero-right">
+          <div className="lab-hero-polaroid">
+            <div className="lab-hero-polaroid-inner">
+              <div
+                className="lab-hero-profile-img"
+                style={{ backgroundImage: 'url(/tp-black.png)' }}
+              />
             </div>
-
-            <div className="col-header" style={{ marginTop: '1.75rem' }}>RESOURCES</div>
-            
-            <div className="grid-item">
-              <h3 className="item-title">Product Lab Resources</h3>
-              <p className="item-desc">Free templates, technical blueprints, and tools.</p>
-              <div className="item-links">
-                <Link to="/resources" className="item-link"><i className="fas fa-folder-open" style={{ marginRight: '6px' }}></i> Access Resources →</Link>
-              </div>
-            </div>
-          </div>
-
-          {/* Column 2 */}
-          <div>
-            <div className="col-header">The Newsletter</div>
-            
-            <div className="grid-item">
-              <h3 className="item-title">The Weekly Architecture Audit</h3>
-              <p className="item-desc">Behind-the-scenes lessons on building products and companies.</p>
-              <div className="item-links" style={{ flexDirection: 'column', gap: '0.6rem' }}>
-                <a href="https://substack.com/@thosynpax" target="_blank" rel="noopener noreferrer" className="item-link"><i className="fas fa-pen-nib" style={{ marginRight: '6px' }}></i> Substack ↗</a>
-                <a href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7325566398129225728" target="_blank" rel="noopener noreferrer" className="item-link"><i className="fab fa-linkedin" style={{ marginRight: '6px' }}></i> LinkedIn ↗</a>
-              </div>
-            </div>
-
-            <div className="col-header" style={{ marginTop: '1.75rem' }}>THE BOOK</div>
-            
-            <div className="grid-item" style={{ display: 'flex', gap: '1.25rem', alignItems: 'flex-start' }}>
-              <img src="/ebook2.jpg" alt="The Vibecoder's Playbook Cover" style={{ width: '64px', height: '90px', borderRadius: '4px', border: '1px solid rgba(255,255,255,0.1)', objectFit: 'cover', flexShrink: 0, boxShadow: '0 8px 20px rgba(0,0,0,0.4)' }} />
+            <div className="vc-card-footer">
               <div>
-                <h3 className="item-title">The Vibecoder's Playbook</h3>
-                <p className="item-desc" style={{ marginBottom: '0.8rem' }}>Build products with AI without losing your mind.</p>
-                <div className="item-links">
-                  <a href="/vibecoding-playbook/?v=2.1" target="_blank" rel="noopener noreferrer" className="item-link">Link to Buy →</a>
-                </div>
+                <h3 className="vc-card-title">Host</h3>
+                <span className="vc-card-tag">Thosyn Pax</span>
               </div>
+              <div className="vc-card-arrow">↗</div>
             </div>
           </div>
         </div>
 
-        <div className="lab-projects-wrapper">
-          <div className="col-header" style={{ marginBottom: '1.2rem' }}>Lab Projects</div>
-          <div className="project-list">
-            <div className="project-row header-row">
-              <span>Project</span>
-              <span>Status</span>
-              <span>Domain</span>
-              <span></span>
-            </div>
-            
-            <div className="project-row">
-              <span className="p-name">PaxVTO</span>
-              <span className="p-status">In-Dev</span>
-              <span className="p-domain">AR Commerce</span>
-              <span className="p-link"></span>
-            </div>
+      </header>
 
-            <a href="https://trykarpture.com/?ref=thosynpax.com" target="_blank" rel="noopener noreferrer" className="project-row">
-              <span className="p-name">Karpture</span>
-              <span className="p-status">LIVE</span>
-              <span className="p-domain">Chrome Extension</span>
-              <span className="p-link">↗</span>
-            </a>
+      {/* ── Vinyl Card Carousel ── */}
+      <section className="vc-section">
 
-            <a href="https://withpaste.com/?ref=thosynpax.com" target="_blank" rel="noopener noreferrer" className="project-row">
-              <span className="p-name">PASTE</span>
-              <span className="p-status">LIVE</span>
-              <span className="p-domain">Tech Education</span>
-              <span className="p-link">↗</span>
-            </a>
+        {/* Slide track */}
+        <div className="vc-track">
+          {menuRecords.map((record, index) => {
+            let offset = index - activeSlide;
+            const total = menuRecords.length;
 
-            <a href="https://cre8fast.thosynpax.com/qell" target="_blank" rel="noopener noreferrer" className="project-row">
-              <span className="p-name">QELL</span>
-              <span className="p-status">LIVE</span>
-              <span className="p-domain">Cre8fast Product Lab</span>
-              <span className="p-link">↗</span>
-            </a>
+            if (offset > Math.floor(total / 2)) {
+              offset -= total;
+            } else if (offset < -Math.floor(total / 2)) {
+              offset += total;
+            }
 
-            <a href="https://cut.thosynpax.com/" target="_blank" rel="noopener noreferrer" className="project-row">
-              <span className="p-name">ReMake</span>
-              <span className="p-status">LIVE</span>
-              <span className="p-domain">A curator.</span>
-              <span className="p-link">↗</span>
-            </a>
+            const isCenter = offset === 0;
+            const isNear = Math.abs(offset) === 1;
+
+            return (
+              <div
+                key={record.id}
+                className={`vc-card-wrap ${isCenter ? 'vc-center' : isNear ? (offset === -1 ? 'vc-near-left' : 'vc-near-right') : 'vc-far'
+                  }`}
+                style={{ '--offset': offset }}
+                onClick={() => isCenter
+                  ? null         // center card navigates via Link below
+                  : setActiveSlide(index)
+                }
+              >
+                <Link to={record.link} className="vc-card" onClick={e => !isCenter && e.preventDefault()}>
+
+                  {/* Sleeve / card body */}
+                  <div className="vc-sleeve-body">
+                    <div
+                      className="vc-cover-img"
+                      style={{ backgroundImage: `url(${record.cover})` }}
+                    />
+                  </div>
+
+                  {/* Card footer: title, tag, arrow */}
+                  <div className="vc-card-footer">
+                    <div>
+                      <h3 className="vc-card-title">{record.title}</h3>
+                      <span className="vc-card-tag">{record.desc}</span>
+                    </div>
+                    {isCenter && (
+                      <span className="vc-card-arrow">&#x2197;</span>
+                    )}
+                  </div>
+
+                </Link>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Controls row: counter + arrows */}
+        <div className="vc-controls">
+          <span className="vc-counter">{activeSlide + 1} / {menuRecords.length}</span>
+          <div className="vc-arrows">
+            <button
+              className="vc-arrow-btn"
+              onClick={() => setActiveSlide(i => (i - 1 + menuRecords.length) % menuRecords.length)}
+              aria-label="Previous"
+            >&#8592;</button>
+            <button
+              className="vc-arrow-btn"
+              onClick={() => setActiveSlide(i => (i + 1) % menuRecords.length)}
+              aria-label="Next"
+            >&#8594;</button>
           </div>
         </div>
 
-        <div className="lab-bottom">
-          
-          <div>
-            <div className="col-header">The Production Wing</div>
-            <div className="grid-item" style={{ marginBottom: 0 }}>
-              <h3 className="item-title">Cre8fast</h3>
-              <p className="item-desc" style={{ maxWidth: '300px' }}>Rapid Execution. Turning architectural insights into deployed products.</p>
-            </div>
-          </div>
+      </section>
 
-          <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', flexWrap: 'wrap', justifyContent: 'flex-end', marginTop: '1rem' }}>
-            <a href="mailto:me@thosynpax.com?subject=Partnership / Sponsorship Inquiry" className="cta-button" style={{ background: 'transparent', color: '#fff', border: '1px solid rgba(255,255,255,0.2)' }}>
-              Get In Touch
-            </a>
-            <a href="https://cre8fast.thosynpax.com" target="_blank" rel="noopener noreferrer" className="cta-button">
-              Visit Cre8fast
-            </a>
-          </div>
-
+      {/* ── Why Us Section ── */}
+      <section className="lab-why-section">
+        <div className="lab-why-left">
+          <span className="lab-hero-label">&#123; What is the lab? &#125;</span>
+          <h2 className="lab-why-headline">
+            We are not just another media page. We are a working lab.
+          </h2>
         </div>
+        <div className="lab-why-right">
+          <p className="lab-why-text">
+            The Product Lab exists at the intersection of deep technical thinking and real product building. We document the build, teach the architecture, and ship the tools — so the next generation of builders does not have to figure it out alone.
+          </p>
+          <Link to="/lab/story" className="lab-why-btn">Read More</Link>
+        </div>
+      </section>
 
-      </div>
+      {/* ── Marquee Section ── */}
+      <section className="lab-marquee-section">
+        <div className="lab-marquee-track left-to-right">
+          <div className="lab-marquee-content">
+            {Array(8).fill('Built for builders').map((text, i) => (
+              <span key={`l1-${i}`} className="marquee-pill light">{text}</span>
+            ))}
+          </div>
+          <div className="lab-marquee-content">
+            {Array(8).fill('Built for builders').map((text, i) => (
+              <span key={`l2-${i}`} className="marquee-pill light">{text}</span>
+            ))}
+          </div>
+        </div>
+        <div className="lab-marquee-track right-to-left">
+          <div className="lab-marquee-content">
+            {Array(6).fill('Over a decade of building').map((text, i) => (
+              <span key={`d1-${i}`} className="marquee-pill dark">{text}</span>
+            ))}
+          </div>
+          <div className="lab-marquee-content">
+            {Array(6).fill('Over a decade of building').map((text, i) => (
+              <span key={`d2-${i}`} className="marquee-pill dark">{text}</span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Contact & Sponsorship Section (Hektor Style) ── */}
+      <LabContact />
 
     </div>
   );
