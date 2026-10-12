@@ -13,7 +13,25 @@ const PageWrapper = ({ children, title, isLab = false }) => {
       document.title = "Thosyn Pax — Product Architect";
     }
 
-    // 2. Entrance Animation Trigger
+    // 2. Dynamic Canonical Tag & OpenGraph URL
+    const baseUrl = 'https://thosynpax.com';
+    const cleanPath = location.pathname === '/' ? '' : location.pathname.replace(/\/+$/, '');
+    const canonicalUrl = `${baseUrl}${cleanPath}${location.pathname === '/' ? '/' : ''}`;
+
+    let canonicalEl = document.querySelector('link[rel="canonical"]');
+    if (!canonicalEl) {
+      canonicalEl = document.createElement('link');
+      canonicalEl.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonicalEl);
+    }
+    canonicalEl.setAttribute('href', canonicalUrl);
+
+    let ogUrlEl = document.querySelector('meta[property="og:url"]');
+    if (ogUrlEl) {
+      ogUrlEl.setAttribute('content', canonicalUrl);
+    }
+
+    // 3. Entrance Animation Trigger
     setIsVisible(false);
     const timer = setTimeout(() => setIsVisible(true), 30); // slight delay ensures class applies after render
 
