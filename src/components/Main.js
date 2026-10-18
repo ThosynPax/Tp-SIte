@@ -280,7 +280,7 @@ const Main = ({ theme }) => {
                   As a <strong>Tech Educator</strong>, I help professionals engineer high-earning, global careers through <a href="https://www.withpaste.com/" target="_blank" rel="noopener noreferrer" className="brand-link">PASTE</a>.
                 </p>
                 <p style={{ marginTop: "1rem", display: "inline-block" }}>
-                  <a href="https://adplist.org/mentors/thosyn-pax-qWY4?session=34223-mentorship-session" target="_blank" rel="noopener noreferrer" className="brand-link" style={{ display: 'flex', alignItems: 'center', gap: '8px', fontWeight: 'bold' }}>
+                  <a href="https://cal.com/cre8fast-thosyn-pax/30min" target="_blank" rel="noopener noreferrer" className="brand-link" style={{ display: 'flex', alignItems: 'center', gap: '8px', fontWeight: 'bold' }}>
                     <i className="fas fa-calendar-check"></i>
                     Book a Free Mentoring Session
                   </a>
