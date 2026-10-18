@@ -18,32 +18,7 @@ const Main = ({ theme }) => {
   const imageSrc = theme?.toLowerCase() === 'dark' ? '/tp-black.png' : '/tp-light.png';
   const [imgLoaded, setImgLoaded] = useState(false);
 
-  const [openTopics, setOpenTopics] = useState({});
 
-  const toggleTopic = (index) => {
-    setOpenTopics((prev) => ({
-      ...prev,
-      [index]: !prev[index],
-    }));
-  };
-
-  const teachingTopics = [
-    {
-      title: "Building the Right Way, Product Thinking for Founders Who Want to Get It Right From the Start",
-      content: "Most founders start building before they understand what they are actually building. This session is for technical and non-technical founders who want to make the right infrastructure and product decisions from day one, before the wrong choices become expensive to fix. We cover how to think about your product architecture, how to avoid the traps that slow most early-stage teams down, and how to build something that can grow without breaking. You do not need to be a developer to walk away from this session with a clear, actionable approach to building properly.",
-      suitedFor: "early-stage founders, product teams, university students interested in entrepreneurship.",
-    },
-    {
-      title: "Learning Tech That Actually Pays, How to Acquire the Right Skills, in the Right Order, for Real Opportunities",
-      content: "The internet is full of places to learn tech. Most people learn the wrong things, in the wrong order, with no clear picture of where it leads. This session is about learning with intention, understanding which technical skills open real doors, how to build competence that employers and clients can actually see, and how to position yourself so opportunities come to you rather than you chasing them. Whether you are starting from zero or trying to level up what you already know, this session gives you a framework for learning that compounds over time.",
-      suitedFor: "university students, early-career tech professionals, career switchers, bootcamp graduates.",
-    },
-    {
-      title: "From Builder to Founder, What It Actually Takes to Turn a Product Idea Into Something Real",
-      content: "There is a version of this talk that is motivational. This is not that version. This session is for people who have an idea, or who are already building, and want an honest picture of what the journey from concept to shipped product actually looks like. Drawing from years of building multiple products across different contexts, we cover the decisions that matter most at the early stage, the mistakes that kill most products before they find users, and the mindset and infrastructure a builder needs to go from idea to something real that people actually use.",
-      suitedFor: "aspiring founders, developers who want to build their own products, students, early-stage entrepreneurs.",
-    },
-  ];
 
   // Preload both variants so they're cached regardless of theme
   useEffect(() => {
@@ -114,66 +89,7 @@ const Main = ({ theme }) => {
           text-decoration: underline;
         }
 
-        .topic-accordion-item {
-          border-top: 1px solid rgba(128, 128, 128, 0.22);
-          padding: 1.15rem 0;
-          transition: border-color 0.2s ease;
-        }
-        .topic-accordion-item:last-child {
-          border-bottom: 1px solid rgba(128, 128, 128, 0.22);
-        }
-        .topic-accordion-btn {
-          width: 100%;
-          background: none;
-          border: none;
-          padding: 0;
-          text-align: left;
-          display: flex;
-          justify-content: space-between;
-          align-items: flex-start;
-          gap: 1.25rem;
-          cursor: pointer;
-          color: var(--header-color);
-          font-family: 'Space Mono', monospace;
-        }
-        .topic-title-text {
-          font-family: 'Space Mono', monospace;
-          font-size: 1.15rem;
-          font-weight: 600;
-          line-height: 1.45;
-          color: var(--header-color);
-          transition: color 0.2s ease;
-        }
-        .topic-accordion-btn:hover .topic-title-text {
-          color: var(--link-color);
-        }
-        .topic-toggle-symbol {
-          font-family: 'Space Mono', monospace;
-          font-size: 1.35rem;
-          font-weight: 600;
-          line-height: 1.2;
-          color: var(--header-color);
-          flex-shrink: 0;
-          transition: color 0.2s ease;
-          user-select: none;
-        }
-        .topic-accordion-btn:hover .topic-toggle-symbol {
-          color: var(--link-color);
-        }
-        .topic-accordion-content {
-          margin-top: 1rem;
-          animation: topicFadeIn 0.25s ease-out;
-        }
-        @keyframes topicFadeIn {
-          from {
-            opacity: 0;
-            transform: translateY(-4px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
+
 
         .pocit-quote {
           margin: 1.25rem 0 0 0;
@@ -213,15 +129,7 @@ const Main = ({ theme }) => {
             margin-bottom: 0.7rem;
             line-height: 1.5;
           }
-          .topic-title-text {
-            font-size: 1.05rem;
-          }
-          .topic-accordion-item {
-            padding: 0.95rem 0;
-          }
-          .topic-toggle-symbol {
-            font-size: 1.2rem;
-          }
+
           .wrapper { 
             padding: 0.8rem; 
           }
@@ -322,42 +230,21 @@ const Main = ({ theme }) => {
               <div style={{ marginTop: "3.5rem" }}>
                 <h2 className="roles-grid">Teaching & Facilitation</h2>
                 <p className="styled-p" style={{ marginTop: "0.75rem" }}>
-                  I have been teaching practical tech skills since 2022. What I care about is not getting through the content, it is making sure people leave the room with something they can actually use. Whether I am talking to founders, students, or working professionals, the goal is always the same: clarity, confidence, and a next step they can take immediately.
+                  I have been teaching practical tech skills since 2022. What I care about is making sure people leave the room with actionable capability—not just theory. Whether working with founders, engineering teams, or students, my sessions focus on practical execution, clarity, and sustainable technical decisions.
                 </p>
-
-                <div className="teaching-accordion" style={{ marginTop: "1.75rem" }}>
-                  {teachingTopics.map((topic, index) => {
-                    const isOpen = !!openTopics[index];
-                    return (
-                      <div key={index} className="topic-accordion-item">
-                        <button
-                          type="button"
-                          className="topic-accordion-btn"
-                          onClick={() => toggleTopic(index)}
-                          aria-expanded={isOpen}
-                        >
-                          <span className="topic-title-text">{topic.title}</span>
-                          <span className="topic-toggle-symbol" aria-hidden="true">
-                            {isOpen ? "−" : "+"}
-                          </span>
-                        </button>
-                        {isOpen && (
-                          <div className="topic-accordion-content">
-                            <p className="styled-p" style={{ marginBottom: "0.5rem" }}>
-                              {topic.content}
-                            </p>
-                            <p className="styled-p" style={{ fontSize: "0.95rem", opacity: 0.85, marginBottom: "0.25rem" }}>
-                              <em>Suited for: {topic.suitedFor}</em>
-                            </p>
-                          </div>
-                        )}
-                      </div>
-                    );
-                  })}
-                </div>
-
-                <p className="styled-p" style={{ marginTop: "1.75rem" }}>
-                  If you run a bootcamp, university programme, developer community, or corporate training and want to bring me in as a guest lecturer or workshop facilitator, reach out directly at <a href="mailto:thosynpax@gmail.com?subject=Teaching%20%26%20Facilitation%20Inquiry" className="brand-link">thosynpax@gmail.com</a> or <a href="mailto:me@thosynpax.com?subject=Teaching%20%26%20Facilitation%20Inquiry" className="brand-link">me@thosynpax.com</a>.
+                <ul>
+                  <li>
+                    <strong>Product Architecture for Founders:</strong> Avoiding costly early-stage technical mistakes, making sound infrastructure choices, and building systems that scale from day one.
+                  </li>
+                  <li>
+                    <strong>Practical Tech Skills & Career Engineering:</strong> Focusing on high-leverage technical competencies that directly translate to global employment and compounding career opportunities.
+                  </li>
+                  <li>
+                    <strong>From Concept to Shipped Product:</strong> An unvarnished blueprint of what it takes to transition from an initial idea to an active, reliable product in users' hands.
+                  </li>
+                </ul>
+                <p className="styled-p" style={{ marginTop: "1.25rem" }}>
+                  Available for guest lectures, workshops, developer community talks, and corporate training. Reach out at <a href="mailto:thosynpax@gmail.com?subject=Teaching%20%26%20Facilitation%20Inquiry" className="brand-link">thosynpax@gmail.com</a> or <a href="mailto:me@thosynpax.com?subject=Teaching%20%26%20Facilitation%20Inquiry" className="brand-link">me@thosynpax.com</a>.
                 </p>
               </div>
 
