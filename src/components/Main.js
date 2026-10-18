@@ -232,18 +232,7 @@ const Main = ({ theme }) => {
                 <p className="styled-p" style={{ marginTop: "0.75rem" }}>
                   I have been teaching practical tech skills since 2022. What I care about is making sure people leave the room with actionable capability—not just theory. Whether working with founders, engineering teams, or students, my sessions focus on practical execution, clarity, and sustainable technical decisions.
                 </p>
-                <ul>
-                  <li>
-                    <strong>Product Architecture for Founders:</strong> Avoiding costly early-stage technical mistakes, making sound infrastructure choices, and building systems that scale from day one.
-                  </li>
-                  <li>
-                    <strong>Practical Tech Skills & Career Engineering:</strong> Focusing on high-leverage technical competencies that directly translate to global employment and compounding career opportunities.
-                  </li>
-                  <li>
-                    <strong>From Concept to Shipped Product:</strong> An unvarnished blueprint of what it takes to transition from an initial idea to an active, reliable product in users' hands.
-                  </li>
-                </ul>
-                <p className="styled-p" style={{ marginTop: "1.25rem" }}>
+                <p className="styled-p" style={{ marginTop: "1rem" }}>
                   Available for guest lectures, workshops, developer community talks, and corporate training. Reach out at <a href="mailto:thosynpax@gmail.com?subject=Teaching%20%26%20Facilitation%20Inquiry" className="brand-link">thosynpax@gmail.com</a> or <a href="mailto:me@thosynpax.com?subject=Teaching%20%26%20Facilitation%20Inquiry" className="brand-link">me@thosynpax.com</a>.
                 </p>
               </div>
