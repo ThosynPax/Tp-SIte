@@ -278,6 +278,9 @@ const Main = ({ theme }) => {
                 <p className="styled-p">
                   I write a monthly letter called <a href="https://thosynpax.substack.com/" target="_blank" rel="noopener noreferrer" className="brand-link">Letters from Pax</a>. One honest letter, once a month, written from the middle of building things.
                 </p>
+                <p className="styled-p" style={{ marginTop: "1rem" }}>
+                  I also write under <a href="https://trail.thosynpax.com/?ref=thosynpax.com" target="_blank" rel="noopener noreferrer" className="brand-link">Pax Trail</a>, where I share my thoughts and perspectives.
+                </p>
               </div>
 
               {/* PUBLICATIONS */}
