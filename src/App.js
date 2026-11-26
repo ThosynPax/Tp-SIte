@@ -9,7 +9,6 @@ import Link from './components/Links';
 import Lab from './components/Lab';
 import Resources from './components/Resources';
 import LabStory from './components/lab/LabStory';
-import LabProducts from './components/lab/LabProducts';
 import LabStore from './components/lab/LabStore';
 import LabPodcast from './components/lab/LabPodcast';
 import LabNewsletter from './components/lab/LabNewsletter';
@@ -75,7 +74,6 @@ const App = () => {
             <Route path="/" element={<PageWrapper title="Home"><Main theme={theme} /></PageWrapper>} />
             <Route path="/lab" element={<PageWrapper title="The Lab" isLab={true}><Lab theme={theme} /></PageWrapper>} />
             <Route path="/lab/story" element={<PageWrapper title="Story" isLab={true}><LabStory theme={theme} /></PageWrapper>} />
-            <Route path="/lab/products" element={<PageWrapper title="Portfolio" isLab={true}><LabProducts theme={theme} /></PageWrapper>} />
             <Route path="/lab/store" element={<PageWrapper title="Store" isLab={true}><LabStore theme={theme} /></PageWrapper>} />
             <Route path="/lab/podcast" element={<PageWrapper title="Podcast" isLab={true}><LabPodcast theme={theme} /></PageWrapper>} />
             <Route path="/lab/newsletter" element={<PageWrapper title="Newsletter" isLab={true}><LabNewsletter theme={theme} /></PageWrapper>} />

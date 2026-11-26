@@ -19,8 +19,7 @@ const LabFooter = () => {
           <div className="footer-col">
             <h4>Links</h4>
             <Link to="/lab/story">Story</Link>
-            <Link to="/lab/products">Products</Link>
-            <Link to="/lab/store">Store</Link>
+            {/* <Link to="/lab/store">Store</Link> */}
             <Link to="/lab/research">Research</Link>
           </div>
           
