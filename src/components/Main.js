@@ -175,23 +175,20 @@ const Main = ({ theme }) => {
               <div className="brief-content">
                 <header className="intro">
                   <h3 className="intro-title" style={{ fontSize: "2.2rem" }}>
-                    Thosyn Pax — Product Architect, Tech Educator, and Founder
+                    Thosyn Pax | Product Architect, Tech Educator, and Founder
                   </h3>
                 </header>
                 <p style={{ marginTop: "0.75rem", marginBottom: "1rem" }}>
                   I've trained over 5,000 people across Africa, from complete beginners to working professionals, in product thinking, tech careers, and building real things.
                 </p>
+                <p style={{ marginTop: "0.5rem", marginBottom: "1rem" }}>
+                  My focus is the Business of Learning: building the products, programmes and systems that turn learning into real careers and real businesses.
+                </p>
                 <p style={{ marginTop: "0.5rem" }}>
-                  As a <strong>Product Architect</strong>, I build stable, scalable products at <a href="https://cre8fast.thosynpax.com" target="_blank" rel="noopener noreferrer" className="brand-link">Cre8fast</a> and help Founders & CEOs avoid the "Vibecoding" trap.
+                  As a <strong>Product Architect</strong>, I build stable, scalable products through <Link to="/lab" className="brand-link">The Product Lab</Link>, and help Founders & CEOs avoid the "Vibecoding" trap.
                 </p>
                 <p style={{ marginTop: "0.5rem" }}>
                   As a <strong>Tech Educator</strong>, I help professionals engineer high-earning, global careers through <a href="https://www.withpaste.com/" target="_blank" rel="noopener noreferrer" className="brand-link">PASTE</a>.
-                </p>
-                <p style={{ marginTop: "1rem", display: "inline-block" }}>
-                  <a href="https://cal.com/cre8fast-thosyn-pax/30min" target="_blank" rel="noopener noreferrer" className="brand-link" style={{ display: 'flex', alignItems: 'center', gap: '8px', fontWeight: 'bold' }}>
-                    <i className="fas fa-calendar-check"></i>
-                    Book a Free Mentoring Session
-                  </a>
                 </p>
               </div>
 
@@ -245,13 +242,13 @@ const Main = ({ theme }) => {
                     Since 2022, over 5,000 people, from complete beginners to working professionals, have gone through my teaching programmes, learning product thinking, practical tech skills, and how to build careers that travel.
                   </li>
                   <li>
+                    I founded <a href={addRef("https://www.withpaste.com/")} target="_blank" rel="noopener noreferrer" className="brand-link">PASTE</a>, an applied tech education ecosystem where people learn by building, collaborating, and shipping real-world products. It is where my work on the Business of Learning lives.
+                  </li>
+                  <li>
                     I lead <a href={addRef("https://afribreath.com")} target="_blank" rel="noopener noreferrer" className="brand-link">Afribreath</a>, a global digital infrastructure firm powering the digital frontier. We provision high-scale IT services, systems analysis, and elite talent pipelines for international partners.
                   </li>
                   <li>
-                    I founded <a href={addRef("https://www.withpaste.com/")} target="_blank" rel="noopener noreferrer" className="brand-link">PASTE (Pax School of Technology)</a>, an applied tech education ecosystem where people learn by building, collaborating, and shipping real-world products.
-                  </li>
-                  <li>
-                    I launched <a href={addRef("https://cre8fast.thosynpax.com")} target="_blank" rel="noopener noreferrer" className="brand-link">Cre8fast</a>, a product lab where I build practical tools and internal products for myself and other founders.
+                    I run <Link to="/lab" className="brand-link">The Product Lab</Link>, our product studio, where I design and build practical tools and learning products for PASTE and other founders.
                   </li>
                   <li>
                     I co-founded <a href={addRef("https://www.inmail.ng/")} target="_blank" rel="noopener noreferrer" className="brand-link">InFlect Innovations</a> to support new tech ideas.
@@ -267,7 +264,7 @@ const Main = ({ theme }) => {
                 <h2 className="roles-grid">The Lab</h2>
 
                 <p className="styled-p" style={{ marginTop: "1rem" }}>
-                  Welcome to <strong>The Product Lab</strong>. I'm documenting the journey of building high-scale tech systems and global careers.
+                  Welcome to <strong>The Product Lab</strong>. I'm documenting the journey of building learning products, high-scale tech systems and global careers: the Business of Learning, in public.
                 </p>
                 <p style={{ marginTop: "1.5rem" }}>
                   <Link to="/lab" className="project-link">Enter The Lab →</Link>

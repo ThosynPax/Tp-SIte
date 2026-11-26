@@ -14,9 +14,9 @@ const LabHeader = () => {
     { name: 'Home', path: '/lab' },
     { name: 'Story', path: '/lab/story' },
     { name: 'Podcast', path: '/lab/podcast' },
-    { name: 'Products', path: '/lab/products' },
+    { name: 'Research', path: '/lab/research' },
     // { name: 'Magazine', path: '/lab/magazine' },
-    { name: 'Store', path: '/lab/store' },
+    // { name: 'Store', path: '/lab/store' },
   ];
 
   const isOverlayLight = location.pathname === '/lab/magazine';
